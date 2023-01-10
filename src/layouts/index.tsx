@@ -7,10 +7,12 @@ type Props = {
 
 function Layout({ children }: Props) {
     return (
-        <div>
+        <>
             <Header />
-            {children}
-        </div>
+            <main id='main'>
+                {children}
+            </main>
+        </>
     )
 }
 
