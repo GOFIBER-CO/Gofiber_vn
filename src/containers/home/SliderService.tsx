@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Pagination } from "swiper";
 import Image from "next/image";
+import TextIconButton from "@/src/components/button/TextIconButton";
+import { ICON } from "@/src/utils";
 
 const sliders = [
     {
@@ -70,10 +71,12 @@ function SliderService() {
                 spaceBetween={30}
                 className="mySwiper"
                 id="slider-service"
+                onSlideChange={(e) => console.log('change', e.slideNext)}
+                autoplay
             >
                 {
                     sliders.map((slide) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={slide.id}>
                             <div className='item-container'>
                                 <div className="container">
                                     <div className="image">
@@ -83,7 +86,8 @@ function SliderService() {
                                         <div className="content">
                                             <h3 className="mb-3">{slide.title}</h3>
                                             <p>{slide.content1}</p>
-                                            <p>{slide.content2}</p>
+                                            {/* <p>{slide.content2}</p> */}
+                                            <TextIconButton className="mt-2" icon={ICON.RIGHT} name="Xem thêm" color="primary" />
                                         </div>
                                     </div>
                                 </div>
@@ -91,15 +95,6 @@ function SliderService() {
                         </SwiperSlide>
                     ))
                 }
-                {/* <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide> */}
             </Swiper>
         </>
     );
