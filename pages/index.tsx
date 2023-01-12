@@ -79,6 +79,7 @@ function Home() {
           </div>
         </div>
       </section>
+
       <section>
         <div className="section-content position-relative">
           <div className="row justify-content-center">

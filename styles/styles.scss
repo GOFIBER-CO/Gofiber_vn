@@ -299,7 +299,7 @@ a:hover {
   z-index: 100;
 
   &.nav-dropdown {
-    box-shadow: 1px 1px 15px rgb(0 0 0 / 15%);
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 15%) !important;
     margin-top: 30px !important;
     border-radius: 20px !important;
   }
@@ -986,6 +986,101 @@ h6,
   }
 }
 
+#introduction {
+  padding: 72px 0px 130px;
+}
+
+.banner {
+  min-height: 30px;
+  position: relative;
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+.banner-page {
+  padding-top: 550px;
+}
+
+.fill {
+  height: 100%;
+  left: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.banner-bg {
+  overflow: hidden;
+}
+
+.banner-layers {
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.banner-link {
+  position: absolute;
+
+  h1 {
+    font-size: 3.5em;
+    line-height: 1;
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  &.large {
+    width: 21%;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    left: 10%;
+  }
+
+  &.medium {
+    width: 43%;
+    top: 20%;
+    transform: translateX(-50%) !important;
+    left: 50%;
+  }
+
+  &.small {
+    width: 83%;
+    top: 25%;
+    transform: translateX(-50%) !important;
+    left: 50%;
+
+    .link {
+      a {
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  .link {
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border: 1px solid #f4f4f4;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 10%);
+    border-radius: 16px;
+    padding: 10px;
+
+    a {
+      font-weight: 500;
+      line-height: 24px;
+      color: #fafafa !important;
+      font-size: 16px;
+    }
+  }
+}
+
+.h2 {
+  font-size: 1.6em !important;
+}
+
 @media (min-width: 850px) {
   .hide-for-large {
     display: none !important;
@@ -1005,6 +1100,9 @@ h6,
     button {
       font-size: 14px !important;
     }
+  }
+  .banner-page {
+    padding-top: 550px;
   }
 }
 
@@ -1052,6 +1150,14 @@ h6,
     h2 {
       font-size: 1.2em;
     }
+  }
+
+  .banner-page {
+    padding-top: 450px;
+  }
+
+  .h2 {
+    font-size: 1.2em !important;
   }
 }
 
