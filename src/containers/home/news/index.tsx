@@ -74,7 +74,7 @@ function NewsAndEvents() {
             </div>
             <div className='news_list'>
                 <div className='d-flex justify-content-end'>
-                    <TextIconButton name="Xem tất cả" icon={ICON.RIGHT} color="white" styles={{ boxShadow: 'none' }} />
+                    <TextIconButton className='mt-4' name="Xem tất cả" icon={ICON.RIGHT} color="white" styles={{ boxShadow: 'none' }} />
                 </div>
                 <div className='row mt-4'>
                     {

@@ -7,7 +7,11 @@ import { Icon } from '@iconify/react'
 import { ICON } from '../utils';
 import DrawerButton from '../components/button/IconButton';
 
-function Header() {
+type Props = {
+    onShowDrawer: () => void;
+}
+
+function Header({ onShowDrawer }: Props) {
     return (
         <header id='header' className=''>
             <div className='header_wrapper'>
@@ -22,14 +26,12 @@ function Header() {
                                     Giới thiệu
                                 </a>
                             </li>
-                            <li className='menu_item has-dropdown'>
-                                <Popover id='popover-service' trigger={["hover"]} content={<MenuService />}>
-                                    <a href='#'>
-                                        Dịch vụ
-                                        <Icon icon={ICON.DOWN} />
-                                    </a>
-                                </Popover>
-
+                            <li className='menu_item has-dropdown position-relative'>
+                                <a href='#'>
+                                    Dịch vụ
+                                    <Icon icon={ICON.DOWN} />
+                                </a>
+                                <MenuService />
                             </li>
 
                             <li className='menu_item'>
@@ -45,7 +47,7 @@ function Header() {
                         </ul>
                     </div>
                     <div className='hide-for-large'>
-                        <DrawerButton icon={ICON.MENU} classNameButton="menu-button" />
+                        <DrawerButton onClick={onShowDrawer} icon={ICON.MENU} classNameButton="menu-button" />
                     </div>
                     <div className='flex-right flew-col hide-for-medium'>
                         <ul className='d-flex align-items-center justify-content-center p-0 mb-2'>
