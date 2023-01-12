@@ -20,7 +20,9 @@ function NewsItem({ item }: Props) {
                         <div className='title mt-2'>{item.title}</div>
                     </div>
                 </a>
-
+                <div className={`type ${item.class}`}>
+                    {item.type}
+                </div>
             </div>
         </div>
     )
