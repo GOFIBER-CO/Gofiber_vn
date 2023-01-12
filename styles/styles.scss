@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'SVN-Poppins' !important;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -265,9 +266,43 @@ a:hover {
   margin-top: 10px;
 }
 
+.menu_item.has-dropdown::after {
+  content: '';
+  background-color: transparent;
+  width: 80%;
+  position: absolute;
+  height: 30px;
+  top: 30px;
+  left: 0px;
+}
+
+.menu_item.has-dropdown:hover .menu_service {
+  left: 0px;
+  opacity: 1;
+  visibility: visible;
+}
+
 .menu_service {
-  min-width: 350px;
-  padding: 0px;
+  background-color: #fff;
+  color: #777;
+  display: table;
+  left: -99999px;
+  margin: 0px;
+  max-height: 0;
+  min-width: 300px;
+  opacity: 0;
+  padding: 20px;
+  position: absolute;
+  text-align: left;
+  transition: opacity 0.25s, visibility 0.25s;
+  visibility: hidden;
+  z-index: 100;
+
+  &.nav-dropdown {
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 15%);
+    margin-top: 30px !important;
+    border-radius: 20px !important;
+  }
 
   .sub_menu a {
     width: 100%;
@@ -373,36 +408,37 @@ img {
   padding: 0 !important;
 }
 
-.row-title .col-title-1 {
-  background: url('../public/images/introduction/background-title3.png');
-  background-size: 100% 100%;
-
+.row-title {
   h2 {
     color: var(--color--primary);
     font-size: 1.6em;
-    padding: 25px 10px;
   }
-}
 
-.row-title .col-title-2 {
-  background: url('../public/images/introduction/background-title2.png');
-  background-size: 100% 100%;
+  .col-title-1 {
+    background: url('../public/images/introduction/background-title3.png');
+    background-size: 100% 100%;
 
-  h2 {
-    color: var(--color--primary);
-    font-size: 1.6em;
-    padding: 20px 0px;
+    h2 {
+      padding: 25px 10px;
+    }
   }
-}
 
-.row-title .col-title-3 {
-  background: url('../public/images/introduction/background-title4.png');
-  background-size: 100% 100%;
+  .col-title-2 {
+    background: url('../public/images/introduction/background-title2.png');
+    background-size: 100% 100%;
 
-  h2 {
-    color: var(--color--primary);
-    font-size: 1.6em;
-    padding: 30px 50px;
+    h2 {
+      padding: 20px 0px;
+    }
+  }
+
+  .col-title-3 {
+    background: url('../public/images/introduction/background-title4.png');
+    background-size: 100% 100%;
+
+    h2 {
+      padding: 35px 50px;
+    }
   }
 }
 
@@ -471,6 +507,19 @@ img {
   }
 }
 
+.service_list {
+  .service_item {
+    h4 {
+      font-size: 1.25rem;
+      color: var(--color--primary);
+    }
+
+    p {
+      line-height: 22px;
+    }
+  }
+}
+
 .item-container {
   position: relative;
   border: 1px solid #fafafa;
@@ -523,6 +572,7 @@ h6,
       background: url('../public/images/introduction/khung-noibat1.png');
       background-size: 100% 100%;
       position: relative;
+      opacity: 1;
 
       &::before {
         content: '';
@@ -575,6 +625,7 @@ h6,
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+    opacity: 0.5;
 
     .wrapper_image {
       padding: 15px;
@@ -725,7 +776,7 @@ h6,
     margin-top: 30px;
 
     .ant-collapse {
-      background-color: #fff !important;
+      background-color: rgba(255, 255, 255, 0.5) !important;
 
       .ant-collapse-item {
         background: rgba(255, 255, 255, 0.2) !important;
@@ -877,6 +928,64 @@ h6,
   }
 }
 
+.drawer_menu {
+  .ant-drawer-content-wrapper {
+    width: 350px;
+    .ant-drawer-body {
+    }
+  }
+
+  .ant-drawer-close {
+    .anticon-close svg {
+      fill: var(--color--primary);
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.wrapper_drawer {
+  background-color: #fff !important;
+  .ant-menu {
+    background-color: #fff !important;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-family-primary);
+    border: none !important;
+
+    .ant-menu-item {
+      .menu_icon {
+        filter: brightness(0) !important;
+      }
+    }
+
+    .ant-menu-submenu-title:hover {
+      background-color: #fff !important;
+      color: var(--color--primary) !important;
+    }
+  }
+
+  .ant-menu-item:hover {
+    background-color: #fff !important;
+    .menu_icon {
+      filter: brightness(1) !important;
+    }
+    .ant-menu-title-content {
+      color: var(--color--primary) !important;
+    }
+  }
+  .ant-menu-item-selected {
+    background-color: transparent;
+    color: #000;
+  }
+
+  .ant-menu-submenu-selected {
+    .ant-menu-submenu-title {
+      color: #000 !important;
+    }
+  }
+}
+
 @media (min-width: 850px) {
   .hide-for-large {
     display: none !important;
@@ -937,5 +1046,24 @@ h6,
     button {
       font-size: 12px !important;
     }
+  }
+
+  .row-title {
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  .show-for-small,
+  [data-show='show-for-small'] {
+    display: none !important;
+  }
+}
+@media (min-width: 850px) {
+  .show-for-medium,
+  [data-show='show-for-medium'] {
+    display: none !important;
   }
 }

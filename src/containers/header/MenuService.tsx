@@ -3,7 +3,7 @@ import React from 'react';
 
 function MenuService() {
     return (
-        <ul className='menu_service'>
+        <ul className='menu_service nav-dropdown'>
             <li className='sub_menu'>
                 <a href='/'>
                     <Image className='menu_icon' src={require("@/public/images/icons/icon-1.svg")} alt="Thiết kế website" />

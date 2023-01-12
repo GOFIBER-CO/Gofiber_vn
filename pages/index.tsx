@@ -3,11 +3,14 @@ import Contact from '@/src/containers/home/contact';
 import MyCustomer from '@/src/containers/home/my-customer';
 import NewsAndEvents from '@/src/containers/home/news';
 import Question from '@/src/containers/home/question';
+import ServiceList from '@/src/containers/home/service';
 import SliderHot from '@/src/containers/home/SliderHot';
+import SliderMyCustomer from '@/src/containers/home/SliderMyCustomer';
 import SliderService from '@/src/containers/home/SliderService';
+import DrawerMenu from '@/src/layouts/DrawerMenu';
 import { ICON } from '@/src/utils';
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import EffectButton from '../src/components/button/EffectButton';
 
 const dataWhy = [
@@ -87,10 +90,16 @@ function Home() {
             </div>
           </div>
           <div className='row'>
-            <SliderService />
+            <div className='hide-for-medium'>
+              <SliderService />
+            </div>
+            <div className='hide-for-large'>
+              <ServiceList />
+            </div>
           </div>
         </div>
       </section>
+
       <section className='section-hot'>
         <div className='section-content position-relative'>
           <div className='row justify-content-center'>
@@ -226,6 +235,7 @@ function Home() {
             </div>
           </div>
           <MyCustomer />
+          <SliderMyCustomer />
         </div>
       </section>
 

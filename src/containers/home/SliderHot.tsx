@@ -41,18 +41,45 @@ const data = [
 ]
 
 function SliderHot() {
+
     return (
         <div id='slider-hot'>
             <Swiper
                 slidesPerView={5}
                 spaceBetween={5}
-                centeredSlides={true}
-                className="mySwiper"
-                onSlideChange={(e) => console.log('change', e.slideNext)}
+                centeredSlides
                 pagination={{
-                    clickable: true,
+                    clickable: true
                 }}
+                scrollbar={{ draggable: true }}
+                loop
                 modules={[Pagination]}
+                className="mySwiper"
+                autoplay
+                breakpoints={
+                    {
+                        "@0.00": {
+                            slidesPerView: 1,
+                            spaceBetween: 5,
+                        },
+                        "@0.75": {
+                            slidesPerView: 2,
+                            spaceBetween: 5,
+                        },
+                        "@1.00": {
+                            slidesPerView: 3,
+                            spaceBetween: 5,
+                        },
+                        "@1.25": {
+                            slidesPerView: 4,
+                            spaceBetween: 5,
+                        },
+                        "@1.50": {
+                            slidesPerView: 5,
+                            spaceBetween: 5,
+                        }
+                    }
+                }
             >
                 {
                     data.map((item, index) => (
@@ -69,7 +96,8 @@ function SliderHot() {
                     ))
                 }
             </Swiper>
-        </div>
+        </div >
+
     )
 }
 
