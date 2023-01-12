@@ -1,0 +1,151 @@
+#webDesign {
+    background: linear-gradient(90deg, #4074ec 0%, #b3defd 100%);
+    border-radius: 0px 0px 100px 100px;
+    height: 517px;
+    margin-top: 73px;
+    .webDesign__container {
+        height: 100%;
+        .webDesign__container_left {
+            padding-left: 5%;
+            padding-top: 10%;
+            .webDesign__container_left_title {
+                font-family: "SVN-Poppins";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 64px;
+                line-height: 120px;
+                text-align: justify;
+                color: #fafafa;
+                width: 533px;
+                height: 120px;
+            }
+            .webDesign__container_left_link {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 12px 24px;
+                gap: 8px;
+                position: absolute;
+                width: auto;
+                height: 50px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid #f4f4f4;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 16px;
+                .webDesign__container_left_link_text {
+                    font-family: "SVN-Poppins";
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: justify;
+                    color: #fafafa;
+                    cursor: pointer;
+                }
+            }
+        }
+        .webDesign__container_right {
+            .webDesign__container_right_logo {
+                width: 466px;
+                height: 309px;
+                // background: url(.png);
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            }
+        }
+    }
+}
+
+#how__to {
+    height: auto;
+    width: 100%;
+    .how__to_title {
+        font-family: "SVN-Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: justify;
+        color: #333333;
+        margin-bottom: 25px;
+    }
+    .how__to_text {
+        font-family: "SVN-Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+        color: #5c5c5c;
+        margin-bottom: 25px;
+    }
+    .how__to_logo {
+        margin-bottom: 25px;
+    }
+    .how__to_title1 {
+        font-family: "SVN-Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 48px;
+        text-align: justify;
+        color: #000000;
+        // margin-bottom: 25px;
+    }
+    .how__to_image {
+        position: relative;
+        .how__to_image_absolute {
+            position: absolute;
+            left: 0;
+            top: 174px;
+        }
+    }
+}
+
+#OurProducts {
+    padding: 5% 5% 0% 5%;
+    .OurProducts_title {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        font-family: "SVN-Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: justify;
+        color: #333333;
+        padding-bottom: 20px;
+    }
+    .OurProducts_col {
+        cursor: pointer;
+        .OurProducts_image {
+            width: 384px;
+            height: 398px;
+            /* Shadow 1 */
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+            border-radius: 8px 8px 0px 0px;
+        }
+        .OurProducts_image_text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "SVN-Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #333333;
+        }
+    }
+    .OurProducts_col:hover {
+        .OurProducts_image {
+            filter: drop-shadow(0px 5px 6px rgba(0, 172, 215, 0.3));
+            border-radius: 8px 8px 0px 0px;
+        }
+        .OurProducts_image_text {
+            color: #00acd7;
+        }
+    }
+}

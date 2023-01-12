@@ -7,7 +7,7 @@ import SliderHot from '@/src/containers/home/SliderHot';
 import SliderService from '@/src/containers/home/SliderService';
 import { ICON } from '@/src/utils';
 import Image from 'next/image';
-import React from 'react'
+import React from 'react';
 import EffectButton from '../src/components/button/EffectButton';
 
 const dataWhy = [
@@ -15,8 +15,9 @@ const dataWhy = [
     id: '1',
     class: 'row-why-1',
     title: 'Giá rẻ ổn định',
-    content: 'Cam kết luôn đem tới cho khách hàng dịch vụ cho thuê máy chủ, thuê server giá rẻ, đường truyền ổn định',
-    image: require("@/public/images/introduction/why-1.png"),
+    content:
+      'Cam kết luôn đem tới cho khách hàng dịch vụ cho thuê máy chủ, thuê server giá rẻ, đường truyền ổn định',
+    image: require('@/public/images/introduction/why-1.png'),
   },
   {
     id: '2',
@@ -24,8 +25,7 @@ const dataWhy = [
     title: 'Bảo mật tối đa',
     content: `Với hơn 300.000 website đang hoạt động trên hệ thống, 
     chúng tôi luôn có các quy trình chặt chẽ để bảo vệ dữ liệu của khách hàng trên mức cần thiết.`,
-    image: require("@/public/images/introduction/why-2.png"),
-
+    image: require('@/public/images/introduction/why-2.png'),
   },
   {
     id: '3',
@@ -34,12 +34,11 @@ const dataWhy = [
     content: `Đội ngũ kỹ thuật đông đảo chuyên môn cao luôn túc trực 24/7 nhằm mang lại sự yên tâm 
     tối đa cho khách hàng, tất cả vấn đề của bạn sẽ luôn được phản hồi dưới 15 phút. 
     Chúng tôi tự hào là một trong những đơn vị có chế độ hỗ trợ khách hàng tốt nhất hiện nay.`,
-    image: require("@/public/images/introduction/why-3.png"),
-  }
-]
+    image: require('@/public/images/introduction/why-3.png'),
+  },
+];
 
 function Home() {
-
   return (
     <div id='home' className='container'>
       <section className='top'>
@@ -49,10 +48,15 @@ function Home() {
           <div className='row align-items-center justify-content-center'>
             <div className='col col-12 col-md-6'>
               <div className='col-left content'>
-                <h1 className='uppercase'>CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM</h1>
+                <h1 className='uppercase'>
+                  CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM
+                </h1>
                 <p>
-                  Tự hào Phát triển và đi lên nhờ vào sự tin tưởng của khách hàng với dịch vụ thiết kế website giá rẻ uy tín và tối ưu.
-                  Công ty TNHH Công Nghệ Phần Mềm GOFIBER tự tin có thể tiếp tục mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho khách hàng của mình.
+                  Tự hào Phát triển và đi lên nhờ vào sự tin tưởng của khách
+                  hàng với dịch vụ thiết kế website giá rẻ uy tín và tối ưu.
+                  Công ty TNHH Công Nghệ Phần Mềm GOFIBER tự tin có thể tiếp tục
+                  mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
+                  khách hàng của mình.
                 </p>
                 <EffectButton color='primary' name='Liên hệ ngay' />
               </div>
@@ -60,7 +64,10 @@ function Home() {
             <div className='col col-12 col-md-6'>
               <div className='img col-right'>
                 <div className='img img-inner dark'>
-                  <Image src={require("@/public/images/introduction/Video-33.gif")} alt="Video 33" />
+                  <Image
+                    src={require('@/public/images/introduction/Video-33.gif')}
+                    alt='Video 33'
+                  />
                 </div>
               </div>
             </div>
@@ -78,7 +85,9 @@ function Home() {
                   </div>
                 </div>
                 <div className='text-center'>
-                  <p className='describe'>Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt lên hàng đầu.
+                  <p className='describe'>
+                    Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt
+                    lên hàng đầu.
                     <br />
                     Chúng tôi cam kết đảm bảo 100% hài lòng.
                   </p>
@@ -102,7 +111,9 @@ function Home() {
                   </div>
                 </div>
                 <div className='text-center'>
-                  <p className='describe'>Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt lên hàng đầu.
+                  <p className='describe'>
+                    Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt
+                    lên hàng đầu.
                     <br />
                     Chúng tôi cam kết đảm bảo 100% hài lòng.
                   </p>
@@ -123,14 +134,18 @@ function Home() {
               <div className='col-inner'>
                 <div className='row row-title justify-content-center'>
                   <div className='col col-12 col-md-9 col-lg-8 col-title-3 text-center'>
-                    <h2 className='m-0'>VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG
-                      CÁC SẢN PHẨM KHÁC CỦA GOFIBER</h2>
+                    <h2 className='m-0'>
+                      VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG CÁC SẢN PHẨM KHÁC CỦA
+                      GOFIBER
+                    </h2>
                   </div>
                 </div>
                 <div className='text-center'>
-                  <p className='describe'>Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.
+                  <p className='describe'>
+                    Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.
                     <br />
-                    Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà cung cấp cấp dịch vụ.
+                    Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà
+                    cung cấp cấp dịch vụ.
                   </p>
                 </div>
               </div>
@@ -138,24 +153,25 @@ function Home() {
           </div>
           <div className='row justify-content-center mt-4'>
             <div className='col col-12 col-md-7'>
-              {
-                dataWhy.map((item) => (
-                  <div key={item.id} className={`row align-items-center ${item.class}`}>
-                    <div className='col col-12 col-md-6'>
-                      <h6 className='title'>
-                        {item.title}
-                      </h6>
-                      <p className='content'>
-                        {item.content}
-                      </p>
-                      <TextIconButton name='Xem chi tiết' color='white' icon={ICON.RIGHT} />
-                    </div>
-                    <div className='col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start'>
-                      <Image src={item.image} alt={item.title} />
-                    </div>
+              {dataWhy.map(item => (
+                <div
+                  key={item.id}
+                  className={`row align-items-center ${item.class}`}
+                >
+                  <div className='col col-12 col-md-6'>
+                    <h6 className='title'>{item.title}</h6>
+                    <p className='content'>{item.content}</p>
+                    <TextIconButton
+                      name='Xem chi tiết'
+                      color='white'
+                      icon={ICON.RIGHT}
+                    />
                   </div>
-                ))
-              }
+                  <div className='col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start'>
+                    <Image src={item.image} alt={item.title} />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -173,7 +189,8 @@ function Home() {
                 </div>
                 <div className='text-center'>
                   <p className='describe'>
-                    Cập nhật tin tức công nghệ, cập nhật kiến thức và các tin khuyến mãi từ GOFIBER
+                    Cập nhật tin tức công nghệ, cập nhật kiến thức và các tin
+                    khuyến mãi từ GOFIBER
                   </p>
                 </div>
               </div>
@@ -197,8 +214,9 @@ function Home() {
                 </div>
                 <div className='text-center'>
                   <p className='describe'>
-                    Giải đáp các thắc mắc thường gặp của khách hàng
-                    mới khi lần đầu biết đến dịch vụ Hosting và Máy chủ hiệu năng cao của GOFIBER
+                    Giải đáp các thắc mắc thường gặp của khách hàng mới khi lần
+                    đầu biết đến dịch vụ Hosting và Máy chủ hiệu năng cao của
+                    GOFIBER
                   </p>
                 </div>
               </div>
@@ -236,8 +254,9 @@ function Home() {
               <div className='col-inner'>
                 <div className='row row-title justify-content-center'>
                   <div className='col col-12 col-md-6 col-lg-4 col-title-3 text-center'>
-                    <h2 className='m-0'>BẠN QUAN TÂM GÌ ĐẾN
-                      DỊCH VỤ CỦA CHÚNG TÔI</h2>
+                    <h2 className='m-0'>
+                      BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -249,7 +268,7 @@ function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 export default Home;
