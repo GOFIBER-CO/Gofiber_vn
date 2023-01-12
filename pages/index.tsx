@@ -10,11 +10,9 @@ import SliderService from '@/src/containers/home/SliderService';
 import DrawerMenu from '@/src/layouts/DrawerMenu';
 import { ICON } from '@/src/utils';
 import Image from 'next/image';
-<<<<<<< HEAD
-import React from 'react';
-=======
-import React, { useState } from 'react'
->>>>>>> 751e873857027f0804851ffe63dc1399c4801b02
+
+import React, { useState } from 'react';
+
 import EffectButton from '../src/components/button/EffectButton';
 
 const dataWhy = [
@@ -47,15 +45,15 @@ const dataWhy = [
 
 function Home() {
   return (
-    <div id='home' className='container'>
-      <section className='top'>
+    <div id="home" className="container">
+      <section className="top">
         {/* <div className="bg section-bg fill bg-fill bg-loaded">
         </div> */}
-        <div className='section-content position-relative'>
-          <div className='row align-items-center justify-content-center'>
-            <div className='col col-12 col-md-6'>
-              <div className='col-left content'>
-                <h1 className='uppercase'>
+        <div className="section-content position-relative">
+          <div className="row align-items-center justify-content-center">
+            <div className="col col-12 col-md-6">
+              <div className="col-left content">
+                <h1 className="uppercase">
                   CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM
                 </h1>
                 <p>
@@ -65,15 +63,15 @@ function Home() {
                   mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
                   khách hàng của mình.
                 </p>
-                <EffectButton color='primary' name='Liên hệ ngay' />
+                <EffectButton color="primary" name="Liên hệ ngay" />
               </div>
             </div>
-            <div className='col col-12 col-md-6'>
-              <div className='img col-right'>
-                <div className='img img-inner dark'>
+            <div className="col col-12 col-md-6">
+              <div className="img col-right">
+                <div className="img img-inner dark">
                   <Image
                     src={require('@/public/images/introduction/Video-33.gif')}
-                    alt='Video 33'
+                    alt="Video 33"
                   />
                 </div>
               </div>
@@ -82,17 +80,17 @@ function Home() {
         </div>
       </section>
       <section>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12 col-lg-8'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-11 col-md-5 col-title-1 text-center'>
-                    <h2 className='m-0'>DỊCH VỤ CỦA CHÚNG TÔI</h2>
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12 col-lg-8">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-11 col-md-5 col-title-1 text-center">
+                    <h2 className="m-0">DỊCH VỤ CỦA CHÚNG TÔI</h2>
                   </div>
                 </div>
-                <div className='text-center'>
-                  <p className='describe'>
+                <div className="text-center">
+                  <p className="describe">
                     Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt
                     lên hàng đầu.
                     <br />
@@ -102,29 +100,29 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className='row'>
-            <div className='hide-for-medium'>
+          <div className="row">
+            <div className="hide-for-medium">
               <SliderService />
             </div>
-            <div className='hide-for-large'>
+            <div className="hide-for-large">
               <ServiceList />
             </div>
           </div>
         </div>
       </section>
 
-      <section className='section-hot'>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12 col-lg-8'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-7 col-md-3 col-title-2 text-center'>
-                    <h2 className='m-0'>NỔI BẬT</h2>
+      <section className="section-hot">
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12 col-lg-8">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-7 col-md-3 col-title-2 text-center">
+                    <h2 className="m-0">NỔI BẬT</h2>
                   </div>
                 </div>
-                <div className='text-center'>
-                  <p className='describe'>
+                <div className="text-center">
+                  <p className="describe">
                     Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt
                     lên hàng đầu.
                     <br />
@@ -134,27 +132,27 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className="row">
             <SliderHot />
           </div>
         </div>
       </section>
 
-      <section className='section-why'>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12 col-lg-9'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-12 col-md-9 col-lg-8 col-title-3 text-center'>
-                    <h2 className='m-0'>
+      <section className="section-why">
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12 col-lg-9">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-12 col-md-9 col-lg-8 col-title-3 text-center">
+                    <h2 className="m-0">
                       VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG CÁC SẢN PHẨM KHÁC CỦA
                       GOFIBER
                     </h2>
                   </div>
                 </div>
-                <div className='text-center'>
-                  <p className='describe'>
+                <div className="text-center">
+                  <p className="describe">
                     Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.
                     <br />
                     Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà
@@ -164,23 +162,23 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className='row justify-content-center mt-4'>
-            <div className='col col-12 col-md-7'>
-              {dataWhy.map(item => (
+          <div className="row justify-content-center mt-4">
+            <div className="col col-12 col-md-7">
+              {dataWhy.map((item) => (
                 <div
                   key={item.id}
                   className={`row align-items-center ${item.class}`}
                 >
-                  <div className='col col-12 col-md-6'>
-                    <h6 className='title'>{item.title}</h6>
-                    <p className='content'>{item.content}</p>
+                  <div className="col col-12 col-md-6">
+                    <h6 className="title">{item.title}</h6>
+                    <p className="content">{item.content}</p>
                     <TextIconButton
-                      name='Xem chi tiết'
-                      color='white'
+                      name="Xem chi tiết"
+                      color="white"
                       icon={ICON.RIGHT}
                     />
                   </div>
-                  <div className='col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start'>
+                  <div className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
                     <Image src={item.image} alt={item.title} />
                   </div>
                 </div>
@@ -190,18 +188,18 @@ function Home() {
         </div>
       </section>
 
-      <section className='section-news'>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12 col-lg-8'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-11 col-md-5 col-title-1 text-center'>
-                    <h2 className='m-0'>TIN TỨC VÀ SỰ KIỆN</h2>
+      <section className="section-news">
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12 col-lg-8">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-11 col-md-5 col-title-1 text-center">
+                    <h2 className="m-0">TIN TỨC VÀ SỰ KIỆN</h2>
                   </div>
                 </div>
-                <div className='text-center'>
-                  <p className='describe'>
+                <div className="text-center">
+                  <p className="describe">
                     Cập nhật tin tức công nghệ, cập nhật kiến thức và các tin
                     khuyến mãi từ GOFIBER
                   </p>
@@ -209,24 +207,24 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className="row">
             <NewsAndEvents />
           </div>
         </div>
       </section>
 
-      <section className='section-question'>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12 col-lg-8'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-11 col-md-5 col-title-1 text-center'>
-                    <h2 className='m-0'>CÂU HỎI THƯỜNG GẶP</h2>
+      <section className="section-question">
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12 col-lg-8">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-11 col-md-5 col-title-1 text-center">
+                    <h2 className="m-0">CÂU HỎI THƯỜNG GẶP</h2>
                   </div>
                 </div>
-                <div className='text-center'>
-                  <p className='describe'>
+                <div className="text-center">
+                  <p className="describe">
                     Giải đáp các thắc mắc thường gặp của khách hàng mới khi lần
                     đầu biết đến dịch vụ Hosting và Máy chủ hiệu năng cao của
                     GOFIBER
@@ -235,22 +233,22 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className='row justify-content-center'>
-            <div className='col-12 col-md-10 col-lg-8'>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-10 col-lg-8">
               <Question />
             </div>
           </div>
         </div>
       </section>
 
-      <section className='section-customer'>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-12 col-md-6 col-lg-4 col-title-1 text-center'>
-                    <h2 className='m-0'>KHÁCH HÀNG CỦA CHÚNG TÔI</h2>
+      <section className="section-customer">
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-12 col-md-6 col-lg-4 col-title-1 text-center">
+                    <h2 className="m-0">KHÁCH HÀNG CỦA CHÚNG TÔI</h2>
                   </div>
                 </div>
               </div>
@@ -261,14 +259,14 @@ function Home() {
         </div>
       </section>
 
-      <section className='section-contact'>
-        <div className='section-content position-relative'>
-          <div className='row justify-content-center'>
-            <div className='col col-12'>
-              <div className='col-inner'>
-                <div className='row row-title justify-content-center'>
-                  <div className='col col-12 col-md-6 col-lg-4 col-title-3 text-center'>
-                    <h2 className='m-0'>
+      <section className="section-contact">
+        <div className="section-content position-relative">
+          <div className="row justify-content-center">
+            <div className="col col-12">
+              <div className="col-inner">
+                <div className="row row-title justify-content-center">
+                  <div className="col col-12 col-md-6 col-lg-4 col-title-3 text-center">
+                    <h2 className="m-0">
                       BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
                     </h2>
                   </div>
@@ -276,7 +274,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className='row justify-content-center'>
+          <div className="row justify-content-center">
             <Contact />
           </div>
         </div>
