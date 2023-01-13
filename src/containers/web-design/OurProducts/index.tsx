@@ -3,61 +3,95 @@ import Image from 'next/image';
 
 const OurProducts = () => {
   return (
-    <section id='OurProducts'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-12 OurProducts_title'>Sản phẩm của chúng tôi</div>
-        </div>
-        <div className='row'>
-          <div className='col-4 OurProducts_col'>
-            <Image
-              className='OurProducts_image'
-              src={require('@/public/images/webdesign/image54.png')}
-              alt=''
-            />
-            <div className='OurProducts_image_text'>Digital Agency</div>
-          </div>
-          <div className='col-4 OurProducts_col'>
-            <Image
-              className='OurProducts_image'
-              src={require('@/public/images/webdesign/image51.png')}
-              alt=''
-            />
-            <div className='OurProducts_image_text'>Digital Agency</div>
-          </div>
-          <div className='col-4 OurProducts_col'>
-            <Image
-              className='OurProducts_image'
-              src={require('@/public/images/webdesign/image52.png')}
-              alt=''
-            />
-            <div className='OurProducts_image_text'>Digital Agency</div>
+    <section id="OurProducts">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 OurProducts__title pb-2">
+            <div className="OurProducts__title_bg">
+              <span className="OurProducts__title_text">
+                Sản phẩm của chúng tôi
+              </span>
+              <Image
+                src={require('@/public/images/webdesign/Group1.png')}
+                alt=""
+                // style={{ zIndex: '10' }}
+                className="OurProducts__image_absolute"
+              />
+              <Image
+                src={require('@/public/images/webdesign/Group2.png')}
+                alt=""
+                // style={{ zIndex: '10' }}
+                className="OurProducts__image_absolute_right"
+              />
+            </div>
           </div>
         </div>
-        <div className='row pt-5'>
-          <div className='col-4 OurProducts_col'>
-            <Image
-              className='OurProducts_image'
-              src={require('@/public/images/webdesign/image54.png')}
-              alt=''
-            />
-            <div className='OurProducts_image_text'>Digital Agency</div>
+        <div className="row">
+          <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12 OurProducts_col">
+            <div style={{ width: '100%', height: 'auto', overflow: 'hidden' }}>
+              <Image
+                className="OurProducts_image"
+                src={require('@/public/images/webdesign/image54.png')}
+                alt=""
+              />
+            </div>
+
+            <div className="OurProducts_image_text">Digital Agency</div>
           </div>
-          <div className='col-4 OurProducts_col'>
-            <Image
-              className='OurProducts_image'
-              src={require('@/public/images/webdesign/image55.png')}
-              alt=''
-            />
-            <div className='OurProducts_image_text'>Digital Agency</div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12 OurProducts_col">
+            <div style={{ width: '100%', height: 'auto', overflow: 'hidden' }}>
+              <Image
+                className="OurProducts_image"
+                src={require('@/public/images/webdesign/image54.png')}
+                alt=""
+              />
+            </div>
+
+            <div className="OurProducts_image_text">Digital Agency</div>
           </div>
-          <div className='col-4 OurProducts_col'>
-            <Image
-              className='OurProducts_image'
-              src={require('@/public/images/webdesign/image52.png')}
-              alt=''
-            />
-            <div className='OurProducts_image_text'>Digital Agency</div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12 OurProducts_col">
+            <div style={{ width: '100%', height: 'auto', overflow: 'hidden' }}>
+              <Image
+                className="OurProducts_image"
+                src={require('@/public/images/webdesign/image54.png')}
+                alt=""
+              />
+            </div>
+
+            <div className="OurProducts_image_text">Digital Agency</div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12 OurProducts_col">
+            <div style={{ width: '100%', height: 'auto', overflow: 'hidden' }}>
+              <Image
+                className="OurProducts_image"
+                src={require('@/public/images/webdesign/image54.png')}
+                alt=""
+              />
+            </div>
+
+            <div className="OurProducts_image_text">Digital Agency</div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12 OurProducts_col">
+            <div style={{ width: '100%', height: 'auto', overflow: 'hidden' }}>
+              <Image
+                className="OurProducts_image"
+                src={require('@/public/images/webdesign/image54.png')}
+                alt=""
+              />
+            </div>
+
+            <div className="OurProducts_image_text">Digital Agency</div>
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12 OurProducts_col">
+            <div style={{ width: '100%', height: 'auto', overflow: 'hidden' }}>
+              <Image
+                className="OurProducts_image"
+                src={require('@/public/images/webdesign/image54.png')}
+                alt=""
+              />
+            </div>
+
+            <div className="OurProducts_image_text">Digital Agency</div>
           </div>
         </div>
       </div>
