@@ -4,6 +4,7 @@ export enum ICON {
   RIGHT = 'material-symbols:arrow-right-alt-rounded',
   EDIT = 'majesticons:edit-pen-4-line',
   RIGHT_CIRCLE = 'material-symbols:swipe-right-alt-outline',
+  CHECKED = 'mdi:check-bold',
 }
 
 export enum NEWS_TAB {

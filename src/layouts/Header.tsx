@@ -22,7 +22,7 @@ function Header({ onShowDrawer }: Props) {
                     <div className='flex-col flex-left flex-grow hide-for-medium'>
                         <ul className='nav justify-content-end'>
                             <li className='menu_item'>
-                                <a href='#'>
+                                <a href='/introduction'>
                                     Giới thiệu
                                 </a>
                             </li>
@@ -35,7 +35,7 @@ function Header({ onShowDrawer }: Props) {
                             </li>
 
                             <li className='menu_item'>
-                                <a href='#'>
+                                <a href='/contact'>
                                     Liên hệ
                                 </a>
                             </li>

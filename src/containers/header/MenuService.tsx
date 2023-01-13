@@ -15,7 +15,7 @@ function MenuService() {
                 </a>
             </li>
             <li className="sub_menu">
-                <a href="/">
+                <a href="/web-hosting">
                     <Image
                         className="menu_icon"
                         src={require('@/public/images/icons/icon-2.svg')}

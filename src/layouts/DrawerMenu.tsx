@@ -1,5 +1,6 @@
 import { Drawer, Menu, MenuProps } from 'antd';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react'
 import EffectButton from '../components/button/EffectButton';
 
@@ -27,10 +28,10 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-    getItem('Giới thiệu', '1', null),
+    getItem('Giới thiệu', '/introduction', null),
     getItem('Dịch vụ', '2', null, [
-        getItem('Thiết kế Website', '5', <Image className='menu_icon' src={require("@/public/images/icons/icon-1.svg")} alt="Thiết kế website" />),
-        getItem('Hosting khủng giá rẻ ', '6', <Image className='menu_icon' src={require("@/public/images/icons/icon-2.svg")} alt="Hosting khủng giá rẻ" />),
+        getItem('Thiết kế Website', '/web-design', <Image className='menu_icon' src={require("@/public/images/icons/icon-1.svg")} alt="Thiết kế website" />),
+        getItem('Hosting khủng giá rẻ ', '/web-hosting', <Image className='menu_icon' src={require("@/public/images/icons/icon-2.svg")} alt="Hosting khủng giá rẻ" />),
         getItem('Dịch vụ Firewall', '7', <Image className='menu_icon' src={require("@/public/images/icons/icon-3.svg")} alt="Dịch vụ Firewall" />),
         getItem('Thuê VPS', '8', <Image className='menu_icon' src={require("@/public/images/icons/icon-4.svg")} alt="Thuê VPS" />),
         getItem('Chứng chỉ SSL', '9', <Image className='menu_icon' src={require("@/public/images/icons/icon-5.svg")} alt="Chứng chỉ SSL" />),
@@ -38,7 +39,7 @@ const items: MenuProps['items'] = [
 
     ]),
 
-    getItem('Liên hệ', '3', null),
+    getItem('Liên hệ', '/contact', null),
     getItem('Tuyển dụng', '4', null),
 ];
 
@@ -49,12 +50,18 @@ const logo = (
 )
 
 function DrawerMenu({ onClose, visible }: Props) {
+    const router = useRouter();
+
+    const handleRedirect = (path: string) => {
+        router.push(path)
+    }
+
     return (
         <div>
             <Drawer onClose={onClose} rootClassName='drawer_menu' placement='left' title={logo} open={visible}>
                 <div className='wrapper_drawer'>
                     <Menu
-                        onClick={(e) => console.log('e', e)}
+                        onClick={(e) => handleRedirect(e.key)}
                         style={{ width: '100%' }}
                         mode="inline"
                         items={items}

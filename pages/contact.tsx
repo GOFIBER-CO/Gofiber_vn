@@ -124,7 +124,7 @@ function Contact() {
                                 <div className='wrapper_input'>
                                     <textarea className='effect_input' placeholder='Nội dung' rows={5}></textarea>
                                 </div>
-                                <button className='btn0' type='submit'>
+                                <button id='btn-registry' className='btn0' type='submit'>
                                     LIÊN HỆ NGAY
                                 </button>
                             </form>

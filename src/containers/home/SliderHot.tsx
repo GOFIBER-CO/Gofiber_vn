@@ -54,7 +54,7 @@ function SliderHot() {
                 scrollbar={{ draggable: true }}
                 loop
                 modules={[Pagination]}
-                className="mySwiper"
+                className="mySwiper has-custom-pagination"
                 autoplay
                 breakpoints={
                     {
