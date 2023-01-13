@@ -2,40 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import OurProducts from './../src/containers/web-design/OurProducts/index';
 import Service from '@/src/containers/web-design/Service';
+import BannerPage from '@/src/components/banner/BannerPage';
 
 function webDesign() {
+  const banner = {
+    large:
+      'https://gofiber.vn/wp-content/uploads/2022/12/banner-thietketweb.png',
+    medium: 'https://gofiber.vn/wp-content/uploads/2022/12/bg-thietkeweb-1.png',
+    small: 'https://gofiber.vn/wp-content/uploads/2022/12/bg-thietkeweb-1.png',
+  };
+
   return (
     <>
-      <div id="webDesign">
-        <div className="container webDesign__container">
-          <div className="row">
-            <div className="col-6 webDesign__container_left">
-              <span className=" webDesign__container_left_title">
-                Thiết kế Website
-              </span>
-              <div className=" webDesign__container_left_link">
-                <span className="webDesign__container_left_link_text">
-                  Trang chủ{' '}
-                </span>
-                <span className="webDesign__container_left_link_text">
-                  {' '}
-                  &gt;{' '}
-                </span>
-                <span className="webDesign__container_left_link_text">
-                  Thiết kế Website
-                </span>
-              </div>
-            </div>
-            <div className="col-6 webDesign__container_right">
-              <Image
-                className="webDesign__container_right_logo"
-                src={require('@/public/images/webdesign/bg-anh1.png')}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <BannerPage image={banner} key="1" name="Thiết kế website" />
       <div id="how__to">
         <div className="container">
           <div className="row" style={{ padding: '5% 7% 0% 7%' }}>
@@ -45,13 +24,13 @@ function webDesign() {
                   THIẾT KẾ WEBSITE CHUYÊN NGHIỆP
                 </span>
                 <Image
-                  src={require('@/public/images/webdesign/Group1.png')}
+                  src={require('@/public/images/webdesign/element1.png')}
                   alt=""
                   // style={{ zIndex: '10' }}
                   className="how__to_image_absolute"
                 />
                 <Image
-                  src={require('@/public/images/webdesign/Group2.png')}
+                  src={require('@/public/images/webdesign/element2.png')}
                   alt=""
                   // style={{ zIndex: '10' }}
                   className="how__to_image_absolute_right"
@@ -84,13 +63,13 @@ function webDesign() {
                   NHỮNG LỢI ÍCH CHỌN WEBSITE THEO MẪU CÓ SẴN
                 </span>
                 <Image
-                  src={require('@/public/images/webdesign/Group1.png')}
+                  src={require('@/public/images/webdesign/element1.png')}
                   alt=""
                   // style={{ zIndex: '10' }}
                   className="how__to_image_absolute"
                 />
                 <Image
-                  src={require('@/public/images/webdesign/Group2.png')}
+                  src={require('@/public/images/webdesign/element2.png')}
                   alt=""
                   // style={{ zIndex: '10' }}
                   className="how__to_image_absolute_right"
@@ -150,37 +129,6 @@ function webDesign() {
               Marketing ngày nay đều am hiểu về WordPress và có thể hỗ trợ bạn.
             </div>
           </div>
-
-          {/* <div className="row" style={{ padding: '0px 5%' }}>
-            <div className="col-4 how__to_image">
-              <Image
-                src={require('@/public/images/webdesign/Think.png')}
-                alt=""
-                // style={{ zIndex: '10' }}
-                className="how__to_image_absolute"
-              />
-              <Image
-                src={require('@/public/images/webdesign/image44.png')}
-                alt=""
-                style={{ marginLeft: '13%' }}
-              />
-            </div>
-            <div className="col-4">
-              <Image
-                src={require('@/public/images/webdesign/Make.png')}
-                alt=""
-                style={{ paddingTop: '176px' }}
-              />
-            </div>
-            <div className="col-4 ">
-              <Image
-                className=""
-                src={require('@/public/images/webdesign/Solve.png')}
-                alt=""
-                style={{ paddingTop: '176px' }}
-              />
-            </div>
-          </div> */}
         </div>
       </div>
       <OurProducts />

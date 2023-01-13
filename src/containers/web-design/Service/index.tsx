@@ -12,13 +12,13 @@ const Service = () => {
                 BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
               </span>
               <Image
-                src={require('@/public/images/webdesign/Group1.png')}
+                src={require('@/public/images/webdesign/element1.png')}
                 alt=""
                 // style={{ zIndex: '10' }}
                 className="service__image_absolute"
               />
               <Image
-                src={require('@/public/images/webdesign/Group2.png')}
+                src={require('@/public/images/webdesign/element2.png')}
                 alt=""
                 // style={{ zIndex: '10' }}
                 className="service__image_absolute_right"

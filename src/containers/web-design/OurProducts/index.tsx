@@ -12,13 +12,13 @@ const OurProducts = () => {
                 Sản phẩm của chúng tôi
               </span>
               <Image
-                src={require('@/public/images/webdesign/Group1.png')}
+                src={require('@/public/images/webdesign/element1.png')}
                 alt=""
                 // style={{ zIndex: '10' }}
                 className="OurProducts__image_absolute"
               />
               <Image
-                src={require('@/public/images/webdesign/Group2.png')}
+                src={require('@/public/images/webdesign/element2.png')}
                 alt=""
                 // style={{ zIndex: '10' }}
                 className="OurProducts__image_absolute_right"
