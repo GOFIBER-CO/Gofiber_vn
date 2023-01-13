@@ -5,7 +5,7 @@ import TextIconInfo from '../components/footer/TextIconInfo'
 const infoData = [
     {
         id: '1',
-        text: '22/10 Nguyễn Văn Săng, Phường Tân Sơn Nhì, Quận Tân Phú, Hồ Chí Minh',
+        text: 'Số 131, Đường CN11, P. Sơn Kỳ, Q. Tân Phú, TP.HCM',
         icon: require("@/public/images/icons/address.svg")
     },
     {
@@ -15,7 +15,7 @@ const infoData = [
     },
     {
         id: '3',
-        text: '0989 07 85 07',
+        text: '0989.07.85.07',
         icon: require("@/public/images/icons/call.svg")
     },
     {

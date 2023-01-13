@@ -1,4 +1,7 @@
-import LargeBannerPage from '@/src/components/banner/BannerPage'
+import BannerPage from '@/src/components/banner/BannerPage'
+import ChoiceList from '@/src/containers/introduction/choice'
+import SliderIntroduction from '@/src/containers/introduction/SliderIntroduction'
+import Image from 'next/image'
 import React from 'react'
 
 function Introduction() {
@@ -11,7 +14,7 @@ function Introduction() {
     return (
         <div id="introduction">
             <section>
-                <LargeBannerPage image={banner} name="Giới thiệu" />
+                <BannerPage image={banner} name="Giới thiệu" />
             </section>
             <div className='container'>
                 <div className='row justify-content-center mt-4'>
@@ -49,8 +52,65 @@ function Introduction() {
                         </div>
                     </div>
                 </section>
-            </div>
+                <section className='mt-4'>
+                    <SliderIntroduction />
+                </section>
 
+                <section className='section-other-service'>
+                    <div className="section-content position-relative">
+                        <div className="row justify-content-center">
+                            <div className="col col-12">
+                                <div className="col-inner">
+                                    <div className="row row-title justify-content-center">
+                                        <div className="col col-10 col-md-4 col-lg-4 col-title-1 text-center">
+                                            <h2 className="m-0">CÁC DỊCH VỤ KHÁC</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='row align-items-center mt-4'>
+                            <div className='col col-12 col-md-7'>
+                                <h4 className='h4' style={{ lineHeight: '36px', fontWeight: 700 }}>
+                                    Luôn tự hào là một trong những đơn vị thiết kế website giá rẻ có sản phẩm đầu ra tốt nhất hiện nay,
+                                    GOFIBER chúng tôi luôn hiểu và có sẵn giải pháp cho mọi vấn đề của khách hàng đồng thời đảm bảo các tiêu chí như:
+                                </h4>
+                                <ul className='has-style'>
+                                    <li>Giao diện đẹp mắt</li>
+                                    <li>Đảm bảo tính bảo mật và tối ưu hóa cao</li>
+                                    <li>Mang lại lợi ích cạnh tranh so với web đối thủ</li>
+                                </ul>
+                                <p className='mt-4'>Ngoài ra, với mỗi một dự án chúng tôi đề
+                                    xem như dự án của chính mình và đảm bảo điều kiện thuận lợi nhất để khách hàng có được kết quả mong muốn
+                                </p>
+                            </div>
+                            <div className='col col-12 col-md-5'>
+                                <div className='img'>
+                                    <Image src={require("@/public/images/introduction/image-6.png")} alt="Các dịch vụ khác" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='section-choice'>
+                    <div className="section-content position-relative">
+                        <div className="row justify-content-center">
+                            <div className="col col-12">
+                                <div className="col-inner">
+                                    <div className="row row-title justify-content-center">
+                                        <div className="col col-10 col-md-4 col-lg-4 col-title-1 text-center">
+                                            <h2 className="m-0">CHỌN GOFIBER LÀ LỰA CHỌN
+                                                <br />ĐÚNG ĐẮN NHẤT</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ChoiceList />
+                    </div>
+                </section>
+            </div>
         </div>
     )
 }
