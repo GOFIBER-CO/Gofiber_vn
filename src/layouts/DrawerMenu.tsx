@@ -32,10 +32,10 @@ const items: MenuProps['items'] = [
     getItem('Dịch vụ', '2', null, [
         getItem('Thiết kế Website', '/web-design', <Image className='menu_icon' src={require("@/public/images/icons/icon-1.svg")} alt="Thiết kế website" />),
         getItem('Hosting khủng giá rẻ ', '/web-hosting', <Image className='menu_icon' src={require("@/public/images/icons/icon-2.svg")} alt="Hosting khủng giá rẻ" />),
-        getItem('Dịch vụ Firewall', '7', <Image className='menu_icon' src={require("@/public/images/icons/icon-3.svg")} alt="Dịch vụ Firewall" />),
-        getItem('Thuê VPS', '8', <Image className='menu_icon' src={require("@/public/images/icons/icon-4.svg")} alt="Thuê VPS" />),
-        getItem('Chứng chỉ SSL', '9', <Image className='menu_icon' src={require("@/public/images/icons/icon-5.svg")} alt="Chứng chỉ SSL" />),
-        getItem('Thuê máy chủ vật lý', '10', <Image className='menu_icon' src={require("@/public/images/icons/icon-6.svg")} alt="Thuê máy chủ vật lý" />),
+        getItem('Dịch vụ Firewall', '/firewall', <Image className='menu_icon' src={require("@/public/images/icons/icon-3.svg")} alt="Dịch vụ Firewall" />),
+        getItem('Thuê VPS', '/rent-vps', <Image className='menu_icon' src={require("@/public/images/icons/icon-4.svg")} alt="Thuê VPS" />),
+        getItem('Chứng chỉ SSL', '/ssl', <Image className='menu_icon' src={require("@/public/images/icons/icon-5.svg")} alt="Chứng chỉ SSL" />),
+        getItem('Thuê máy chủ vật lý', '/rent-physical-server', <Image className='menu_icon' src={require("@/public/images/icons/icon-6.svg")} alt="Thuê máy chủ vật lý" />),
 
     ]),
 

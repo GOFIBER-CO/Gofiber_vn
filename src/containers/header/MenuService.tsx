@@ -25,7 +25,7 @@ function MenuService() {
                 </a>
             </li>
             <li className="sub_menu">
-                <a href="/">
+                <a href="/firewall">
                     <Image
                         className="menu_icon"
                         src={require('@/public/images/icons/icon-3.svg')}
@@ -35,7 +35,7 @@ function MenuService() {
                 </a>
             </li>
             <li className="sub_menu">
-                <a href="/">
+                <a href="/rent-vps">
                     <Image
                         className="menu_icon"
                         src={require('@/public/images/icons/icon-4.svg')}
@@ -45,7 +45,7 @@ function MenuService() {
                 </a>
             </li>
             <li className="sub_menu">
-                <a href="/">
+                <a href="/ssl">
                     <Image
                         className="menu_icon"
                         src={require('@/public/images/icons/icon-5.svg')}
@@ -55,7 +55,7 @@ function MenuService() {
                 </a>
             </li>
             <li className="sub_menu">
-                <a href="/">
+                <a href="/rent-physical-server">
                     <Image
                         className="menu_icon"
                         src={require('@/public/images/icons/icon-6.svg')}

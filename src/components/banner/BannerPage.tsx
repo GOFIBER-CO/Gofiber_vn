@@ -7,9 +7,14 @@ type Props = {
         small: any
     },
     name: string;
+    bannerLinkLargeWidth?: string;
+    bannerLinkMediumWidth?: string;
+    bannerLinkSmallWidth?: string;
+    styleLinkName?: any;
 }
 
-function BannerPage({ image, name }: Props) {
+function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediumWidth = "43%", bannerLinkSmallWidth = "83%",
+    styleLinkName = {} }: Props) {
 
     return (
         <>
@@ -17,9 +22,9 @@ function BannerPage({ image, name }: Props) {
                 <div className='fill className="container"'>
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
-                            <div className='banner-link large'>
-                                <h1>{name}</h1>
-                                <div className='link d-flex align-items-center justify-content-center'>
+                            <div style={{ width: bannerLinkLargeWidth }} className='banner-link large'>
+                                <h1 style={styleLinkName}>{name}</h1>
+                                <div className='link d-flex align-items-center justify-content-center mt-4'>
                                     <a href='/'>Trang chủ</a>
                                     <a className='mx-2'>{'>'}</a>
                                     <a>{name}</a>
@@ -33,9 +38,9 @@ function BannerPage({ image, name }: Props) {
                 <div className='fill'>
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
-                            <div className='banner-link medium text-center'>
-                                <h1>{name}</h1>
-                                <div className='link d-flex align-items-center justify-content-center'>
+                            <div style={{ width: bannerLinkMediumWidth }} className='banner-link medium text-center'>
+                                <h1 style={styleLinkName}>{name}</h1>
+                                <div className='link d-flex align-items-center justify-content-center mt-4'>
                                     <a href='/'>Trang chủ</a>
                                     <a className='mx-2'>{'>'}</a>
                                     <a>{name}</a>
@@ -49,9 +54,9 @@ function BannerPage({ image, name }: Props) {
                 <div className='fill'>
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
-                            <div className='banner-link small text-center'>
-                                <h1>{name}</h1>
-                                <div className='link d-flex align-items-center justify-content-center'>
+                            <div style={{ width: bannerLinkSmallWidth }} className='banner-link small text-center'>
+                                <h1 style={styleLinkName}>{name}</h1>
+                                <div className='link d-flex align-items-center justify-content-center mt-4'>
                                     <a href='/'>Trang chủ</a>
                                     <a className='mx-2'>{'>'}</a>
                                     <a>{name}</a>

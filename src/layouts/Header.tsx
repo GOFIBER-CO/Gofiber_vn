@@ -27,7 +27,7 @@ function Header({ onShowDrawer }: Props) {
                                 </a>
                             </li>
                             <li className='menu_item has-dropdown position-relative'>
-                                <a href='#'>
+                                <a href='/service'>
                                     Dịch vụ
                                     <Icon icon={ICON.DOWN} />
                                 </a>

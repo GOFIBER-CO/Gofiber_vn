@@ -1,5 +1,6 @@
 import { on } from 'events';
 import React, { useState } from 'react'
+import ButtonBackToTop from '../components/button/ButtonBackToTop';
 import DrawerMenu from './DrawerMenu';
 import Footer from './Footer';
 import Header from './Header';
@@ -26,6 +27,7 @@ function Layout({ children }: Props) {
                 {children}
             </main>
             <DrawerMenu visible={drawer} onClose={onCloseDrawer} />
+            <ButtonBackToTop />
             <Footer />
         </>
     )
