@@ -6,6 +6,7 @@ import { initFP } from '../redux/slice';
 import DrawerMenu from './DrawerMenu';
 import Footer from './Footer';
 import Header from './Header';
+import { notification } from 'antd';
 
 type Props = {
   children: JSX.Element;
