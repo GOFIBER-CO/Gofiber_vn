@@ -36,3 +36,17 @@ export const openNotificationWithIcon = (
 export const formatNumber = (number: any) => {
   return new Intl.NumberFormat('en-US').format(parseInt(number || 0));
 };
+
+export const convertObjectToQuery = (obj: any) => {
+  const keys = Object.keys(obj);
+  let query = '?';
+  keys.forEach((key) => {
+    if (obj[key] !== undefined && obj[key] !== '') {
+      query +=
+        typeof obj[key] === 'string'
+          ? `${key}=${obj[key]}&`
+          : `${key}=${JSON.stringify(obj[key])}&`;
+    }
+  });
+  return query;
+};

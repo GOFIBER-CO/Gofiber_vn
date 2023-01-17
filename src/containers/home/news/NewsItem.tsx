@@ -1,3 +1,4 @@
+import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -13,16 +14,16 @@ function NewsItem({ item }: Props) {
                 <Link href='/'>
                     <div className='box-image'>
                         <div className='image-cover'>
-                            <Image className='img' src={item?.image} alt={item?.id} />
+                            <Image className='img' src={item?.image || require("@/public/images/introduction/news-1.png")} alt={item?.id} />
                         </div>
                     </div>
                     <div className='wrapper_content'>
-                        <div className='time'>{item.time}</div>
+                        <div className='time'>{moment(item?.createdAt).format("DD/MM/YYYY")}</div>
                         <div className='title mt-2'>{item.title}</div>
                     </div>
                 </Link>
-                <div className={`type ${item.class}`}>
-                    {item.type}
+                <div className={`type ${item.class ?? 'news'}`}>
+                    {'Tin tức'}
                 </div>
             </div>
         </div>

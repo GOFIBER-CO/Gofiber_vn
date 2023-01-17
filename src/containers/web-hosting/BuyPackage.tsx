@@ -5,7 +5,7 @@ import { notification } from 'antd';
 import { formatNumber, openNotificationWithIcon } from '@/src/utils';
 
 function BuyPackage({ packageSelect }: any) {
-  const [api] = notification.useNotification();
+  const [api, contextHolder] = notification.useNotification();
   const [usedTime, setUsedTime] = useState(1);
 
   const handleBuyPackage = (e: any) => {
@@ -52,6 +52,7 @@ function BuyPackage({ packageSelect }: any) {
   };
   return (
     <div id="buy-package">
+      {contextHolder}
       <div className="row mx-0 justify-content-center">
         <div className="col col-12 col-md-6">
           <form className="form" onSubmit={handleBuyPackage}>

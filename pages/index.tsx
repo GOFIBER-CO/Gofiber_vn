@@ -196,30 +196,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-news">
-        <div className="section-content position-relative">
-          <div className="row justify-content-center">
-            <div className="col col-12 col-lg-8">
-              <div className="col-inner">
-                <div className="row row-title justify-content-center">
-                  <div className="col col-11 col-md-5 col-title-1 text-center">
-                    <h2 className="m-0">TIN TỨC VÀ SỰ KIỆN</h2>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <p className="describe">
-                    Cập nhật tin tức công nghệ, cập nhật kiến thức và các tin
-                    khuyến mãi từ GOFIBER
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <NewsAndEvents />
-          </div>
-        </div>
-      </section>
+      <NewsAndEvents />
 
       <section className="section-question">
         <div className="section-content position-relative">
