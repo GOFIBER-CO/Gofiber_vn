@@ -6,8 +6,6 @@ import { initFP } from '../redux/slice';
 import DrawerMenu from './DrawerMenu';
 import Footer from './Footer';
 import Header from './Header';
-import { useRouter } from 'next/router';
-import { notification } from 'antd';
 
 
 type Props = {
@@ -18,7 +16,6 @@ function Layout({ children }: Props) {
     const dispatch = useAppDispatch();
     const [drawer, setDrawer] = useState<boolean>(false);
     const { data } = useVisitorData({ extendedResult: true }, { immediate: true });
-    const [_, contextHolder] = notification.useNotification();
 
 
     useEffect(() => {
@@ -50,7 +47,6 @@ function Layout({ children }: Props) {
         <>
             <Header onShowDrawer={onShowDrawer} />
             <main id='main'>
-                {contextHolder}
                 {children}
             </main>
             <DrawerMenu visible={drawer} onClose={onCloseDrawer} />
