@@ -8,6 +8,7 @@ import SliderHot from '@/src/containers/home/SliderHot';
 import SliderMyCustomer from '@/src/containers/home/SliderMyCustomer';
 import SliderService from '@/src/containers/home/SliderService';
 import DrawerMenu from '@/src/layouts/DrawerMenu';
+import { useAppSelector } from '@/src/redux';
 import { ICON } from '@/src/utils';
 import Image from 'next/image';
 import { useRouter } from 'next/router';

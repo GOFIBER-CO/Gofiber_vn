@@ -5,8 +5,13 @@ import Layout from '../src/layouts';
 import '../styles/webDesign/index.scss';
 import { useEffect } from 'react';
 import AOS from "aos";
+import { Provider } from 'react-redux';
+import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react'
 
 import "aos/dist/aos.css";
+import { env } from '@/src/utils';
+import Head from 'next/head';
+import { store } from '@/src/redux';
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -16,11 +21,23 @@ export default function App({ Component, pageProps }: AppProps) {
       offset: 100,
       once: true
     });
-  }, [])
+  }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <FpjsProvider
+        loadOptions={{
+          apiKey: env.FP_PUBLIC_API_KEY || '',
+        }}
+      >
+        <Head>
+          <title>Gofiber Hosting và Máy chủ hiệu năng cao - Gofiber.vn - Giới thiệu sản phẩm</title>
+        </Head>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </FpjsProvider>
+    </Provider>
+
   );
 }
