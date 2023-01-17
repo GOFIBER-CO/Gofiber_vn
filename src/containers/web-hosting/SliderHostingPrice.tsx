@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import { Pagination } from 'swiper';
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
+import { formatNumber } from '@/src/utils';
 const data = [
   {
     id: '1',
@@ -155,9 +156,7 @@ function SliderHostingPrice({ onSelectPackage }: any) {
                           fontWeight: 'bold',
                         }}
                       >
-                        {new Intl.NumberFormat('en-US').format(
-                          parseInt(item?.price),
-                        )}
+                        {formatNumber(item?.price)}
                       </span>
                       VNĐ/Th
                     </p>

@@ -2,20 +2,13 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { notification } from 'antd';
-type NotificationType = 'success' | 'info' | 'warning' | 'error';
+import { openNotificationWithIcon } from '@/src/utils';
+
 function BuyPackage({ packageSelect }: any) {
-  const [api, contextHolder] = notification.useNotification();
+  const [api] = notification.useNotification();
   const [usedTime, setUsedTime] = useState(1);
-  const openNotificationWithIcon = (
-    type: NotificationType,
-    message: String,
-    description: String,
-  ) => {
-    api[type]({
-      message: message,
-      description: description,
-    });
-  };
+
+
   const handleBuyPackage = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -46,6 +39,7 @@ function BuyPackage({ packageSelect }: any) {
             'success',
             'Đặt hàng thành công',
             'Đơn hàng đặt thành công. Quý khách vui lòng kiểm tra email để xem chi tiết đơn hàng.',
+            api,
           );
           console.log('SUCCESS!', response.status, response.text);
         },
@@ -54,6 +48,7 @@ function BuyPackage({ packageSelect }: any) {
             'error',
             'Đặt hàng thất bại',
             'Đã có lỗi xảy ra. Quý khách vui lòng thử lại sau',
+            api,
           );
           console.log('FAILED...', err);
         },
@@ -61,7 +56,6 @@ function BuyPackage({ packageSelect }: any) {
   };
   return (
     <div id="buy-package">
-      {contextHolder}
       <div className="row mx-0 justify-content-center">
         <div className="col col-12 col-md-6">
           <form className="form" onSubmit={handleBuyPackage}>

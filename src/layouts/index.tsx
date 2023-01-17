@@ -7,6 +7,8 @@ import DrawerMenu from './DrawerMenu';
 import Footer from './Footer';
 import Header from './Header';
 import { useRouter } from 'next/router';
+import { notification } from 'antd';
+
 
 type Props = {
     children: JSX.Element;
@@ -16,9 +18,10 @@ function Layout({ children }: Props) {
     const dispatch = useAppDispatch();
     const [drawer, setDrawer] = useState<boolean>(false);
     const { data } = useVisitorData({ extendedResult: true }, { immediate: true });
+    const [_, contextHolder] = notification.useNotification();
+
 
     useEffect(() => {
-        console.log(window.location.protocol);
         const init = async (data: any) => {
             const { requestId, visitorId } = data;
 
@@ -47,6 +50,7 @@ function Layout({ children }: Props) {
         <>
             <Header onShowDrawer={onShowDrawer} />
             <main id='main'>
+                {contextHolder}
                 {children}
             </main>
             <DrawerMenu visible={drawer} onClose={onCloseDrawer} />

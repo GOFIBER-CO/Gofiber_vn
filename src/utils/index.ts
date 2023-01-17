@@ -18,3 +18,21 @@ export const env = {
 };
 
 export const DOMAIN = 'localhost:3000';
+
+export type NotificationType = 'success' | 'info' | 'warning' | 'error';
+
+export const openNotificationWithIcon = (
+  type: NotificationType,
+  message: String,
+  description: String,
+  api: any,
+) => {
+  api[type]({
+    message: message,
+    description: description,
+  });
+};
+
+export const formatNumber = (number: any) => {
+  return new Intl.NumberFormat('en-US').format(parseInt(number || 0));
+};
