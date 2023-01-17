@@ -2,12 +2,11 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { notification } from 'antd';
-import { openNotificationWithIcon } from '@/src/utils';
+import { formatNumber, openNotificationWithIcon } from '@/src/utils';
 
 function BuyPackage({ packageSelect }: any) {
   const [api] = notification.useNotification();
   const [usedTime, setUsedTime] = useState(1);
-
 
   const handleBuyPackage = (e: any) => {
     e.preventDefault();
@@ -19,17 +18,16 @@ function BuyPackage({ packageSelect }: any) {
       email: formProps?.email,
       comment: formProps?.comment || '',
       name_service: packageSelect?.name,
-      price: new Intl.NumberFormat('en-US').format(packageSelect?.price),
+      price: formatNumber(packageSelect?.price),
+      domain: `${formProps?.nameDomain}.${formProps?.lastDomain}`,
       used_time: `${usedTime} tháng`,
-      total_price: new Intl.NumberFormat('en-US').format(
-        parseInt(packageSelect?.price) * usedTime,
-      ),
+      total_price: formatNumber(parseInt(packageSelect?.price) * usedTime),
     };
 
     emailjs
       .send(
         'service_1jvutpr',
-        'template_28uxqmd',
+        'template_bbf7b4i',
         templateParams,
         'g-iUYFW8FHIpEY9Rx',
       )
@@ -41,7 +39,6 @@ function BuyPackage({ packageSelect }: any) {
             'Đơn hàng đặt thành công. Quý khách vui lòng kiểm tra email để xem chi tiết đơn hàng.',
             api,
           );
-          console.log('SUCCESS!', response.status, response.text);
         },
         (err) => {
           openNotificationWithIcon(
@@ -50,7 +47,6 @@ function BuyPackage({ packageSelect }: any) {
             'Đã có lỗi xảy ra. Quý khách vui lòng thử lại sau',
             api,
           );
-          console.log('FAILED...', err);
         },
       );
   };
@@ -81,7 +77,7 @@ function BuyPackage({ packageSelect }: any) {
                   'color': '#00acd7',
                 }}
               >
-                {new Intl.NumberFormat('en-US').format(packageSelect?.price)}
+                {formatNumber(packageSelect?.price)}
               </span>
               VNĐ/Th
             </p>
@@ -98,6 +94,20 @@ function BuyPackage({ packageSelect }: any) {
               </div>
               <div className="col-12 ">
                 <input placeholder="Email" name="email" type="email" required />
+              </div>
+              <div className="col-12 ">
+                <input
+                  placeholder="Tên miền"
+                  name="nameDomain"
+                  required
+                  style={{ width: '80%' }}
+                />
+                <input
+                  placeholder="Đuôi tên miền"
+                  name="lastDomain"
+                  required
+                  style={{ width: '20%' }}
+                />
               </div>
               <div className="col-12 ">
                 <select
@@ -119,10 +129,7 @@ function BuyPackage({ packageSelect }: any) {
                 <span style={{ fontSize: '20px', marginTop: '5px' }}>
                   Tổng thanh toán{' '}
                   <span style={{ color: '#F2994A', fontWeight: '700' }}>
-                    {new Intl.NumberFormat('en-US').format(
-                      parseInt(packageSelect?.price) * usedTime,
-                    )}
-                    đ
+                    {formatNumber(parseInt(packageSelect?.price) * usedTime)}đ
                   </span>
                 </span>
               </div>
