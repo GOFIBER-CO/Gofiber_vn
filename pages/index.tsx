@@ -10,6 +10,7 @@ import SliderService from '@/src/containers/home/SliderService';
 import DrawerMenu from '@/src/layouts/DrawerMenu';
 import { ICON } from '@/src/utils';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import React, { useState } from 'react';
 
@@ -23,6 +24,7 @@ const dataWhy = [
     content:
       'Cam kết luôn đem tới cho khách hàng dịch vụ cho thuê máy chủ, thuê server giá rẻ, đường truyền ổn định',
     image: require('@/public/images/introduction/why-1.png'),
+    aos: ["fade-right", "fade-left"]
   },
   {
     id: '2',
@@ -31,6 +33,7 @@ const dataWhy = [
     content: `Với hơn 300.000 website đang hoạt động trên hệ thống, 
     chúng tôi luôn có các quy trình chặt chẽ để bảo vệ dữ liệu của khách hàng trên mức cần thiết.`,
     image: require('@/public/images/introduction/why-2.png'),
+    aos: ["fade-left", "fade-right"]
   },
   {
     id: '3',
@@ -40,10 +43,13 @@ const dataWhy = [
     tối đa cho khách hàng, tất cả vấn đề của bạn sẽ luôn được phản hồi dưới 15 phút. 
     Chúng tôi tự hào là một trong những đơn vị có chế độ hỗ trợ khách hàng tốt nhất hiện nay.`,
     image: require('@/public/images/introduction/why-3.png'),
+    aos: ["fade-right", "fade-left"]
   },
 ];
 
 function Home() {
+  const router = useRouter();
+
   return (
     <div id="home" className="container">
       <section className="top">
@@ -63,7 +69,7 @@ function Home() {
                   mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
                   khách hàng của mình.
                 </p>
-                <EffectButton color="primary" name="Liên hệ ngay" />
+                <EffectButton onClick={() => router.push("/contact")} color="primary" name="Liên hệ ngay" />
               </div>
             </div>
             <div className="col col-12 col-md-6">
@@ -170,7 +176,7 @@ function Home() {
                   key={item.id}
                   className={`row align-items-center ${item.class}`}
                 >
-                  <div className="col col-12 col-md-6">
+                  <div data-aos={item.aos[0]} className="col col-12 col-md-6">
                     <h6 className="title">{item.title}</h6>
                     <p className="content">{item.content}</p>
                     <TextIconButton
@@ -179,7 +185,7 @@ function Home() {
                       icon={ICON.RIGHT}
                     />
                   </div>
-                  <div className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
+                  <div data-aos={item.aos[1]} className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
                     <Image src={item.image} alt={item.title} />
                   </div>
                 </div>

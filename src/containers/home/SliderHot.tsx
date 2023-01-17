@@ -40,62 +40,63 @@ const data = [
     }
 ]
 
+const responsive = [
+    {
+        id: 1,
+        class: 'show-for-small',
+        slidesPerView: 1
+    },
+    {
+        id: 2,
+        class: 'show-for-medium hide-for-small ',
+        slidesPerView: 2
+    },
+    {
+        id: 3,
+        class: 'hide-for-medium',
+        slidesPerView: 4
+    }
+]
+
 function SliderHot() {
 
     return (
         <div id='slider-hot'>
-            <Swiper
-                slidesPerView={5}
-                spaceBetween={5}
-                centeredSlides
-                pagination={{
-                    clickable: true
-                }}
-                scrollbar={{ draggable: true }}
-                loop
-                modules={[Pagination]}
-                className="mySwiper has-custom-pagination"
-                autoplay
-                breakpoints={
-                    {
-                        "@0.00": {
-                            slidesPerView: 1,
-                            spaceBetween: 5,
-                        },
-                        "@0.75": {
-                            slidesPerView: 2,
-                            spaceBetween: 5,
-                        },
-                        "@1.00": {
-                            slidesPerView: 3,
-                            spaceBetween: 5,
-                        },
-                        "@1.25": {
-                            slidesPerView: 4,
-                            spaceBetween: 5,
-                        },
-                        "@1.50": {
-                            slidesPerView: 5,
-                            spaceBetween: 5,
-                        }
-                    }
-                }
-            >
-                {
-                    data.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <div className='hot-item'>
-                                <div className='wrapper_image'>
-                                    <Image src={item.image} alt={item.title} />
-                                </div>
-                                <h4>{item.title}</h4>
-                                <p>{item.content}</p>
-                            </div>
-                        </SwiperSlide>
+            {
+                responsive.map(item => (
+                    <div className={item.class} key={item.id}>
+                        <Swiper
+                            slidesPerView={item.slidesPerView}
+                            spaceBetween={5}
+                            centeredSlides
+                            pagination={{
+                                clickable: true
+                            }}
+                            scrollbar={{ draggable: true }}
+                            loop
+                            modules={[Pagination]}
+                            className="mySwiper has-custom-pagination"
+                            autoplay
+                        >
+                            {
+                                data.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className='hot-item'>
+                                            <div className='wrapper_image'>
+                                                <Image src={item.image} alt={item.title} />
+                                            </div>
+                                            <h4>{item.title}</h4>
+                                            <p>{item.content}</p>
+                                        </div>
+                                    </SwiperSlide>
 
-                    ))
-                }
-            </Swiper>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
+                ))
+            }
+
         </div >
 
     )

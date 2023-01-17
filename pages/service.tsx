@@ -17,7 +17,8 @@ const data = [
         diện mẫu phong phú bật nhất tại Việt Nam. Mỗi giao diện mẫu là một dự án 
         hoàn thiện và có thể áp dụng theo yêu cầu của quý khách một cách nhanh nhất với chi phí tiết kiệm nhất.`,
         image: require("@/public/images/service/bg-1.png"),
-        class: 'flex-row-reverse'
+        class: 'flex-row-reverse',
+        aos: ["fade-left", "fade-right"]
     },
     {
         id: '2',
@@ -31,6 +32,7 @@ const data = [
         có thể đáp ứng gần như mọi nhu cầu từ cơ bản đến chuyên nghiệp.
         `,
         image: require("@/public/images/service/bg-2.png"),
+        aos: ["fade-right", "fade-left"]
     },
     {
         id: '3',
@@ -39,7 +41,8 @@ const data = [
         chúng phát hiện và phán xét những hành vi được truy cập và 
         không được truy cập vào bên trong hệ thống, đảm bảo tối đa sự an toàn thông tin.`,
         image: require("@/public/images/service/bg-3.png"),
-        class: 'flex-row-reverse'
+        class: 'flex-row-reverse',
+        aos: ["fade-left", "fade-right"]
     },
     {
         id: '4',
@@ -47,6 +50,7 @@ const data = [
         content: `Ở Gofiber, mỗi máy chủ ảo VPS server đều sử dụng vi xử lý Intel Xeon mới nhất, 
         hàng terabytes ổ cứng SSD NVMe và 512 GB RAM. Điều này giúp cung cấp đủ tốc độ xử lý cho mọi dự án từ vừa đến lớn.`,
         image: require("@/public/images/service/bg-4.png"),
+        aos: ["fade-right", "fade-left"]
     },
     {
         id: '5',
@@ -56,7 +60,9 @@ const data = [
         sẽ được mã hóa nhằm tránh nguy cơ bị tấn công 
         từ hacker. Đồng thời, đảm bảo độ tin cậy và niềm tin cho khách hàng khi truy cập vào website.`,
         image: require("@/public/images/service/bg-5.png"),
-        class: 'flex-row-reverse'
+        class: 'flex-row-reverse',
+        aos: ["fade-left", "fade-right"]
+
     },
     {
         id: '6',
@@ -66,6 +72,8 @@ const data = [
         Bởi vì, tài nguyên trong server không giới hạn nhờ vào sự linh hoạt trong 
         nâng cấp các thiết bị phần cứng và phần mềm. Đồng thời, sức tải của server có thể mở rộng vô hạn.`,
         image: require("@/public/images/service/bg-5.png"),
+        aos: ["fade-right", "fade-left"]
+
     }
 ]
 
@@ -90,9 +98,9 @@ function Service() {
                         </div>
                     </div>
                     {
-                        data.map(item => (
+                        data.map((item: any) => (
                             <div className={`mt-4 row justify-content-center align-items-center ${item?.class ? item?.class : ''}`}>
-                                <div className='col col-12 col-md-6 mx-0'>
+                                <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[0]}>
                                     <div className='row justify-content-center'>
                                         <div className='col col-12 col-md-7 mx-0'>
                                             <h3 className='h3'>{item.title}</h3>
@@ -105,7 +113,7 @@ function Service() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='col col-12 col-md-6 mx-0'>
+                                <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[1]}>
                                     <div className='img'>
                                         <Image src={item.image} alt={item.title} />
                                     </div>

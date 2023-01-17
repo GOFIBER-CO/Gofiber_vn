@@ -36,57 +36,60 @@ const data = [
     }
 ]
 
+const responsive = [
+    {
+        id: 1,
+        class: 'show-for-small',
+        slidesPerView: 1
+    },
+    {
+        id: 2,
+        class: 'hide-for-small ',
+        slidesPerView: 2
+    },
+]
+
 function SliderIntroduction() {
     return (
         <div id='slider-introduction'>
-            <Swiper
-                slidesPerView={2}
-                spaceBetween={5}
-                centeredSlides
-                pagination={{
-                    clickable: true
-                }}
-                scrollbar={{ draggable: true }}
-                loop
-                modules={[Pagination]}
-                className="mySwiper has-custom-pagination"
-                autoplay
-                breakpoints={
-                    {
-                        "@0.00": {
-                            slidesPerView: 1,
-                            spaceBetween: 5,
-                        },
-                        "@0.75": {
-                            slidesPerView: 2,
-                            spaceBetween: 5,
-                        },
-                        "@1.00": {
-                            slidesPerView: 2,
-                            spaceBetween: 5,
-                        },
-                    }
-                }
-            >
-                {
-                    data.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <div className='introduction-item'>
-                                <div className='wrapper_image'>
-                                    <a href='/'>
-                                        <Image src={item.image} alt={item.title} />
+            {
+                responsive.map(item => (
+                    <div className={item.class} key={item.id}>
+                        <Swiper
+                            slidesPerView={item.slidesPerView}
+                            spaceBetween={5}
+                            centeredSlides
+                            pagination={{
+                                clickable: true
+                            }}
+                            scrollbar={{ draggable: true }}
+                            loop
+                            modules={[Pagination]}
+                            className="mySwiper has-custom-pagination"
+                            autoplay
+                        >
+                            {
+                                data.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className='introduction-item'>
+                                            <div className='wrapper_image'>
+                                                <a href='/'>
+                                                    <Image src={item.image} alt={item.title} />
 
-                                    </a>
-                                </div>
-                                <div className='box-text text-center'>
-                                    <h4 className='m-0 h4 color_primary'>{item.title}</h4>
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                                                </a>
+                                            </div>
+                                            <div className='box-text text-center'>
+                                                <h4 className='m-0 h4 color_primary'>{item.title}</h4>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
 
-                    ))
-                }
-            </Swiper>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
+                ))
+            }
         </div >
     )
 }

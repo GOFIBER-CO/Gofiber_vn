@@ -2,6 +2,7 @@ import BannerPage from '@/src/components/banner/BannerPage'
 import ChoiceList from '@/src/containers/introduction/choice'
 import SliderIntroduction from '@/src/containers/introduction/SliderIntroduction'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function Introduction() {
@@ -39,7 +40,7 @@ function Introduction() {
                             </p>
                             <p className='describe'>
                                 Bước sang năm 2023, chúng tôi cảm thấy đã đến lúc phát huy thêm nữa các giá trị của mình, nâng tầm các dịch vụ sẵn có lên một tầm cao mới đồng thời xây
-                                dựng thêm các dịch vụ chuyên nghiệp khác, đặc biệt là dịch vụ <a href='/' className='text-primary'>Cho thuê hosting và máy chủ VPS hiệu năng cao.</a>
+                                dựng thêm các dịch vụ chuyên nghiệp khác, đặc biệt là dịch vụ <Link href='/' className='text-primary'>Cho thuê hosting và máy chủ VPS hiệu năng cao.</Link>
                             </p>
                             <p className='describe'>
                                 Với nguồn nhân lực chất lượng, không ngừng được nâng cao và phát triển, GOFIBER tự tin sẽ có thể đáp ứng

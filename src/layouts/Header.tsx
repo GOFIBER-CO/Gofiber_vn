@@ -6,6 +6,7 @@ import MenuService from '../containers/header/MenuService';
 import { Icon } from '@iconify/react'
 import { ICON } from '../utils';
 import DrawerButton from '../components/button/IconButton';
+import Link from 'next/link';
 
 type Props = {
     onShowDrawer: () => void;
@@ -16,33 +17,33 @@ function Header({ onShowDrawer }: Props) {
         <header id='header' className=''>
             <div className='header_wrapper'>
                 <div className='container d-flex align-items-center justify-content-between'>
-                    <a href='/'>
+                    <Link href='/'>
                         <Image id='logo' className='logo-left logo' src={require("@/public/images/logo.png")} alt="" />
-                    </a>
+                    </Link>
                     <div className='flex-col flex-left flex-grow hide-for-medium'>
                         <ul className='nav justify-content-end'>
                             <li className='menu_item'>
-                                <a href='/introduction'>
+                                <Link href='/introduction'>
                                     Giới thiệu
-                                </a>
+                                </Link>
                             </li>
                             <li className='menu_item has-dropdown position-relative'>
-                                <a href='/service'>
+                                <Link href='/service'>
                                     Dịch vụ
                                     <Icon icon={ICON.DOWN} />
-                                </a>
+                                </Link>
                                 <MenuService />
                             </li>
 
                             <li className='menu_item'>
-                                <a href='/contact'>
+                                <Link href='/contact'>
                                     Liên hệ
-                                </a>
+                                </Link>
                             </li>
                             <li className='menu_item'>
-                                <a href='#'>
+                                <Link href='#'>
                                     Tuyển dụng
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

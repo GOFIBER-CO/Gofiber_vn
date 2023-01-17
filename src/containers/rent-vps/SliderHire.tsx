@@ -307,6 +307,24 @@ const dataWithTab = [
     }
 ]
 
+const responsive = [
+    {
+        id: 1,
+        class: 'show-for-small',
+        slidesPerView: 1
+    },
+    {
+        id: 2,
+        class: 'show-for-medium hide-for-small ',
+        slidesPerView: 2
+    },
+    {
+        id: 3,
+        class: 'hide-for-medium',
+        slidesPerView: 3
+    }
+]
+
 type Props = {
     tab: string;
 }
@@ -318,109 +336,90 @@ function SliderHire({ tab }: Props) {
 
     return (
         <div id='slider-hire'>
-            <Swiper
-                slidesPerView={3}
-                spaceBetween={5}
-                centeredSlides
-                pagination={{
-                    clickable: true
-                }}
-                scrollbar={{ draggable: true }}
-                loop
-                modules={[Pagination]}
-                className="mySwiper has-custom-pagination"
-                autoplay
-                breakpoints={
-                    {
-                        "@0.00": {
-                            slidesPerView: 1,
-                            spaceBetween: 5,
-                        },
-                        "@0.75": {
-                            slidesPerView: 1,
-                            spaceBetween: 5,
-                        },
-                        "@1.00": {
-                            slidesPerView: 2,
-                            spaceBetween: 5,
-                        },
-                        "@1.25": {
-                            slidesPerView: 3,
-                            spaceBetween: 5,
-                        },
-                        "@1.50": {
-                            slidesPerView: 3,
-                            spaceBetween: 5,
-                        }
-                    }
-                }
-            >
-                {
-                    data?.map((item: any, index: number) => (
-                        <SwiperSlide key={index}>
-                            <div className='hire-item'>
-                                <div className='wrapper_content'>
-                                    <p className='text-center'>
-                                        <strong>{item.name}</strong>
-                                        <br />
-                                        <span className='mt-2' style={{ fontSize: '14px' }}>
-                                            {item.extra}
-                                        </span>
-                                        <br />
-                                        <span className='color_primary' style={{
-                                            fontSize: '32px',
-                                            fontWeight: 'bold'
-                                        }}>
-                                            {item.price}
-                                        </span>
-                                        VNĐ/Th
-                                    </p>
-                                    <div className='text-center'>
-                                        <button className='btn0'>
-                                            <a href='#buy-package'><span>Chọn</span></a>
-                                        </button>
-                                    </div>
-                                    <div className='my-3 divider divider--primary'></div>
-                                    {
-                                        item?.feature &&
-                                        <>
-                                            <div className='name'>
-                                                {item?.feature?.name}
+            {
+                responsive.map(item => (
+                    <div className={item.class} key={item.id}>
+                        <Swiper
+                            slidesPerView={item.slidesPerView}
+                            spaceBetween={5}
+                            centeredSlides
+                            pagination={{
+                                clickable: true
+                            }}
+                            scrollbar={{ draggable: true }}
+                            loop
+                            modules={[Pagination]}
+                            className="mySwiper has-custom-pagination"
+                            autoplay
+                        >
+                            {
+                                data?.map((item: any, index: number) => (
+                                    <SwiperSlide key={index}>
+                                        <div className='hire-item'>
+                                            <div className='wrapper_content'>
+                                                <p className='text-center'>
+                                                    <strong>{item.name}</strong>
+                                                    <br />
+                                                    <span className='mt-2' style={{ fontSize: '14px' }}>
+                                                        {item.extra}
+                                                    </span>
+                                                    <br />
+                                                    <span className='color_primary' style={{
+                                                        fontSize: '32px',
+                                                        fontWeight: 'bold'
+                                                    }}>
+                                                        {item.price}
+                                                    </span>
+                                                    VNĐ/Th
+                                                </p>
+                                                <div className='text-center'>
+                                                    <button className='btn0'>
+                                                        <a href='#buy-package'><span>Chọn</span></a>
+                                                    </button>
+                                                </div>
+                                                <div className='my-3 divider divider--primary'></div>
+                                                {
+                                                    item?.feature &&
+                                                    <>
+                                                        <div className='name'>
+                                                            {item?.feature?.name}
+                                                        </div>
+                                                        {
+                                                            item.feature?.data.map((e: any, index: any) => <TextIconPrice key={index} content={e} />)
+                                                        }
+                                                    </>
+                                                }
+                                                {
+                                                    item?.security &&
+                                                    <>
+                                                        <div className='name'>
+                                                            {item?.security?.name}
+                                                        </div>
+                                                        {
+                                                            item.security?.data.map((e: any, index: any) => <TextIconPrice color='green' key={index} content={e} />)
+                                                        }
+                                                    </>
+                                                }
+                                                {
+                                                    item?.free &&
+                                                    <>
+                                                        <div className='name'>
+                                                            {item?.free?.name}
+                                                        </div>
+                                                        {
+                                                            item.free?.data.map((e: any, index: any) => <TextIconPrice color='blue' key={index} content={e} />)
+                                                        }
+                                                    </>
+                                                }
                                             </div>
-                                            {
-                                                item.feature?.data.map((e: any, index: any) => <TextIconPrice key={index} content={e} />)
-                                            }
-                                        </>
-                                    }
-                                    {
-                                        item?.security &&
-                                        <>
-                                            <div className='name'>
-                                                {item?.security?.name}
-                                            </div>
-                                            {
-                                                item.security?.data.map((e: any, index: any) => <TextIconPrice color='green' key={index} content={e} />)
-                                            }
-                                        </>
-                                    }
-                                    {
-                                        item?.free &&
-                                        <>
-                                            <div className='name'>
-                                                {item?.free?.name}
-                                            </div>
-                                            {
-                                                item.free?.data.map((e: any, index: any) => <TextIconPrice color='blue' key={index} content={e} />)
-                                            }
-                                        </>
-                                    }
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                                        </div>
+                                    </SwiperSlide>
 
-                    ))
-                }
-            </Swiper>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
+                ))}
         </div >
 
     )

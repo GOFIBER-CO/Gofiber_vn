@@ -4,7 +4,10 @@ import Question from '@/src/containers/home/question';
 import BuyPackage from '@/src/containers/rent-physical-server/BuyPackage';
 import SliderPhysicalServer from '@/src/containers/rent-physical-server/SliderPhysicalServer';
 import SliderPhysicalServerPlace from '@/src/containers/rent-physical-server/SliderPhysicalServerPlace';
+import { ICON } from '@/src/utils';
+import { Icon } from '@iconify/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react'
 
 const banner = {
@@ -497,16 +500,18 @@ function RentPhysicalServer() {
                                     <div className='mt-4'>
                                         {
                                             item.data.map((e, index) => (
-                                                <a href={e.link} key={index}>
-                                                    <TextIconPrice color='blue' content={e.name} />
-                                                </a>
+                                                <div key={index} className='text-icon-price mt-2'>
+                                                    <Link href={e.link} className='d-flex'>
+                                                        <Icon className={`blue`} icon={ICON.CHECKED} />
+                                                        <p className='px-2'>{e.name}</p>
+                                                    </Link>
+                                                </div>
                                             ))
                                         }
                                     </div>
                                 </div>
                             ))
                         }
-
                     </div>
                     <SliderPhysicalServerPlace data={physicalServerPlace} />
                 </section>

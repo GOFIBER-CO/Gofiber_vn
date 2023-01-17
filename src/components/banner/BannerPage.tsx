@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 type Props = {
@@ -25,7 +26,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                             <div style={{ width: bannerLinkLargeWidth }} className='banner-link large'>
                                 <h1 style={styleLinkName}>{name}</h1>
                                 <div className='link d-flex align-items-center justify-content-center mt-4'>
-                                    <a href='/'>Trang chủ</a>
+                                    <Link href='/'>Trang chủ</Link>
                                     <a className='mx-2'>{'>'}</a>
                                     <a>{name}</a>
                                 </div>
@@ -41,7 +42,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                             <div style={{ width: bannerLinkMediumWidth }} className='banner-link medium text-center'>
                                 <h1 style={styleLinkName}>{name}</h1>
                                 <div className='link d-flex align-items-center justify-content-center mt-4'>
-                                    <a href='/'>Trang chủ</a>
+                                    <Link href='/'>Trang chủ</Link>
                                     <a className='mx-2'>{'>'}</a>
                                     <a>{name}</a>
                                 </div>
@@ -57,7 +58,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                             <div style={{ width: bannerLinkSmallWidth }} className='banner-link small text-center'>
                                 <h1 style={styleLinkName}>{name}</h1>
                                 <div className='link d-flex align-items-center justify-content-center mt-4'>
-                                    <a href='/'>Trang chủ</a>
+                                    <Link href='/'>Trang chủ</Link>
                                     <a className='mx-2'>{'>'}</a>
                                     <a>{name}</a>
                                 </div>
