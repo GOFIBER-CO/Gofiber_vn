@@ -1496,6 +1496,19 @@ h6,
       }
     }
 
+    select {
+      padding: 8px 12px;
+      width: 100%;
+      border: 1px solid transparent;
+      outline: none;
+      border-bottom: 1px solid #5c5c5c !important;
+      margin-bottom: 30px;
+
+      &:focus {
+        border: 1px solid #00bfa6;
+      }
+    }
+
     textarea {
       width: 100%;
       border: 1px solid transparent;
