@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { Pagination } from 'swiper';
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
 import { formatNumber } from '@/src/utils';
+import ButtonSlideSeeMore from '@/src/components/button/ButtonSlideSeeMore';
 const data = [
   {
     id: '1',
@@ -127,7 +128,7 @@ function SliderHostingPrice({ onSelectPackage }: any) {
         <div className={item.class} key={item.id}>
           <Swiper
             slidesPerView={item.slidesPerView}
-            spaceBetween={5}
+            spaceBetween={10}
             centeredSlides
             pagination={{
               clickable: true,
@@ -135,12 +136,12 @@ function SliderHostingPrice({ onSelectPackage }: any) {
             scrollbar={{ draggable: true }}
             loop
             modules={[Pagination]}
-            className="mySwiper has-custom-pagination"
+            className="mySwiper hide-pagination"
             autoplay
           >
             {data.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="web-hosting-item">
+                <div className={`web-hosting-item ${item.isBest ? 'best' : ''}`}>
                   <div className="wrapper_content">
                     <p className="text-center">
                       <strong>{item.name}</strong>
@@ -166,7 +167,7 @@ function SliderHostingPrice({ onSelectPackage }: any) {
                           href="#buy-package"
                           onClick={() => onSelectPackage(item)}
                         >
-                          <span>Chọn</span>
+                          <span>Thêm vào giỏ hàng</span>
                         </a>
                       </button>
                     </div>
@@ -184,6 +185,15 @@ function SliderHostingPrice({ onSelectPackage }: any) {
                       <TextIconPrice key={index} color="blue" content={e} />
                     ))}
                   </div>
+                  <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} />
+                  {
+                    item.isBest && <div className="wrapper-best">
+                      <button className="btn0 btn-best">
+                        <span>Phổ biến nhất</span>
+                      </button>
+                    </div>
+                  }
+
                 </div>
               </SwiperSlide>
             ))}

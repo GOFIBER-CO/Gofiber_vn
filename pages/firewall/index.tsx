@@ -1,8 +1,10 @@
 import BannerPage from '@/src/components/banner/BannerPage';
 import SpecificationItem from '@/src/components/firewall/SpecificationItem';
+import TitleWithLine from '@/src/components/TitleWithLine';
 import BuyPackage from '@/src/containers/firewall/BuyPackage';
 import SecurityItem from '@/src/containers/firewall/security/SecurityItem';
 import SliderSpecification from '@/src/containers/firewall/SliderSpecification';
+import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import { formatNumber } from '@/src/utils';
 import Image from 'next/image';
@@ -16,7 +18,7 @@ const banner = {
 
 const specification = [
   {
-    title: 'Giá dịch vụ',
+    title: 'Băng thông',
     fw1: {
       content: '1 Core',
     },
@@ -37,7 +39,7 @@ const specification = [
     },
   },
   {
-    title: 'Băng thông',
+    title: 'Số lượng IP Backend',
     fw1: {
       content: '300Mbs',
     },
@@ -55,27 +57,6 @@ const specification = [
     },
     fw6: {
       content: '20GB',
-    },
-  },
-  {
-    title: 'Số lượng IP Backend',
-    fw1: {
-      content: '1',
-    },
-    fw2: {
-      content: '1',
-    },
-    fw3: {
-      content: '1',
-    },
-    fw4: {
-      content: '1',
-    },
-    fw5: {
-      content: '1',
-    },
-    fw6: {
-      content: '1',
     },
   },
   {
@@ -437,42 +418,53 @@ function Firewall() {
         <BannerPage image={banner} name="Firewall" />
       </section>
       <div className="container">
-        <section className="section-specification hide-for-small">
+        <section className="section-specification hide-for-medium">
           <div className="row">
             <div className="col col-12">
               <div
-                className="price-firewall"
-                style={{ borderBottom: '1px solid' }}
+                className="price-firewall title pb-2"
               >
                 <div className="name-server">
-                  <p>Thông số kỹ thuật</p>
+                  <p>Tính năng</p>
                 </div>
                 <div className="name-server info-server">
                   Firewall 1<br />
-                  {formatNumber(91800)} VNĐ/Th
+                  <span className='price'>
+                    {formatNumber(91800)} VNĐ/Th
+                  </span>
                 </div>
                 <div className="name-server info-server">
                   Firewall 2<br />
-                  {formatNumber(91800)} VNĐ/Th
+                  <span className='price'>
+                    {formatNumber(91800)} VNĐ/Th
+                  </span>
                 </div>
                 <div className="name-server info-server">
                   Firewall 3<br />
-                  {formatNumber(91800)} VNĐ/Th
+                  <span className='price'>
+                    {formatNumber(91800)} VNĐ/Th
+                  </span>
                 </div>
                 <div className="name-server info-server">
                   Firewall 4<br />
-                  {formatNumber(91800)} VNĐ/Th
+                  <span className='price'>
+                    {formatNumber(91800)} VNĐ/Th
+                  </span>
                 </div>
                 <div className="name-server info-server">
                   Firewall 5<br />
-                  {formatNumber(91800)} VNĐ/Th
+                  <span className='price'>
+                    {formatNumber(91800)} VNĐ/Th
+                  </span>
                 </div>
                 <div className="name-server info-server">
                   Firewall 6<br />
-                  {formatNumber(91800)} VNĐ/Th
+                  <span className='price'>
+                    {formatNumber(91800)} VNĐ/Th
+                  </span>
                 </div>
               </div>
-              <div className="price-firewall specification-item">
+              <div className="price-firewall specification-item mt-2">
                 {specification.map((item, index) => (
                   <SpecificationItem key={index} item={item} />
                 ))}
@@ -500,23 +492,19 @@ function Firewall() {
           </div>
         </section>
 
-        <section className="section-specification show-for-small">
+        <section className="section-specification hide-for-large">
           <div className="row">
             <div className="col col-6">
               <div className="" style={{ width: '100% !important' }}>
-                <div className="name-server">
-                  <p>Thông số kỹ thuật</p>
+                <div className="name-server" style={{ borderBottom: '1px solid #d6d6d6' }}>
+                  <p style={{ margin: '0px', lineHeight: '42px' }}>Tính năng</p>
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '100%' }}>
-                <p></p>
-                <div className="name-server">
-                  <p>Giá Dịch vụ</p>
-                </div>
                 <div className="name-server">
                   <p>Băng thông</p>
                 </div>
-                <div className="name-server">
+                <div style={{ minHeight: '41px' }} className="name-server number_line_1">
                   <p>Số lượng IP Backend</p>
                 </div>
                 <div className="name-server">
@@ -525,7 +513,7 @@ function Firewall() {
                 <div className="name-server">
                   <p>Chống SYN Flood</p>
                 </div>
-                <div className="name-server">
+                <div style={{ minHeight: '41px' }} className="name-server number_line_1">
                   <p>Chống SYN Flood Fake Source IP</p>
                 </div>
                 <div className="name-server">
@@ -537,7 +525,7 @@ function Firewall() {
                 <div className="name-server">
                   <p>Chống TOS Flood</p>
                 </div>
-                <div className="name-server">
+                <div style={{ minHeight: '41px' }} className="name-server number_line_1">
                   <p>Đường mạng 100 mb/s</p>
                 </div>
                 <div className="name-server">
@@ -557,14 +545,8 @@ function Firewall() {
         <section className="section-security">
           <div className="section-content position-relative">
             <div className="row justify-content-center">
-              <div className="col col-12">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-12 col-md-6 col-lg-3 col-title-1 text-center">
-                      <h2 className="m-0">BẢO VỆ TOÀN DIỆN</h2>
-                    </div>
-                  </div>
-                </div>
+              <div className="col col-12 col-md-6 col-lg-4">
+                <TitleWithLine title='BẢO VỆ TOÀN DIỆN' />
               </div>
             </div>
             <div className="row justify-content-center">
@@ -588,26 +570,7 @@ function Firewall() {
         <Question data={question} />
 
 
-        <section className="section-contact">
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-12 col-md-6 col-lg-4 col-title-3 text-center">
-                      <h2 className="m-0">
-                        BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row justify-content-center">
-              <BuyPackage />
-            </div>
-          </div>
-        </section>
+        <Contact />
       </div>
     </div>
   );

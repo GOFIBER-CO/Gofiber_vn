@@ -1,8 +1,11 @@
 import BannerPage from '@/src/components/banner/BannerPage'
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice'
+import Contact from '@/src/containers/home/contact'
 import Question from '@/src/containers/home/question'
 import BuyPackage from '@/src/containers/ssl/BuyPackage'
 import SliderSSL from '@/src/containers/ssl/SliderSSL'
+import { ICON } from '@/src/utils'
+import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -225,23 +228,29 @@ function SSL() {
 
                 <section className='section-info-ssl'>
                     <div className='row justify-content-center'>
-                        <div className='col col-12 col-md-8' style={{ color: '#777' }}>
+                        <div className='col col-12 col-md-8'>
                             <div className='text-center'>
-                                <h3 className='h3'>Tại sao bạn cần sử dụng chứng chỉ SSL?</h3>
+                                <h2 className='h2'>Tại sao bạn cần sử dụng chứng chỉ SSL?</h2>
                             </div>
-                            <p className='mt-4'>
+                            <p style={{ color: '#777777' }} className='mt-4'>
                                 Mua chứng chỉ SSL sẽ giúp website của bạn được an toàn và bảo mật hơn với thanh địa chỉ có chìa khóa xanh.
                                 Mọi thông tin dữ liệu của website và khách hàng sẽ được mã hóa nhằm tránh nguy cơ bị tấn công từ hacker.
                                 Đồng thời, đảm bảo độ tin cậy và niềm tin cho khách hàng khi truy cập vào website.
                             </p>
-                            <div className='row'>
+                            <div className='row align-items-center'>
                                 <div className='col col-12 col-md-6 m-0 p-0'>
-                                    <TextIconPrice color='blue' content="SSL Không hợp lệ" />
-                                    <p>
+                                    <div className='text-icon red mt-2'>
+                                        <Icon icon={ICON.CHECKED} />
+                                        <p className='px-2'>SSL Không hợp lệ</p>
+                                    </div>
+                                    <p className='red'>
                                         Thông tin, dữ liệu có thể bị nghe lén hoặc đánh cắp trong quá trình truy cập website của bạn
                                     </p>
-                                    <TextIconPrice color='blue' content="SSL Không hợp lệ" />
-                                    <p>
+                                    <div className='text-icon green mt-2'>
+                                        <Icon icon={ICON.CHECKED} />
+                                        <p className='px-2'>SSL Không hợp lệ</p>
+                                    </div>
+                                    <p className='green'>
                                         Thông tin, dữ liệu trao đổi được bảo mật và trang web của bạn được tin cậy
                                     </p>
                                 </div>
@@ -262,26 +271,7 @@ function SSL() {
                 </section>
                 <Question data={question} />
 
-                <section className="section-contact">
-                    <div className="section-content position-relative">
-                        <div className="row justify-content-center">
-                            <div className="col col-12">
-                                <div className="col-inner">
-                                    <div className="row row-title justify-content-center">
-                                        <div className="col col-12 col-md-6 col-lg-4 col-title-3 text-center">
-                                            <h2 className="m-0">
-                                                BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center">
-                            <BuyPackage />
-                        </div>
-                    </div>
-                </section>
+                <Contact />
             </div>
         </div>
     )

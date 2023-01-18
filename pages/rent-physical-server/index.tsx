@@ -1,5 +1,6 @@
 import BannerPage from '@/src/components/banner/BannerPage';
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
+import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import BuyPackage from '@/src/containers/rent-physical-server/BuyPackage';
 import SliderPhysicalServer from '@/src/containers/rent-physical-server/SliderPhysicalServer';
@@ -547,26 +548,8 @@ function RentPhysicalServer() {
       <div className="container">
 
         <Question data={question} />
-        <section className="section-contact">
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-12 col-md-6 col-lg-4 col-title-3 text-center">
-                      <h2 className="m-0">
-                        BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row justify-content-center">
-              <BuyPackage packageSelect={packageSelect} />
-            </div>
-          </div>
-        </section>
+
+        <Contact />
       </div>
     </div>
   );

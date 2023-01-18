@@ -30,6 +30,7 @@ const dataWithTab = [
           name: 'Phần thưởng miễn phí',
           data: ['Hỗ trợ IPv6', 'Sao lưu hàng tuần'],
         },
+        isBest: true
       },
       {
         id: 2,
@@ -278,7 +279,7 @@ function SliderHire({ tab, onSelectPackage }: Props) {
         <div className={item.class} key={item.id}>
           <Swiper
             slidesPerView={item.slidesPerView}
-            spaceBetween={5}
+            spaceBetween={10}
             centeredSlides
             pagination={{
               clickable: true,
@@ -286,12 +287,12 @@ function SliderHire({ tab, onSelectPackage }: Props) {
             scrollbar={{ draggable: true }}
             loop
             modules={[Pagination]}
-            className="mySwiper has-custom-pagination"
+            className="mySwiper hide-pagination"
             autoplay
           >
             {data?.map((item: any, index: number) => (
               <SwiperSlide key={index}>
-                <div className="hire-item">
+                <div className={`hire-item ${item.isBest ? 'best' : ''}`}>
                   <div className="wrapper_content">
                     <p className="text-center">
                       <strong>{item.name}</strong>
@@ -317,7 +318,7 @@ function SliderHire({ tab, onSelectPackage }: Props) {
                           href="#buy-package"
                           onClick={() => onSelectPackage(item)}
                         >
-                          <span>Chọn</span>
+                          <span>Thêm vào giỏ hàng</span>
                         </a>
                       </button>
                     </div>
@@ -351,6 +352,13 @@ function SliderHire({ tab, onSelectPackage }: Props) {
                       </>
                     )}
                   </div>
+                  {
+                    item.isBest && <div className="wrapper-best">
+                      <button className="btn0 btn-best">
+                        <span>Phổ biến nhất</span>
+                      </button>
+                    </div>
+                  }
                 </div>
               </SwiperSlide>
             ))}

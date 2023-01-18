@@ -1,4 +1,5 @@
 import TextIconButton from '@/src/components/button/TextIconButton';
+import TitleWithLine from '@/src/components/TitleWithLine';
 import Contact from '@/src/containers/home/contact';
 import MyCustomer from '@/src/containers/home/my-customer';
 import NewsAndEvents from '@/src/containers/home/news';
@@ -93,26 +94,15 @@ function Home() {
 
         </div>
       </section>
+
       <div className="container">
         <section>
           <div className="section-content position-relative">
             <div className="row justify-content-center">
               <div className="col col-12 col-lg-8">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-11 col-md-5 col-title-1 text-center">
-                      <h2 className="m-0">DỊCH VỤ CỦA CHÚNG TÔI</h2>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <p className="describe">
-                      Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt
-                      lên hàng đầu.
-                      <br />
-                      Chúng tôi cam kết đảm bảo 100% hài lòng.
-                    </p>
-                  </div>
-                </div>
+                <TitleWithLine title='DỊCH VỤ CỦA CHÚNG TÔI'
+                  extra='Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt lên hàng đầu.'
+                  extra2='Chúng tôi cam kết đảm bảo 100% hài lòng.' />
               </div>
             </div>
             <div className="row">
@@ -130,21 +120,8 @@ function Home() {
           <div className="section-content position-relative">
             <div className="row justify-content-center">
               <div className="col col-12 col-lg-8">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-7 col-md-3 col-title-2 text-center">
-                      <h2 className="m-0">NỔI BẬT</h2>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <p className="describe">
-                      Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt
-                      lên hàng đầu.
-                      <br />
-                      Chúng tôi cam kết đảm bảo 100% hài lòng.
-                    </p>
-                  </div>
-                </div>
+                <TitleWithLine title='NỔI BẬT'
+                  extra='Các tính năng vượt trội so với số còn lại trên thị trường của các sản phẩm và dịch vụ do GOFIBER cung cấp.' />
               </div>
             </div>
             <div className="row">
@@ -156,25 +133,10 @@ function Home() {
         <section className="section-why">
           <div className="section-content position-relative">
             <div className="row justify-content-center">
-              <div className="col col-12 col-lg-9">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-12 col-md-9 col-lg-8 col-title-3 text-center">
-                      <h2 className="m-0">
-                        VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG CÁC SẢN PHẨM KHÁC CỦA
-                        GOFIBER
-                      </h2>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <p className="describe">
-                      Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.
-                      <br />
-                      Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà
-                      cung cấp cấp dịch vụ.
-                    </p>
-                  </div>
-                </div>
+              <div className="col col-12 col-md-8 col-lg-6">
+                <TitleWithLine title='VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG CÁC SẢN PHẨM KHÁC CỦA GOFIBER'
+                  extra='Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.'
+                  extra2='Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà cung cấp cấp dịch vụ.' />
               </div>
             </div>
             <div className="row justify-content-center mt-4">
@@ -203,7 +165,7 @@ function Home() {
           </div>
         </section>
 
-        {/* <NewsAndEvents /> */}
+        <NewsAndEvents />
 
         <Question />
 
@@ -211,13 +173,7 @@ function Home() {
           <div className="section-content position-relative">
             <div className="row justify-content-center">
               <div className="col col-12">
-                <div className="col-inner">
-                  <div className="row row-title justify-content-center">
-                    <div className="col col-12 col-md-6 col-lg-4 col-title-1 text-center">
-                      <h2 className="m-0">KHÁCH HÀNG CỦA CHÚNG TÔI</h2>
-                    </div>
-                  </div>
-                </div>
+                <TitleWithLine title='KHÁCH HÀNG CỦA CHÚNG TÔI' />
               </div>
             </div>
             <MyCustomer />
@@ -225,7 +181,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="section-contact">
+        {/* <section className="section-contact">
           <div className="section-content position-relative">
             <div className="row justify-content-center">
               <div className="col col-12">
@@ -244,7 +200,7 @@ function Home() {
               <Contact />
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
 
     </div>

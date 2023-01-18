@@ -1,4 +1,5 @@
 import BannerPage from '@/src/components/banner/BannerPage';
+import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import BuyPackage from '@/src/containers/web-hosting/BuyPackage';
 import SliderHostingPrice from '@/src/containers/web-hosting/SliderHostingPrice';
@@ -17,31 +18,37 @@ const data = [
     id: '1',
     title: 'Web Hosting',
     className: 'first',
+    link: '/web-hosting'
   },
   {
     id: '2',
     title: 'Thiết kế Website',
     className: 'second',
+    link: '/web-design'
   },
   {
     id: '3',
     title: 'Thuê VPS',
     className: 'third',
+    link: '/rent-vps'
   },
   {
     id: '4',
     title: 'Thuê máy chủ vật lý Thuê chỗ đặt máy chủ',
     className: 'fourth',
+    link: '/rent-physical-server'
   },
   {
     id: '5',
     title: 'Firewall',
     className: 'firth',
+    link: '/firewall'
   },
   {
     id: '6',
     title: 'Chứng chỉ SSL',
     className: 'sixth',
+    link: '/ssl'
   },
 ];
 
@@ -290,9 +297,9 @@ function WebHosting() {
       </section>
       <div className="container">
         <section className="mt-4 text-center">
-          <h4 className="h4 mt-4">
+          <h3 className="h3 mt-4">
             Mua Hosting đang được tin dùng bởi hàng ngàn người
-          </h4>
+          </h3>
           <p className="mt-3">
             GoFiber là nhà cung cấp dịch vụ lưu trữ web hosting được đánh giá
             “tuyệt vời” bởi hàng ngàn người dùng thực tế.
@@ -302,6 +309,13 @@ function WebHosting() {
           <h3 className="h3 text-center">Bảng giá hosting</h3>
           <div>
             <SliderHostingPrice onSelectPackage={setPackageSelect} />
+          </div>
+          <div className='mt-4 text-center'>
+            <Link href="/">
+              <span className='color_primary'>
+                Điều khoản thanh toán
+              </span>
+            </Link>
           </div>
         </section>
       </div>
@@ -385,7 +399,7 @@ function WebHosting() {
                 <div
                   className={`d-flex align-items-center justify-content-center section-search-other__item section-search-other__item__${item.className}`}
                 >
-                  <Link href="/">{item.title}</Link>
+                  <Link href={item.link}>{item.title}</Link>
                 </div>
               </div>
             ))}
@@ -395,7 +409,7 @@ function WebHosting() {
 
       <Question data={question} />
 
-      <section className="section-contact">
+      {/* <section className="section-contact">
         <div className="section-content position-relative">
           <div className="row justify-content-center">
             <div className="col col-12">
@@ -414,7 +428,8 @@ function WebHosting() {
             <BuyPackage packageSelect={packageSelect} />
           </div>
         </div>
-      </section>
+      </section> */}
+      <Contact />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import { Pagination } from "swiper";
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
+import ButtonSlideSeeMore from '@/src/components/button/ButtonSlideSeeMore';
 
 const responsive = [
     {
@@ -40,6 +41,7 @@ function SliderHostingPrice() {
                 "Thời gian cấp phát: 1 - 5 phút",
                 "Hỗ trợ cài đặt miễn phí"
             ],
+            isBest: true
         },
         {
             id: '2',
@@ -89,7 +91,7 @@ function SliderHostingPrice() {
                     <div className={item.class} key={item.id}>
                         <Swiper
                             slidesPerView={item.slidesPerView}
-                            spaceBetween={5}
+                            spaceBetween={10}
                             centeredSlides
                             pagination={{
                                 clickable: true
@@ -97,20 +99,20 @@ function SliderHostingPrice() {
                             scrollbar={{ draggable: true }}
                             loop
                             modules={[Pagination]}
-                            className="mySwiper has-custom-pagination"
+                            className="mySwiper hide-pagination"
                             autoplay
                         >
                             {
                                 data.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <div className='ssl-item'>
+                                        <div className={`ssl-item ${item.isBest ? 'best' : ''}`}>
                                             <div className='wrapper_content'>
                                                 <p className='text-center'>
                                                     <strong>{item.name}</strong>
                                                 </p>
-                                                <div className='text-center'>
-                                                    <button className='btn0'>
-                                                        <a href='/contact'><span>Liên hệ</span></a>
+                                                <div className="text-center">
+                                                    <button className="btn0">
+                                                        <span>Thêm vào giỏ hàng</span>
                                                     </button>
                                                 </div>
                                                 <div className='my-3 divider divider--primary'></div>
@@ -124,6 +126,14 @@ function SliderHostingPrice() {
                                                     item.class && <div style={{ minHeight: '24px' }} className={`${item.class ? item.class : ''}`}></div>
                                                 }
                                             </div>
+                                            {
+                                                item.isBest && <div className="wrapper-best">
+                                                    <button className="btn0 btn-best">
+                                                        <span>Phổ biến nhất</span>
+                                                    </button>
+                                                </div>
+                                            }
+                                            <ButtonSlideSeeMore alt={item.name} isBest={item?.isBest || false} />
                                         </div>
                                     </SwiperSlide>
 

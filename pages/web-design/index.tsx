@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import OurProducts from '@/src/containers/web-design/OurProducts';
-import Service from '@/src/containers/web-design/Service';
 import BannerPage from '@/src/components/banner/BannerPage';
+import Contact from '@/src/containers/home/contact';
 
 function webDesign() {
   const banner = {
@@ -132,7 +132,8 @@ function webDesign() {
         </div>
       </div>
       <OurProducts />
-      <Service />
+
+      <Contact />
     </>
   );
 }

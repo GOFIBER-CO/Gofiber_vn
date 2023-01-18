@@ -60,60 +60,85 @@ const specification = [
     }
 ]
 
+const responsive = [
+    {
+        id: 1,
+        class: 'show-for-small',
+        slidesPerView: 1
+    },
+    {
+        id: 2,
+        class: 'show-for-medium hide-for-small ',
+        slidesPerView: 3
+    },
+]
+
 function SliderSpecification() {
 
     return (
         <div id='slider-specification'>
-            <Swiper
-                slidesPerView={1}
-                spaceBetween={5}
-                centeredSlides
-                pagination={{
-                    clickable: true
-                }}
-                scrollbar={{ draggable: true }}
-                loop
-                modules={[Pagination]}
-                className="mySwiper has-custom-pagination"
-                autoplay
-            >
-                {
-                    specification.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <div className='specification-item'>
-                                <div className="price-firewall-mobile" style={{ borderBottom: '1px solid ' }}>
-                                    <div className="name-server info-server">{item.title}<br />{item.price} VNĐ/Th</div>
-                                </div>
-                                <div className="price-firewall-mobile">
-                                    <div className="info-server">
-                                        <p>{item.info1}</p>
-                                    </div>
-                                    <div className="info-server">
-                                        <p>{item.info2}</p>
-                                    </div>
-                                    <div className="info-server">
-                                        <p>{item.info3}</p>
-                                    </div>
-                                    {
-                                        [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) =>
-                                            <div className="info-server" key={item}>
-                                                <p>
-                                                    <Icon icon={ICON.CHECKED} />
-                                                </p>
-                                            </div>)
-                                    }
-                                    <div className="info-server">
-                                        <button className="btn0 btn-price">
-                                            Chọn
-                                        </button>
-                                    </div>
+            {
+                responsive.map(item => (
+                    <div key={item.id} className={item.class}>
+                        <Swiper
+                            slidesPerView={item.slidesPerView}
+                            spaceBetween={10}
+                            centeredSlides
+                            pagination={{
+                                clickable: true
+                            }}
+                            scrollbar={{ draggable: true }}
+                            loop
+                            modules={[Pagination]}
+                            className="mySwiper has-custom-pagination"
+                            autoplay
+                        >
+                            {
+                                specification.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className='specification-item'>
+                                            <div className="price-firewall-mobile" style={{ borderBottom: '1px solid #d6d6d6' }}>
+                                                <div className="name-server info-server">{item.title}<br />
+                                                    <span className='price'>
+                                                        {item.price}
+                                                        VNĐ/Th
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="price-firewall-mobile">
+                                                <div className="info-server item">
+                                                    <p>{item.info1}</p>
+                                                </div>
+                                                <div className="info-server item">
+                                                    <p>{item.info2}</p>
+                                                </div>
+                                                <div className="info-server item">
+                                                    <p>{item.info3}</p>
+                                                </div>
+                                                {
+                                                    [1, 2, 3, 4, 5, 6, 7, 8].map((item, index) =>
+                                                        <div className={`info-server item ${item === 8 ? 'end' : ''}`} key={item}>
+                                                            <p>
+                                                                <Icon icon={ICON.CHECKED} />
+                                                            </p>
+                                                        </div>)
+                                                }
+                                                <div className="info-server">
+                                                    <button className="btn0 btn-price">
+                                                        Chọn
+                                                    </button>
+                                                </div>
 
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))
-                }
-            </Swiper>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
+                ))
+            }
+
         </div >
 
     )

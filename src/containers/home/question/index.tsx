@@ -1,3 +1,4 @@
+import TitleWithLine from '@/src/components/TitleWithLine';
 import { ICON } from '@/src/utils'
 import { Icon } from '@iconify/react'
 import { Collapse } from 'antd'
@@ -56,21 +57,11 @@ function Question({ data = dummyData }: Props) {
 
                 <div className="row justify-content-center">
                     <div className="col col-12 col-lg-8">
-                        <div className="col-inner">
-                            <div className="row row-title justify-content-center">
-                                <div className="col col-11 col-md-5 col-title-1 text-center">
-                                    <h2 className="m-0">CÂU HỎI THƯỜNG GẶP</h2>
-                                </div>
-                            </div>
-                            <div className="text-center">
-                                <p className="describe">
-                                    Giải đáp các thắc mắc thường gặp của khách hàng mới khi lần
-                                    đầu biết đến dịch vụ Hosting và Máy chủ hiệu năng cao của
-                                    GOFIBER
-                                </p>
-                            </div>
-                        </div>
+                        <TitleWithLine title='CÂU HỎI THƯỜNG GẶP'
+                            extra='Giải đáp các thắc mắc thường gặp của khách hàng mới khi lần
+                            đầu biết đến dịch vụ Hosting và Máy chủ hiệu năng cao của GOFIBER' />
                     </div>
+
                 </div>
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-10 col-lg-8">

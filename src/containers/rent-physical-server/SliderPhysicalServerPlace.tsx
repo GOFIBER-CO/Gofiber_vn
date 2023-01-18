@@ -13,79 +13,59 @@ type Props = {
     data: any[]
 }
 
+const responsive = [
+    {
+        id: 1,
+        class: 'show-for-small',
+        slidesPerView: 1,
+    },
+    {
+        id: 2,
+        class: 'hide-for-small ',
+        slidesPerView: 2,
+    },
+];
+
 function SliderPhysicalServerPlace({ data }: Props) {
     return (
         <div className='row show-for-medium mt-4'>
-            <div className='show-for-small'>
-                <Swiper
-                    slidesPerView={1}
-                    spaceBetween={10}
-                    className="mySwiper"
-                    id="slider-physical-server-place"
-                    centeredSlides
-                    loop
-                >
-                    {
-                        data.map((item) => (
-                            <SwiperSlide key={item.id}>
-                                <div className='slider-physical-server-place-item mt-4' style={{ height: '100%' }}>
-                                    <div className='img text-center'>
-                                        <Image src={item.image} alt={item.id} />
-                                    </div>
-                                    <div className='mt-4'>
-                                        {
-                                            item.data.map((e: any, index: number) => (
-                                                <div key={index} className='text-icon-price mt-2'>
-                                                    <Link href={e.link} className='d-flex'>
-                                                        <Icon className={`blue`} icon={ICON.CHECKED} />
-                                                        <p className='px-2'>{e.name}</p>
-                                                    </Link>
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))
-                    }
-                </Swiper>
-            </div>
+            {responsive.map((item) => (
+                <div className={item.class} key={item.id}>
+                    <Swiper
+                        slidesPerView={item.slidesPerView}
 
-            <div className='hide-for-small'>
-                <Swiper
-                    slidesPerView={2}
-                    spaceBetween={10}
-                    className="mySwiper"
-                    id="slider-physical-server-place"
-                    centeredSlides
-                    loop
-                >
-                    {
-                        data.map((item) => (
-                            <SwiperSlide key={item.id}>
-                                <div className='slider-physical-server-place-item mt-4' style={{ height: '100%' }}>
-                                    <div className='img text-center'>
-                                        <Image src={item.image} alt={item.id} />
+                        spaceBetween={10}
+                        className="mySwiper hide-pagination"
+                        id="slider-physical-server-place"
+                        centeredSlides
+                        loop
+                    >
+                        {
+                            data.map((item) => (
+                                <SwiperSlide key={item.id}>
+                                    <div className='slider-physical-server-place-item mt-4' style={{ height: '100%' }}>
+                                        <div className='img text-center'>
+                                            <Image src={item.image} alt={item.id} />
+                                        </div>
+                                        <div className='mt-4'>
+                                            {
+                                                item.data.map((e: any, index: number) => (
+                                                    <div key={index} className='text-icon-price mt-2'>
+                                                        <Link href={e.link} className='d-flex'>
+                                                            <Icon className={`blue`} icon={ICON.CHECKED} />
+                                                            <p className='px-2'>{e.name}</p>
+                                                        </Link>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
                                     </div>
-                                    <div className='mt-4'>
-                                        {
-                                            item.data.map((e: any, index: number) => (
-                                                <div key={index} className='text-icon-price mt-2'>
-                                                    <Link href={e.link} className='d-flex'>
-                                                        <Icon className={`blue`} icon={ICON.CHECKED} />
-                                                        <p className='px-2'>{e.name}</p>
-                                                    </Link>
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))
-                    }
-                </Swiper>
-            </div>
-
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
+            ))}
         </div>
     )
 }

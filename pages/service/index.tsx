@@ -123,26 +123,7 @@ function Service() {
                     }
                 </section>
 
-                <section className="section-contact">
-                    <div className="section-content position-relative">
-                        <div className="row justify-content-center">
-                            <div className="col col-12">
-                                <div className="col-inner">
-                                    <div className="row row-title justify-content-center">
-                                        <div className="col col-12 col-md-6 col-lg-4 col-title-3 text-center">
-                                            <h2 className="m-0">
-                                                BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row justify-content-center">
-                            <Contact />
-                        </div>
-                    </div>
-                </section>
+                <Contact />
             </div >
         </div >
     )
