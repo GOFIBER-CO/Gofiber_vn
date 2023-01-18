@@ -1,6 +1,6 @@
 import TextIconButton from '@/src/components/button/TextIconButton'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const data = [
     {
@@ -38,7 +38,32 @@ const data = [
 
 ]
 
+type DataType = {
+    id: string;
+    name: string;
+}
+
 function Contact() {
+    const [dataSelected, setDataSelected] = useState<Array<DataType>>([data[0]]);
+
+    const selected = (id: string) => {
+        const isSelected = dataSelected.find((item) => item.id === id);
+
+        return isSelected ? 'selected' : '';
+    }
+
+    const onChoose = (item: DataType) => {
+        const isExist = dataSelected.find((e) => e?.id === item?.id);
+
+        if (isExist) setDataSelected((prevState) => {
+            return prevState.filter((e) => e?.id !== item?.id);
+        })
+
+        else setDataSelected((prevState) => {
+            return [...prevState, item]
+        })
+    }
+
     return (
         <div className='col col-12 col-md-10 col-lg-10'>
             <form className='contact_form'>
@@ -51,8 +76,8 @@ function Contact() {
                         <div className='category_list d-flex align-items-center flex-wrap'>
                             {
                                 data.map(item => (
-                                    <div className='category_item' key={item.id}>
-                                        <button type='button' className='btn0 py-2 px-3 py-lg-3 px-lg-4'>
+                                    <div className={`category_item ${selected(item?.id)}`} key={item.id}>
+                                        <button onClick={() => onChoose(item)} type='button' className='btn0 py-2 px-3 py-lg-3 px-lg-4'>
                                             {item.name}
                                         </button>
                                     </div>

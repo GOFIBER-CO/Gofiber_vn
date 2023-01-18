@@ -22,7 +22,7 @@ function NewsItem({ item }: Props) {
                         <div className='title mt-2'>{item.title}</div>
                     </div>
                 </Link>
-                <div className={`type ${item.class ?? 'news'}`}>
+                <div className={`type news`}>
                     {'Tin tức'}
                 </div>
             </div>

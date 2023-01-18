@@ -1,8 +1,10 @@
+import { Icon } from '@iconify/react';
 import { Drawer, Menu, MenuProps } from 'antd';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react'
 import EffectButton from '../components/button/EffectButton';
+import { ICON } from '../utils';
 
 type Props = {
     visible: boolean;
@@ -53,7 +55,8 @@ function DrawerMenu({ onClose, visible }: Props) {
     const router = useRouter();
 
     const handleRedirect = (path: string) => {
-        router.push(path)
+        router.push(path);
+        onClose();
     }
 
     return (
@@ -67,6 +70,13 @@ function DrawerMenu({ onClose, visible }: Props) {
                         items={items}
                     />
                 </div>
+                <div className='mt-4 text-center'>
+                    <a href='tel:0971026910' className='btn0 btn-support'>
+                        <Icon icon={ICON.CALL} />
+                        Hỗ trợ 24/7: 0971026910
+                    </a>
+                </div>
+
                 <ul className='d-flex m-0 p-0 mt-4 align-items-center justify-content-center'>
                     <li>
                         <EffectButton name='Đăng ký' color='white' />

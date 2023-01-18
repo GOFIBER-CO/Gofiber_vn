@@ -20,7 +20,7 @@ function Header({ onShowDrawer }: Props) {
                     <Link href='/'>
                         <Image id='logo' className='logo-left logo' src={require("@/public/images/logo.png")} alt="" />
                     </Link>
-                    <div className='flex-col flex-left flex-grow hide-for-medium'>
+                    <div className='flex-col flex-left flex-grow hide-for-932'>
                         <ul className='nav justify-content-end'>
                             <li className='menu_item'>
                                 <Link href='/introduction'>
@@ -47,16 +47,22 @@ function Header({ onShowDrawer }: Props) {
                             </li>
                         </ul>
                     </div>
-                    <div className='hide-for-large'>
+                    <div className='show-for-932'>
                         <DrawerButton onClick={onShowDrawer} icon={ICON.MENU} classNameButton="menu-button" />
                     </div>
-                    <div className='flex-right flew-col hide-for-medium'>
+                    <div className='flex-right flew-col hide-for-932'>
                         <ul className='d-flex align-items-center justify-content-center p-0 mb-2'>
                             <li className='mx-2'>
-                                <EffectButton name='Đăng ký' color='white' />
+                                <EffectButton styles={{ width: '100px' }} name='Đăng ký' color='white' />
                             </li>
                             <li>
-                                <EffectButton name='Đăng nhập' color='primary' />
+                                <EffectButton styles={{ width: '100px' }} name='Đăng nhập' color='primary' />
+                            </li>
+                            <li>
+                                <a href='tel:0971026910' className='btn0 btn-support'>
+                                    <Icon icon={ICON.CALL} />
+                                    Hỗ trợ 24/7: 0971026910
+                                </a>
                             </li>
                         </ul>
                     </div>

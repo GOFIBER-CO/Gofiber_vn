@@ -1,71 +1,68 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+
+const menu = [
+    {
+        title: 'Thiết kế website',
+        image: require("@/public/images/menu/web-design.svg"),
+        link: '/web-design'
+    },
+    {
+        title: 'Hosting khủng giá rẻ',
+        image: require("@/public/images/menu/web-hosting.svg"),
+        link: '/web-hosting'
+    },
+    {
+        title: 'Dịch vụ Firewall',
+        image: require("@/public/images/menu/firewall.svg"),
+        link: '/firewall'
+    },
+    {
+        title: 'Thuê VPS',
+        image: require("@/public/images/menu/vps.svg"),
+        link: '/rent-vps'
+    },
+    {
+        title: 'Chứng chỉ SSL',
+        image: require("@/public/images/menu/ssl.svg"),
+        link: '/ssl'
+    },
+    {
+        title: 'Thuê máy chủ vật lý',
+        image: require("@/public/images/menu/physical-server.svg"),
+        link: '/rent-physical-server'
+    }
+]
 
 function MenuService() {
+    const [hide, setHide] = useState<boolean>(false);
+
+    const onClick = () => {
+        setHide(true);
+        setTimeout(() => setHide(false), 100)
+    }
+
     return (
-        <ul className="menu_service nav-dropdown">
-            <li className="sub_menu">
-                <Link href="/web-design">
-                    <Image
-                        className="menu_icon"
-                        src={require('@/public/images/icons/icon-1.svg')}
-                        alt="Thiết kế website"
-                    />
-                    Thiết kế website
-                </Link>
-            </li>
-            <li className="sub_menu">
-                <Link href="/web-hosting">
-                    <Image
-                        className="menu_icon"
-                        src={require('@/public/images/icons/icon-2.svg')}
-                        alt="Hosting khủng giá rẻ"
-                    />
-                    Hosting khủng giá rẻ
-                </Link>
-            </li>
-            <li className="sub_menu">
-                <Link href="/firewall">
-                    <Image
-                        className="menu_icon"
-                        src={require('@/public/images/icons/icon-3.svg')}
-                        alt="Dịch vụ Firewall"
-                    />
-                    Dịch vụ Firewall
-                </Link>
-            </li>
-            <li className="sub_menu">
-                <Link href="/rent-vps">
-                    <Image
-                        className="menu_icon"
-                        src={require('@/public/images/icons/icon-4.svg')}
-                        alt="Thuê VPS"
-                    />
-                    Thuê VPS
-                </Link>
-            </li>
-            <li className="sub_menu">
-                <Link href="/ssl">
-                    <Image
-                        className="menu_icon"
-                        src={require('@/public/images/icons/icon-5.svg')}
-                        alt="Chứng chỉ SSL"
-                    />
-                    Chứng chỉ SSL
-                </Link>
-            </li>
-            <li className="sub_menu">
-                <Link href="/rent-physical-server">
-                    <Image
-                        className="menu_icon"
-                        src={require('@/public/images/icons/icon-6.svg')}
-                        alt="Thuê máy chủ vật lý"
-                    />
-                    Thuê máy chủ vật lý
-                </Link>
-            </li>
-        </ul>
+        <div className={`menu_service nav-dropdown ${hide ? 'hide' : ''}`}>
+            <div className='row'>
+                {
+                    menu.map((item, index) =>
+                        <div className='col col-6 sub_menu' key={index}>
+                            <Link onClick={onClick} href={item.link}>
+                                <Image
+                                    className="menu_icon"
+                                    src={item.image}
+                                    alt={item.title}
+                                />
+                                <span>{item.title}</span>
+                            </Link>
+                        </div>
+                    )
+                }
+
+            </div>
+        </div>
     );
 }
 

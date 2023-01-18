@@ -1,6 +1,7 @@
 import { ICON } from '@/src/utils'
 import { Icon } from '@iconify/react'
 import { Collapse } from 'antd'
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 const { Panel } = Collapse;
@@ -47,26 +48,56 @@ function Question({ data = dummyData }: Props) {
     const [chosen, setChosen] = useState<string>('');
 
     return (
-        <div className='wrapper_question'>
-            <Collapse
-                accordion
-                bordered={false}
-                onChange={(e) => setChosen(e as string)}
-                expandIcon={(e) => <Icon className='icon-edit' icon={ICON.EDIT} />}
-            >
-                {
-                    data.map(item => <Panel extra={<Icon className={`icon-expand ${chosen === item.id ? 'active' : ''}`} icon={ICON.DOWN} />} header={item.title} key={item.id}>
-                        <>
-                            <div className='row position-relative mb-3'>
-                                <div className='divider'></div>
 
+        <section className="section-question">
+            <div className="section-content position-relative">
+                <Image src={require("@/public/images/introduction/Torus1.png")} alt="Torus1" className='img-torus img-torus__top' />
+                <Image src={require("@/public/images/introduction/Torus2.png")} alt="Torus2" className='img-torus img-torus__bottom' />
+
+                <div className="row justify-content-center">
+                    <div className="col col-12 col-lg-8">
+                        <div className="col-inner">
+                            <div className="row row-title justify-content-center">
+                                <div className="col col-11 col-md-5 col-title-1 text-center">
+                                    <h2 className="m-0">CÂU HỎI THƯỜNG GẶP</h2>
+                                </div>
                             </div>
-                            {item.content}
-                        </>
-                    </Panel>)
-                }
-            </Collapse>
-        </div>
+                            <div className="text-center">
+                                <p className="describe">
+                                    Giải đáp các thắc mắc thường gặp của khách hàng mới khi lần
+                                    đầu biết đến dịch vụ Hosting và Máy chủ hiệu năng cao của
+                                    GOFIBER
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row justify-content-center">
+                    <div className="col-12 col-md-10 col-lg-8">
+                        <div className='wrapper_question'>
+                            <Collapse
+                                accordion
+                                bordered={false}
+                                onChange={(e) => setChosen(e as string)}
+                                expandIcon={(e) => <Icon className='icon-edit' icon={ICON.EDIT} />}
+                            >
+                                {
+                                    data.map(item => <Panel extra={<Icon className={`icon-expand ${chosen === item.id ? 'active' : ''}`} icon={ICON.DOWN} />} header={item.title} key={item.id}>
+                                        <>
+                                            <div className='row position-relative mb-3'>
+                                                <div className='divider'></div>
+
+                                            </div>
+                                            {item.content}
+                                        </>
+                                    </Panel>)
+                                }
+                            </Collapse>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 
