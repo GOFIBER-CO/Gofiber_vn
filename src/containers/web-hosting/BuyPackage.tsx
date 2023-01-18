@@ -64,7 +64,7 @@ function BuyPackage({ packageSelect }: any) {
               />
             </div>
             <p
-              className="tab_content text-center mt-2 hide-for-small"
+              className="tab_content text-center mt-2 "
               style={{ color: '#777777' }}
             >
               <strong>{packageSelect?.name}</strong>
