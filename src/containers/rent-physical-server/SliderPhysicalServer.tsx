@@ -31,7 +31,7 @@ const responsive = [
   {
     id: 3,
     class: 'hide-for-medium',
-    slidesPerView: 3,
+    slidesPerView: 4,
   },
 ];
 
@@ -104,7 +104,13 @@ function SliderPhysicalServer({ data, name, onSelectPackage }: Props) {
                     </div>
                   }
                   <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} />
-
+                  {
+                    item.isBest && <div className="wrapper-best">
+                      <button className="btn0 btn-best">
+                        <span>Phổ biến nhất</span>
+                      </button>
+                    </div>
+                  }
                 </div>
               </SwiperSlide>
             ))}

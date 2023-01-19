@@ -29,6 +29,7 @@ const tabs = [
         price: '1200000',
         name: 'Computer S1',
         data: ['4GB RAM', '500GB Dung lượng ổ SSD', '100 GB Băng thông'],
+        isBest: true,
       },
       {
         id: 2,
@@ -73,6 +74,7 @@ const tabs = [
           'Phí khởi tạo dịch vụ: Miễn phí',
           'Số địa chỉ IP tĩnh: 02 IP',
         ],
+        isBest: true,
       },
       {
         id: 2,
@@ -445,7 +447,7 @@ function RentPhysicalServer() {
         </section>
 
         <section className="section-hire">
-          <div className="text-center pt-4">
+          <div className="text-center py-4">
             <h3 className="h3">Lợi ích của máy chủ vật lý là gì?</h3>
           </div>
 

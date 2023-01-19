@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -63,24 +66,35 @@ const sliders = [
     }
 ]
 
+gsap.registerPlugin(ScrollTrigger)
+
 function SliderService() {
+
+    useEffect(() => {
+        const section = gsap.utils.toArray(".scroll-slide");
+        gsap.to(section, {
+            xPercent: -100 * (section.length - 1),
+            ease: "none",
+            smoothOrigin: false,
+            scrollTrigger: {
+                pin: true,
+                trigger: '.scroll-wrapper',
+                scrub: 0.1,
+                end: "+=3000",
+            }
+        })
+    }, [])
+
     return (
-        <>
-            <Swiper
-                slidesPerView={"auto"}
-                spaceBetween={30}
-                className="mySwiper"
-                id="slider-service"
-                onSlideChange={(e) => console.log('change', e.slideNext)}
-                autoplay
-            >
+        <div id="slider-service">
+            <div style={{ paddingTop: '150px' }} className="scroll-wrapper">
                 {
                     sliders.map((slide) => (
-                        <SwiperSlide key={slide.id}>
-                            <div className='item-container'>
+                        <article key={slide.id} className="item scroll-slide">
+                            <div className="item-container">
                                 <div className="container">
-                                    <div className="image">
-                                        <Image src={slide?.image} alt={slide.title} />
+                                    <div className="img">
+                                        <Image src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
                                     </div>
                                     <div className="content-slider">
                                         <div className="content">
@@ -92,12 +106,47 @@ function SliderService() {
                                     </div>
                                 </div>
                             </div>
-                        </SwiperSlide>
-                    ))
-                }
-            </Swiper>
-        </>
-    );
+                        </article>
+                    ))}
+            </div>
+        </div>
+    )
+
+    // return (
+    //     <>
+    //         <Swiper
+    //             slidesPerView={"auto"}
+    //             spaceBetween={5}
+    //             className="mySwiper"
+    //             id="slider-service"
+    //             onSlideChange={(e) => console.log('change', e.slideNext)}
+    //             autoplay
+    //             loop
+    //         >
+    //             {
+    //                 sliders.map((slide) => (
+    //                     <SwiperSlide key={slide.id}>
+    //                         <div className='item-container'>
+    //                             <div className="container">
+    //                                 <div className="image">
+    //                                     <Image src={slide?.image} alt={slide.title} />
+    //                                 </div>
+    //                                 <div className="content-slider">
+    //                                     <div className="content">
+    //                                         <h3 className="mb-3">{slide.title}</h3>
+    //                                         <p>{slide.content1}</p>
+    //                                         {/* <p>{slide.content2}</p> */}
+    //                                         <TextIconButton className="mt-2" icon={ICON.RIGHT} name="Xem thêm" color="primary" />
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </SwiperSlide>
+    //                 ))
+    //             }
+    //         </Swiper>
+    //     </>
+    // );
 }
 
 export default SliderService;

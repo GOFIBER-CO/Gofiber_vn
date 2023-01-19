@@ -257,7 +257,7 @@ const responsive = [
   {
     id: 3,
     class: 'hide-for-medium',
-    slidesPerView: 3,
+    slidesPerView: 4,
   },
 ];
 
