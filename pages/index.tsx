@@ -98,7 +98,7 @@ function Home() {
       <div className="container">
         <section>
           <div className="section-content position-relative">
-            <div style={{ marginBottom: '-150px' }} className="row justify-content-center">
+            <div className="row my-service justify-content-center">
               <div className="col col-12 col-lg-8">
                 <TitleWithLine title='DỊCH VỤ CỦA CHÚNG TÔI'
                   extra='Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt lên hàng đầu.'

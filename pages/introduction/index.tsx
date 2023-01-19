@@ -109,7 +109,7 @@ function Introduction() {
                                     dành riêng cho người Việt
                                 </h2>
                                 <div className='row justify-content-center'>
-                                    <div className='col col-10'>
+                                    <div className='col col-12 col-md-10'>
                                         <p className='mt-4'>
                                             Đa phần các mẫu website được các công ty khác đăng lên đều là sản phẩm
                                             của các tác giả nước ngoài, thực tế nó mang lại một vấn đề rất lớn mà bạn không để ý: gu của người Việt rất khác
@@ -157,7 +157,7 @@ function Introduction() {
                                     Chi phí thấp nhất cho một Website Đẹp/ Chuẩn / Tiện
                                 </h2>
                                 <div className='row justify-content-center'>
-                                    <div className='col col-10'>
+                                    <div className='col col-12 col-md-10'>
                                         <p className='mt-4'>
                                             Khi bắt đầu, chi phí đầu tư không rộng rãi như những doanh
                                             nghiệp thâm niên hàng chục năm khác thì bạn nên lựa chọn một giải
@@ -208,7 +208,7 @@ function Introduction() {
                                     nhân sự đơn giản đến không tưởng
                                 </h2>
                                 <div className='row justify-content-center'>
-                                    <div className='col col-10'>
+                                    <div className='col col-12 col-md-10'>
                                         <p className='mt-4'>
                                             Hệ thống mẫu website có sẵn của Gofiber.vn hoạt
                                             động trên nền tảng CMS số một thế giới:
@@ -226,7 +226,7 @@ function Introduction() {
                                             <Image src={require("@/public/images/introduction/Generatingnewleads-bro1.png")} alt=" Sử dụng nền tảng 
                                             Wordpress giúp cho việc thuê mướn nhân sự đơn giản đến không tưởng" />
                                         </div>
-                                    </div>
+                                    </div>col-12 col-md-10
                                 </div>
                             </div>
                         </div>
@@ -238,7 +238,7 @@ function Introduction() {
                                     cho nền tảng Website và ứng dụng ở thời điểm ban đầu
                                 </h2>
                                 <div className='row justify-content-center'>
-                                    <div className='col col-10'>
+                                    <div className='col col-12 col-md-10'>
                                         <p className='mt-4'>
                                             Trong giai đoạn internet hiện nay, website có thể được tích hợp
                                             thêm hàng trăm các tính năng tiện lợi khác nhau cho khách hàng sử dụng.

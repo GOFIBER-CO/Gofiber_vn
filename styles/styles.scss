@@ -493,6 +493,10 @@ img {
   margin-top: 10px;
 }
 
+.my-service {
+  margin-bottom: -150px;
+}
+
 #slider-service {
   margin-top: 30px;
 
@@ -2046,6 +2050,10 @@ h6,
     h2 {
       padding: 25px 30px;
     }
+  }
+
+  .my-service {
+    margin-bottom: 0px !important;
   }
 }
 
