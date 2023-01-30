@@ -1,21 +1,21 @@
-import { FPApi } from '@/src/api/fp';
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { FPApi } from "@/src/api/fp";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 interface FPState {
-  a: string;
+  domainId: string;
 }
 
 const defaultState: FPState = {
-  a: '321321321',
+  domainId: "",
 };
 
 const fpSlice = createSlice({
-  name: 'fp',
+  name: "fp",
   initialState: defaultState,
   reducers: {},
 });
 
-export const initFP = createAsyncThunk('fp/initFP', async (data: any) => {
+export const initFP = createAsyncThunk("fp/initFP", async (data: any) => {
   try {
     const result = await FPApi.init(data);
 

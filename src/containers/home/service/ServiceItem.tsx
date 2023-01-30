@@ -13,7 +13,7 @@ function ServiceItem({ item }: Props) {
     return (
         <div className='service_item mt-2'>
             <div className='img text-center'>
-                <Image src={item.image} alt={item.title} />
+                <Image width={500} height={500} src={item.image} alt={item.title} />
             </div>
             <h4 className='mt-2'>{item.title}</h4>
             <p className='font_size_14 font_weight_500'>{item.content1}</p>

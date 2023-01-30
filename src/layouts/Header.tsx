@@ -23,12 +23,12 @@ function Header({ onShowDrawer }: Props) {
                     <div className='flex-col flex-left flex-grow hide-for-932'>
                         <ul className='nav justify-content-end'>
                             <li className='menu_item'>
-                                <Link href='/introduction'>
+                                <Link href='/gioi-thieu'>
                                     Giới thiệu
                                 </Link>
                             </li>
                             <li className='menu_item has-dropdown position-relative'>
-                                <Link href='/service'>
+                                <Link href='/dich-vu'>
                                     Dịch vụ
                                     <Icon icon={ICON.DOWN} />
                                 </Link>
@@ -36,12 +36,12 @@ function Header({ onShowDrawer }: Props) {
                             </li>
 
                             <li className='menu_item'>
-                                <Link href='/contact'>
+                                <Link href='/lien-he'>
                                     Liên hệ
                                 </Link>
                             </li>
                             <li className='menu_item'>
-                                <Link href='#'>
+                                <Link href='/tuyen-dung'>
                                     Tuyển dụng
                                 </Link>
                             </li>
@@ -53,16 +53,18 @@ function Header({ onShowDrawer }: Props) {
                     <div className='flex-right flew-col hide-for-932'>
                         <ul className='d-flex align-items-center justify-content-center p-0 mb-2'>
                             <li className='mx-2'>
-                                <EffectButton styles={{ width: '100px' }} name='Đăng ký' color='white' />
+                                <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng ký' color='white' />
                             </li>
                             <li>
-                                <EffectButton styles={{ width: '100px' }} name='Đăng nhập' color='primary' />
+                                <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng nhập' color='primary' />
                             </li>
                             <li>
-                                <a href='tel:0971026910' className='btn0 btn-support'>
-                                    <Icon icon={ICON.CALL} />
-                                    Hỗ trợ 24/7: 0971026910
-                                </a>
+                                <div className='btn0 btn-support d-flex'>
+                                    <span className='moving'>
+                                        <Icon icon={ICON.CALL} />
+                                        Hỗ trợ 24/7: 0989.07.85.07
+                                    </span>
+                                </div>
                             </li>
                         </ul>
                     </div>

@@ -3,27 +3,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import Image from 'next/image';
+import { HOME_IMAGE } from '@/src/utils';
 
 const data = [
     {
         id: '1',
-        image: require("@/public/images/introduction/customer-1.png")
+        image: HOME_IMAGE.CUSTOMER.FIRST
     },
     {
         id: '2',
-        image: require("@/public/images/introduction/customer-2.png")
+        image: HOME_IMAGE.CUSTOMER.SECOND
     },
     {
         id: '3',
-        image: require("@/public/images/introduction/customer-3.png")
+        image: HOME_IMAGE.CUSTOMER.THIRD
     },
     {
         id: '4',
-        image: require("@/public/images/introduction/customer-4.png")
+        image: HOME_IMAGE.CUSTOMER.FOURTH
     },
     {
         id: '5',
-        image: require("@/public/images/introduction/customer-5.png")
+        image: HOME_IMAGE.CUSTOMER.FIFTH
     }
 ]
 
@@ -44,7 +45,7 @@ function SliderMyCustomer() {
                         <SwiperSlide key={item.id}>
                             <div className='img d-flex align-items-center justify-content-center' style={{ height: '100%' }}>
                                 <div className='p-2'>
-                                    <Image src={item.image} alt={item.id} />
+                                    <Image width={150} height={150} src={item.image} alt={item.id} />
                                 </div>
                             </div>
                         </SwiperSlide>

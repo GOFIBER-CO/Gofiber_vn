@@ -10,7 +10,7 @@ import SliderMyCustomer from '@/src/containers/home/SliderMyCustomer';
 import SliderService from '@/src/containers/home/SliderService';
 import DrawerMenu from '@/src/layouts/DrawerMenu';
 import { useAppSelector } from '@/src/redux';
-import { ICON } from '@/src/utils';
+import { HOME_IMAGE, ICON } from '@/src/utils';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
@@ -25,7 +25,7 @@ const dataWhy = [
     title: 'Giá rẻ ổn định',
     content:
       'Cam kết luôn đem tới cho khách hàng dịch vụ cho thuê máy chủ, thuê server giá rẻ, đường truyền ổn định',
-    image: require('@/public/images/introduction/why-1.png'),
+    image: HOME_IMAGE.WHY.CHEAP,
     aos: ["fade-right", "fade-left"]
   },
   {
@@ -34,7 +34,7 @@ const dataWhy = [
     title: 'Bảo mật tối đa',
     content: `Với hơn 300.000 website đang hoạt động trên hệ thống, 
     chúng tôi luôn có các quy trình chặt chẽ để bảo vệ dữ liệu của khách hàng trên mức cần thiết.`,
-    image: require('@/public/images/introduction/why-2.png'),
+    image: HOME_IMAGE.WHY.SECURITY,
     aos: ["fade-left", "fade-right"]
   },
   {
@@ -44,7 +44,7 @@ const dataWhy = [
     content: `Đội ngũ kỹ thuật đông đảo chuyên môn cao luôn túc trực 24/7 nhằm mang lại sự yên tâm 
     tối đa cho khách hàng, tất cả vấn đề của bạn sẽ luôn được phản hồi dưới 15 phút. 
     Chúng tôi tự hào là một trong những đơn vị có chế độ hỗ trợ khách hàng tốt nhất hiện nay.`,
-    image: require('@/public/images/introduction/why-3.png'),
+    image: HOME_IMAGE.WHY.SUPPORT,
     aos: ["fade-right", "fade-left"]
   },
 ];
@@ -62,7 +62,7 @@ function Home() {
             <div className="row align-items-center">
               <div className="col col-12 col-md-6 col-lg-4">
                 <div className="col-left content">
-                  <h1 className="uppercase">
+                  <h1 style={{ lineHeight: '1.5' }} className="uppercase">
                     CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM
                   </h1>
                   <p style={{ textAlign: 'justify' }}>
@@ -156,7 +156,7 @@ function Home() {
                       />
                     </div>
                     <div data-aos={item.aos[1]} className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
-                      <Image src={item.image} alt={item.title} />
+                      <Image width={500} height={500} src={item.image} alt={item.title} />
                     </div>
                   </div>
                 ))}

@@ -44,7 +44,11 @@ type DataType = {
     name: string;
 }
 
-function Contact() {
+type Props = {
+    showTitle?: boolean
+}
+
+function Contact({ showTitle = true }: Props) {
     const [dataSelected, setDataSelected] = useState<Array<DataType>>([data[0]]);
 
     const selected = (id: string) => {
@@ -68,11 +72,13 @@ function Contact() {
     return (
         <section className="section-contact">
             <div className="section-content position-relative">
-                <div className="row justify-content-center">
-                    <div className="col col-12 col-md-6 col-lg-4">
-                        <TitleWithLine title='BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI' />
+                {
+                    showTitle && <div className="row justify-content-center">
+                        <div className="col col-12 col-md-6 col-lg-4">
+                            <TitleWithLine title='BẠN QUAN TÂM GÌ ĐẾN DỊCH VỤ CỦA CHÚNG TÔI' />
+                        </div>
                     </div>
-                </div>
+                }
                 <div className="row justify-content-center">
                     <div className='col col-12 col-md-10 col-lg-8'>
                         <form className='contact_form'>

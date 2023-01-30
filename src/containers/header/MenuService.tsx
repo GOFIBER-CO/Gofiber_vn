@@ -6,32 +6,32 @@ const menu = [
     {
         title: 'Thiết kế website',
         image: require("@/public/images/menu/web-design.svg"),
-        link: '/web-design'
+        link: '/thiet-ke-website'
     },
     {
         title: 'Hosting khủng giá rẻ',
         image: require("@/public/images/menu/web-hosting.svg"),
-        link: '/web-hosting'
+        link: '/hosting-khung-gia-re'
     },
     {
         title: 'Dịch vụ Firewall',
         image: require("@/public/images/menu/firewall.svg"),
-        link: '/firewall'
+        link: '/dich-vu-firewall'
     },
     {
         title: 'Thuê VPS',
         image: require("@/public/images/menu/vps.svg"),
-        link: '/rent-vps'
+        link: '/thue-vps'
     },
     {
         title: 'Chứng chỉ SSL',
         image: require("@/public/images/menu/ssl.svg"),
-        link: '/ssl'
+        link: '/chung-chi-ssl'
     },
     {
         title: 'Thuê máy chủ vật lý',
         image: require("@/public/images/menu/physical-server.svg"),
-        link: '/rent-physical-server'
+        link: '/thue-may-chu-vat-ly'
     }
 ]
 
@@ -48,7 +48,7 @@ function MenuService() {
             <div className='row'>
                 {
                     menu.map((item, index) =>
-                        <div className='col col-6 sub_menu' key={index}>
+                        <div className='col col-6 sub_menu p-0' key={index}>
                             <Link onClick={onClick} href={item.link}>
                                 <Image
                                     className="menu_icon"

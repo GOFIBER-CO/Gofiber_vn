@@ -114,7 +114,7 @@ function NewsAndEvents() {
                             {
                                 data?.length > 0 ? <div className='row mt-4'>
                                     {
-                                        data.map(item => <NewsItem key={item.id} item={item} />)
+                                        data.map((item, index) => <NewsItem key={index} item={item} />)
                                     }
                                 </div>
                                     :

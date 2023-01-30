@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 import Image from "next/image";
 import TextIconButton from "@/src/components/button/TextIconButton";
-import { ICON } from "@/src/utils";
+import { HOME_IMAGE, ICON } from "@/src/utils";
 
 const sliders = [
     {
@@ -22,7 +22,7 @@ const sliders = [
             Tốc độ load của website cũng được đội ngũ nhân viên giàu kinh nghiệm của GOFIBER theo dõi 
             và tối ưu kỹ càng trước khi bàn giao cho khách hàng
       `,
-        image: require("@/public/images/introduction/bg-1-1.png")
+        image: HOME_IMAGE.MY_SERVICE.WEB_DESIGN
     },
     {
         id: 2,
@@ -33,7 +33,7 @@ const sliders = [
         Chúng tôi tự hào là một trong những công ty cung cấp dịch vụ cho thuê hosting và máy 
         chủ hiệu năng cao với giá thành cực kỳ hợp lý… có thể đáp ứng gần như mọi nhu cầu từ cơ bản đến chuyên nghiệp.
       `,
-        image: require("@/public/images/introduction/bg-2-1.png")
+        image: HOME_IMAGE.MY_SERVICE.RENT_SERVICE
     },
     {
         id: 3,
@@ -42,7 +42,7 @@ const sliders = [
         các giải pháp công nghệ nhằm đáp ứng nhu cầu hosting và VPS ‘khủng’ với ngân sách vừa phải. Tóm lại, mọi yếu tố để giúp bạn khởi động dự án của mình 
         đã được đội ngũ giàu kinh nghiệm của GOFIBER chuẩn bị sẵn. 
         Hãy liên hệ ngay với nhân viên sale để được tư vấn ngay hôm nay.`,
-        image: require("@/public/images/introduction/bg-3-1.png")
+        image: HOME_IMAGE.MY_SERVICE.HOSTING_VPS
     },
     {
         id: 4,
@@ -50,7 +50,7 @@ const sliders = [
         content1: `Đội ngũ content của GOFIBER được 
         đào tạo bài bản và chuyên sâu về SEO luôn sẵn sàng hỗ trợ khách hàng trong việc chuẩn bị nội dung cho website của mình. 
         Đây là một trong những thế mạnh của dịch vụ xây dựng nội dung của chúng tôi nhiều năm qua.`,
-        image: require("@/public/images/introduction/bg-4-1.png")
+        image: HOME_IMAGE.MY_SERVICE.BUILD_CONTENT
     },
     {
         id: 5,
@@ -62,7 +62,18 @@ const sliders = [
         Dịch vụ chăm sóc website chuyên nghiệp của GOFIBER được sinh ra để hỗ trợ cho các các nhân và doanh nghiệp
          sở hữu website vận hành website của mình hiệu quả hơn và nhận được nhiều lợi ích rõ ràng hơn.
         `,
-        image: require("@/public/images/introduction/bg-5-1.png")
+        image: HOME_IMAGE.MY_SERVICE.CARE_WEBSITE
+    },
+    {
+        id: 6,
+        title: 'Hạ tầng an toàn và bảo mật',
+        content1: `Cơ sở hạ tầng của GOFIBER được đầu tư và trang bị chỉn chu với các thiết bị được 
+        chuyển giao từ những thương hiệu nổi tiếng như Dell, HP… có tính bảo mật và ổn định cao.`,
+        content2: `
+        Dịch vụ chăm sóc website chuyên nghiệp của GOFIBER được sinh ra để hỗ trợ cho các các nhân và doanh nghiệp
+         sở hữu website vận hành website của mình hiệu quả hơn và nhận được nhiều lợi ích rõ ràng hơn.
+        `,
+        image: HOME_IMAGE.MY_SERVICE.INFRASTRUCTURE
     }
 ]
 
@@ -80,7 +91,7 @@ function SliderService() {
                 pin: true,
                 trigger: '.scroll-wrapper',
                 scrub: 0.1,
-                end: "+=3000",
+                end: "+=2000",
             }
         })
     }, [])
@@ -94,7 +105,7 @@ function SliderService() {
                             <div className="item-container">
                                 <div className="container">
                                     <div className="img">
-                                        <Image src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
+                                        <Image width={500} height={500} src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
                                     </div>
                                     <div className="content-slider">
                                         <div className="content">

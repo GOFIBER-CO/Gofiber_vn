@@ -19,8 +19,8 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
 
     return (
         <>
-            <div className='banner banner-page hide-for-medium' style={{ backgroundImage: `url(${image?.large})` }}>
-                <div className='fill className="container"'>
+            <div className='banner banner-page image-large hide-for-medium' style={{ backgroundImage: `url(${image?.large})` }}>
+                <div className='fill'>
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
                             <div style={{ width: bannerLinkLargeWidth }} className='banner-link large'>
@@ -35,7 +35,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                     </div>
                 </div>
             </div>
-            <div className='banner banner-page show-for-medium hide-for-small' style={{ backgroundImage: `url(${image?.medium})` }}>
+            <div className='banner banner-page image-medium show-for-medium hide-for-small' style={{ backgroundImage: `url(${image?.medium})` }}>
                 <div className='fill'>
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
@@ -51,7 +51,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                     </div>
                 </div>
             </div>
-            <div className='banner banner-page show-for-small' style={{ backgroundImage: `url(${image?.small})` }}>
+            <div className='banner banner-page image-small show-for-small' style={{ backgroundImage: `url(${image?.small})` }}>
                 <div className='fill'>
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>

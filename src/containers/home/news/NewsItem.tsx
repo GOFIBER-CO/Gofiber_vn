@@ -1,3 +1,4 @@
+import { HOME_IMAGE } from '@/src/utils';
 import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,7 +15,7 @@ function NewsItem({ item }: Props) {
                 <Link href='/'>
                     <div className='box-image'>
                         <div className='image-cover'>
-                            <Image className='img' src={item?.image || require("@/public/images/introduction/news-1.png")} alt={item?.id} />
+                            <Image className='img' src={item?.image || HOME_IMAGE.NEWS} width={500} height={500} alt={item?._id} />
                         </div>
                     </div>
                     <div className='wrapper_content'>

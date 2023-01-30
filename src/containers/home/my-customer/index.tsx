@@ -1,26 +1,27 @@
+import { HOME_IMAGE } from '@/src/utils'
 import Image from 'next/image'
 import React from 'react'
 
 const data = [
     {
         id: '1',
-        image: require("@/public/images/introduction/customer-1.png")
+        image: HOME_IMAGE.CUSTOMER.FIRST
     },
     {
         id: '2',
-        image: require("@/public/images/introduction/customer-2.png")
+        image: HOME_IMAGE.CUSTOMER.SECOND
     },
     {
         id: '3',
-        image: require("@/public/images/introduction/customer-3.png")
+        image: HOME_IMAGE.CUSTOMER.THIRD
     },
     {
         id: '4',
-        image: require("@/public/images/introduction/customer-4.png")
+        image: HOME_IMAGE.CUSTOMER.FOURTH
     },
     {
         id: '5',
-        image: require("@/public/images/introduction/customer-5.png")
+        image: HOME_IMAGE.CUSTOMER.FIFTH
     }
 ]
 
@@ -32,7 +33,7 @@ function MyCustomer() {
                     data.map((item) => (
                         <div key={item.id} className="col-4 col-md-2 mt-4">
                             <div className='d-block text-center'>
-                                <Image src={item.image} alt={item.id} />
+                                <Image width={150} height={100} src={item.image} alt={item.id} />
                             </div>
                         </div>
                     ))
