@@ -15,7 +15,7 @@ function RecruitItem({ wrapperClassName, item }: Props) {
             <div className='recruit-item mt-4'>
                 <Link href={`/tuyen-dung/chi-tiet/${item._id}`}>
                     <div className='img'>
-                        <Image src={item.image || RECRUIT_IMAGE.ILLUSTRATION} alt={item.title} width={3000}
+                        <img src={item.thumb || RECRUIT_IMAGE.ILLUSTRATION} alt={item.title} width={3000}
                             height={100} />
                     </div>
                     <div className='recruit-info'>

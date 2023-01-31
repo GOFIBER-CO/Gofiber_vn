@@ -33,7 +33,7 @@ function MyCustomer() {
                     data.map((item) => (
                         <div key={item.id} className="col-4 col-md-2 mt-4">
                             <div className='d-block text-center'>
-                                <Image width={150} height={100} src={item.image} alt={item.id} />
+                                <img width={150} height={100} src={item.image} alt={item.id} />
                             </div>
                         </div>
                     ))

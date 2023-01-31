@@ -45,7 +45,7 @@ function SliderPhysicalServerPlace({ data }: Props) {
                                 <SwiperSlide key={item.id}>
                                     <div className='slider-physical-server-place-item mt-4' style={{ height: '100%' }}>
                                         <div className='img text-center'>
-                                            <Image src={item.image} alt={item.id} />
+                                            <img src={item.image} alt={item.id} />
                                         </div>
                                         <div className='mt-4'>
                                             {

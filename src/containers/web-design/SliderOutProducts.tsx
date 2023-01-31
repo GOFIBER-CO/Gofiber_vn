@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Image from 'next/image';
 
 import { Pagination } from 'swiper';
 import { WEB_DESIGN_IMAGE } from '@/src/utils';
@@ -56,7 +55,7 @@ function SliderOutProducts() {
                     <SwiperSlide key={index}>
                         <div className="slide-our-product-item">
                             <div className='img'>
-                                <Image width={1000} height={1500} alt={item.title} src={item.image} />
+                                <img width={1000} height={1500} alt={item.title} src={item.image} />
                             </div>
                             <div className='mt-4 text-center'>
                                 <h3 className='h3'>

@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import Image from 'next/image';
 
 import { Pagination } from "swiper";
+import Link from 'next/link';
 
 const data = [
     {
@@ -73,10 +74,10 @@ function SliderIntroduction() {
                                     <SwiperSlide key={index}>
                                         <div className='introduction-item'>
                                             <div className='wrapper_image'>
-                                                <a href='/'>
+                                                <Link href='/'>
                                                     <Image src={item.image} alt={item.title} />
 
-                                                </a>
+                                                </Link>
                                             </div>
                                             <div className='box-text text-center'>
                                                 <h4 className='m-0 h4 color_primary'>{item.title}</h4>

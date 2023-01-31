@@ -84,7 +84,7 @@ function SliderHot() {
                                     <SwiperSlide key={index}>
                                         <div className='hot-item'>
                                             <div className='wrapper_image'>
-                                                <Image width={200} height={200} src={item.image} alt={item.title} />
+                                                <img src={item.image} alt={item.title} />
                                             </div>
                                             <h4>{item.title}</h4>
                                             <p>{item.content}</p>

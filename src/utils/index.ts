@@ -235,6 +235,9 @@ export const PHYSICAL_IMAGE = {
   SERVER: getImageWithBunnyUrl(
     "Desktop/Thue-may-chu-vat-ly/anh-thue-may-chu.png"
   ),
+  FPT: getImageWithBunnyUrl("Desktop/Thue-may-chu-vat-ly/Fpt.png"),
+  VIETTEL: getImageWithBunnyUrl("Desktop/Thue-may-chu-vat-ly/Viettel.png"),
+  VNPT: getImageWithBunnyUrl("Desktop/Thue-may-chu-vat-ly/Vnpt.png"),
 };
 
 export const CONTACT_IMAGE = {

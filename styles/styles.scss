@@ -596,12 +596,12 @@ img {
   border-radius: 32px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
 .heading-font,
 .banner h1,
 .banner h2 {
@@ -1086,8 +1086,9 @@ h6,
 #service,
 #web-design,
 #recruit,
-#recruit-detail {
-  padding: 72px 0px 40px;
+#recruit-detail,
+#news-detail {
+  padding: 70px 0px 40px;
 }
 
 .banner {
@@ -1176,6 +1177,10 @@ h6,
       font-size: 16px;
     }
   }
+}
+
+.h1 {
+  font-size: 1.8em !important;
 }
 
 .h2 {
@@ -2088,6 +2093,109 @@ h6,
   min-width: 200px !important;
 }
 
+#news-detail {
+  .breadcrumb {
+    min-height: 180px;
+    background-image: url("https://gofiber.b-cdn.net/tintuc-detail.png");
+    background-size: 100% 100%;
+
+    .breadcrumb_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+
+      .breadcrumb_link {
+        display: flex;
+        align-items: center;
+
+        a {
+          font-weight: 500;
+          line-height: 24px;
+          color: #fafafa !important;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .content {
+    .time {
+      color: #777777;
+    }
+  }
+
+  .best-news,
+  .relative-news {
+    .title {
+      color: var(--color--primary);
+      position: relative;
+      padding: 10px;
+      border-left: 7px solid var(--color--primary);
+    }
+
+    .best-news-item {
+      img {
+        max-height: 200px;
+      }
+
+      .news-title {
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      .time {
+        font-size: 12px;
+        color: #777777;
+      }
+
+      &.primary {
+        img {
+          width: 100%;
+        }
+        .info {
+          margin-top: 8px;
+        }
+      }
+
+      &.secondary {
+        .wrapper-best-news {
+          display: flex;
+        }
+
+        img {
+          min-width: 100px;
+          height: 80px;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+
+  .relative-news {
+    margin-top: 50px;
+
+    .relative-news-item {
+      img {
+        max-height: 150px;
+        width: 100%;
+      }
+
+      .description,
+      .time {
+        font-size: 14px;
+      }
+
+      .title-news {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 @media (max-width: 1052px) {
   .nav {
     .menu_item {
@@ -2227,6 +2335,10 @@ h6,
 
   .banner-page {
     padding-top: 450px;
+  }
+
+  .h1 {
+    font-size: 1.5em !important;
   }
 
   .h2 {

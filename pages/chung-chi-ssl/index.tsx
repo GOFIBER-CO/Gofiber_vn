@@ -6,7 +6,6 @@ import BuyPackage from '@/src/containers/ssl/BuyPackage'
 import SliderSSL from '@/src/containers/ssl/SliderSSL'
 import { ICON, SSL_IMAGE } from '@/src/utils'
 import { Icon } from '@iconify/react'
-import Image from 'next/image'
 import React from 'react'
 
 const banner = {
@@ -212,7 +211,7 @@ function SSL() {
                         <div className='col col-12 col-md-8 text-center'>
                             <p style={{ color: '#777777' }} className='mt-4 text-center'>
                                 Xác thực tên miền
-                                <Image className='image-ssl mt-1 mt-md-0'
+                                <img className='image-ssl mt-1 mt-md-0'
                                     src={SSL_IMAGE.POPULAR.FIRST}
                                     width={800}
                                     height={500}
@@ -220,14 +219,14 @@ function SSL() {
                             </p>
                             <p style={{ color: '#777777' }} className='mt-4 text-center'>
                                 Xác thực tổ chức
-                                <Image className='image-ssl mt-1 mt-md-0'
+                                <img className='image-ssl mt-1 mt-md-0'
                                     src={SSL_IMAGE.POPULAR.SECOND}
                                     width={800}
                                     height={500} alt="Xác thực tổ chức" />
                             </p>
                             <p style={{ color: '#777777' }} className='mt-4 text-center'>
                                 Xác thực doanh nghiệp mở rộng
-                                <Image className='image-ssl mt-1 mt-md-0'
+                                <img className='image-ssl mt-1 mt-md-0'
                                     src={SSL_IMAGE.POPULAR.THIRD}
                                     width={800}
                                     height={500} alt="Xác thực doanh nghiệp mở rộng" />
@@ -266,13 +265,13 @@ function SSL() {
                                 </div>
                                 <div className='col col-12 col-md-6'>
                                     <div className='img d-flex justify-content-center'>
-                                        <Image src={SSL_IMAGE.WHY.FIRST} width={400} height={200} alt="anh-ssl" />
+                                        <img src={SSL_IMAGE.WHY.FIRST} width={400} height={200} alt="anh-ssl" />
                                     </div>
                                     <div className='img d-flex justify-content-center'>
-                                        <Image src={SSL_IMAGE.WHY.SECOND} width={400} height={200} alt="anh-ssl2" />
+                                        <img src={SSL_IMAGE.WHY.SECOND} width={400} height={200} alt="anh-ssl2" />
                                     </div>
                                     <div className='img d-flex justify-content-center'>
-                                        <Image src={SSL_IMAGE.WHY.THIRD} width={400} height={200} alt="anh-ssl3" />
+                                        <img src={SSL_IMAGE.WHY.THIRD} width={400} height={200} alt="anh-ssl3" />
                                     </div>
                                 </div>
                             </div>

@@ -3,7 +3,6 @@ import TextIconInfo from '@/src/components/footer/TextIconInfo'
 import Contact from '@/src/containers/home/contact'
 import { CONTACT_IMAGE, ICON } from '@/src/utils'
 import { Icon } from '@iconify/react'
-import Image from 'next/image'
 import React, { useState } from 'react'
 
 const banner = {
@@ -103,14 +102,14 @@ function ContactPage() {
                             <h3 className='h3'>LIÊN HỆ VỚI GOFIBER</h3>
                         </div>
                         <div className='col col-10 col-md-6 d-flex justify-content-center justify-content-md-end'>
-                            <Image src={CONTACT_IMAGE.ILLUSTRATION} alt="LIÊN HỆ VỚI GOFIBER" width={400} height={500} />
+                            <img src={CONTACT_IMAGE.ILLUSTRATION} alt="LIÊN HỆ VỚI GOFIBER" width={400} height={500} />
                         </div>
                         <div className='col col-10 col-md-6'>
                             <div className='mt-3'>
                                 {
                                     infoData.map(item => (
                                         <div className='extra_info d-flex align-items-center' key={item.id}>
-                                            <Image src={item.icon} alt={item.text} width={50} height={50} />
+                                            <img src={item.icon} alt={item.text} width={50} height={50} />
                                             <div>{item.text}</div>
                                         </div>
                                     ))

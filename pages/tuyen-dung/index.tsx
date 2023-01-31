@@ -127,7 +127,7 @@ function Recruit() {
                         <div className='row'>
                             {
                                 recruits.map((item, index) => (
-                                    <RecruitItem item={item} wrapperClassName={`col ${index === 0 ? 'col-12 primary' : 'col-12 col-sm-6 col-lg-4 mt-4 secondary'}`} key={index} />
+                                    <RecruitItem item={item} wrapperClassName={`col ${index === -1 ? 'col-12 primary' : 'col-12 col-md-6 col-lg-12 mt-4 secondary'}`} key={index} />
                                 ))
                             }
                         </div>

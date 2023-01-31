@@ -7,7 +7,7 @@ import SliderSpecification from '@/src/containers/firewall/SliderSpecification';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import { FIREWALL_IMAGE, formatNumber } from '@/src/utils';
-import Image from 'next/image';
+import img from 'next/image';
 import React from 'react';
 
 const banner = {
@@ -557,7 +557,7 @@ function Firewall() {
               </div>
               <div className="col col-12 col-md-4 hide-for-medium">
                 <div className="img">
-                  <Image
+                  <img
                     src={FIREWALL_IMAGE.SECURITY}
                     width={500}
                     height={1500}

@@ -1,10 +1,8 @@
 import BannerPage from '@/src/components/banner/BannerPage';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
-import BuyPackage from '@/src/containers/web-hosting/BuyPackage';
 import SliderHostingPrice from '@/src/containers/web-hosting/SliderHostingPrice';
 import { WEB_HOSTING_IMAGE } from '@/src/utils';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -325,7 +323,7 @@ function WebHosting() {
           <div className="row justify-content-center align-items-center flex-row-reverse">
             <div className="col col-12 col-md-6">
               <div className="img text-center text-md-left">
-                <Image
+                <img
                   src={WEB_HOSTING_IMAGE.CLOUD2}
                   width={1000}
                   height={500}
@@ -360,7 +358,7 @@ function WebHosting() {
           <div className="row justify-content-center align-items-center mt-4">
             <div className="col col-12 col-md-6">
               <div className="img text-center text-md-left">
-                <Image
+                <img
                   src={WEB_HOSTING_IMAGE.CLOUD1}
                   width={1000}
                   height={500}

@@ -45,7 +45,7 @@ function SliderMyCustomer() {
                         <SwiperSlide key={item.id}>
                             <div className='img d-flex align-items-center justify-content-center' style={{ height: '100%' }}>
                                 <div className='p-2'>
-                                    <Image width={150} height={150} src={item.image} alt={item.id} />
+                                    <img width={150} height={150} src={item.image} alt={item.id} />
                                 </div>
                             </div>
                         </SwiperSlide>

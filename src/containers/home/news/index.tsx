@@ -69,8 +69,10 @@ function NewsAndEvents() {
         const getPosts = async () => {
             try {
                 const params = {
-                    domain: 'dev.gofiber.vn',
-                    status: 1
+                    domain: process.env.NEXT_PUBLIC_DOMAIN,
+                    status: 1,
+                    pageSize: 6,
+                    pageIndex: 1,
                 }
 
                 const result = await dispatch(getPagingByDomain(params)).unwrap();

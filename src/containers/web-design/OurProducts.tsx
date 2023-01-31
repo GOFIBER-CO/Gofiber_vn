@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import TitleWithLine from '@/src/components/TitleWithLine';
 import SliderOutProducts from './SliderOutProducts';
 import { WEB_DESIGN_IMAGE } from '@/src/utils';
@@ -47,7 +46,7 @@ const OurProducts = () => {
                             <div key={item.id} className='col col-12 col-sm-6 col-lg-4'>
                                 <div className='our-product-item'>
                                     <div className='img'>
-                                        <Image width={1000} height={1500} src={item.image} alt={item.title} />
+                                        <img width={1000} height={1500} src={item.image} alt={item.title} />
                                     </div>
                                     <div className='mt-4 text-center'>
                                         <h4 className='h4'>

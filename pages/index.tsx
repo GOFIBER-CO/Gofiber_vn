@@ -62,7 +62,7 @@ function Home() {
             <div className="row align-items-center">
               <div className="col col-12 col-md-6 col-lg-4">
                 <div className="col-left content">
-                  <h1 style={{ lineHeight: '1.5' }} className="uppercase">
+                  <h1 style={{ lineHeight: '1.5' }} className="uppercase h1">
                     CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM
                   </h1>
                   <p style={{ textAlign: 'justify' }}>
@@ -156,7 +156,7 @@ function Home() {
                       />
                     </div>
                     <div data-aos={item.aos[1]} className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
-                      <Image width={500} height={500} src={item.image} alt={item.title} />
+                      <img src={item.image} alt={item.title} />
                     </div>
                   </div>
                 ))}

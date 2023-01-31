@@ -2,7 +2,6 @@ import BannerPage from '@/src/components/banner/BannerPage'
 import TextIconButton from '@/src/components/button/TextIconButton'
 import Contact from '@/src/containers/home/contact'
 import { ICON, SERVICE_IMAGE } from '@/src/utils'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -126,7 +125,7 @@ function Service() {
                                 </div>
                                 <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[1]}>
                                     <div className='img'>
-                                        <Image width={1000} height={500} src={item.image} alt={item.title} />
+                                        <img width={1000} height={500} src={item.image} alt={item.title} />
                                     </div>
                                 </div>
                             </div>

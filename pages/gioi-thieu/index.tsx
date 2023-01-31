@@ -1,10 +1,7 @@
 import BannerPage from '@/src/components/banner/BannerPage'
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice'
 import ChoiceList from '@/src/containers/introduction/choice'
-import SliderIntroduction from '@/src/containers/introduction/SliderIntroduction'
 import { INTRODUCE_IMAGE } from '@/src/utils'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 
 function Introduction() {
@@ -68,7 +65,7 @@ function Introduction() {
                         <div className='row align-items-center mt-4 flex-row-reverse'>
                             <div className='col col-12 col-lg-6 text-center'>
                                 <div className='img'>
-                                    <Image width={1000} height={500} src={INTRODUCE_IMAGE.CHEAP_WEBSITE} alt="Các dịch vụ khác" />
+                                    <img width={1000} height={500} src={INTRODUCE_IMAGE.CHEAP_WEBSITE} alt="Các dịch vụ khác" />
                                 </div>
                             </div>
                             <div className='col col-12 col-lg-6'>
@@ -144,7 +141,7 @@ function Introduction() {
                                         </ul>
 
                                         <div className='img text-center'>
-                                            <Image src={INTRODUCE_IMAGE.WHY.FIRST} width={1000} height={500} alt="Nền tảng website giá rẻ đầu tiên được thiết kế
+                                            <img src={INTRODUCE_IMAGE.WHY.FIRST} width={1000} height={500} alt="Nền tảng website giá rẻ đầu tiên được thiết kế
                                     dành riêng cho người Việt" />
                                         </div>
                                     </div>
@@ -195,7 +192,7 @@ function Introduction() {
                                         </ul>
 
                                         <div className='img text-center'>
-                                            <Image src={INTRODUCE_IMAGE.WHY.SECOND} width={1000} height={500} alt="Chi phí thấp nhất cho một Website Đẹp/ Chuẩn / Tiện" />
+                                            <img src={INTRODUCE_IMAGE.WHY.SECOND} width={1000} height={500} alt="Chi phí thấp nhất cho một Website Đẹp/ Chuẩn / Tiện" />
                                         </div>
                                     </div>
                                 </div>
@@ -224,7 +221,7 @@ function Introduction() {
                                         </p>
 
                                         <div className='img text-center'>
-                                            <Image src={INTRODUCE_IMAGE.WHY.THIRD} width={1000} height={500} alt=" Sử dụng nền tảng 
+                                            <img src={INTRODUCE_IMAGE.WHY.THIRD} width={1000} height={500} alt=" Sử dụng nền tảng 
                                             Wordpress giúp cho việc thuê mướn nhân sự đơn giản đến không tưởng" />
                                         </div>
                                     </div>
@@ -250,7 +247,7 @@ function Introduction() {
                                         </p>
 
                                         <div className='img text-center'>
-                                            <Image src={INTRODUCE_IMAGE.WHY.FOURTH} width={1000} height={500} alt="Không cần / Không nhất thiết phải chi hàng trăm triệu
+                                            <img src={INTRODUCE_IMAGE.WHY.FOURTH} width={1000} height={500} alt="Không cần / Không nhất thiết phải chi hàng trăm triệu
                                     cho nền tảng Website và ứng dụng ở thời điểm ban đầu" />
                                         </div>
                                     </div>

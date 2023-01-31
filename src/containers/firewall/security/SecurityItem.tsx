@@ -10,7 +10,7 @@ function SecurityItem({ item }: Props) {
         <div className='security-item row'>
             <div className='col col-12 col-md-5 hide-for-medium'>
                 <div className='img'>
-                    <Image width={400} height={200} src={item.image} alt={item.title} />
+                    <img width={400} height={200} src={item.image} alt={item.title} />
                 </div>
             </div>
             <div className='col col-12 col-md-7 mt-3 mt-lg-0'>

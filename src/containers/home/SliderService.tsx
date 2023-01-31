@@ -105,11 +105,11 @@ function SliderService() {
                             <div className="item-container">
                                 <div className="container">
                                     <div className="img">
-                                        <Image width={500} height={500} src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
+                                        <img width={500} height={500} src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
                                     </div>
                                     <div className="content-slider">
                                         <div className="content">
-                                            <h3 className="mb-3">{slide.title}</h3>
+                                            <h3 className="mb-3 h3">{slide.title}</h3>
                                             <p>{slide.content1}</p>
                                             {/* <p>{slide.content2}</p> */}
                                             <TextIconButton className="mt-2" icon={ICON.RIGHT} name="Xem thêm" color="primary" />

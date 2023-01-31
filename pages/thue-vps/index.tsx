@@ -4,7 +4,6 @@ import Question from '@/src/containers/home/question';
 import BuyPackage from '@/src/containers/rent-vps/BuyPackage';
 import SliderHire from '@/src/containers/rent-vps/SliderHire';
 import { VPS_IMAGE } from '@/src/utils';
-import Image from 'next/image';
 import React, { useState } from 'react';
 
 const banner = {
@@ -314,7 +313,7 @@ function RentVps() {
               <div id="slider-hire">
                 <div className="text-center pt-4">
                   <div className="img">
-                    <Image
+                    <img
                       src={require('@/public/images/vps/updating2.gif')}
                       alt="Đang cập nhật"
                     />
@@ -335,7 +334,7 @@ function RentVps() {
           <div className="row justify-content-center align-items-center flex-row-reverse">
             <div className="col col-12 col-md-6">
               <div className="img text-center text-md-left">
-                <Image
+                <img
                   src={VPS_IMAGE.VPS2}
                   width={1000}
                   height={500}
@@ -369,7 +368,7 @@ function RentVps() {
           <div className="row justify-content-center align-items-center mt-4">
             <div className="col col-12 col-md-6">
               <div className="img text-center text-md-left">
-                <Image
+                <img
                   src={VPS_IMAGE.VPS1}
                   width={1000}
                   height={500}

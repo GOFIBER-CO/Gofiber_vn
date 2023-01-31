@@ -7,7 +7,6 @@ import SliderPhysicalServer from '@/src/containers/rent-physical-server/SliderPh
 import SliderPhysicalServerPlace from '@/src/containers/rent-physical-server/SliderPhysicalServerPlace';
 import { ICON, PHYSICAL_IMAGE } from '@/src/utils';
 import { Icon } from '@iconify/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -151,7 +150,7 @@ const tabs = [
 const physicalServerPlace = [
   {
     id: 'viettel',
-    image: require('@/public/images/physical-server/Viettel.png'),
+    image: PHYSICAL_IMAGE.VIETTEL,
     data: [
       {
         id: 1,
@@ -172,7 +171,7 @@ const physicalServerPlace = [
   },
   {
     id: 'Vnpt',
-    image: require('@/public/images/physical-server/Vnpt.png'),
+    image: PHYSICAL_IMAGE.VNPT,
     data: [
       {
         id: 1,
@@ -197,7 +196,7 @@ const physicalServerPlace = [
   },
   {
     id: 'Fpt',
-    image: require('@/public/images/physical-server/Fpt.png'),
+    image: PHYSICAL_IMAGE.FPT,
     data: [
       {
         id: 1,
@@ -452,7 +451,7 @@ function RentPhysicalServer() {
           <div className="row justify-content-center align-items-center flex-row-reverse">
             <div className="col col-12 col-md-6">
               <div className="img text-center text-md-left">
-                <Image
+                <img
                   src={PHYSICAL_IMAGE.BENEFIT.FIRST}
                   width={500}
                   height={500}
@@ -486,7 +485,7 @@ function RentPhysicalServer() {
           <div className="row justify-content-center align-items-center mt-4">
             <div className="col col-12 col-md-6">
               <div className="img text-center text-md-left">
-                <Image
+                <img
                   src={PHYSICAL_IMAGE.BENEFIT.SECOND}
                   width={500}
                   height={500}
@@ -519,7 +518,7 @@ function RentPhysicalServer() {
             {physicalServerPlace.map((item) => (
               <div className="col col-12 col-md-4" key={item.id}>
                 <div className="image">
-                  <Image src={item.image} alt={item.id} />
+                  <img width={150} height={100} src={item.image} alt={item.id} />
                 </div>
                 <div className="mt-4">
                   {item.data.map((e, index) => (
@@ -541,7 +540,7 @@ function RentPhysicalServer() {
       <section className="section-hire">
         <div className="row justify-content-center">
           <div className="img text-center">
-            <Image
+            <img
               src={PHYSICAL_IMAGE.SERVER}
               alt="anh-thue-may-chu"
               width={1000}
