@@ -34,13 +34,13 @@ function NewsDetail() {
                 domain: process.env.NEXT_PUBLIC_DOMAIN,
                 status: 1,
                 pageSize: pageSize,
-                pageIndex,
+                pageIndex: 1,
                 slug,
             }
 
             const result = await dispatch(getPagingByDomain(params)).unwrap();
             const { data, count } = result?.data;
-            setRelativeNews((prevState) => [...prevState, ...(data || [])]);
+            setRelativeNews(data || []);
             setCount(count || 0);
             setPageIndex(pageIndex + 1)
         } catch (error) {
@@ -100,9 +100,31 @@ function NewsDetail() {
     }
 
 
-    const fetchMoreData = () => {
-        getNewsByDomain(slug);
+    const fetchMoreData = async () => {
+        try {
+
+            const params = {
+                domain: process.env.NEXT_PUBLIC_DOMAIN,
+                status: 1,
+                pageSize: pageSize,
+                pageIndex,
+                slug,
+            }
+
+            const result = await dispatch(getPagingByDomain(params)).unwrap();
+            const { data, count } = result?.data;
+            setRelativeNews((prevState) => [...prevState, ...(data || [])]);
+            setCount(count || 0);
+            setPageIndex(pageIndex + 1);
+        } catch (error) {
+            console.log('error', error);
+        }
+
     };
+
+    const onRedirect = () => {
+        setPageIndex(1);
+    }
 
     return (
         <div id='news-detail'>
@@ -169,7 +191,7 @@ function NewsDetail() {
                                 {
                                     relativeNews?.map((item, index) =>
                                         <React.Fragment key={index}>
-                                            <RelativeNews item={item} key={item?._id} />
+                                            <RelativeNews onRedirect={onRedirect} item={item} key={item?._id} />
                                             <Divider className='mx-3' />
                                         </React.Fragment>
                                     )
@@ -185,7 +207,7 @@ function NewsDetail() {
                             {
                                 bestNews?.map((item, index) =>
                                     <React.Fragment key={index}>
-                                        <BestNews item={item} className={`${index === 0 ? 'primary' : 'secondary'}`} key={item?._id} />
+                                        <BestNews onRedirect={onRedirect} item={item} className={`${index === 0 ? 'primary' : 'secondary'}`} key={item?._id} />
                                         <Divider className='mx-3' />
                                     </React.Fragment>
                                 )

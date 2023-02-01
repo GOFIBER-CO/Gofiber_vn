@@ -4,21 +4,22 @@ import Link from 'next/link'
 import React from 'react'
 
 type Props = {
-    item: any
+    item: any;
+    onRedirect?: () => void;
 }
 
-function RelativeNews({ item }: Props) {
+function RelativeNews({ item, onRedirect = () => null }: Props) {
     return (
         <div className='row relative-news-item mt-4'>
             <div className='col-4'>
                 <div className='img'>
-                    <Link href={`/${item?.slug}`}>
+                    <Link onClick={onRedirect} href={`/${item?.slug}`}>
                         <img src={item?.thumb || HOME_IMAGE.NEWS} alt={item?.title} />
                     </Link>
                 </div>
             </div>
             <div className='col-8'>
-                <Link href={`/${item?.slug}`} className='title-news'>
+                <Link onClick={onRedirect} href={`/${item?.slug}`} className='title-news'>
                     {item?.title}
                 </Link>
                 <div className='description mt-2'>
