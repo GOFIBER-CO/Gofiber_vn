@@ -94,7 +94,7 @@ function NewsDetail() {
         }
     }, [slug])
 
-    const getTime = () => {
+    const getTime = (time: any) => {
         const string = moment().format("dddd, DD/MM/YYYY, hh:mm");
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -148,7 +148,7 @@ function NewsDetail() {
                     <div className='col-12 col-md-8 content'>
                         <h1>{data?.title}</h1>
                         <div className='mt-2 time'>
-                            {getTime()}
+                            {getTime(data?.createdAt)}
                         </div>
                         <div className='mt-2'>
                             <div dangerouslySetInnerHTML={{ __html: data?.description }}></div>
