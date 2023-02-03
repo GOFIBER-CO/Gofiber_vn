@@ -1,21 +1,77 @@
+import { Popover } from 'antd';
 import Image from 'next/image';
 import React from 'react';
+import EffectButton from '../components/button/EffectButton';
+import MenuService from '../containers/header/MenuService';
+import { Icon } from '@iconify/react'
+import { ICON } from '../utils';
+import DrawerButton from '../components/button/IconButton';
+import Link from 'next/link';
 
-function Header() {
+type Props = {
+    onShowDrawer: () => void;
+}
+
+function Header({ onShowDrawer }: Props) {
     return (
         <header id='header' className=''>
             <div className='header_wrapper'>
                 <div className='container d-flex align-items-center justify-content-between'>
-                    <a href='/'>
-                        <Image id='logo' className='logo-left logo' src={require("../assets/images/logo.png")} alt="" />
-                    </a>
-                    <div className='flex-col flex-left flex-grow'>
-                        dsa
+                    <Link href='/'>
+                        <Image id='logo' className='logo-left logo' src={require("@/public/images/logo.png")} alt="" />
+                    </Link>
+                    <div className='flex-col flex-left flex-grow hide-for-932'>
+                        <ul className='nav justify-content-end'>
+                            <li className='menu_item'>
+                                <Link href='/gioi-thieu'>
+                                    Giới thiệu
+                                </Link>
+                            </li>
+                            <li className='menu_item has-dropdown position-relative'>
+                                <Link href='/dich-vu'>
+                                    Dịch vụ
+                                    <Icon icon={ICON.DOWN} />
+                                </Link>
+                                <MenuService />
+                            </li>
+
+                            <li className='menu_item'>
+                                <Link href='/lien-he'>
+                                    Liên hệ
+                                </Link>
+                            </li>
+                            <li className='menu_item'>
+                                <Link href='/tuyen-dung'>
+                                    Tuyển dụng
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='show-for-932'>
+                        <DrawerButton onClick={onShowDrawer} icon={ICON.MENU} classNameButton="menu-button" />
+                    </div>
+                    <div className='flex-right flew-col hide-for-932'>
+                        <ul className='d-flex align-items-center justify-content-center p-0 mb-2'>
+                            <li className='mx-2'>
+                                <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng ký' color='white' />
+                            </li>
+                            <li>
+                                <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng nhập' color='primary' />
+                            </li>
+                            <li>
+                                <div className='btn0 btn-support d-flex'>
+                                    <span className='moving'>
+                                        <Icon icon={ICON.CALL} />
+                                        Hỗ trợ 24/7: 0989.07.85.07
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
             </div>
-        </header>
+        </header >
     )
 }
 

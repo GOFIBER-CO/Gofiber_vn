@@ -1,0 +1,410 @@
+#webDesign {
+    background: linear-gradient(90deg, #4074ec 0%, #b3defd 100%);
+    border-radius: 0px 0px 100px 100px;
+    height: 517px;
+    margin-top: 73px;
+    .webDesign__container {
+        height: 100%;
+        .webDesign__container_left {
+            padding-left: 5%;
+            padding-top: 10%;
+            .webDesign__container_left_title {
+                font-family: "SVN-Poppins";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 64px;
+                line-height: 120px;
+                text-align: justify;
+                color: #fafafa;
+                width: 533px;
+                height: 120px;
+            }
+            .webDesign__container_left_link {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 12px 24px;
+                gap: 8px;
+                position: absolute;
+                width: auto;
+                height: 50px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid #f4f4f4;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 16px;
+                .webDesign__container_left_link_text {
+                    font-family: "SVN-Poppins";
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: justify;
+                    color: #fafafa;
+                    cursor: pointer;
+                }
+            }
+        }
+        .webDesign__container_right {
+            .webDesign__container_right_logo {
+                width: 466px;
+                height: 309px;
+                // background: url(.png);
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            }
+        }
+    }
+}
+
+#how__to {
+    height: auto;
+    width: 100%;
+    .how__to_title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 22%;
+        text-align: center;
+        .how__to_title_bg {
+            position: relative;
+            min-height: 10px;
+            width: 100%;
+            padding: 20px 36px 10px 36px;
+            .how__to_image_absolute {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20%;
+            }
+            .how__to_image_absolute_right {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 20%;
+            }
+            .how__to_title_text {
+                font-family: "SVN-Poppins";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 34px;
+                line-height: 48px;
+                color: rgb(0, 172, 215);
+
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        .how__to_title {
+            padding: 0px 21%;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .how__to_title {
+            padding: 0px 15%;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .how__to_title {
+            padding: 0px 10%;
+        }
+    }
+    .how__to_text {
+        font-family: "SVN-Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+        color: #5c5c5c;
+        margin-bottom: 25px;
+    }
+    .how__to_logo {
+        margin-bottom: 25px;
+    }
+    .how__to_title1 {
+        font-family: "SVN-Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 48px;
+        text-align: justify;
+        color: #000000;
+        // margin-bottom: 25px;
+    }
+    .how__to_image {
+        position: relative;
+        .how__to_image_absolute {
+            position: absolute;
+            left: 0;
+            top: 174px;
+        }
+    }
+}
+
+#OurProducts {
+    padding: 5% 5% 0% 5%;
+    .OurProducts__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 29%;
+        text-align: center;
+        .OurProducts__title_bg {
+            position: relative;
+            min-height: 10px;
+            width: 100%;
+            padding: 20px 36px 15px 36px;
+            .OurProducts__image_absolute {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20%;
+            }
+            .OurProducts__image_absolute_right {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 20%;
+            }
+            .OurProducts__title_text {
+                font-family: "SVN-Poppins";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 34px;
+                line-height: 48px;
+                color: rgb(0, 172, 215);
+
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        .OurProducts__title {
+            padding: 0px 21%;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .OurProducts__title {
+            padding: 0px 15%;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .OurProducts__title {
+            padding: 0px 10%;
+        }
+    }
+    .OurProducts_col {
+        cursor: pointer;
+        margin-bottom: 40px;
+        .OurProducts_image {
+            width: 384px;
+            height: 398px;
+            /* Shadow 1 */
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+            border-radius: 8px 8px 0px 0px;
+        }
+        .OurProducts_image_text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "SVN-Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #333333;
+            margin-top: 15px;
+        }
+    }
+    .OurProducts_col:hover {
+        .OurProducts_image {
+            filter: drop-shadow(0px 5px 6px rgba(0, 172, 215, 0.3));
+            border-radius: 8px 8px 0px 0px;
+        }
+        .OurProducts_image:hover {
+            transform: scale(1.5);
+            transition: opacity 0.3s, transform 5s, background-color 0.3s;
+        }
+        .OurProducts_image_text {
+            color: #00acd7;
+        }
+    }
+}
+
+#service {
+    .service__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 29%;
+        text-align: center;
+
+        .service__title_bg {
+            position: relative;
+            min-height: 10px;
+            width: 100%;
+            padding: 20px 36px 15px 36px;
+            .service__image_absolute {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20%;
+            }
+            .service__image_absolute_right {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 20%;
+            }
+            .service__title_text {
+                font-family: "SVN-Poppins";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 34px;
+                line-height: 48px;
+                color: rgb(0, 172, 215);
+
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        .service__title {
+            padding: 0px 21%;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .service__title {
+            padding: 0px 15%;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        .service__title {
+            padding: 0px 10%;
+        }
+    }
+    .service__row_form {
+        background-image: url("https://gofiber.vn/wp-content/uploads/2022/12/Group-103.png");
+        background-size: 100% 100%;
+        padding: 50px 8%;
+    }
+    .service__row_form_col {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        left: 222px;
+        top: 4613px;
+
+        background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+        border: 3px solid rgba(255, 255, 255, 0.28);
+        box-shadow: 0px 5px 41px rgba(0, 172, 215, 0.3);
+        border-radius: 32px;
+        padding-top: 30px;
+        .service__row_form_col_img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .service__row_form_col_icon {
+            display: block;
+            width: 100%;
+            text-align: center;
+            .service__row_form_col_icon_button {
+                padding: 13px 24px;
+                gap: 10px;
+
+                height: 50px;
+                // background: #00acd7;
+                background: white;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+                border-radius: 32px;
+                font-family: "SVN-Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                border: none;
+                color: black;
+                margin-bottom: 15px;
+            }
+            .service__row_form_col_icon_button:focus {
+                background: #00acd7;
+                color: #fafafa;
+            }
+        }
+        .service__row_form_col_input {
+            width: 100%;
+            margin-bottom: 20px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 1rem;
+            outline: none;
+            transition: all 0.3s ease-out;
+            box-shadow: unset;
+            border: 0px;
+            border-bottom: 1px solid #5c5c5c !important;
+        }
+        .service__row_form_col_input:focus {
+            border: 1px solid #00bfa6;
+            outline: none;
+        }
+        .service__row_form_col_textarea {
+            min-height: 120px;
+            padding-top: 0.7em;
+            width: 100%;
+            height: 70px;
+            margin-bottom: 1em;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+            box-sizing: border-box;
+            color: #333;
+            font-size: 0.97em;
+            height: 2.507em;
+            max-width: 100%;
+            padding: 0 0.75em;
+            transition: color 0.3s, border 0.3s, background 0.3s, opacity 0.3s;
+            vertical-align: middle;
+        }
+        .service__row_form_col_textarea:focus {
+            background-color: #fff;
+            box-shadow: 0 0 5px #ccc;
+            color: #333;
+            opacity: 1 !important;
+            outline: 0;
+        }
+        .service__row_form_col_buton_Lh {
+            display: inline-block;
+            color: #fff;
+            background-color: #00acd7;
+            border: 2px solid #00acd7;
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none !important;
+
+            z-index: 20;
+            background: #00acd7;
+            box-shadow: 0px 5px 6px rgb(0 172 215 / 30%);
+            border-radius: 32px;
+            text-align: center;
+            width: 25%;
+            padding: 15px 0;
+            color: #f4f4f4;
+            font-size: 16px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
