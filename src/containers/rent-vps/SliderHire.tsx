@@ -257,7 +257,7 @@ const responsive = [
   {
     id: 3,
     class: 'hide-for-medium',
-    slidesPerView: 4,
+    slidesPerView: 3,
   },
 ];
 
@@ -287,7 +287,7 @@ function SliderHire({ tab, onSelectPackage }: Props) {
             scrollbar={{ draggable: true }}
             loop
             modules={[Pagination]}
-            className="mySwiper hide-pagination"
+            className="mySwiper has-custom-pagination"
             autoplay
           >
             {data?.map((item: any, index: number) => (

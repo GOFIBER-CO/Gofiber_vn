@@ -314,7 +314,7 @@ function RentVps() {
                 <div className="text-center pt-4">
                   <div className="img">
                     <img
-                      src={require('@/public/images/vps/updating2.gif')}
+                      src={VPS_IMAGE.UPDATING}
                       alt="Đang cập nhật"
                     />
                   </div>

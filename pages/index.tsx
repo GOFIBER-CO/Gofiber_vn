@@ -72,7 +72,7 @@ function Home() {
                     mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
                     khách hàng của mình.
                   </p>
-                  <EffectButton onClick={() => router.push("/contact")} color="primary" name="Liên hệ ngay" />
+                  <EffectButton onClick={() => router.push("/lien-he")} color="primary" name="Liên hệ ngay" />
                 </div>
               </div>
               <div className="col col-12 col-md-6 col-lg-8 mt-4 mt-md-0">
@@ -80,8 +80,8 @@ function Home() {
                   <div className='col col-12 col-lg-8'>
                     <div className="img col-right">
                       <div className="img img-inner dark">
-                        <Image
-                          src={require('@/public/images/Init.gif')}
+                        <img
+                          src={HOME_IMAGE.INIT}
                           alt="Video 33"
                         />
                       </div>

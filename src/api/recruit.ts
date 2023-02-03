@@ -29,6 +29,20 @@ export const RecruitApi = {
     }
   },
 
+  getRecruitBySlug: async (params: any) => {
+    const query = convertObjectToQuery(params);
+
+    const url = pathname + `/getRecruitBySlug/` + query;
+
+    try {
+      const response = await fetchApi().get(url);
+
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  },
+
   getRelativeRecruits: async (params: any) => {
     const query = convertObjectToQuery(params);
     const url = pathname + `/getRelativeRecruits` + query;

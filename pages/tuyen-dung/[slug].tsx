@@ -1,7 +1,7 @@
 import TextIconButton from '@/src/components/button/TextIconButton';
 import RecruitItem from '@/src/containers/recruit/RecruitItem';
 import { useAppDispatch } from '@/src/redux';
-import { getRecruitById, getRelativeRecruits } from '@/src/redux/slice/recruitSlice';
+import { getRecruitById, getRecruitBySlug, getRelativeRecruits } from '@/src/redux/slice/recruitSlice';
 import { formatNumber } from '@/src/utils';
 import { Form } from 'antd';
 import moment from 'moment';
@@ -54,13 +54,17 @@ const OverviewItem = ({ name, children, image }: { name: string, children: React
 function RecruitDetail() {
     const dispatch = useAppDispatch();
     const router = useRouter();
-    const { id } = router.query;
+    const { slug } = router.query;
     const [recruit, setRecruit] = useState<any>({});
     const [relativeRecruits, setRelativeRecruits] = useState<any[]>([]);
 
-    const getRecruit = async (id: any) => {
+    const getRecruit = async (slug: any) => {
         try {
-            const result = await dispatch(getRecruitById(id)).unwrap();
+            const params = {
+                slug,
+                domain: process.env.NEXT_PUBLIC_DOMAIN
+            }
+            const result = await dispatch(getRecruitBySlug(params)).unwrap();
 
             const { data } = result?.data;
 
@@ -70,13 +74,13 @@ function RecruitDetail() {
         }
     }
 
-    const getRelatedRecruits = async (id: any) => {
+    const getRelatedRecruits = async (slug: any) => {
         try {
             const params = {
                 pageSize: 3,
                 pageIndex: 1,
-                domain: 'gofiber.vn',
-                id
+                domain: process.env.NEXT_PUBLIC_DOMAIN,
+                slug,
             }
 
             const result = await dispatch(getRelativeRecruits(params)).unwrap();
@@ -90,11 +94,11 @@ function RecruitDetail() {
     }
 
     useEffect(() => {
-        if (id) {
-            getRecruit(id);
-            getRelatedRecruits(id);
+        if (slug) {
+            getRecruit(slug);
+            getRelatedRecruits(slug);
         }
-    }, [id])
+    }, [slug])
 
     return (
         <div id='recruit-detail'>

@@ -13,7 +13,7 @@ function RecruitItem({ wrapperClassName, item }: Props) {
     return (
         <div className={`${wrapperClassName}`}>
             <div className='recruit-item mt-4'>
-                <Link href={`/tuyen-dung/chi-tiet/${item._id}`}>
+                <Link href={`/tuyen-dung/${item.slug}`}>
                     <div className='img'>
                         <img src={item.thumb || RECRUIT_IMAGE.ILLUSTRATION} alt={item.title} width={3000}
                             height={100} />

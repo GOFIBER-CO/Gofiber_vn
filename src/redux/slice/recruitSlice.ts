@@ -41,6 +41,19 @@ export const getRecruitById = createAsyncThunk(
   }
 );
 
+export const getRecruitBySlug = createAsyncThunk(
+  "recruit/getRecruitBySlug",
+  async (params: any) => {
+    try {
+      const result = await RecruitApi.getRecruitBySlug(params);
+
+      return result;
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
+);
+
 export const getRelativeRecruits = createAsyncThunk(
   "recruit/getRelativeRecruits",
   async (params: any) => {

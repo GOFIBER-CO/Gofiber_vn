@@ -95,6 +95,7 @@ export const HOME_IMAGE = {
     FOURTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-4.png"),
     FIFTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-5.png"),
   },
+  INIT: getImageWithBunnyUrl("Desktop/Trang-chu/Init.gif"),
 };
 
 export const INTRODUCE_IMAGE = {
@@ -187,6 +188,7 @@ export const VPS_IMAGE = {
   BANNER_SMALL: getImageWithBunnyUrl("Mobile/Thue-vps/bg-thuevpsmanh.png"),
   VPS1: getImageWithBunnyUrl("Desktop/Thue-VPS/anh-kien-truc-vps.png"),
   VPS2: getImageWithBunnyUrl("Desktop/Thue-VPS/anh-kien-truc-vps2.png"),
+  UPDATING: getImageWithBunnyUrl("Desktop/Thue-VPS/updating2.gif"),
 };
 export const SSL_IMAGE = {
   BANNER_LARGE: getImageWithBunnyUrl(
