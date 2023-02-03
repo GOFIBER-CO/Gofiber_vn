@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,6 +9,7 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import TextIconButton from "@/src/components/button/TextIconButton";
 import { HOME_IMAGE, ICON } from "@/src/utils";
+import Link from "next/link";
 
 const sliders = [
     {
@@ -96,55 +96,20 @@ function SliderService() {
         })
     }, [])
 
-    return (
-        <div id="slider-service">
-            <div style={{ paddingTop: '150px' }} className="scroll-wrapper">
-                {
-                    sliders.map((slide) => (
-                        <article key={slide.id} className="item scroll-slide">
-                            <div className="item-container">
-                                <div className="container">
-                                    <div className="img">
-                                        <img width={500} height={500} src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
-                                    </div>
-                                    <div className="content-slider">
-                                        <div className="content">
-                                            <h3 className="mb-3 h3">{slide.title}</h3>
-                                            <p>{slide.content1}</p>
-                                            {/* <p>{slide.content2}</p> */}
-                                            <TextIconButton className="mt-2" icon={ICON.RIGHT} name="Xem thêm" color="primary" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    ))}
-            </div>
-        </div>
-    )
-
     // return (
-    //     <>
-    //         <Swiper
-    //             slidesPerView={"auto"}
-    //             spaceBetween={5}
-    //             className="mySwiper"
-    //             id="slider-service"
-    //             onSlideChange={(e) => console.log('change', e.slideNext)}
-    //             autoplay
-    //             loop
-    //         >
+    //     <div id="slider-service">
+    //         <div style={{ paddingTop: '150px' }} className="scroll-wrapper">
     //             {
     //                 sliders.map((slide) => (
-    //                     <SwiperSlide key={slide.id}>
-    //                         <div className='item-container'>
+    //                     <article key={slide.id} className="item scroll-slide">
+    //                         <div className="item-container">
     //                             <div className="container">
-    //                                 <div className="image">
-    //                                     <Image src={slide?.image} alt={slide.title} />
+    //                                 <div className="img">
+    //                                     <img width={500} height={500} src={slide.image} alt="Image" title="Gofiber Hosting và Máy chủ hiệu năng cao 19" />
     //                                 </div>
     //                                 <div className="content-slider">
     //                                     <div className="content">
-    //                                         <h3 className="mb-3">{slide.title}</h3>
+    //                                         <h3 className="mb-3 h3">{slide.title}</h3>
     //                                         <p>{slide.content1}</p>
     //                                         {/* <p>{slide.content2}</p> */}
     //                                         <TextIconButton className="mt-2" icon={ICON.RIGHT} name="Xem thêm" color="primary" />
@@ -152,12 +117,87 @@ function SliderService() {
     //                                 </div>
     //                             </div>
     //                         </div>
-    //                     </SwiperSlide>
-    //                 ))
-    //             }
-    //         </Swiper>
-    //     </>
-    // );
+    //                     </article>
+    //                 ))}
+    //         </div>
+    //     </div>
+    // )
+
+    const sliderRef = useRef<any>(null);
+    const [index, setIndex] = useState<number>(0);
+
+    const handlePrev = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slidePrev();
+    }, []);
+
+    const handleNext = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slideNext();
+    }, []);
+
+    return (
+        <>
+            <Swiper
+                ref={sliderRef}
+                slidesPerView={"auto"}
+                spaceBetween={5}
+                className="mySwiper position-relative"
+                id="slider-service"
+                onSlideChange={(e) => setIndex(e?.activeIndex)}
+                autoplay
+                loop
+                navigation
+            >
+                {
+                    sliders.map((slide) => (
+                        <SwiperSlide key={slide?.id}>
+                            <div className='item-container'>
+                                <div className="container">
+                                    <div className="image">
+                                        <img src={slide?.image} alt={slide.title} />
+                                    </div>
+                                    <div className="content-slider">
+                                        <div className="content">
+                                            <h3 className="mb-3">{slide.title}</h3>
+                                            <p>{slide.content1}</p>
+                                            {/* <p>{slide.content2}</p> */}
+                                            <TextIconButton className="mt-2" icon={ICON.RIGHT} name="Xem thêm" color="primary" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))
+                }
+                <button className="custom-navigation-button custom-prev-arrow btn0" onClick={handlePrev}>
+                    <div className="img">
+                        <Image src={require("@/public/images/icons/left.svg")} alt="prev" />
+                    </div>
+                </button>
+                <button className="custom-navigation-button custom-next-arrow btn0" onClick={handleNext}>
+                    <div className="img">
+                        <Image src={require("@/public/images/icons/right.svg")} alt="prev" />
+                    </div>
+                </button>
+                <div className="mt-3 text-center pagination-index">
+                    <button className="btn0 button-pagination" onClick={handlePrev}>
+                        <div className="img">
+                            <Image src={require("@/public/images/icons/left.svg")} alt="prev" />
+                        </div>
+                    </button>
+                    <span>
+                        {(index % sliders?.length) + 1}/{sliders?.length}
+                    </span>
+                    <button className="btn0 button-pagination" onClick={handleNext}>
+                        <div className="img">
+                            <Image src={require("@/public/images/icons/right.svg")} alt="prev" />
+                        </div>
+                    </button>
+                </div>
+            </Swiper>
+        </>
+    );
 }
 
 export default SliderService;

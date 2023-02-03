@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useAppDispatch } from '@/src/redux';
 import { getRecruitsByDomain } from '@/src/redux/slice/recruitSlice';
 import { RECRUIT_IMAGE } from '@/src/utils';
+import Skeleton from 'react-loading-skeleton';
 
 const banner = {
     large: RECRUIT_IMAGE.BANNER_LARGE,
@@ -79,6 +80,19 @@ const data = [
     }
 ]
 
+const SkeletonItem = () => {
+    return (<div className='col-12 col-md-6 mb-4 d-flex justify-content-center'>
+        <div className="p-2 recruit-item-skeleton">
+            <Skeleton style={{ height: '200px' }} count={1} />
+            <Skeleton style={{ height: '24px', width: '70%' }} className="mt-4" />
+            <Skeleton style={{ height: '16px', width: '60%' }} className="mt-2" />
+            <Skeleton style={{ height: '16px', width: '60%' }} className="mt-2" />
+            <Skeleton style={{ height: '72px' }} className="mt-2" />
+
+        </div>
+    </div>)
+}
+
 function Recruit() {
     const dispatch = useAppDispatch();
     const [recruits, setRecruits] = useState<any[]>([]);
@@ -109,7 +123,11 @@ function Recruit() {
     }, [])
 
     const render = {
-        isLoading: <div></div>,
+        isLoading: <div className='row'>
+            {
+                [1, 2].map((item) => <SkeletonItem key={item} />)
+            }
+        </div>,
         notLoading: <>
             {
                 recruits?.length === 0 ?
