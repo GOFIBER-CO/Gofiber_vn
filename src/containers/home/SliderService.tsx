@@ -170,7 +170,7 @@ function SliderService() {
                         </SwiperSlide>
                     ))
                 }
-                <button className="custom-navigation-button custom-prev-arrow btn0" onClick={handlePrev}>
+                {/* <button className="custom-navigation-button custom-prev-arrow btn0" onClick={handlePrev}>
                     <div className="img">
                         <Image src={require("@/public/images/icons/left.svg")} alt="prev" />
                     </div>
@@ -179,7 +179,7 @@ function SliderService() {
                     <div className="img">
                         <Image src={require("@/public/images/icons/right.svg")} alt="prev" />
                     </div>
-                </button>
+                </button> */}
                 <div className="mt-3 text-center pagination-index">
                     <button className="btn0 button-pagination" onClick={handlePrev}>
                         <div className="img">
