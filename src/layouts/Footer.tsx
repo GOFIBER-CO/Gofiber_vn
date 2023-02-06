@@ -125,15 +125,15 @@ const policy = [
     {
         id: 2,
         icon: require("@/public/images/icons/send.svg"),
-        name: 'Chính sách giao, nhận hàng và kiểm hàng',
-        link: '/chinh-sach-giao-nhan-hang-va-kiem-hang'
+        name: 'Chính sách hoàn huỷ dịch vụ',
+        link: '/chinh-sach-hoan-huy-dich-vu'
     },
-    {
-        id: 3,
-        icon: require("@/public/images/icons/send.svg"),
-        name: 'Chính sách bảo hành, đổi trả',
-        link: '/chinh-sach-bao-hanh-doi-tra'
-    },
+    // {
+    //     id: 3,
+    //     icon: require("@/public/images/icons/send.svg"),
+    //     name: 'Chính sách bảo hành, đổi trả',
+    //     link: '/chinh-sach-bao-hanh-doi-tra'
+    // },
     {
         id: 4,
         icon: require("@/public/images/icons/send.svg"),
