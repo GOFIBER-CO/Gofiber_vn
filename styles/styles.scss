@@ -2247,6 +2247,32 @@ img {
   width: 80%;
 }
 
+.section-policy {
+  margin-top: 40px;
+
+  .h3 {
+    line-height: 1.5;
+  }
+
+  .extra {
+    color: #777777;
+    font-size: 18px;
+  }
+}
+
+.policy-item {
+  .iconify {
+    min-width: 32px;
+    height: 32px;
+    color: var(--color--primary);
+    margin-right: 4px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 1052px) {
   .nav {
     .menu_item {
@@ -2449,6 +2475,12 @@ img {
 
   .recruit-item-skeleton {
     width: 100%;
+  }
+
+  .section-policy {
+    .extra {
+      font-size: 16px !important;
+    }
   }
 }
 

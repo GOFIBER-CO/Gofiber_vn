@@ -6,6 +6,7 @@ export enum ICON {
   RIGHT_CIRCLE = "material-symbols:swipe-right-alt-outline",
   CHECKED = "mdi:check-bold",
   CALL = "material-symbols:call",
+  POLICY = "material-symbols:policy-outline-rounded",
 }
 
 export enum NEWS_TAB {
@@ -257,4 +258,54 @@ export const RECRUIT_IMAGE = {
   BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Tuyen-dung/tuyen-dung.png"),
   BANNER_SMALL: getImageWithBunnyUrl("Mobile/Tuyen-dung/tuyen-dung.png"),
   ILLUSTRATION: getImageWithBunnyUrl("Desktop/Tuyen-dung/anh-minh-hoa-4.png"),
+};
+
+export const POLICY_IMAGE = {
+  INFORMATION_SECURITY: {
+    BANNER_LARGE: getImageWithBunnyUrl(
+      "Desktop/Chinh-sach/bg-chinhsachbaomat.png"
+    ),
+    BANNER_MEDIUM: getImageWithBunnyUrl(
+      "Tablet/Chinh-sach/tablet-chinhsachbaomat.png"
+    ),
+    BANNER_SMALL: getImageWithBunnyUrl(
+      "Mobile/Chinh-sach/mobile-chinhsachbaomat.png"
+    ),
+  },
+
+  DELIVERY_PRODUCT: {
+    BANNER_LARGE: getImageWithBunnyUrl(
+      "Desktop/Chinh-sach/bg-dieukhoanvadieukien.png"
+    ),
+    BANNER_MEDIUM: getImageWithBunnyUrl(
+      "Tablet/Chinh-sach/tablet-dieukhoanvadieukien.png"
+    ),
+    BANNER_SMALL: getImageWithBunnyUrl(
+      "Mobile/Chinh-sach/mobile-dieukhoanvadieukien.png"
+    ),
+  },
+
+  GUARANTEE: {
+    BANNER_LARGE: getImageWithBunnyUrl(
+      "Desktop/Chinh-sach/bg-chinhsachhoanhuydichvu.png"
+    ),
+    BANNER_MEDIUM: getImageWithBunnyUrl(
+      "Tablet/Chinh-sach/tablet-chinhsachhoanhuydichvu.png"
+    ),
+    BANNER_SMALL: getImageWithBunnyUrl(
+      "Mobile/Chinh-sach/mobile-chinhsachhoanhuydichvu.png"
+    ),
+  },
+
+  PAYMENT: {
+    BANNER_LARGE: getImageWithBunnyUrl(
+      "Desktop/Chinh-sach/bg-chinhsachthanhtoan.png"
+    ),
+    BANNER_MEDIUM: getImageWithBunnyUrl(
+      "Tablet/Chinh-sach/tablet-chinhsachthanhtoan.png"
+    ),
+    BANNER_SMALL: getImageWithBunnyUrl(
+      "Mobile/Chinh-sach/mobile-chinhsachthanhtoan.png"
+    ),
+  },
 };

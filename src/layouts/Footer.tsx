@@ -1,6 +1,9 @@
+import { Icon } from '@iconify/react';
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import TextIconInfo from '../components/footer/TextIconInfo'
+import { ICON } from '../utils';
 
 const infoData = [
     {
@@ -112,6 +115,33 @@ const bankData = [
     }
 ]
 
+const policy = [
+    {
+        id: 1,
+        icon: require("@/public/images/icons/send.svg"),
+        name: 'Chính sách bảo mật',
+        link: '/chinh-sach-bao-mat'
+    },
+    {
+        id: 2,
+        icon: require("@/public/images/icons/send.svg"),
+        name: 'Chính sách giao, nhận hàng và kiểm hàng',
+        link: '/chinh-sach-giao-nhan-hang-va-kiem-hang'
+    },
+    {
+        id: 3,
+        icon: require("@/public/images/icons/send.svg"),
+        name: 'Chính sách bảo hành, đổi trả',
+        link: '/chinh-sach-bao-hanh-doi-tra'
+    },
+    {
+        id: 4,
+        icon: require("@/public/images/icons/send.svg"),
+        name: 'Chính sách thanh toán',
+        link: '/chinh-sach-thanh-toan'
+    },
+]
+
 function Footer() {
     return (
         <footer id='footer'>
@@ -130,7 +160,11 @@ function Footer() {
                                 nhằm giúp quý khách có thể tiếp cận tốt hơn đến khách hàng của mình trên internet.
                             </p>
 
-                            <div className='hide-for-large mb-3'>
+                            <div className='font_size_16 font_weight_500 color_primary mb-3'>Chính sách khách hàng</div>
+                            {
+                                policy.map((item) => <TextIconInfo link={item.link} icon={item.icon} key={item.id} text={item.name} />)
+                            }
+                            <div className='hide-for-large my-3'>
                                 <div className='d-flex align-items-center'>
                                     {
                                         socialData.map(item => <a key={item.id} href={item.link} className='button_social button_social__medium'>

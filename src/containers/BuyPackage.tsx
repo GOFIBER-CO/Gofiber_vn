@@ -84,11 +84,12 @@ function BuyPackage({ packageSelect }: Props) {
   };
 
   return (
-    <div id="buy-package">
+    <div id="buy-package" style={{ marginTop: '30px' }}>
       {contextHolder}
       {
-        packageSelect && <div className="row mx-0 justify-content-center">
-          <div className="col col-12 col-md-8">
+        packageSelect &&
+        <div className="row mx-0 justify-content-center">
+          <div className="col col-12 col-md-6">
             <form className="form" onSubmit={handleBuyPackage}>
               <div className="img text-center">
                 <Image
@@ -167,35 +168,36 @@ function BuyPackage({ packageSelect }: Props) {
               </div>
             </form>
           </div>
-          {/* <div className="col col-12 mt-4 mt-md-0 col-md-4">
-          <div className="form">
-            <h4 className="h4">
-              Thanh toán bằng tiền mặt tại văn phòng Công ty GoFiber
-            </h4>
-            <p className="font_size_14 font_weight_400 mt-3 color_777777">
-              Quý khách đến và thực hiện thanh toán bằng tiền mặt trực tiếp tại
-              văn phòng Công ty GoFiber tại các địa chỉ sau:
-              <br />
-              Số 131, Đường CN11, P. Sơn Kỳ, Q. Tân Phú, TP.HCM
-            </p>
-            <div className="show-for-small">
+          <div className="col col-12 mt-4 mt-md-0 col-md-4">
+            <div className="form">
               <h4 className="h4">
                 Thanh toán bằng tiền mặt tại văn phòng Công ty GoFiber
               </h4>
-              <ul className="has-style mt-3 font_size_14 font_weight_400 mt-3 color_777777">
-                <li>Số TK: 060260311991</li>
-                <li>Tên TK: Nguyễn Trung Hiếu</li>
-                <li>Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)</li>
-              </ul>
-              <p className="mt-2 font_size_14 font_weight_400 mt-3 color_777777">
-                Quý khách thực hiện chuyển khoản vào một trong các tài khoản
-                hiển thị bên tay phải, với số tiền chính xác kèm theo nội dung
-                chuyển khoản theo đúng cú pháp là HD{'<'}Số hoá đơn{'>'}. Ví dụ
-                số hoá đơn là #100149 thì cú pháp sẽ là HD100149.
+              <p className="font_size_14 font_weight_400 mt-3 color_777777">
+                Quý khách đến và thực hiện thanh toán bằng tiền mặt trực tiếp tại
+                văn phòng Công ty GoFiber tại các địa chỉ sau:
+                <br />
+                Số 131, Đường CN11, P. Sơn Kỳ, Q. Tân Phú, TP.HCM
               </p>
+
+              <div>
+                <h4 className="h4">
+                  Thanh toán bằng tiền mặt tại văn phòng Công ty GoFiber
+                </h4>
+                <ul className="has-style mt-3 font_size_14 font_weight_400 mt-3 color_777777">
+                  <li>Số TK: 060260311991</li>
+                  <li>Tên TK: Nguyễn Trung Hiếu</li>
+                  <li>Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)</li>
+                </ul>
+                <p className="mt-2 font_size_14 font_weight_400 mt-3 color_777777">
+                  Quý khách thực hiện chuyển khoản vào một trong các tài khoản
+                  hiển thị bên tay phải, với số tiền chính xác kèm theo nội dung
+                  chuyển khoản theo đúng cú pháp là HD{'<'}Số hoá đơn{'>'}. Ví dụ
+                  số hoá đơn là #100149 thì cú pháp sẽ là HD100149.
+                </p>
+              </div>
             </div>
           </div>
-        </div> */}
         </div>
       }
     </div>
