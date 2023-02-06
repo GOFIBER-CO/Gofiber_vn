@@ -13,7 +13,7 @@ function DeliveryProductPolicyPage() {
     return (
         <div id='service'>
             <section>
-                <BannerPage styleLinkName={{ lineHeight: '1.3' }} image={banner} bannerLinkLargeWidth="40%" bannerLinkMediumWidth='70%' bannerLinkSmallWidth='90%' name="Chính sách giao, nhận hàng và kiểm hàng" />
+                <BannerPage styleLinkName={{ lineHeight: '1.3' }} image={banner} bannerLinkLargeWidth="40%" bannerLinkMediumWidth='70%' bannerLinkSmallWidth='90%' name="Chính sách hoàn huỷ dịch vụ" />
             </section>
             <div className="container">
                 <section className="section-policy">
