@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { notification } from 'antd';
 import { formatNumber, openNotificationWithIcon } from '@/src/utils';
+import { Icon } from '@iconify/react';
 
 type Props = {
   packageSelect: any
@@ -12,18 +13,28 @@ function BuyPackage({ packageSelect }: Props) {
   const [usedTime, setUsedTime] = useState(1);
   const [api, contextHolder] = notification.useNotification();
   const [error, setError] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleBuyPackage = (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData);
-
+    console.log('dsaoidsadsa')
     const { fullName, numberPhone, email, comment } = formProps;
-    if (!numberPhone.toString().match(/(84|0[3|5|7|8|9])+([0-9]{8})\b/)) {
-      setError("Số điện thoại không hợp lệ")
+
+    if (!fullName) {
+      setError("Họ tên không hợp lệ");
+      setIsLoading(false)
+    } else if (!numberPhone.toString().match(/(84|0[3|5|7|8|9])+([0-9]{8})\b/)) {
+      setError("Số điện thoại không hợp lệ");
+      setIsLoading(false)
+
     }
     else if (!email.toString().match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      setError("Email không hợp lệ")
+      setError("Email không hợp lệ");
+
+      setIsLoading(false)
     }
     else {
       setError('');
@@ -65,9 +76,10 @@ function BuyPackage({ packageSelect }: Props) {
               api,
             );
           },
-        );
+        ).finally(() => {
+          setIsLoading(false)
+        });
     }
-
 
   };
 
@@ -147,8 +159,10 @@ function BuyPackage({ packageSelect }: Props) {
                 </div>
               }
               <div className="text-center">
-                <button type="submit" className="btn0" id="btn-registry">
-                  MUA NGAY
+                <button disabled={isLoading} type="submit" className="btn0" id="btn-registry">
+                  {
+                    !isLoading ? `MUA NGAY` : <Icon style={{ width: '32px', height: '32px' }} icon={"eos-icons:bubble-loading"} />
+                  }
                 </button>
               </div>
             </form>
