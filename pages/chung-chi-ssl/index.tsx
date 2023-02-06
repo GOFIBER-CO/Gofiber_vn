@@ -1,12 +1,11 @@
 import BannerPage from '@/src/components/banner/BannerPage'
-import TextIconPrice from '@/src/components/web-hosting/TextIconPrice'
+import BuyPackage from '@/src/containers/BuyPackage'
 import Contact from '@/src/containers/home/contact'
 import Question from '@/src/containers/home/question'
-import BuyPackage from '@/src/containers/ssl/BuyPackage'
 import SliderSSL from '@/src/containers/ssl/SliderSSL'
 import { ICON, SSL_IMAGE } from '@/src/utils'
 import { Icon } from '@iconify/react'
-import React from 'react'
+import React, { useState } from 'react'
 
 const banner = {
     large: SSL_IMAGE.BANNER_LARGE,
@@ -188,6 +187,9 @@ const question = [
 ]
 
 function SSL() {
+    const [packageSelect, setPackageSelect] = useState();
+
+
     return (
         <div id='rent-vps'>
             <section>
@@ -198,7 +200,7 @@ function SSL() {
                     <div className='text-center'>
                         <h3 className='h3'>SSL cho website</h3>
                     </div>
-                    <SliderSSL />
+                    <SliderSSL onSelectPackage={setPackageSelect} />
                 </section>
 
                 <section className='section-info-ssl'>
@@ -280,7 +282,9 @@ function SSL() {
                 </section>
                 <Question data={question} />
 
-                <Contact />
+                {/* <Contact /> */}
+
+                {/* <BuyPackage packageSelect={packageSelect} /> */}
             </div>
         </div>
     )

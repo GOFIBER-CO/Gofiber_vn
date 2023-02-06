@@ -1,7 +1,7 @@
 import BannerPage from '@/src/components/banner/BannerPage';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
-import BuyPackage from '@/src/containers/rent-vps/BuyPackage';
+import BuyPackage from '@/src/containers/BuyPackage';
 import SliderHire from '@/src/containers/rent-vps/SliderHire';
 import { VPS_IMAGE } from '@/src/utils';
 import React, { useState } from 'react';
@@ -285,7 +285,8 @@ const question = [
 
 function RentVps() {
   const [tab, setTab] = useState(tabs[0]);
-  const [packageSelect, setPackageSelect] = useState({});
+  const [packageSelect, setPackageSelect] = useState();
+
   return (
     <div id="rent-vps">
       <section>
@@ -402,7 +403,9 @@ function RentVps() {
 
         <Question data={question} />
 
-        <Contact />
+        {/* <Contact /> */}
+
+        <BuyPackage packageSelect={packageSelect} />
       </div>
     </div>
   );

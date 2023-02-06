@@ -1,4 +1,5 @@
 import BannerPage from '@/src/components/banner/BannerPage';
+import BuyPackage from '@/src/containers/BuyPackage';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import SliderHostingPrice from '@/src/containers/web-hosting/SliderHostingPrice';
@@ -271,24 +272,8 @@ const question = [
 ];
 
 function WebHosting() {
-  const [packageSelect, setPackageSelect] = useState({
-    id: '2',
-    name: 'Website Hosting Cá Nhân',
-    extra: 'Giải pháp lý tưởng cho người mới',
-    price: '25000',
-    feature: [
-      '1 trang web',
-      '50 GB Dung lượng ổ SSD',
-      '~10 000 lượt truy cập hàng tháng',
-      '100 GB Băng thông',
-      '2 Databases',
-    ],
-    security: [
-      'SSL Miễn phí Không giới hạn',
-      'Nameservers bảo vệ bằng Cloudflare',
-    ],
-    free: ['Website builder', 'Sao lưu hàng tuần'],
-  });
+  const [packageSelect, setPackageSelect] = useState();
+
   return (
     <div id="web-hosting">
       <section>
@@ -432,7 +417,9 @@ function WebHosting() {
           </div>
         </div>
       </section> */}
-      <Contact />
+      {/* <Contact /> */}
+
+      <BuyPackage packageSelect={packageSelect} />
     </div>
   );
 }

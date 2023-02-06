@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { Pagination } from "swiper";
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
 import ButtonSlideSeeMore from '@/src/components/button/ButtonSlideSeeMore';
+import Link from 'next/link';
 
 const responsive = [
     {
@@ -27,7 +28,11 @@ const responsive = [
     }
 ]
 
-function SliderHostingPrice() {
+type Props = {
+    onSelectPackage: any;
+}
+
+function SliderHostingPrice({ onSelectPackage }: Props) {
     const data = [
         {
             id: '1',
@@ -110,9 +115,22 @@ function SliderHostingPrice() {
                                                 <p className='text-center'>
                                                     <strong>{item.name}</strong>
                                                 </p>
+                                                {/* <div className="text-center">
+                                                    <button className="btn0">
+                                                        <a
+                                                            href="#buy-package"
+                                                            onClick={() => onSelectPackage(item)}
+                                                        >
+                                                            <span>Thêm vào giỏ hàng</span>
+                                                        </a>
+                                                    </button>
+                                                </div> */}
                                                 <div className="text-center">
                                                     <button className="btn0">
-                                                        <span>Thêm vào giỏ hàng</span>
+                                                        <Link href="/lien-he"
+                                                        >
+                                                            <span>Liên hệ</span>
+                                                        </Link>
                                                     </button>
                                                 </div>
                                                 <div className='my-3 divider divider--primary'></div>
@@ -133,7 +151,7 @@ function SliderHostingPrice() {
                                                     </button>
                                                 </div>
                                             }
-                                            <ButtonSlideSeeMore alt={item.name} isBest={item?.isBest || false} />
+                                            {/* <ButtonSlideSeeMore alt={item.name} isBest={item?.isBest || false} /> */}
                                         </div>
                                     </SwiperSlide>
 

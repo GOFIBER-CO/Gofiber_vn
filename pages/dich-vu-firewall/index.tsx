@@ -1,14 +1,14 @@
 import BannerPage from '@/src/components/banner/BannerPage';
 import SpecificationItem from '@/src/components/firewall/SpecificationItem';
 import TitleWithLine from '@/src/components/TitleWithLine';
-import BuyPackage from '@/src/containers/firewall/BuyPackage';
+import BuyPackage from '@/src/containers/BuyPackage';
 import SecurityItem from '@/src/containers/firewall/security/SecurityItem';
 import SliderSpecification from '@/src/containers/firewall/SliderSpecification';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import { FIREWALL_IMAGE, formatNumber } from '@/src/utils';
 import img from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 const banner = {
   large: FIREWALL_IMAGE.BANNER_LARGE,
@@ -411,7 +411,42 @@ const question = [
   },
 ];
 
+const firewallService = [
+  {
+    id: 1,
+    name: "Firewall 1",
+    price: 91800,
+  },
+  {
+    id: 2,
+    name: "Firewall 2",
+    price: 91800,
+  },
+  {
+    id: 3,
+    name: "Firewall 3",
+    price: 91800,
+  },
+  {
+    id: 4,
+    name: "Firewall 4",
+    price: 91800,
+  },
+  {
+    id: 5,
+    name: "Firewall 5",
+    price: 91800,
+  },
+  {
+    id: 6,
+    name: "Firewall 6",
+    price: 91800,
+  }
+]
+
 function Firewall() {
+  const [packageSelect, setPackageSelect] = useState();
+
   return (
     <div id="firewall">
       <section>
@@ -427,66 +462,29 @@ function Firewall() {
                 <div className="name-server">
                   <p>Tính năng</p>
                 </div>
-                <div className="name-server info-server">
-                  Firewall 1<br />
-                  <span className='price'>
-                    {formatNumber(91800)} VNĐ/Th
-                  </span>
-                </div>
-                <div className="name-server info-server">
-                  Firewall 2<br />
-                  <span className='price'>
-                    {formatNumber(91800)} VNĐ/Th
-                  </span>
-                </div>
-                <div className="name-server info-server">
-                  Firewall 3<br />
-                  <span className='price'>
-                    {formatNumber(91800)} VNĐ/Th
-                  </span>
-                </div>
-                <div className="name-server info-server">
-                  Firewall 4<br />
-                  <span className='price'>
-                    {formatNumber(91800)} VNĐ/Th
-                  </span>
-                </div>
-                <div className="name-server info-server">
-                  Firewall 5<br />
-                  <span className='price'>
-                    {formatNumber(91800)} VNĐ/Th
-                  </span>
-                </div>
-                <div className="name-server info-server">
-                  Firewall 6<br />
-                  <span className='price'>
-                    {formatNumber(91800)} VNĐ/Th
-                  </span>
-                </div>
+                {
+                  firewallService.map((item) => <div key={item.id} className="name-server info-server">
+                    {item?.name}<br />
+                    <span className='price'>
+                      {formatNumber(item.price)} VNĐ/Th
+                    </span>
+                  </div>)
+                }
               </div>
               <div className="price-firewall specification-item mt-2">
                 {specification.map((item, index) => (
                   <SpecificationItem key={index} item={item} />
                 ))}
                 <div className="name-server"></div>
-                <div className="info-server">
-                  <button className="btn0 btn-price">Chọn</button>
-                </div>
-                <div className="info-server">
-                  <button className="btn0 btn-price">Chọn</button>
-                </div>
-                <div className="info-server">
-                  <button className="btn0 btn-price">Chọn</button>
-                </div>
-                <div className="info-server">
-                  <button className="btn0 btn-price">Chọn</button>
-                </div>
-                <div className="info-server">
-                  <button className="btn0 btn-price">Chọn</button>
-                </div>
-                <div className="info-server">
-                  <button className="btn0 btn-price">Chọn</button>
-                </div>
+                {
+                  firewallService.map((item: any) => <div key={item.id} className="info-server">
+                    <a href='#buy-package' className='a'>
+                      <button onClick={() => setPackageSelect(item)} className="btn0 btn-price">
+                        Chọn
+                      </button>
+                    </a>
+                  </div>)
+                }
               </div>
             </div>
           </div>
@@ -537,7 +535,7 @@ function Firewall() {
               </div>
             </div>
             <div className="col col-6">
-              <SliderSpecification />
+              <SliderSpecification onSelectPackage={setPackageSelect} />
             </div>
           </div>
         </section>
@@ -571,7 +569,10 @@ function Firewall() {
 
         <Question data={question} />
 
-        <Contact />
+        {/* <Contact /> */}
+
+        <BuyPackage packageSelect={packageSelect} />
+
       </div>
     </div>
   );

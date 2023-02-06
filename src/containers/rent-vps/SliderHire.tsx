@@ -269,7 +269,7 @@ type Props = {
 function SliderHire({ tab, onSelectPackage }: Props) {
   const data = useMemo(() => {
     const result = dataWithTab.find((item) => item.tab === tab)?.data || [];
-    onSelectPackage(result[0]);
+    // onSelectPackage(result[0]);
     return result;
   }, [tab]);
 

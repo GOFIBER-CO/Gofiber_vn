@@ -54,12 +54,12 @@ const infoData = [
     },
     {
         id: '2',
-        text: 'Sales@gofiber.vn',
+        text: '0989.07.85.07',
         icon: CONTACT_IMAGE.PHONE
     },
     {
         id: '3',
-        text: '0989.07.85.07',
+        text: 'Sales@gofiber.vn',
         icon: CONTACT_IMAGE.LOCATION
     },
 ]

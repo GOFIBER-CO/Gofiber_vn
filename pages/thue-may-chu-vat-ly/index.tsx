@@ -1,8 +1,7 @@
 import BannerPage from '@/src/components/banner/BannerPage';
-import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
+import BuyPackage from '@/src/containers/BuyPackage';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
-import BuyPackage from '@/src/containers/rent-physical-server/BuyPackage';
 import SliderPhysicalServer from '@/src/containers/rent-physical-server/SliderPhysicalServer';
 import SliderPhysicalServerPlace from '@/src/containers/rent-physical-server/SliderPhysicalServerPlace';
 import { ICON, PHYSICAL_IMAGE } from '@/src/utils';
@@ -407,7 +406,7 @@ const question = [
 
 function RentPhysicalServer() {
   const [tab, setTab] = useState(tabs[0]);
-  const [packageSelect, setPackageSelect] = useState(tab.data[0]);
+  const [packageSelect, setPackageSelect] = useState();
   return (
     <div id="rent-vps">
       <section>
@@ -554,7 +553,9 @@ function RentPhysicalServer() {
 
         <Question data={question} />
 
-        <Contact />
+        {/* <Contact /> */}
+
+        <BuyPackage packageSelect={packageSelect} />
       </div>
     </div>
   );

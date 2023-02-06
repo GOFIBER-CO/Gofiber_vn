@@ -12,48 +12,48 @@ import { ICON } from '@/src/utils';
 const specification = [
     {
         id: 1,
-        title: 'Firewall 1',
-        price: '91.800',
+        name: 'Firewall 1',
+        price: '91800',
         info1: '1 Core',
         info2: '300Mbs',
         info3: '1',
     },
     {
         id: 1,
-        title: 'Firewall 2',
-        price: '91.800',
+        name: 'Firewall 2',
+        price: '91800',
         info1: '1 Core',
         info2: '700Mbs',
         info3: '1',
     },
     {
         id: 1,
-        title: 'Firewall 3',
-        price: '91.800',
+        name: 'Firewall 3',
+        price: '91800',
         info1: '1 Core',
         info2: '1.5GB',
         info3: '1',
     },
     {
         id: 1,
-        title: 'Firewall 4',
-        price: '91.800',
+        name: 'Firewall 4',
+        price: '91800',
         info1: '1 Core',
         info2: '5GB',
         info3: '1',
     },
     {
         id: 1,
-        title: 'Firewall 5',
-        price: '91.800',
+        name: 'Firewall 5',
+        price: '91800',
         info1: '1 Core',
         info2: '10GB',
         info3: '1',
     },
     {
         id: 1,
-        title: 'Firewall 6',
-        price: '91.800',
+        name: 'Firewall 6',
+        price: '91800',
         info1: '1 Core',
         info2: '20GB',
         info3: '1',
@@ -73,7 +73,11 @@ const responsive = [
     },
 ]
 
-function SliderSpecification() {
+type Props = {
+    onSelectPackage: any
+}
+
+function SliderSpecification({ onSelectPackage }: Props) {
 
     return (
         <div id='slider-specification'>
@@ -98,7 +102,7 @@ function SliderSpecification() {
                                     <SwiperSlide key={index}>
                                         <div className='specification-item'>
                                             <div className="price-firewall-mobile" style={{ borderBottom: '1px solid #d6d6d6' }}>
-                                                <div className="name-server info-server">{item.title}<br />
+                                                <div className="name-server info-server">{item.name}<br />
                                                     <span className='price'>
                                                         {item.price}
                                                         VNĐ/Th
@@ -124,9 +128,12 @@ function SliderSpecification() {
                                                         </div>)
                                                 }
                                                 <div className="info-server">
-                                                    <button className="btn0 btn-price">
-                                                        Chọn
-                                                    </button>
+                                                    <a href='#buy-package' onClick={() => onSelectPackage(item)}>
+                                                        <button className="btn0 btn-price">
+                                                            Chọn
+                                                        </button>
+                                                    </a>
+
                                                 </div>
 
                                             </div>
