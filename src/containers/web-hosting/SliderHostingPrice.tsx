@@ -185,7 +185,7 @@ function SliderHostingPrice({ onSelectPackage }: any) {
                       <TextIconPrice key={index} color="blue" content={e} />
                     ))}
                   </div>
-                  <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} />
+                  {/* <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} /> */}
                   {
                     item.isBest && <div className="wrapper-best">
                       <button className="btn0 btn-best">

@@ -12,6 +12,7 @@ import DrawerMenu from '@/src/layouts/DrawerMenu';
 import { useAppSelector } from '@/src/redux';
 import { HOME_IMAGE, ICON } from '@/src/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import React, { useState } from 'react';
@@ -72,7 +73,9 @@ function Home() {
                     mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
                     khách hàng của mình.
                   </p>
-                  <EffectButton onClick={() => router.push("/lien-he")} color="primary" name="Liên hệ ngay" />
+                  <Link href={"/lien-he"}>
+                    <EffectButton onClick={() => router.push("/lien-he")} className="shadow" color="primary" name="Liên hệ ngay" />
+                  </Link>
                 </div>
               </div>
               <div className="col col-12 col-md-6 col-lg-8 mt-4 mt-md-0">

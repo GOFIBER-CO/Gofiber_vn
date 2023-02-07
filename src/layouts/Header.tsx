@@ -12,11 +12,11 @@ type Props = {
     onShowDrawer: () => void;
 }
 
-function Header({ onShowDrawer }: Props) {
+function Header({ onShowDrawer }: Props): any {
     return (
         <header id='header' className=''>
             <div className='header_wrapper'>
-                <div className='container d-flex align-items-center justify-content-between'>
+                <div style={{ height: '80px' }} className='container d-flex align-items-center justify-content-between'>
                     <Link href='/'>
                         <Image id='logo' className='logo-left logo' src={require("@/public/images/logo.png")} alt="" />
                     </Link>
@@ -51,24 +51,24 @@ function Header({ onShowDrawer }: Props) {
                         <DrawerButton onClick={onShowDrawer} icon={ICON.MENU} classNameButton="menu-button" />
                     </div>
                     <div className='flex-right flew-col hide-for-932'>
-                        <ul className='d-flex align-items-center justify-content-center p-0 mb-2'>
+                        <ul className='d-flex align-items-center justify-content-center p-0'>
                             <li className='mx-2'>
                                 <a href='https://go.vngserver.vn/register'>
-                                    <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng ký' color='white' />
+                                    <EffectButton className='btn_auth shadow border' styles={{ width: '136px' }} name='Đăng ký' color='white' />
                                 </a>
                             </li>
                             <li>
                                 <a href='https://go.vngserver.vn/'>
-                                    <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng nhập' color='primary' />
+                                    <EffectButton className='btn_auth shadow' styles={{ width: '136px' }} name='Đăng nhập' color='primary' />
                                 </a>
                             </li>
                             <li>
-                                <div className='btn0 btn-support d-flex'>
+                                <a href='tel:0989078507' className='btn0 btn-support d-flex'>
                                     <span className='moving'>
                                         <Icon icon={ICON.CALL} />
                                         Hỗ trợ 24/7: 0989.07.85.07
                                     </span>
-                                </div>
+                                </a>
                             </li>
                         </ul>
                     </div>

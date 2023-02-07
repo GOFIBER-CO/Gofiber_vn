@@ -103,7 +103,7 @@ function SliderPhysicalServer({ data, name, onSelectPackage }: Props) {
                       </button>
                     </div>
                   }
-                  <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} />
+                  {/* <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} /> */}
                   {
                     item.isBest && <div className="wrapper-best">
                       <button className="btn0 btn-best">

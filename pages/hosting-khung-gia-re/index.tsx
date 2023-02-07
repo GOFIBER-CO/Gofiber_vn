@@ -295,7 +295,7 @@ function WebHosting() {
             <SliderHostingPrice onSelectPackage={setPackageSelect} />
           </div>
           <div className='mt-4 text-center'>
-            <Link href="/">
+            <Link href="/chinh-sach-thanh-toan">
               <span className='color_primary'>
                 Điều khoản thanh toán
               </span>
