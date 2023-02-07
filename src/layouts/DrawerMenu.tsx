@@ -79,10 +79,10 @@ function DrawerMenu({ onClose, visible }: Props) {
 
                 <ul className='d-flex m-0 p-0 mt-4 align-items-center justify-content-center'>
                     <li>
-                        <EffectButton name='Đăng ký' color='white' />
+                        <EffectButton className='shadow border' name='Đăng ký' color='white' />
                     </li>
                     <li className='mx-2'>
-                        <EffectButton name='Đăng nhập' color='primary' />
+                        <EffectButton name='Đăng nhập' className='shadow' color='primary' />
                     </li>
                 </ul>
             </Drawer>

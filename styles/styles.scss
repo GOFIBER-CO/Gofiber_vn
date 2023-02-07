@@ -159,7 +159,7 @@ a {
 .button_effect,
 .button_text_icon {
   width: 130px;
-  height: 40px;
+  height: 45px;
   border-radius: 32px;
   text-align: center;
   transition: all 0.3s ease;
@@ -202,6 +202,10 @@ a {
   height: 100%;
   font-weight: 500;
   font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px !important;
 }
 
 // .button_effect:hover {
@@ -263,6 +267,9 @@ a {
 // }
 
 .btn_auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   span {
     font-size: 14px;
   }
@@ -281,7 +288,6 @@ a {
   letter-spacing: 0.02em;
   font-size: 16px;
   transition: 0.3s ease;
-  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
 }
