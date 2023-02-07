@@ -53,10 +53,14 @@ function Header({ onShowDrawer }: Props) {
                     <div className='flex-right flew-col hide-for-932'>
                         <ul className='d-flex align-items-center justify-content-center p-0 mb-2'>
                             <li className='mx-2'>
-                                <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng ký' color='white' />
+                                <a href='https://go.vngserver.vn/register'>
+                                    <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng ký' color='white' />
+                                </a>
                             </li>
                             <li>
-                                <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng nhập' color='primary' />
+                                <a href='https://go.vngserver.vn/'>
+                                    <EffectButton className='btn_auth' styles={{ width: '90px' }} name='Đăng nhập' color='primary' />
+                                </a>
                             </li>
                             <li>
                                 <div className='btn0 btn-support d-flex'>

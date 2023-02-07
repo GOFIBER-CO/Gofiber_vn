@@ -68,7 +68,6 @@ function BuyPackage({ packageSelect }: Props) {
             e.target.reset();
           },
           (err) => {
-            console.log('eor', err);
             openNotificationWithIcon(
               'error',
               'Đặt hàng thất bại',
@@ -182,12 +181,12 @@ function BuyPackage({ packageSelect }: Props) {
 
               <div>
                 <h4 className="h4">
-                  Thanh toán bằng tiền mặt tại văn phòng Công ty GoFiber
+                  Thanh toán bằng chuyển khoản
                 </h4>
                 <ul className="has-style mt-3 font_size_14 font_weight_400 mt-3 color_777777">
-                  <li>Số TK: 060260311991</li>
-                  <li>Tên TK: Nguyễn Trung Hiếu</li>
-                  <li>Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)</li>
+                  <li>Số TK: 588585888</li>
+                  <li>Tên TK: CTY TNHH Công nghệ phần mềm GOFIBER</li>
+                  <li>Ngân hàng ACB</li>
                 </ul>
                 <p className="mt-2 font_size_14 font_weight_400 mt-3 color_777777">
                   Quý khách thực hiện chuyển khoản vào một trong các tài khoản

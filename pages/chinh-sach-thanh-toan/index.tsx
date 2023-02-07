@@ -23,8 +23,8 @@ function PaymentPolicyPage() {
                         </h1>
                         <div className='col col-12 col-md-10'>
                             <TextIconPrice content='Thanh toán bằng tiền mặt: Số 131 CN11, Phường Sơn Kỳ, quận Tân Phú, thành phố Hồ Chí Minh.' color='blue' />
-                            {/* <TextIconPrice content='Thanh toán bằng hình thức chuyển khoản: Số tài khoản 0011004184300 ngân hàng Vietcombank chủ tài khoản Âu Văn Dũng.' color='blue' /> */}
-                            <TextIconPrice content='Số điện thoại mua hàng + mã đơn hàng.' color='blue' />
+                            <TextIconPrice content='Thanh toán bằng hình thức chuyển khoản: Số tài khoản 88585888 - ngân hàng ACB - chủ tài khoản CTY TNHH Công nghệ phần mềm GOFIBER.' color='blue' />
+                            {/* <TextIconPrice content='Số điện thoại mua hàng + mã đơn hàng.' color='blue' /> */}
                             <p className='mt-4'>
                                 Sau khi nhận được chuyển khoản chậm nhất sau 12 tiếng chúng tôi sẽ gọi điện xác nhận với khách hàng
                             </p>
