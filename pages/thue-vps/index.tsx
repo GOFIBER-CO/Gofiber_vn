@@ -4,7 +4,10 @@ import Question from '@/src/containers/home/question';
 import BuyPackage from '@/src/containers/BuyPackage';
 import SliderHire from '@/src/containers/rent-vps/SliderHire';
 import { VPS_IMAGE } from '@/src/utils';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAppDispatch } from '@/src/redux';
+import { getAllVpsByVpsTab } from '@/src/redux/slice/vpsSlice';
+import Skeleton from 'react-loading-skeleton';
 
 const banner = {
   large: VPS_IMAGE.BANNER_LARGE,
@@ -283,9 +286,82 @@ const question = [
   },
 ];
 
+const SkeletonSlide = () => <>
+  <div className='d-flex justify-content-center mt-4'>
+    <Skeleton count={1} style={{ height: '40px', width: '100px', borderRadius: '32px' }} />
+    <Skeleton className='mx-2' count={1} style={{ height: '40px', width: '100px', borderRadius: '32px' }} />
+    <Skeleton count={1} style={{ height: '40px', width: '100px', borderRadius: '32px' }} />
+  </div>
+  <div className='row mt-4 justify-content-center'>
+    {
+      ['mt-0 mt-lg-3', 'mt-0 d-none d-lg-block', 'mt-lg-3 mt-0 d-none d-md-block'].map((i, index) => <div key={index} className={`col col-12 col-sm-8 col-md-6 col-lg-4 ${i}`}>
+        <Skeleton count={1} style={{ width: '100%', minHeight: '600px' }} />
+      </div>)
+    }
+  </div>
+</>
+
 function RentVps() {
-  const [tab, setTab] = useState(tabs[0]);
+  const dispatch = useAppDispatch();
+  const [tab, setTab] = useState<any>();
   const [packageSelect, setPackageSelect] = useState();
+  const [vps, setVps] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const getVps = async () => {
+    try {
+      setIsLoading(true)
+
+      const result = await dispatch(getAllVpsByVpsTab({})).unwrap();
+
+      const { data } = result?.data;
+
+      setTab(data[0]);
+      setVps(data || []);
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getVps();
+  }, [])
+
+  const renderSlideHire = {
+    loading: <SkeletonSlide />,
+    notLoading: <>
+      <div className="d-flex justify-content-center flex-wrap mt-4 pt-4">
+        {vps.map((item) => (
+          <button
+            onClick={() => setTab(item)}
+            key={item._id}
+            className={`btn0 btn-tab m-1 ${tab?._id === item?._id ? 'active' : ''
+              }`}
+          >
+            {item.name}
+          </button>
+        ))}
+      </div>
+      <div className="mt-3">
+        {tab?.isUpdating ? (
+          <div id="slider-hire">
+            <div className="text-center pt-4">
+              <div className="img">
+                <img
+                  src={VPS_IMAGE.UPDATING}
+                  alt="Đang cập nhật"
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <SliderHire data={tab?.vps || []} onSelectPackage={setPackageSelect} />
+        )}
+      </div>
+    </>
+  }
 
   return (
     <div id="rent-vps">
@@ -297,34 +373,7 @@ function RentVps() {
           <div className="text-center">
             <h3 className="h3">Thuê VPS</h3>
           </div>
-          <div className="d-flex justify-content-center flex-wrap mt-4 pt-4">
-            {tabs.map((item) => (
-              <button
-                onClick={() => setTab(item)}
-                key={item.id}
-                className={`btn0 btn-tab m-1 ${tab.id === item.id ? 'active' : ''
-                  }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-          <div className="mt-3">
-            {tab?.isUpdating ? (
-              <div id="slider-hire">
-                <div className="text-center pt-4">
-                  <div className="img">
-                    <img
-                      src={VPS_IMAGE.UPDATING}
-                      alt="Đang cập nhật"
-                    />
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <SliderHire tab={tab.id} onSelectPackage={setPackageSelect} />
-            )}
-          </div>
+          {isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']}
         </section>
 
         <section className="section-hire">

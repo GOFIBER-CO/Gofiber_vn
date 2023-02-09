@@ -178,7 +178,7 @@ const dataWithTab = [
         },
       },
       {
-        id: 2,
+        id: 3,
         name: 'Xeon 14 Core Series',
         extra: 'Phí khởi tạo 800.000',
         price: '6100000',
@@ -203,7 +203,7 @@ const dataWithTab = [
         },
       },
       {
-        id: 2,
+        id: 4,
         name: 'Xeon 18 Core Series',
         extra: 'Phí khởi tạo 800.000',
         price: '8100000',
@@ -262,16 +262,16 @@ const responsive = [
 ];
 
 type Props = {
-  tab: string;
+  data: any[];
   onSelectPackage: any;
 };
 
-function SliderHire({ tab, onSelectPackage }: Props) {
-  const data = useMemo(() => {
-    const result = dataWithTab.find((item) => item.tab === tab)?.data || [];
-    // onSelectPackage(result[0]);
-    return result;
-  }, [tab]);
+function SliderHire({ data, onSelectPackage }: Props) {
+  // const data = useMemo(() => {
+  //   const result = dataWithTab.find((item) => item.tab === tab)?.data || [];
+  //   // onSelectPackage(result[0]);
+  //   return result;
+  // }, [tab]);
 
   return (
     <div id="slider-hire">
@@ -323,18 +323,18 @@ function SliderHire({ tab, onSelectPackage }: Props) {
                       </button>
                     </div>
                     <div className="my-3 divider divider--primary"></div>
-                    {item?.feature && (
+                    {item?.feature?.length > 0 && (
                       <>
-                        <div className="name">{item?.feature?.name}</div>
-                        {item.feature?.data.map((e: any, index: any) => (
+                        <div className="name">Tính năng hàng đầu</div>
+                        {item.feature?.map((e: any, index: any) => (
                           <TextIconPrice key={index} content={e} />
                         ))}
                       </>
                     )}
-                    {item?.security && (
+                    {item?.security?.length > 0 && (
                       <>
-                        <div className="name">{item?.security?.name}</div>
-                        {item.security?.data.map((e: any, index: any) => (
+                        <div className="name">Bảo mật</div>
+                        {item.security?.map((e: any, index: any) => (
                           <TextIconPrice
                             color="green"
                             key={index}
@@ -343,10 +343,18 @@ function SliderHire({ tab, onSelectPackage }: Props) {
                         ))}
                       </>
                     )}
-                    {item?.free && (
+                    {item?.free?.length > 0 && (
                       <>
-                        <div className="name">{item?.free?.name}</div>
-                        {item.free?.data.map((e: any, index: any) => (
+                        <div className="name">Phần thường miễn phí</div>
+                        {item.free?.map((e: any, index: any) => (
+                          <TextIconPrice color="blue" key={index} content={e} />
+                        ))}
+                      </>
+                    )}
+                    {item?.advance?.length > 0 && (
+                      <>
+                        <div className="name">Tuỳ chọn nâng cao</div>
+                        {item.advance?.map((e: any, index: any) => (
                           <TextIconPrice color="blue" key={index} content={e} />
                         ))}
                       </>

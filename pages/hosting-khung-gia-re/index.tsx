@@ -3,9 +3,12 @@ import BuyPackage from '@/src/containers/BuyPackage';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import SliderHostingPrice from '@/src/containers/web-hosting/SliderHostingPrice';
+import { useAppDispatch } from '@/src/redux';
+import { getAllHosting } from '@/src/redux/slice/hostingSlice';
 import { WEB_HOSTING_IMAGE } from '@/src/utils';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Skeleton from 'react-loading-skeleton';
 
 const banner = {
   large: WEB_HOSTING_IMAGE.BANNER_LARGE,
@@ -271,8 +274,51 @@ const question = [
   },
 ];
 
+const SkeletonSlide = () => <div className='row mt-4 justify-content-center'>
+  {
+    ['mt-0 mt-lg-3', 'mt-0 d-none d-lg-block', 'mt-lg-3 mt-0 d-none d-md-block'].map((i, index) => <div key={index} className={`col col-12 col-sm-8 col-md-6 col-lg-4 ${i}`}>
+      <Skeleton count={1} style={{ width: '100%', minHeight: '600px' }} />
+    </div>)
+  }
+
+</div>
+
 function WebHosting() {
+  const dispatch = useAppDispatch();
   const [packageSelect, setPackageSelect] = useState();
+  const [hostings, setHostings] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const getHostings = async () => {
+    try {
+      setIsLoading(true);
+
+      const params = {
+        status: 1
+      }
+
+      const result = await dispatch(getAllHosting(params)).unwrap();
+
+      const { hosting } = result?.data;
+
+      setHostings(hosting || []);
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getHostings()
+  }, [])
+
+  const renderSlideHire = {
+    loading: <SkeletonSlide />,
+    notLoading: <div>
+      <SliderHostingPrice data={hostings} onSelectPackage={setPackageSelect} />
+    </div>
+  }
 
   return (
     <div id="web-hosting">
@@ -292,7 +338,9 @@ function WebHosting() {
         <section className="section-hosting-price">
           <h3 className="h3 text-center">Bảng giá hosting</h3>
           <div>
-            <SliderHostingPrice onSelectPackage={setPackageSelect} />
+            {
+              isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']
+            }
           </div>
           <div className='mt-4 text-center'>
             <Link href="/chinh-sach-thanh-toan">

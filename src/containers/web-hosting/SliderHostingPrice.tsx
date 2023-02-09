@@ -9,7 +9,8 @@ import { Pagination } from 'swiper';
 import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
 import { formatNumber } from '@/src/utils';
 import ButtonSlideSeeMore from '@/src/components/button/ButtonSlideSeeMore';
-const data = [
+
+const dummyData = [
   {
     id: '1',
     name: 'Website Hosting Cao Cấp',
@@ -83,24 +84,6 @@ const data = [
     ],
     free: ['Website builder', 'Sao lưu hàng tuần'],
   },
-  {
-    id: '5',
-    name: 'Website Hosting Doanh nghiệp',
-    extra: '',
-    price: '105000',
-    feature: [
-      '10 trang web',
-      '50 GB Dung lượng ổ SSD',
-      '~10 000 lượt truy cập hàng tháng',
-      '100 GB Băng thông',
-      '5 Databases',
-    ],
-    security: [
-      'SSL Miễn phí Không giới hạn',
-      'Nameservers bảo vệ bằng Cloudflare',
-    ],
-    free: ['Website builder', 'Sao lưu hàng tuần'],
-  },
 ];
 
 const responsive = [
@@ -121,7 +104,12 @@ const responsive = [
   },
 ];
 
-function SliderHostingPrice({ onSelectPackage }: any) {
+type Props = {
+  onSelectPackage: any;
+  data: any[];
+}
+
+function SliderHostingPrice({ onSelectPackage, data }: Props) {
   return (
     <div id="slider-web-hosting">
       {responsive.map((item) => (
@@ -173,15 +161,15 @@ function SliderHostingPrice({ onSelectPackage }: any) {
                     </div>
                     <div className="my-3 divider divider--primary"></div>
                     <div>Tính năng hàng đầu</div>
-                    {item.feature.map((e, index) => (
+                    {item.feature.map((e: any, index: any) => (
                       <TextIconPrice key={index} content={e} />
                     ))}
                     <div className="mt-3">Bảo mật</div>
-                    {item.security.map((e, index) => (
+                    {item.security.map((e: any, index: any) => (
                       <TextIconPrice key={index} color="green" content={e} />
                     ))}
                     <div className="mt-3">Phần thưởng miễn phí</div>
-                    {item.free.map((e, index) => (
+                    {item.free.map((e: any, index: any) => (
                       <TextIconPrice key={index} color="blue" content={e} />
                     ))}
                   </div>
