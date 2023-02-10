@@ -2,6 +2,7 @@ import BannerPage from '@/src/components/banner/BannerPage'
 import TextIconButton from '@/src/components/button/TextIconButton'
 import Contact from '@/src/containers/home/contact'
 import { ICON, SERVICE_IMAGE } from '@/src/utils'
+import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 
@@ -85,57 +86,63 @@ const data = [
 
 function Service() {
     return (
-        <div id='service'>
-            <section>
-                <BannerPage image={banner} name="Dịch vụ" />
-            </section>
-            <div className='square'></div>
-            <div className='container'>
-                <section className='section-hire'>
-                    <div className='row justify-content-center'>
-                        <div className='col col-12 col-md-10'>
-                            <h2 className='h2 color_primary text-center'>DỊCH VỤ CỦA CHÚNG TÔI</h2>
-                            <p className='mt-4'>
-                                Gofiber.vn là đơn vị kinh doanh dịch vụ thiết kế website giá rẻ chuyên nghiệp mọi lĩnh vực cho khách hàng.
-                                Bên cạnh việc thiết kế, đơn vị còn chú trọng công tác bảo trì, nâng cấp và chăm sóc khách hàng khi khách hàng có yêu cầu.
-                                <br />
-                                Chúng tôi mong muốn góp một chút công sức của mình cho sự phát triển của lĩnh vực thiết kế website
-                                tại TP. Hồ Chí Minh nói riêng và cũng như Việt Nam nói chung.
-                            </p>
+        <>
+            <Head>
+                <link rel="canonical" href="https://gofiber.vn/dich-vu/" />
+            </Head>
+            <div id='service'>
+                <section>
+                    <BannerPage image={banner} name="Dịch vụ" />
+                </section>
+                <div className='square'></div>
+                <div className='container'>
+                    <section className='section-hire'>
+                        <div className='row justify-content-center'>
+                            <div className='col col-12 col-md-10'>
+                                <h2 className='h2 color_primary text-center'>DỊCH VỤ CỦA CHÚNG TÔI</h2>
+                                <p className='mt-4'>
+                                    Gofiber.vn là đơn vị kinh doanh dịch vụ thiết kế website giá rẻ chuyên nghiệp mọi lĩnh vực cho khách hàng.
+                                    Bên cạnh việc thiết kế, đơn vị còn chú trọng công tác bảo trì, nâng cấp và chăm sóc khách hàng khi khách hàng có yêu cầu.
+                                    <br />
+                                    Chúng tôi mong muốn góp một chút công sức của mình cho sự phát triển của lĩnh vực thiết kế website
+                                    tại TP. Hồ Chí Minh nói riêng và cũng như Việt Nam nói chung.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    {
-                        data.map((item: any, index: number) => (
-                            <div key={index} className={`mt-4 row justify-content-center align-items-center ${item?.class ? item?.class : ''}`}>
-                                <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[0]}>
-                                    <div className='row justify-content-center'>
-                                        <div className='col col-12 col-md-7 mx-0'>
-                                            <h3 className='h3'>{item.title}</h3>
-                                            <p className='mt-4'>
-                                                {item.content}
-                                            </p>
-                                            <p>
-                                                {item.extra}
-                                            </p>
-                                            <Link href={item.link}>
-                                                <TextIconButton name='Xem chi tiết' icon={ICON.RIGHT} color="white" styles={{ boxShadow: 'none' }} />
-                                            </Link>
+                        {
+                            data.map((item: any, index: number) => (
+                                <div key={index} className={`mt-4 row justify-content-center align-items-center ${item?.class ? item?.class : ''}`}>
+                                    <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[0]}>
+                                        <div className='row justify-content-center'>
+                                            <div className='col col-12 col-md-7 mx-0'>
+                                                <h3 className='h3'>{item.title}</h3>
+                                                <p className='mt-4'>
+                                                    {item.content}
+                                                </p>
+                                                <p>
+                                                    {item.extra}
+                                                </p>
+                                                <Link href={item.link}>
+                                                    <TextIconButton name='Xem chi tiết' icon={ICON.RIGHT} color="white" styles={{ boxShadow: 'none' }} />
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[1]}>
+                                        <div className='img'>
+                                            <img width={1000} height={500} src={item.image} alt={item.title} />
                                         </div>
                                     </div>
                                 </div>
-                                <div className='col col-12 col-md-6 mx-0' data-aos={item?.aos[1]}>
-                                    <div className='img'>
-                                        <img width={1000} height={500} src={item.image} alt={item.title} />
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </section>
+                            ))
+                        }
+                    </section>
 
-                <Contact />
+                    <Contact />
+                </div >
             </div >
-        </div >
+        </>
+
     )
 }
 

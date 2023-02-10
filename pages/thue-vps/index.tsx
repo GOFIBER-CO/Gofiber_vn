@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { useAppDispatch } from '@/src/redux';
 import { getAllVpsByVpsTab } from '@/src/redux/slice/vpsSlice';
 import Skeleton from 'react-loading-skeleton';
+import Head from 'next/head';
 
 const banner = {
   large: VPS_IMAGE.BANNER_LARGE,
@@ -364,99 +365,105 @@ function RentVps() {
   }
 
   return (
-    <div id="rent-vps">
-      <section>
-        <BannerPage image={banner} name="Thuê VPS" />
-      </section>
-      <div className="container">
-        <section className="section-hire">
-          <div className="text-center">
-            <h3 className="h3">Thuê VPS</h3>
-          </div>
-          {isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']}
+    <>
+      <Head>
+        <link rel="canonical" href="https://gofiber.vn/thue-vps" />
+      </Head>
+      <div id="rent-vps">
+        <section>
+          <BannerPage image={banner} name="Thuê VPS" />
         </section>
+        <div className="container">
+          <section className="section-hire">
+            <div className="text-center">
+              <h3 className="h3">Thuê VPS</h3>
+            </div>
+            {isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']}
+          </section>
 
-        <section className="section-hire">
-          <div className="text-center pt-4">
-            <h3 className="h3">Kiến trúc VPS của chúng tôi</h3>
-          </div>
+          <section className="section-hire">
+            <div className="text-center pt-4">
+              <h3 className="h3">Kiến trúc VPS của chúng tôi</h3>
+            </div>
 
-          <div className="row justify-content-center align-items-center flex-row-reverse">
-            <div className="col col-12 col-md-6">
-              <div className="img text-center text-md-left">
-                <img
-                  src={VPS_IMAGE.VPS2}
-                  width={1000}
-                  height={500}
-                  alt="anh-kien-truc-vps2"
-                />
+            <div className="row justify-content-center align-items-center flex-row-reverse">
+              <div className="col col-12 col-md-6">
+                <div className="img text-center text-md-left">
+                  <img
+                    src={VPS_IMAGE.VPS2}
+                    width={1000}
+                    height={500}
+                    alt="anh-kien-truc-vps2"
+                  />
+                </div>
+              </div>
+              <div className="col col-12 col-md-6">
+                <h4 className="h4">Ổ Cứng SSD và Sức Mạnh Vi Xử Lý</h4>
+                <p>
+                  Ở Gofiber, mỗi máy chủ ảo VPS server đều sử dụng vi xử lý Intel
+                  Xeon mới nhất, hàng terabytes ổ cứng SSD NVMe và 512 GB RAM.
+                  Điều này giúp cung cấp đủ tốc độ xử lý cho mọi dự án từ vừa đến
+                  lớn.
+                </p>
+                <h4 className="h4">Đường mạng 1000 Mb/s</h4>
+                <p>
+                  Thời gian uptime được đảm bảo 99.99% với hệ thống cloud server
+                  mạnh mẽ từ công ty Gofiber. Giờ đây, bạn không phải lo server
+                  không ổn định nữa, hãy để khách có trải nghiệm tốt nhất khi truy
+                  cập vào website của bạn.
+                </p>
+                <h4 className="h4">Hỗ trợ NFS (Network File System)</h4>
+                <p>
+                  VPS hỗ trợ NFS giúp bạn đưa dữ liệu và file hệ thống lên đám
+                  mây. Chúng tôi sẽ gắn ổ cứng NFS vào máy tính của bạn và tăng
+                  dung lượng ổ cứng SSD để bạn có thể truy cập dữ liệu mọi lúc.
+                </p>
               </div>
             </div>
-            <div className="col col-12 col-md-6">
-              <h4 className="h4">Ổ Cứng SSD và Sức Mạnh Vi Xử Lý</h4>
-              <p>
-                Ở Gofiber, mỗi máy chủ ảo VPS server đều sử dụng vi xử lý Intel
-                Xeon mới nhất, hàng terabytes ổ cứng SSD NVMe và 512 GB RAM.
-                Điều này giúp cung cấp đủ tốc độ xử lý cho mọi dự án từ vừa đến
-                lớn.
-              </p>
-              <h4 className="h4">Đường mạng 1000 Mb/s</h4>
-              <p>
-                Thời gian uptime được đảm bảo 99.99% với hệ thống cloud server
-                mạnh mẽ từ công ty Gofiber. Giờ đây, bạn không phải lo server
-                không ổn định nữa, hãy để khách có trải nghiệm tốt nhất khi truy
-                cập vào website của bạn.
-              </p>
-              <h4 className="h4">Hỗ trợ NFS (Network File System)</h4>
-              <p>
-                VPS hỗ trợ NFS giúp bạn đưa dữ liệu và file hệ thống lên đám
-                mây. Chúng tôi sẽ gắn ổ cứng NFS vào máy tính của bạn và tăng
-                dung lượng ổ cứng SSD để bạn có thể truy cập dữ liệu mọi lúc.
-              </p>
-            </div>
-          </div>
-          <div className="row justify-content-center align-items-center mt-4">
-            <div className="col col-12 col-md-6">
-              <div className="img text-center text-md-left">
-                <img
-                  src={VPS_IMAGE.VPS1}
-                  width={1000}
-                  height={500}
-                  alt="anh-kien-truc-vps"
-                />
+            <div className="row justify-content-center align-items-center mt-4">
+              <div className="col col-12 col-md-6">
+                <div className="img text-center text-md-left">
+                  <img
+                    src={VPS_IMAGE.VPS1}
+                    width={1000}
+                    height={500}
+                    alt="anh-kien-truc-vps"
+                  />
+                </div>
+              </div>
+              <div className="col col-12 col-md-6">
+                <h4 className="h4">Toàn quyền root</h4>
+                <p>
+                  Bạn được toàn quyền kiểm soát VPS với mức cao nhất không giới
+                  hạn. Với quyền root server bạn có thể tùy chỉnh sâu hơn vào hệ
+                  thống VPS cũng như có quyền giám sát tài nguyên máy chủ VPS theo
+                  thời gian thực.
+                </p>
+                <h4 className="h4">IPv6 riêng</h4>
+                <p>
+                  Kể cả VPS rẻ nhất chúng tôi cũng sử dụng IPv6 native giúp giảm
+                  độ trễ, tối ưu hóa tốc độ mạng cũng như giúp server không bị đưa
+                  vào danh sách đen. Công nghệ IP mới nhất giúp kết nối tới VPS
+                  server vừa nhanh chóng lại vô cùng an toàn.
+                </p>
+                <h4 className="h4">Backup và Snapshot</h4>
+                <p>
+                  Có backup tự động và snapshot thủ công, bạn hãy yên tâm rằng
+                  website và VPS server sẽ được khôi phục lại trong ít phút.
+                </p>
               </div>
             </div>
-            <div className="col col-12 col-md-6">
-              <h4 className="h4">Toàn quyền root</h4>
-              <p>
-                Bạn được toàn quyền kiểm soát VPS với mức cao nhất không giới
-                hạn. Với quyền root server bạn có thể tùy chỉnh sâu hơn vào hệ
-                thống VPS cũng như có quyền giám sát tài nguyên máy chủ VPS theo
-                thời gian thực.
-              </p>
-              <h4 className="h4">IPv6 riêng</h4>
-              <p>
-                Kể cả VPS rẻ nhất chúng tôi cũng sử dụng IPv6 native giúp giảm
-                độ trễ, tối ưu hóa tốc độ mạng cũng như giúp server không bị đưa
-                vào danh sách đen. Công nghệ IP mới nhất giúp kết nối tới VPS
-                server vừa nhanh chóng lại vô cùng an toàn.
-              </p>
-              <h4 className="h4">Backup và Snapshot</h4>
-              <p>
-                Có backup tự động và snapshot thủ công, bạn hãy yên tâm rằng
-                website và VPS server sẽ được khôi phục lại trong ít phút.
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <Question data={question} />
+          <Question data={question} />
 
-        {/* <Contact /> */}
+          {/* <Contact /> */}
 
-        <BuyPackage packageSelect={packageSelect} />
+          <BuyPackage packageSelect={packageSelect} />
+        </div>
       </div>
-    </div>
+    </>
+
   );
 }
 

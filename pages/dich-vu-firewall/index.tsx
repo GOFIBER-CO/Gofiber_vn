@@ -7,6 +7,7 @@ import SliderSpecification from '@/src/containers/firewall/SliderSpecification';
 import Contact from '@/src/containers/home/contact';
 import Question from '@/src/containers/home/question';
 import { FIREWALL_IMAGE, formatNumber } from '@/src/utils';
+import Head from 'next/head';
 import img from 'next/image';
 import React, { useState } from 'react';
 
@@ -448,133 +449,142 @@ function Firewall() {
   const [packageSelect, setPackageSelect] = useState();
 
   return (
-    <div id="firewall">
-      <section>
-        <BannerPage image={banner} name="Firewall" />
-      </section>
-      <div className="container">
-        <section className="section-specification hide-for-medium">
-          <div className="row">
-            <div className="col col-12">
-              <div
-                className="price-firewall title pb-2"
-              >
-                <div className="name-server">
-                  <p>Tính năng</p>
-                </div>
-                {
-                  firewallService.map((item) => <div key={item.id} className="name-server info-server">
-                    {item?.name}<br />
-                    <span className='price'>
-                      {formatNumber(item.price)} VNĐ/Th
-                    </span>
-                  </div>)
-                }
-              </div>
-              <div className="price-firewall specification-item mt-2">
-                {specification.map((item, index) => (
-                  <SpecificationItem key={index} item={item} />
-                ))}
-                <div className="name-server"></div>
-                {
-                  firewallService.map((item: any) => <div key={item.id} className="info-server">
-                    <a href='#buy-package' className='a'>
-                      <button onClick={() => setPackageSelect(item)} className="btn0 btn-price">
-                        Chọn
-                      </button>
-                    </a>
-                  </div>)
-                }
-              </div>
-            </div>
-          </div>
+    <>
+      <Head>
+        <title>
+          Gofiber Next-Gen Firewall – Dịch vụ bảo mật tường lửa thế hệ mới
+        </title>
+        <link rel="canonical" href="https://gofiber.vn/dich-vu-firewall" />
+      </Head>
+      <div id="firewall">
+        <section>
+          <BannerPage image={banner} name="Firewall" />
         </section>
-
-        <section className="section-specification hide-for-large">
-          <div className="row">
-            <div className="col col-6">
-              <div className="" style={{ width: '100% !important' }}>
-                <div className="name-server" style={{ borderBottom: '1px solid #d6d6d6' }}>
-                  <p style={{ margin: '0px', lineHeight: '42px' }}>Tính năng</p>
+        <div className="container">
+          <section className="section-specification hide-for-medium">
+            <div className="row">
+              <div className="col col-12">
+                <div
+                  className="price-firewall title pb-2"
+                >
+                  <div className="name-server">
+                    <p>Tính năng</p>
+                  </div>
+                  {
+                    firewallService.map((item) => <div key={item.id} className="name-server info-server">
+                      {item?.name}<br />
+                      <span className='price'>
+                        {formatNumber(item.price)} VNĐ/Th
+                      </span>
+                    </div>)
+                  }
                 </div>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '100%' }}>
-                <div className="name-server">
-                  <p>Băng thông</p>
-                </div>
-                <div style={{ minHeight: '41px' }} className="name-server number_line_1">
-                  <p>Số lượng IP Backend</p>
-                </div>
-                <div className="name-server">
-                  <p>Chống Botnet</p>
-                </div>
-                <div className="name-server">
-                  <p>Chống SYN Flood</p>
-                </div>
-                <div style={{ minHeight: '41px' }} className="name-server number_line_1">
-                  <p>Chống SYN Flood Fake Source IP</p>
-                </div>
-                <div className="name-server">
-                  <p>Chống ICMP/ICMP</p>
-                </div>
-                <div className="name-server">
-                  <p>Chống GRE Flood</p>
-                </div>
-                <div className="name-server">
-                  <p>Chống TOS Flood</p>
-                </div>
-                <div style={{ minHeight: '41px' }} className="name-server number_line_1">
-                  <p>Đường mạng 100 mb/s</p>
-                </div>
-                <div className="name-server">
-                  <p>Hỗ trợ IPv4&amp;IPv6</p>
-                </div>
-                <div className="name-server">
-                  <p>Hỗ trợ 24/7</p>
+                <div className="price-firewall specification-item mt-2">
+                  {specification.map((item, index) => (
+                    <SpecificationItem key={index} item={item} />
+                  ))}
+                  <div className="name-server"></div>
+                  {
+                    firewallService.map((item: any) => <div key={item.id} className="info-server">
+                      <a href='#buy-package' className='a'>
+                        <button onClick={() => setPackageSelect(item)} className="btn0 btn-price">
+                          Chọn
+                        </button>
+                      </a>
+                    </div>)
+                  }
                 </div>
               </div>
             </div>
-            <div className="col col-6">
-              <SliderSpecification onSelectPackage={setPackageSelect} />
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section-security">
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12 col-md-6 col-lg-4">
-                <TitleWithLine title='BẢO VỆ TOÀN DIỆN' />
+          <section className="section-specification hide-for-large">
+            <div className="row">
+              <div className="col col-6">
+                <div className="" style={{ width: '100% !important' }}>
+                  <div className="name-server" style={{ borderBottom: '1px solid #d6d6d6' }}>
+                    <p style={{ margin: '0px', lineHeight: '42px' }}>Tính năng</p>
+                  </div>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '100%' }}>
+                  <div className="name-server">
+                    <p>Băng thông</p>
+                  </div>
+                  <div style={{ minHeight: '41px' }} className="name-server number_line_1">
+                    <p>Số lượng IP Backend</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Chống Botnet</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Chống SYN Flood</p>
+                  </div>
+                  <div style={{ minHeight: '41px' }} className="name-server number_line_1">
+                    <p>Chống SYN Flood Fake Source IP</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Chống ICMP/ICMP</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Chống GRE Flood</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Chống TOS Flood</p>
+                  </div>
+                  <div style={{ minHeight: '41px' }} className="name-server number_line_1">
+                    <p>Đường mạng 100 mb/s</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Hỗ trợ IPv4&amp;IPv6</p>
+                  </div>
+                  <div className="name-server">
+                    <p>Hỗ trợ 24/7</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col col-6">
+                <SliderSpecification onSelectPackage={setPackageSelect} />
               </div>
             </div>
-            <div className="row justify-content-center">
-              <div className="col col-12 col-md-12 col-lg-8">
-                {security.map((item) => (
-                  <SecurityItem key={item.id} item={item} />
-                ))}
+          </section>
+
+          <section className="section-security">
+            <div className="section-content position-relative">
+              <div className="row justify-content-center">
+                <div className="col col-12 col-md-6 col-lg-4">
+                  <TitleWithLine title='BẢO VỆ TOÀN DIỆN' />
+                </div>
               </div>
-              <div className="col col-12 col-md-4 hide-for-medium">
-                <div className="img">
-                  <img
-                    src={FIREWALL_IMAGE.SECURITY}
-                    width={500}
-                    height={1500}
-                    alt="Bảo vệ toàn diện"
-                  />
+              <div className="row justify-content-center">
+                <div className="col col-12 col-md-12 col-lg-8">
+                  {security.map((item) => (
+                    <SecurityItem key={item.id} item={item} />
+                  ))}
+                </div>
+                <div className="col col-12 col-md-4 hide-for-medium">
+                  <div className="img">
+                    <img
+                      src={FIREWALL_IMAGE.SECURITY}
+                      width={500}
+                      height={1500}
+                      alt="Bảo vệ toàn diện"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <Question data={question} />
+          <Question data={question} />
 
-        {/* <Contact /> */}
+          {/* <Contact /> */}
 
-        <BuyPackage packageSelect={packageSelect} />
+          <BuyPackage packageSelect={packageSelect} />
 
+        </div>
       </div>
-    </div>
+    </>
+
   );
 }
 

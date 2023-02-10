@@ -12,6 +12,7 @@ import { Divider } from 'antd';
 import RelativeNews from '@/src/containers/news/new-detail/RelativeNews';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Skeleton from 'react-loading-skeleton'
+import Head from 'next/head';
 
 const pageSize = 4;
 
@@ -127,40 +128,44 @@ function NewsDetail() {
     }
 
     return (
-        <div id='news-detail'>
-            <div className='breadcrumb'>
-                <div className='container'>
-                    <div className='breadcrumb_container'>
-                        <h2 className='h2 text-uppercase'>Tin tức</h2>
-                        <div className='breadcrumb_link mt-2 flex-wrap hide-for-small'>
-                            <Link href="/">Trang chủ</Link>
-                            <a className='mx-2'>{'>'}</a>
-                            <a>Tin tức</a>
-                            <a className='mx-2'>{'>'}</a>
-                            <a>{data?.title}</a>
+        <>
+            <Head>
+                <link rel="canonical" href="https://gofiber.vn/" />
+            </Head>
+            <div id='news-detail'>
+                <div className='breadcrumb'>
+                    <div className='container'>
+                        <div className='breadcrumb_container'>
+                            <h2 className='h2 text-uppercase'>Tin tức</h2>
+                            <div className='breadcrumb_link mt-2 flex-wrap hide-for-small'>
+                                <Link href="/">Trang chủ</Link>
+                                <a className='mx-2'>{'>'}</a>
+                                <a>Tin tức</a>
+                                <a className='mx-2'>{'>'}</a>
+                                <a>{data?.title}</a>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-12 col-md-8 content'>
-                        <h1>{data?.title}</h1>
-                        <div className='mt-2 time'>
-                            {getTime(data?.createdAt)}
-                        </div>
-                        <div className='mt-2'>
-                            <div dangerouslySetInnerHTML={{ __html: data?.description }}></div>
-                        </div>
-                        <div className='mt-4'>
-                            <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
-                        </div>
-                        <div className='relative-news'>
-                            <h4 className='h4 text-uppercase title'>
-                                CÓ THỂ BẠN QUAN TÂM
-                            </h4>
-                            {/* <div id="relative-news" ref={ref}>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-12 col-md-8 content'>
+                            <h1>{data?.title}</h1>
+                            <div className='mt-2 time'>
+                                {getTime(data?.createdAt)}
+                            </div>
+                            <div className='mt-2'>
+                                <div dangerouslySetInnerHTML={{ __html: data?.description }}></div>
+                            </div>
+                            <div className='mt-4'>
+                                <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
+                            </div>
+                            <div className='relative-news'>
+                                <h4 className='h4 text-uppercase title'>
+                                    CÓ THỂ BẠN QUAN TÂM
+                                </h4>
+                                {/* <div id="relative-news" ref={ref}>
                                 {
                                     relativeNews?.map((item, index) =>
                                         <React.Fragment key={index}>
@@ -170,53 +175,55 @@ function NewsDetail() {
                                     )
                                 }
                             </div> */}
-                            <InfiniteScroll
-                                style={{ overflow: 'hidden' }}
-                                dataLength={relativeNews.length}
-                                next={fetchMoreData}
-                                hasMore={relativeNews?.length < count}
-                                loader={
-                                    <div className='row mt-2'>
-                                        <div className='col-4'>
-                                            <Skeleton style={{ width: '100%', height: '150px' }} count={1} />
+                                <InfiniteScroll
+                                    style={{ overflow: 'hidden' }}
+                                    dataLength={relativeNews.length}
+                                    next={fetchMoreData}
+                                    hasMore={relativeNews?.length < count}
+                                    loader={
+                                        <div className='row mt-2'>
+                                            <div className='col-4'>
+                                                <Skeleton style={{ width: '100%', height: '150px' }} count={1} />
+                                            </div>
+                                            <div className='col-8'>
+                                                <Skeleton style={{ width: '200px', height: '24px' }} count={1} />
+                                                <Skeleton style={{ width: '80%', height: '72px', marginTop: '10px' }} count={1} />
+                                                <Skeleton style={{ width: '100px', height: '24px', marginTop: '10px' }} count={1} />
+                                            </div>
                                         </div>
-                                        <div className='col-8'>
-                                            <Skeleton style={{ width: '200px', height: '24px' }} count={1} />
-                                            <Skeleton style={{ width: '80%', height: '72px', marginTop: '10px' }} count={1} />
-                                            <Skeleton style={{ width: '100px', height: '24px', marginTop: '10px' }} count={1} />
-                                        </div>
-                                    </div>
-                                }
-                            >
+                                    }
+                                >
+                                    {
+                                        relativeNews?.map((item, index) =>
+                                            <React.Fragment key={index}>
+                                                <RelativeNews onRedirect={onRedirect} item={item} key={item?._id} />
+                                                <Divider className='mx-3' />
+                                            </React.Fragment>
+                                        )
+                                    }
+                                </InfiniteScroll>
+                            </div>
+                        </div>
+                        <div className='col-12 col-md-4 hide-for-medium'>
+                            <div className='best-news'>
+                                <h4 className='h4 text-uppercase title'>
+                                    Xem nhiều nhất
+                                </h4>
                                 {
-                                    relativeNews?.map((item, index) =>
+                                    bestNews?.map((item, index) =>
                                         <React.Fragment key={index}>
-                                            <RelativeNews onRedirect={onRedirect} item={item} key={item?._id} />
+                                            <BestNews onRedirect={onRedirect} item={item} className={`${index === 0 ? 'primary' : 'secondary'}`} key={item?._id} />
                                             <Divider className='mx-3' />
                                         </React.Fragment>
                                     )
                                 }
-                            </InfiniteScroll>
-                        </div>
-                    </div>
-                    <div className='col-12 col-md-4 hide-for-medium'>
-                        <div className='best-news'>
-                            <h4 className='h4 text-uppercase title'>
-                                Xem nhiều nhất
-                            </h4>
-                            {
-                                bestNews?.map((item, index) =>
-                                    <React.Fragment key={index}>
-                                        <BestNews onRedirect={onRedirect} item={item} className={`${index === 0 ? 'primary' : 'secondary'}`} key={item?._id} />
-                                        <Divider className='mx-3' />
-                                    </React.Fragment>
-                                )
-                            }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
+
     )
 }
 

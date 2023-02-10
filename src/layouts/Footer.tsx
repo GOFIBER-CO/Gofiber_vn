@@ -30,7 +30,8 @@ const infoData = [
     {
         id: '5',
         text: 'Tuyển dụng',
-        icon: require("@/public/images/icons/user-add.svg")
+        icon: require("@/public/images/icons/user-add.svg"),
+        link: '/tuyen-dung'
     }
 ];
 
@@ -68,17 +69,20 @@ const serviceData = [
     {
         id: '7',
         icon: require("@/public/images/icons/send.svg"),
-        text: "Báo Việt Nam"
+        text: "Báo Việt Nam",
+        link: 'https://baovietnam.com'
     },
     {
         id: '8',
         icon: require("@/public/images/icons/send.svg"),
-        text: "Cung cấp PBN"
+        text: "Cung cấp PBN",
+        link: 'https://dichvupbn.com'
     },
     {
         id: '9',
         icon: require("@/public/images/icons/send.svg"),
-        text: "Dịch vụ Traffic User"
+        text: "Dịch vụ Traffic User",
+        link: 'https://dichvutraffic.com'
     }
 ];
 
@@ -179,7 +183,7 @@ function Footer() {
                             <div className='mt-3'>
                                 {
                                     infoData.map(item => (
-                                        <TextIconInfo key={item.id} icon={item.icon} text={item.text} />
+                                        <TextIconInfo link={item.link} key={item.id} icon={item.icon} text={item.text} />
                                     ))
                                 }
                             </div>
@@ -189,7 +193,7 @@ function Footer() {
                             <div className='mt-3'>
                                 {
                                     serviceData.map(item => (
-                                        <TextIconInfo key={item.id} icon={item.icon} text={item.text} />
+                                        <TextIconInfo link={item.link} key={item.id} icon={item.icon} text={item.text} />
                                     ))
                                 }
                             </div>

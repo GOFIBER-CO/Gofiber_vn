@@ -7,6 +7,7 @@ import { useAppDispatch } from '@/src/redux';
 import { getRecruitsByDomain } from '@/src/redux/slice/recruitSlice';
 import { RECRUIT_IMAGE } from '@/src/utils';
 import Skeleton from 'react-loading-skeleton';
+import Head from 'next/head';
 
 const banner = {
     large: RECRUIT_IMAGE.BANNER_LARGE,
@@ -164,18 +165,27 @@ function Recruit() {
     }
 
     return (
-        <div id='recruit'>
-            <section>
-                <BannerPage image={banner} name="Tuyển dụng" />
-            </section>
-            <div className='container'>
-                <section className='section-recruit'>
-                    {
-                        isLoading ? render['isLoading'] : render['notLoading']
-                    }
+        <>
+            <Head>
+                <title>
+                    Cơ hội việc làm với công ty công nghệ hàng đầu
+                </title>
+                <link rel="canonical" href="https://gofiber.vn/tuyen-dung" />
+            </Head>
+            <div id='recruit'>
+                <section>
+                    <BannerPage image={banner} name="Tuyển dụng" />
                 </section>
+                <div className='container'>
+                    <section className='section-recruit'>
+                        {
+                            isLoading ? render['isLoading'] : render['notLoading']
+                        }
+                    </section>
+                </div>
             </div>
-        </div>
+        </>
+
     )
 }
 

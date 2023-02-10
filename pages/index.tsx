@@ -11,6 +11,7 @@ import SliderService from '@/src/containers/home/SliderService';
 import DrawerMenu from '@/src/layouts/DrawerMenu';
 import { useAppSelector } from '@/src/redux';
 import { HOME_IMAGE, ICON } from '@/src/utils';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -54,137 +55,144 @@ function Home() {
   const router = useRouter();
 
   return (
-    <div id="home">
-      <section className="top">
-        {/* <div className="bg section-bg fill bg-fill bg-loaded">
+    <>
+      <Head>
+        <title>
+          Giải pháp công nghệ hàng đầu
+        </title>
+        <link rel="canonical" href="https://gofiber.vn/" />
+      </Head>
+      <div id="home">
+        <section className="top">
+          {/* <div className="bg section-bg fill bg-fill bg-loaded">
         </div> */}
-        <div className="section-content position-relative bg-custom">
-          <div className='container'>
-            <div className="row align-items-center">
-              <div className="col col-12 col-md-6 col-lg-4">
-                <div className="col-left content">
-                  <h1 style={{ lineHeight: '1.5' }} className="uppercase h1">
-                    CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM
-                  </h1>
-                  <p style={{ textAlign: 'justify' }}>
-                    Tự hào Phát triển và đi lên nhờ vào sự tin tưởng của khách
-                    hàng với dịch vụ thiết kế website giá rẻ uy tín và tối ưu.
-                    Công ty TNHH Công Nghệ Phần Mềm GOFIBER tự tin có thể tiếp tục
-                    mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
-                    khách hàng của mình.
-                  </p>
-                  <Link href={"/lien-he"}>
-                    <EffectButton onClick={() => router.push("/lien-he")} className="shadow" color="primary" name="Liên hệ ngay" />
-                  </Link>
+          <div className="section-content position-relative bg-custom">
+            <div className='container'>
+              <div className="row align-items-center">
+                <div className="col col-12 col-md-6 col-lg-4">
+                  <div className="col-left content">
+                    <h1 style={{ lineHeight: '1.5' }} className="uppercase h1">
+                      CÔNG NGHỆ GIẢI PHÁP TỐI ƯU VÀ TIẾT KIỆM
+                    </h1>
+                    <p style={{ textAlign: 'justify' }}>
+                      Tự hào Phát triển và đi lên nhờ vào sự tin tưởng của khách
+                      hàng với dịch vụ thiết kế website giá rẻ uy tín và tối ưu.
+                      Công ty TNHH Công Nghệ Phần Mềm GOFIBER tự tin có thể tiếp tục
+                      mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị cho
+                      khách hàng của mình.
+                    </p>
+                    <Link href={"/lien-he"}>
+                      <EffectButton onClick={() => router.push("/lien-he")} className="shadow" color="primary" name="Liên hệ ngay" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-              <div className="col col-12 col-md-6 col-lg-8 mt-4 mt-md-0">
-                <div className='row justify-content-end'>
-                  <div className='col col-12 col-lg-8'>
-                    <div className="img col-right">
-                      <div className="img img-inner dark">
-                        <img
-                          src={HOME_IMAGE.INIT}
-                          alt="Video 33"
-                        />
+                <div className="col col-12 col-md-6 col-lg-8 mt-4 mt-md-0">
+                  <div className='row justify-content-end'>
+                    <div className='col col-12 col-lg-8'>
+                      <div className="img col-right">
+                        <div className="img img-inner dark">
+                          <img
+                            src={HOME_IMAGE.INIT}
+                            alt="Video 33"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-        </div>
-      </section>
-
-      <div className="container">
-        <section>
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12 col-lg-8">
-                <TitleWithLine title='DỊCH VỤ CỦA CHÚNG TÔI'
-                  extra='Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt lên hàng đầu.'
-                  extra2='Chúng tôi cam kết đảm bảo 100% hài lòng.' />
-              </div>
-            </div>
-            <div className="row">
-              <div className="hide-for-medium">
-                <SliderService />
-              </div>
-              <div className="hide-for-large">
-                <ServiceList />
-              </div>
-            </div>
           </div>
         </section>
 
-        <section className="section-hot">
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12 col-lg-8">
-                <TitleWithLine title='NỔI BẬT'
-                  extra='Các tính năng vượt trội so với số còn lại trên thị trường của các sản phẩm và dịch vụ do GOFIBER cung cấp.' />
+        <div className="container">
+          <section>
+            <div className="section-content position-relative">
+              <div className="row justify-content-center">
+                <div className="col col-12 col-lg-8">
+                  <TitleWithLine title='DỊCH VỤ CỦA CHÚNG TÔI'
+                    extra='Với sự đầu tư đồng bộ về công nghệ và yếu tố con người đặt lên hàng đầu.'
+                    extra2='Chúng tôi cam kết đảm bảo 100% hài lòng.' />
+                </div>
+              </div>
+              <div className="row">
+                <div className="hide-for-medium">
+                  <SliderService />
+                </div>
+                <div className="hide-for-large">
+                  <ServiceList />
+                </div>
               </div>
             </div>
-            <div className="row">
-              <SliderHot />
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section-why">
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12 col-md-8 col-lg-6">
-                <TitleWithLine title='VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG CÁC SẢN PHẨM KHÁC CỦA GOFIBER'
-                  extra='Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.'
-                  extra2='Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà cung cấp cấp dịch vụ.' />
+          <section className="section-hot">
+            <div className="section-content position-relative">
+              <div className="row justify-content-center">
+                <div className="col col-12 col-lg-8">
+                  <TitleWithLine title='NỔI BẬT'
+                    extra='Các tính năng vượt trội so với số còn lại trên thị trường của các sản phẩm và dịch vụ do GOFIBER cung cấp.' />
+                </div>
+              </div>
+              <div className="row">
+                <SliderHot />
               </div>
             </div>
-            <div className="row justify-content-center mt-4">
-              <div className="col col-12 col-md-7">
-                {dataWhy.map((item) => (
-                  <div
-                    key={item.id}
-                    className={`row align-items-center ${item.class}`}
-                  >
-                    <div data-aos={item.aos[0]} className="col col-12 col-md-6">
-                      <h6 className="title">{item.title}</h6>
-                      <p className="content">{item.content}</p>
-                      <TextIconButton
-                        name="Xem chi tiết"
-                        color="white"
-                        icon={ICON.RIGHT}
-                      />
+          </section>
+
+          <section className="section-why">
+            <div className="section-content position-relative">
+              <div className="row justify-content-center">
+                <div className="col col-12 col-md-8 col-lg-6">
+                  <TitleWithLine title='VÌ SAO CHỌN HOSTING VÀ MÁY CHỦ CÙNG CÁC SẢN PHẨM KHÁC CỦA GOFIBER'
+                    extra='Bạn hoàn toàn yên tâm với khoản đầu tư ít tốn kém.'
+                    extra2='Không chịu rủi ro phần cứng và đường truyền thuộc phía nhà cung cấp cấp dịch vụ.' />
+                </div>
+              </div>
+              <div className="row justify-content-center mt-4">
+                <div className="col col-12 col-md-7">
+                  {dataWhy.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`row align-items-center ${item.class}`}
+                    >
+                      <div data-aos={item.aos[0]} className="col col-12 col-md-6">
+                        <h6 className="title">{item.title}</h6>
+                        <p className="content">{item.content}</p>
+                        <TextIconButton
+                          name="Xem chi tiết"
+                          color="white"
+                          icon={ICON.RIGHT}
+                        />
+                      </div>
+                      <div data-aos={item.aos[1]} className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
+                        <img src={item.image} alt={item.title} />
+                      </div>
                     </div>
-                    <div data-aos={item.aos[1]} className="col col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center justify-content-md-start">
-                      <img src={item.image} alt={item.title} />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <NewsAndEvents />
+          <NewsAndEvents />
 
-        <Question />
+          <Question />
 
-        <section className="section-customer">
-          <div className="section-content position-relative">
-            <div className="row justify-content-center">
-              <div className="col col-12">
-                <TitleWithLine title='KHÁCH HÀNG CỦA CHÚNG TÔI' />
+          <section className="section-customer">
+            <div className="section-content position-relative">
+              <div className="row justify-content-center">
+                <div className="col col-12">
+                  <TitleWithLine title='KHÁCH HÀNG CỦA CHÚNG TÔI' />
+                </div>
               </div>
+              <MyCustomer />
+              <SliderMyCustomer />
             </div>
-            <MyCustomer />
-            <SliderMyCustomer />
-          </div>
-        </section>
+          </section>
 
-        {/* <section className="section-contact">
+          {/* <section className="section-contact">
           <div className="section-content position-relative">
             <div className="row justify-content-center">
               <div className="col col-12">
@@ -204,9 +212,11 @@ function Home() {
             </div>
           </div>
         </section> */}
-      </div>
+        </div>
 
-    </div>
+      </div>
+    </>
+
   );
 }
 

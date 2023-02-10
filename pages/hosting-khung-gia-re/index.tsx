@@ -6,6 +6,7 @@ import SliderHostingPrice from '@/src/containers/web-hosting/SliderHostingPrice'
 import { useAppDispatch } from '@/src/redux';
 import { getAllHosting } from '@/src/redux/slice/hostingSlice';
 import { WEB_HOSTING_IMAGE } from '@/src/utils';
+import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
@@ -321,131 +322,138 @@ function WebHosting() {
   }
 
   return (
-    <div id="web-hosting">
-      <section>
-        <BannerPage image={banner} name="Web Hosting" />
-      </section>
-      <div className="container">
-        <section className="mt-4 text-center">
-          <h3 className="h3 mt-4">
-            Mua Hosting đang được tin dùng bởi hàng ngàn người
-          </h3>
-          <p className="mt-3">
-            GoFiber là nhà cung cấp dịch vụ lưu trữ web hosting được đánh giá
-            “tuyệt vời” bởi hàng ngàn người dùng thực tế.
-          </p>
+    <>
+      <Head>
+        <title>
+          Dịch vụ hosting và web hosting giá rẻ, free chứng chỉ SSL
+        </title>
+        <link rel="canonical" href="https://gofiber.vn/hosting-khung-gia-re" />
+      </Head>
+      <div id="web-hosting">
+        <section>
+          <BannerPage image={banner} name="Web Hosting" />
         </section>
-        <section className="section-hosting-price">
-          <h3 className="h3 text-center">Bảng giá hosting</h3>
-          <div>
-            {
-              isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']
-            }
-          </div>
-          <div className='mt-4 text-center'>
-            <Link href="/chinh-sach-thanh-toan">
-              <span className='color_primary'>
-                Điều khoản thanh toán
-              </span>
-            </Link>
-          </div>
-        </section>
-      </div>
-      <section className="section-info-web-hosting">
         <div className="container">
-          <div className="row justify-content-center align-items-center flex-row-reverse">
-            <div className="col col-12 col-md-6">
-              <div className="img text-center text-md-left">
-                <img
-                  src={WEB_HOSTING_IMAGE.CLOUD2}
-                  width={1000}
-                  height={500}
-                  alt="Cloud-hosting-rafiki"
-                />
-              </div>
+          <section className="mt-4 text-center">
+            <h3 className="h3 mt-4">
+              Mua Hosting đang được tin dùng bởi hàng ngàn người
+            </h3>
+            <p className="mt-3">
+              GoFiber là nhà cung cấp dịch vụ lưu trữ web hosting được đánh giá
+              “tuyệt vời” bởi hàng ngàn người dùng thực tế.
+            </p>
+          </section>
+          <section className="section-hosting-price">
+            <h3 className="h3 text-center">Bảng giá hosting</h3>
+            <div>
+              {
+                isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']
+              }
             </div>
-            <div className="col col-12 col-md-6">
-              <h4 className="h4">Chuyên gia hỗ trợ hosting 24/7</h4>
-              <p>
-                Ngoài hỗ trợ tiếng Anh 24/7, chuyên gia đào tạo từ công ty
-                Gofiber còn hỗ trợ kỹ thuật toàn thời gian bằng tiếng Việt cho
-                bạn. Nếu có vấn đề xảy ra, bạn không cần lo lắng vì đã có chúng
-                tôi trợ giúp.
-              </p>
-              <h4 className="h4">Server host công nghệ hàng đầu</h4>
-              <p>
-                Bạn lo lắng trang web chậm ảnh hưởng đến uy tín công ty? Đừng lo
-                lắng vì đã có chúng tôi! Với gói máy chủ host chạy trên hạ tầng
-                HTTP/3 kết hợp cơ chế tự phát hiện và sửa lỗi, ổ cứng SSD và
-                không giới hạn băng thông, website của bạn sẽ đạt tốc độ cao
-                nhất.
-              </p>
-              <h4 className="h4">Server host công nghệ hàng đầu</h4>
-              <p>
-                Các chuyên gia kỹ thuật sẽ giúp bạn chuyển website tới Hostinger
-                một cách miễn phí để bạn có thể tập trung vào công việc chính
-                của bạn nhanh hơn.
-              </p>
+            <div className='mt-4 text-center'>
+              <Link href="/chinh-sach-thanh-toan">
+                <span className='color_primary'>
+                  Điều khoản thanh toán
+                </span>
+              </Link>
             </div>
-          </div>
-          <div className="row justify-content-center align-items-center mt-4">
-            <div className="col col-12 col-md-6">
-              <div className="img text-center text-md-left">
-                <img
-                  src={WEB_HOSTING_IMAGE.CLOUD1}
-                  width={1000}
-                  height={500}
-                  alt="Cloud-hosting-amico-2"
-                />
-              </div>
-            </div>
-            <div className="col col-12 col-md-6">
-              <h4 className="h4">Hosting tối ưu WordPress</h4>
-              <p>
-                Mọi gói hosting của chúng tôi đều tối ưu cho WordPress. Máy chủ
-                với LiteSpeed và các công cụ tăng tốc WordPress sẽ giúp trang
-                web bạn đạt tốc độ nhanh nhất.
-              </p>
-              <h4 className="h4">Bảo mật tối đa</h4>
-              <p>
-                Bạn lo lắng trang web chậm ảnh hưởng đến uy tín công ty? Đừng lo
-                lắng vì đã có chúng tôi! Với gói máy chủ host chạy trên hạ tầng
-                HTTP/3 kết hợp cơ chế tự phát hiện và sửa lỗi, ổ cứng SSD và
-                không giới hạn băng thông, website của bạn sẽ đạt tốc độ cao
-                nhất.
-              </p>
-              <h4 className="h4">Không cần kinh nghiệm làm web</h4>
-              <p>
-                Bạn có biết, bạn có thể mua web hosting và vận hành hiệu quả nhờ
-                công cụ quản lý có giao diện trực quan, thân thiện với người
-                dùng. Hầu hết khách hàng của chúng tôi không phải là lập trình
-                viên và họ đều có thể khởi chạy website trong ít phút.
-              </p>
-            </div>
-          </div>
+          </section>
         </div>
-      </section>
-
-      <section className="section-search-other container">
-        <h3 className="h3 text-center">Bạn đang cần tìm gì khác?</h3>
-        <div className="section-search-other__list hide-for-small">
-          <div className="row justify-content-center">
-            {data.map((item) => (
-              <div key={item.id} className="col col-12 col-md-6 col-lg-4 mt-4">
-                <div
-                  className={`d-flex align-items-center justify-content-center section-search-other__item section-search-other__item__${item.className}`}
-                >
-                  <Link href={item.link}>{item.title}</Link>
+        <section className="section-info-web-hosting">
+          <div className="container">
+            <div className="row justify-content-center align-items-center flex-row-reverse">
+              <div className="col col-12 col-md-6">
+                <div className="img text-center text-md-left">
+                  <img
+                    src={WEB_HOSTING_IMAGE.CLOUD2}
+                    width={1000}
+                    height={500}
+                    alt="Cloud-hosting-rafiki"
+                  />
                 </div>
               </div>
-            ))}
+              <div className="col col-12 col-md-6">
+                <h4 className="h4">Chuyên gia hỗ trợ hosting 24/7</h4>
+                <p>
+                  Ngoài hỗ trợ tiếng Anh 24/7, chuyên gia đào tạo từ công ty
+                  Gofiber còn hỗ trợ kỹ thuật toàn thời gian bằng tiếng Việt cho
+                  bạn. Nếu có vấn đề xảy ra, bạn không cần lo lắng vì đã có chúng
+                  tôi trợ giúp.
+                </p>
+                <h4 className="h4">Server host công nghệ hàng đầu</h4>
+                <p>
+                  Bạn lo lắng trang web chậm ảnh hưởng đến uy tín công ty? Đừng lo
+                  lắng vì đã có chúng tôi! Với gói máy chủ host chạy trên hạ tầng
+                  HTTP/3 kết hợp cơ chế tự phát hiện và sửa lỗi, ổ cứng SSD và
+                  không giới hạn băng thông, website của bạn sẽ đạt tốc độ cao
+                  nhất.
+                </p>
+                <h4 className="h4">Server host công nghệ hàng đầu</h4>
+                <p>
+                  Các chuyên gia kỹ thuật sẽ giúp bạn chuyển website tới Hostinger
+                  một cách miễn phí để bạn có thể tập trung vào công việc chính
+                  của bạn nhanh hơn.
+                </p>
+              </div>
+            </div>
+            <div className="row justify-content-center align-items-center mt-4">
+              <div className="col col-12 col-md-6">
+                <div className="img text-center text-md-left">
+                  <img
+                    src={WEB_HOSTING_IMAGE.CLOUD1}
+                    width={1000}
+                    height={500}
+                    alt="Cloud-hosting-amico-2"
+                  />
+                </div>
+              </div>
+              <div className="col col-12 col-md-6">
+                <h4 className="h4">Hosting tối ưu WordPress</h4>
+                <p>
+                  Mọi gói hosting của chúng tôi đều tối ưu cho WordPress. Máy chủ
+                  với LiteSpeed và các công cụ tăng tốc WordPress sẽ giúp trang
+                  web bạn đạt tốc độ nhanh nhất.
+                </p>
+                <h4 className="h4">Bảo mật tối đa</h4>
+                <p>
+                  Bạn lo lắng trang web chậm ảnh hưởng đến uy tín công ty? Đừng lo
+                  lắng vì đã có chúng tôi! Với gói máy chủ host chạy trên hạ tầng
+                  HTTP/3 kết hợp cơ chế tự phát hiện và sửa lỗi, ổ cứng SSD và
+                  không giới hạn băng thông, website của bạn sẽ đạt tốc độ cao
+                  nhất.
+                </p>
+                <h4 className="h4">Không cần kinh nghiệm làm web</h4>
+                <p>
+                  Bạn có biết, bạn có thể mua web hosting và vận hành hiệu quả nhờ
+                  công cụ quản lý có giao diện trực quan, thân thiện với người
+                  dùng. Hầu hết khách hàng của chúng tôi không phải là lập trình
+                  viên và họ đều có thể khởi chạy website trong ít phút.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Question data={question} />
+        <section className="section-search-other container">
+          <h3 className="h3 text-center">Bạn đang cần tìm gì khác?</h3>
+          <div className="section-search-other__list hide-for-small">
+            <div className="row justify-content-center">
+              {data.map((item) => (
+                <div key={item.id} className="col col-12 col-md-6 col-lg-4 mt-4">
+                  <div
+                    className={`d-flex align-items-center justify-content-center section-search-other__item section-search-other__item__${item.className}`}
+                  >
+                    <Link href={item.link}>{item.title}</Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      {/* <section className="section-contact">
+        <Question data={question} />
+
+        {/* <section className="section-contact">
         <div className="section-content position-relative">
           <div className="row justify-content-center">
             <div className="col col-12">
@@ -465,10 +473,12 @@ function WebHosting() {
           </div>
         </div>
       </section> */}
-      {/* <Contact /> */}
+        {/* <Contact /> */}
 
-      <BuyPackage packageSelect={packageSelect} />
-    </div>
+        <BuyPackage packageSelect={packageSelect} />
+      </div>
+    </>
+
   );
 }
 

@@ -5,6 +5,7 @@ import Question from '@/src/containers/home/question'
 import SliderSSL from '@/src/containers/ssl/SliderSSL'
 import { ICON, SSL_IMAGE } from '@/src/utils'
 import { Icon } from '@iconify/react'
+import Head from 'next/head'
 import React, { useState } from 'react'
 
 const banner = {
@@ -191,102 +192,110 @@ function SSL() {
 
 
     return (
-        <div id='rent-vps'>
-            <section>
-                <BannerPage bannerLinkLargeWidth='30%' bannerLinkMediumWidth='46%' image={banner} name="Chứng chỉ SSL" />
-            </section>
-            <div className='container'>
-                <section className='section-hire'>
-                    <div className='text-center'>
-                        <h3 className='h3'>SSL cho website</h3>
-                    </div>
-                    <SliderSSL onSelectPackage={setPackageSelect} />
+        <>
+            <Head>
+                <title>
+                    Chứng chỉ bảo mật cho website - Đăng ký SSL
+                </title>
+                <link rel="canonical" href="https://gofiber.vn/chung-chi-ssl" />
+            </Head>
+            <div id='rent-vps'>
+                <section>
+                    <BannerPage bannerLinkLargeWidth='30%' bannerLinkMediumWidth='46%' image={banner} name="Chứng chỉ SSL" />
                 </section>
-
-                <section className='section-info-ssl'>
-                    <div className='row justify-content-center'>
-                        <div className='col col-12 col-md-4 text-center'>
-                            <h3 className='h3'>Danh sách 3 loại SSL phổ biến</h3>
+                <div className='container'>
+                    <section className='section-hire'>
+                        <div className='text-center'>
+                            <h3 className='h3'>SSL cho website</h3>
                         </div>
-                    </div>
-                    <div className='row justify-content-center mt-4'>
-                        <div className='col col-12 col-md-8 text-center'>
-                            <p style={{ color: '#777777' }} className='mt-4 text-center'>
-                                Xác thực tên miền
-                                <img className='image-ssl mt-1 mt-md-0'
-                                    src={SSL_IMAGE.POPULAR.FIRST}
-                                    width={800}
-                                    height={500}
-                                    alt="Xác thực tên miền" />
-                            </p>
-                            <p style={{ color: '#777777' }} className='mt-4 text-center'>
-                                Xác thực tổ chức
-                                <img className='image-ssl mt-1 mt-md-0'
-                                    src={SSL_IMAGE.POPULAR.SECOND}
-                                    width={800}
-                                    height={500} alt="Xác thực tổ chức" />
-                            </p>
-                            <p style={{ color: '#777777' }} className='mt-4 text-center'>
-                                Xác thực doanh nghiệp mở rộng
-                                <img className='image-ssl mt-1 mt-md-0'
-                                    src={SSL_IMAGE.POPULAR.THIRD}
-                                    width={800}
-                                    height={500} alt="Xác thực doanh nghiệp mở rộng" />
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                        <SliderSSL onSelectPackage={setPackageSelect} />
+                    </section>
 
-                <section className='section-info-ssl'>
-                    <div className='row justify-content-center'>
-                        <div className='col col-12 col-md-8'>
-                            <div className='text-center'>
-                                <h2 className='h2'>Tại sao bạn cần sử dụng chứng chỉ SSL?</h2>
-                            </div>
-                            <p style={{ color: '#777777' }} className='mt-4'>
-                                Mua chứng chỉ SSL sẽ giúp website của bạn được an toàn và bảo mật hơn với thanh địa chỉ có chìa khóa xanh.
-                                Mọi thông tin dữ liệu của website và khách hàng sẽ được mã hóa nhằm tránh nguy cơ bị tấn công từ hacker.
-                                Đồng thời, đảm bảo độ tin cậy và niềm tin cho khách hàng khi truy cập vào website.
-                            </p>
-                            <div className='row align-items-center'>
-                                <div className='col col-12 col-md-6 m-0 p-0'>
-                                    <div className='text-icon red mt-2'>
-                                        <Icon icon={ICON.CHECKED} />
-                                        <p className='px-2'>SSL Không hợp lệ</p>
-                                    </div>
-                                    <p className='red'>
-                                        Thông tin, dữ liệu có thể bị nghe lén hoặc đánh cắp trong quá trình truy cập website của bạn
-                                    </p>
-                                    <div className='text-icon green mt-2'>
-                                        <Icon icon={ICON.CHECKED} />
-                                        <p className='px-2'>SSL Không hợp lệ</p>
-                                    </div>
-                                    <p className='green'>
-                                        Thông tin, dữ liệu trao đổi được bảo mật và trang web của bạn được tin cậy
-                                    </p>
-                                </div>
-                                <div className='col col-12 col-md-6'>
-                                    <div className='img d-flex justify-content-center'>
-                                        <img src={SSL_IMAGE.WHY.FIRST} width={400} height={200} alt="anh-ssl" />
-                                    </div>
-                                    <div className='img d-flex justify-content-center'>
-                                        <img src={SSL_IMAGE.WHY.SECOND} width={400} height={200} alt="anh-ssl2" />
-                                    </div>
-                                    <div className='img d-flex justify-content-center'>
-                                        <img src={SSL_IMAGE.WHY.THIRD} width={400} height={200} alt="anh-ssl3" />
-                                    </div>
-                                </div>
+                    <section className='section-info-ssl'>
+                        <div className='row justify-content-center'>
+                            <div className='col col-12 col-md-4 text-center'>
+                                <h3 className='h3'>Danh sách 3 loại SSL phổ biến</h3>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <Question data={question} />
+                        <div className='row justify-content-center mt-4'>
+                            <div className='col col-12 col-md-8 text-center'>
+                                <p style={{ color: '#777777' }} className='mt-4 text-center'>
+                                    Xác thực tên miền
+                                    <img className='image-ssl mt-1 mt-md-0'
+                                        src={SSL_IMAGE.POPULAR.FIRST}
+                                        width={800}
+                                        height={500}
+                                        alt="Xác thực tên miền" />
+                                </p>
+                                <p style={{ color: '#777777' }} className='mt-4 text-center'>
+                                    Xác thực tổ chức
+                                    <img className='image-ssl mt-1 mt-md-0'
+                                        src={SSL_IMAGE.POPULAR.SECOND}
+                                        width={800}
+                                        height={500} alt="Xác thực tổ chức" />
+                                </p>
+                                <p style={{ color: '#777777' }} className='mt-4 text-center'>
+                                    Xác thực doanh nghiệp mở rộng
+                                    <img className='image-ssl mt-1 mt-md-0'
+                                        src={SSL_IMAGE.POPULAR.THIRD}
+                                        width={800}
+                                        height={500} alt="Xác thực doanh nghiệp mở rộng" />
+                                </p>
+                            </div>
+                        </div>
+                    </section>
 
-                {/* <Contact /> */}
+                    <section className='section-info-ssl'>
+                        <div className='row justify-content-center'>
+                            <div className='col col-12 col-md-8'>
+                                <div className='text-center'>
+                                    <h2 className='h2'>Tại sao bạn cần sử dụng chứng chỉ SSL?</h2>
+                                </div>
+                                <p style={{ color: '#777777' }} className='mt-4'>
+                                    Mua chứng chỉ SSL sẽ giúp website của bạn được an toàn và bảo mật hơn với thanh địa chỉ có chìa khóa xanh.
+                                    Mọi thông tin dữ liệu của website và khách hàng sẽ được mã hóa nhằm tránh nguy cơ bị tấn công từ hacker.
+                                    Đồng thời, đảm bảo độ tin cậy và niềm tin cho khách hàng khi truy cập vào website.
+                                </p>
+                                <div className='row align-items-center'>
+                                    <div className='col col-12 col-md-6 m-0 p-0'>
+                                        <div className='text-icon red mt-2'>
+                                            <Icon icon={ICON.CHECKED} />
+                                            <p className='px-2'>SSL Không hợp lệ</p>
+                                        </div>
+                                        <p className='red'>
+                                            Thông tin, dữ liệu có thể bị nghe lén hoặc đánh cắp trong quá trình truy cập website của bạn
+                                        </p>
+                                        <div className='text-icon green mt-2'>
+                                            <Icon icon={ICON.CHECKED} />
+                                            <p className='px-2'>SSL Không hợp lệ</p>
+                                        </div>
+                                        <p className='green'>
+                                            Thông tin, dữ liệu trao đổi được bảo mật và trang web của bạn được tin cậy
+                                        </p>
+                                    </div>
+                                    <div className='col col-12 col-md-6'>
+                                        <div className='img d-flex justify-content-center'>
+                                            <img src={SSL_IMAGE.WHY.FIRST} width={400} height={200} alt="anh-ssl" />
+                                        </div>
+                                        <div className='img d-flex justify-content-center'>
+                                            <img src={SSL_IMAGE.WHY.SECOND} width={400} height={200} alt="anh-ssl2" />
+                                        </div>
+                                        <div className='img d-flex justify-content-center'>
+                                            <img src={SSL_IMAGE.WHY.THIRD} width={400} height={200} alt="anh-ssl3" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <Question data={question} />
 
-                {/* <BuyPackage packageSelect={packageSelect} /> */}
+                    {/* <Contact /> */}
+
+                    {/* <BuyPackage packageSelect={packageSelect} /> */}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

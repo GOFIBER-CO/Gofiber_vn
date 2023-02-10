@@ -6,6 +6,7 @@ import SliderPhysicalServer from '@/src/containers/rent-physical-server/SliderPh
 import SliderPhysicalServerPlace from '@/src/containers/rent-physical-server/SliderPhysicalServerPlace';
 import { ICON, PHYSICAL_IMAGE } from '@/src/utils';
 import { Icon } from '@iconify/react';
+import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -408,156 +409,165 @@ function RentPhysicalServer() {
   const [tab, setTab] = useState(tabs[0]);
   const [packageSelect, setPackageSelect] = useState();
   return (
-    <div id="rent-vps">
-      <section>
-        <BannerPage
-          styleLinkName={{ lineHeight: 'unset' }}
-          bannerLinkLargeWidth="46%"
-          bannerLinkMediumWidth="72%"
-          bannerLinkSmallWidth="83%"
-          image={banner}
-          name="Thuê máy chủ vật lý/ Thuê chỗ đặt máy chủ"
-        />
-      </section>
-      <div className="container">
-        <section className="section-hire">
-          <div className="d-flex justify-content-center flex-wrap mt-4 pt-4">
-            {tabs.map((item) => (
-              <button
-                onClick={() => setTab(item)}
-                key={item.id}
-                className={`btn0 btn-tab m-1 ${tab.id === item.id ? 'active' : ''
-                  }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-          <div className="mt-3">
-            <SliderPhysicalServer
-              data={tab?.data || []}
-              name={tab?.name}
-              onSelectPackage={setPackageSelect}
-            />
-          </div>
+    <>
+      <Head>
+        <title>
+          Thuê server, máy chủ vật lý, thuê chỗ đặt máy chủ vật lý giá rẻ và uy tín
+        </title>
+        <link rel="canonical" href="https://gofiber.vn/thue-may-chu-vat-ly" />
+      </Head>
+      <div id="rent-vps">
+        <section>
+          <BannerPage
+            styleLinkName={{ lineHeight: 'unset' }}
+            bannerLinkLargeWidth="46%"
+            bannerLinkMediumWidth="72%"
+            bannerLinkSmallWidth="83%"
+            image={banner}
+            name="Thuê máy chủ vật lý/ Thuê chỗ đặt máy chủ"
+          />
         </section>
+        <div className="container">
+          <section className="section-hire">
+            <div className="d-flex justify-content-center flex-wrap mt-4 pt-4">
+              {tabs.map((item) => (
+                <button
+                  onClick={() => setTab(item)}
+                  key={item.id}
+                  className={`btn0 btn-tab m-1 ${tab.id === item.id ? 'active' : ''
+                    }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+            <div className="mt-3">
+              <SliderPhysicalServer
+                data={tab?.data || []}
+                name={tab?.name}
+                onSelectPackage={setPackageSelect}
+              />
+            </div>
+          </section>
 
-        <section className="section-hire">
-          <div className="text-center py-4">
-            <h3 className="h3">Lợi ích của máy chủ vật lý là gì?</h3>
-          </div>
+          <section className="section-hire">
+            <div className="text-center py-4">
+              <h3 className="h3">Lợi ích của máy chủ vật lý là gì?</h3>
+            </div>
 
-          <div className="row justify-content-center align-items-center flex-row-reverse">
-            <div className="col col-12 col-md-6">
-              <div className="img text-center text-md-left">
-                <img
-                  src={PHYSICAL_IMAGE.BENEFIT.FIRST}
-                  width={500}
-                  height={500}
-                  alt="anh-maychuvatly1"
-                />
-              </div>
-            </div>
-            <div className="col col-12 col-md-6">
-              <h4 className="h4">Tốc độ và sự nhanh chóng</h4>
-              <p>
-                Các ứng dụng và website của bạn có thể sử dụng tất cả các tài
-                nguyên trên server mà không cần phải chia sẻ tài nguyên với bất
-                kỳ ai. Bởi vì, tài nguyên trong server không giới hạn nhờ vào sự
-                linh hoạt trong nâng cấp các thiết bị phần cứng và phần mềm.
-                Đồng thời, sức tải của server có thể mở rộng vô hạn.
-              </p>
-              <h4 className="h4">Tính an toàn và bảo mật dữ liệu cao</h4>
-              <p>
-                Máy chủ vật lý có hiệu suất hoạt động và khả năng bảo mật dữ
-                liệu cao nhất trong các loại máy chủ khác. Bởi vì, các website
-                và dữ liệu đều nằm ngoài Public Cloud
-              </p>
-              <h4 className="h4">Kiểm soát chặt chẽ</h4>
-              <p>
-                Một server vật lý cho phép bạn điều hành kiểm soát một lúc nhiều
-                phần cứng và phần mềm hơn so với việc bỏ nhiều chi phí thuê máy
-                chủ ảo.
-              </p>
-            </div>
-          </div>
-          <div className="row justify-content-center align-items-center mt-4">
-            <div className="col col-12 col-md-6">
-              <div className="img text-center text-md-left">
-                <img
-                  src={PHYSICAL_IMAGE.BENEFIT.SECOND}
-                  width={500}
-                  height={500}
-                  alt="anh-may-chu-vat-ly-2"
-                />
-              </div>
-            </div>
-            <div className="col col-12 col-md-6">
-              <h4 className="h4">Khả năng mở rộng</h4>
-              <p>
-                Bạn có thể sử dụng thêm CPU, nhiều dung lượng đĩa… Đặc biệt, bạn
-                hoàn toàn có thể nâng cấp server khi có nhu cầu lưu trữ, xử lý
-                lượng thông tin khổng lồ, giải phóng băng thông đảm bảo cho
-                lượng truy cập lớn đồng thời.
-              </p>
-              <h4 className="h4">Tùy chỉnh dễ dàng</h4>
-              <p>
-                Mọi thiết lập trên server vật lý đều được tùy chỉnh dễ dàng theo
-                ý muốn của bạn.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-physical-server-place">
-          <div className="text-center pt-4">
-            <h3 className="h3">Nơi đặt máy chủ uy tín hàng đầu tại Việt Nam</h3>
-          </div>
-          <div className="row justify-content-center hide-for-medium mt-4">
-            {physicalServerPlace.map((item) => (
-              <div className="col col-12 col-md-4" key={item.id}>
-                <div className="image">
-                  <img width={150} height={100} src={item.image} alt={item.id} />
-                </div>
-                <div className="mt-4">
-                  {item.data.map((e, index) => (
-                    <div key={index} className="text-icon-price mt-2">
-                      <Link href={e.link} className="d-flex">
-                        <Icon className={`blue`} icon={ICON.CHECKED} />
-                        <p className="px-2">{e.name}</p>
-                      </Link>
-                    </div>
-                  ))}
+            <div className="row justify-content-center align-items-center flex-row-reverse">
+              <div className="col col-12 col-md-6">
+                <div className="img text-center text-md-left">
+                  <img
+                    src={PHYSICAL_IMAGE.BENEFIT.FIRST}
+                    width={500}
+                    height={500}
+                    alt="anh-maychuvatly1"
+                  />
                 </div>
               </div>
-            ))}
-          </div>
-          <SliderPhysicalServerPlace data={physicalServerPlace} />
-        </section>
-      </div>
+              <div className="col col-12 col-md-6">
+                <h4 className="h4">Tốc độ và sự nhanh chóng</h4>
+                <p>
+                  Các ứng dụng và website của bạn có thể sử dụng tất cả các tài
+                  nguyên trên server mà không cần phải chia sẻ tài nguyên với bất
+                  kỳ ai. Bởi vì, tài nguyên trong server không giới hạn nhờ vào sự
+                  linh hoạt trong nâng cấp các thiết bị phần cứng và phần mềm.
+                  Đồng thời, sức tải của server có thể mở rộng vô hạn.
+                </p>
+                <h4 className="h4">Tính an toàn và bảo mật dữ liệu cao</h4>
+                <p>
+                  Máy chủ vật lý có hiệu suất hoạt động và khả năng bảo mật dữ
+                  liệu cao nhất trong các loại máy chủ khác. Bởi vì, các website
+                  và dữ liệu đều nằm ngoài Public Cloud
+                </p>
+                <h4 className="h4">Kiểm soát chặt chẽ</h4>
+                <p>
+                  Một server vật lý cho phép bạn điều hành kiểm soát một lúc nhiều
+                  phần cứng và phần mềm hơn so với việc bỏ nhiều chi phí thuê máy
+                  chủ ảo.
+                </p>
+              </div>
+            </div>
+            <div className="row justify-content-center align-items-center mt-4">
+              <div className="col col-12 col-md-6">
+                <div className="img text-center text-md-left">
+                  <img
+                    src={PHYSICAL_IMAGE.BENEFIT.SECOND}
+                    width={500}
+                    height={500}
+                    alt="anh-may-chu-vat-ly-2"
+                  />
+                </div>
+              </div>
+              <div className="col col-12 col-md-6">
+                <h4 className="h4">Khả năng mở rộng</h4>
+                <p>
+                  Bạn có thể sử dụng thêm CPU, nhiều dung lượng đĩa… Đặc biệt, bạn
+                  hoàn toàn có thể nâng cấp server khi có nhu cầu lưu trữ, xử lý
+                  lượng thông tin khổng lồ, giải phóng băng thông đảm bảo cho
+                  lượng truy cập lớn đồng thời.
+                </p>
+                <h4 className="h4">Tùy chỉnh dễ dàng</h4>
+                <p>
+                  Mọi thiết lập trên server vật lý đều được tùy chỉnh dễ dàng theo
+                  ý muốn của bạn.
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <section className="section-hire">
-        <div className="row justify-content-center">
-          <div className="img text-center">
-            <img
-              src={PHYSICAL_IMAGE.SERVER}
-              alt="anh-thue-may-chu"
-              width={1000}
-              height={500}
-            />
-          </div>
+          <section className="section-physical-server-place">
+            <div className="text-center pt-4">
+              <h3 className="h3">Nơi đặt máy chủ uy tín hàng đầu tại Việt Nam</h3>
+            </div>
+            <div className="row justify-content-center hide-for-medium mt-4">
+              {physicalServerPlace.map((item) => (
+                <div className="col col-12 col-md-4" key={item.id}>
+                  <div className="image">
+                    <img width={150} height={100} src={item.image} alt={item.id} />
+                  </div>
+                  <div className="mt-4">
+                    {item.data.map((e, index) => (
+                      <div key={index} className="text-icon-price mt-2">
+                        <Link href={e.link} className="d-flex">
+                          <Icon className={`blue`} icon={ICON.CHECKED} />
+                          <p className="px-2">{e.name}</p>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <SliderPhysicalServerPlace data={physicalServerPlace} />
+          </section>
         </div>
-      </section>
 
-      <div className="container">
+        <section className="section-hire">
+          <div className="row justify-content-center">
+            <div className="img text-center">
+              <img
+                src={PHYSICAL_IMAGE.SERVER}
+                alt="anh-thue-may-chu"
+                width={1000}
+                height={500}
+              />
+            </div>
+          </div>
+        </section>
 
-        <Question data={question} />
+        <div className="container">
 
-        {/* <Contact /> */}
+          <Question data={question} />
 
-        <BuyPackage packageSelect={packageSelect} />
+          {/* <Contact /> */}
+
+          <BuyPackage packageSelect={packageSelect} />
+        </div>
       </div>
-    </div>
+    </>
+
   );
 }
 

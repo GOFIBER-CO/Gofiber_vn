@@ -40,7 +40,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
                             <div style={{ width: bannerLinkMediumWidth }} className='banner-link medium text-center'>
-                                <h1 style={styleLinkName}>{name}</h1>
+                                <h2 style={styleLinkName}>{name}</h2>
                                 <div className='link d-flex align-items-center justify-content-center mt-4'>
                                     <Link href='/'>Trang chủ</Link>
                                     <a className='mx-2'>{'>'}</a>
@@ -56,7 +56,7 @@ function BannerPage({ image, name, bannerLinkLargeWidth = "21%", bannerLinkMediu
                     <div className='banner-bg fill'>
                         <div className='banner-layers'>
                             <div style={{ width: bannerLinkSmallWidth }} className='banner-link small text-center'>
-                                <h1 style={styleLinkName}>{name}</h1>
+                                <h2 style={styleLinkName}>{name}</h2>
                                 <div className='link d-flex align-items-center justify-content-center mt-4'>
                                     <Link href='/'>Trang chủ</Link>
                                     <a className='mx-2'>{'>'}</a>
