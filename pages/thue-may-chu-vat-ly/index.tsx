@@ -1,146 +1,146 @@
-import BannerPage from '@/src/components/banner/BannerPage';
-import BuyPackage from '@/src/containers/BuyPackage';
-import Contact from '@/src/containers/home/contact';
-import Question from '@/src/containers/home/question';
-import SliderPhysicalServer from '@/src/containers/rent-physical-server/SliderPhysicalServer';
-import SliderPhysicalServerPlace from '@/src/containers/rent-physical-server/SliderPhysicalServerPlace';
-import { ICON, PHYSICAL_IMAGE } from '@/src/utils';
-import { Icon } from '@iconify/react';
-import Head from 'next/head';
-import Link from 'next/link';
-import React, { useState } from 'react';
+import BannerPage from "@/src/components/banner/BannerPage";
+import BuyPackage from "@/src/containers/BuyPackage";
+import Contact from "@/src/containers/home/contact";
+import Question from "@/src/containers/home/question";
+import SliderPhysicalServer from "@/src/containers/rent-physical-server/SliderPhysicalServer";
+import SliderPhysicalServerPlace from "@/src/containers/rent-physical-server/SliderPhysicalServerPlace";
+import { ICON, PHYSICAL_IMAGE } from "@/src/utils";
+import { Icon } from "@iconify/react";
+import Head from "next/head";
+import Link from "next/link";
+import React, { useState } from "react";
 
 const banner = {
   large: PHYSICAL_IMAGE.BANNER_LARGE,
   medium: PHYSICAL_IMAGE.BANNER_MEDIUM,
-  small: PHYSICAL_IMAGE.BANNER_SMALL
-}
+  small: PHYSICAL_IMAGE.BANNER_SMALL,
+};
 
 const tabs = [
   {
-    id: '1',
-    name: 'Thuê máy chủ vật lý',
+    id: "1",
+    name: "Thuê máy chủ vật lý",
     data: [
       {
         id: 1,
-        price: '1200000',
-        name: 'Computer S1',
-        data: ['4GB RAM', '500GB Dung lượng ổ SSD', '100 GB Băng thông'],
+        price: "1200000",
+        name: "Computer S1",
+        data: ["4GB RAM", "500GB Dung lượng ổ SSD", "100 GB Băng thông"],
         isBest: true,
       },
       {
         id: 2,
-        name: 'Computer S2',
-        price: '1500000',
-        data: ['8GB RAM', '500GB Dung lượng ổ SSD', '100 GB Băng thông'],
+        name: "Computer S2",
+        price: "1500000",
+        data: ["8GB RAM", "500GB Dung lượng ổ SSD", "100 GB Băng thông"],
       },
       {
         id: 3,
-        name: 'Computer S3',
-        price: '1700000',
-        data: ['4GB RAM', '2 x 500GB Dung lượng ổ SSD', '100 GB Băng thông'],
+        name: "Computer S3",
+        price: "1700000",
+        data: ["4GB RAM", "2 x 500GB Dung lượng ổ SSD", "100 GB Băng thông"],
       },
       {
         id: 4,
-        name: 'Computer S4',
-        price: '1900000',
-        data: ['4GB RAM', '3 x 500GB Dung lượng ổ SSD', '100 GB Băng thông'],
+        name: "Computer S4",
+        price: "1900000",
+        data: ["4GB RAM", "3 x 500GB Dung lượng ổ SSD", "100 GB Băng thông"],
       },
       {
         id: 5,
-        name: 'Computer S5',
-        price: '2100000',
-        data: ['8GB RAM', '2 x 500GB Dung lượng ổ SSD', '100 GB Băng thông'],
+        name: "Computer S5",
+        price: "2100000",
+        data: ["8GB RAM", "2 x 500GB Dung lượng ổ SSD", "100 GB Băng thông"],
       },
     ],
   },
   {
-    id: '2',
-    name: 'Thuê chỗ đặt máy chủ',
+    id: "2",
+    name: "Thuê chỗ đặt máy chủ",
     data: [
       {
         id: 1,
-        name: 'Location S1',
-        price: '200000',
+        name: "Location S1",
+        price: "200000",
         data: [
-          'Tốc độ mạng: 50MBps',
-          'Ổ cấm mạng: 1GBps',
-          'Bandwidth (Data transfer): Unlimited',
-          'Công suất điện tiêu chuẩn: 350W',
-          'Quản trị máy chủ: Miễn phí',
-          'Phí khởi tạo dịch vụ: Miễn phí',
-          'Số địa chỉ IP tĩnh: 02 IP',
+          "Tốc độ mạng: 50MBps",
+          "Ổ cấm mạng: 1GBps",
+          "Bandwidth (Data transfer): Unlimited",
+          "Công suất điện tiêu chuẩn: 350W",
+          "Quản trị máy chủ: Miễn phí",
+          "Phí khởi tạo dịch vụ: Miễn phí",
+          "Số địa chỉ IP tĩnh: 02 IP",
         ],
         isBest: true,
       },
       {
         id: 2,
-        name: 'Location S2',
-        price: '220000',
+        name: "Location S2",
+        price: "220000",
         data: [
-          'Tốc độ mạng: 100MBps',
-          'Ổ cấm mạng: 1GBps',
-          'Bandwidth (Data transfer): Unlimited',
-          'Công suất điện tiêu chuẩn: 350W',
-          'Quản trị máy chủ: Miễn phí',
-          'Phí khởi tạo dịch vụ: Miễn phí',
-          'Số địa chỉ IP tĩnh: 04 IP',
+          "Tốc độ mạng: 100MBps",
+          "Ổ cấm mạng: 1GBps",
+          "Bandwidth (Data transfer): Unlimited",
+          "Công suất điện tiêu chuẩn: 350W",
+          "Quản trị máy chủ: Miễn phí",
+          "Phí khởi tạo dịch vụ: Miễn phí",
+          "Số địa chỉ IP tĩnh: 04 IP",
         ],
       },
       {
         id: 3,
-        name: 'Location S3',
-        price: '250000',
+        name: "Location S3",
+        price: "250000",
         data: [
-          'Tốc độ mạng: 200MBps',
-          'Ổ cấm mạng: 1GBps',
-          'Bandwidth (Data transfer): Unlimited',
-          'Công suất điện tiêu chuẩn: 350W',
-          'Quản trị máy chủ: Miễn phí',
-          'Phí khởi tạo dịch vụ: Miễn phí',
-          'Số địa chỉ IP tĩnh: 06 IP',
+          "Tốc độ mạng: 200MBps",
+          "Ổ cấm mạng: 1GBps",
+          "Bandwidth (Data transfer): Unlimited",
+          "Công suất điện tiêu chuẩn: 350W",
+          "Quản trị máy chủ: Miễn phí",
+          "Phí khởi tạo dịch vụ: Miễn phí",
+          "Số địa chỉ IP tĩnh: 06 IP",
         ],
       },
       {
         id: 4,
-        name: 'Location S4',
-        price: '260000',
+        name: "Location S4",
+        price: "260000",
         data: [
-          'Tốc độ mạng: 300MBps',
-          'Ổ cấm mạng: 1GBps',
-          'Bandwidth (Data transfer): Unlimited',
-          'Công suất điện tiêu chuẩn: 350W',
-          'Quản trị máy chủ: Miễn phí',
-          'Phí khởi tạo dịch vụ: Miễn phí',
-          'Số địa chỉ IP tĩnh: 06 IP',
+          "Tốc độ mạng: 300MBps",
+          "Ổ cấm mạng: 1GBps",
+          "Bandwidth (Data transfer): Unlimited",
+          "Công suất điện tiêu chuẩn: 350W",
+          "Quản trị máy chủ: Miễn phí",
+          "Phí khởi tạo dịch vụ: Miễn phí",
+          "Số địa chỉ IP tĩnh: 06 IP",
         ],
       },
       {
         id: 5,
-        name: 'Location S5',
-        price: '290000',
+        name: "Location S5",
+        price: "290000",
         data: [
-          'Tốc độ mạng: 500MBps',
-          'Ổ cấm mạng: 1GBps',
-          'Bandwidth (Data transfer): Unlimited',
-          'Công suất điện tiêu chuẩn: 350W',
-          'Quản trị máy chủ: Miễn phí',
-          'Phí khởi tạo dịch vụ: Miễn phí',
-          'Số địa chỉ IP tĩnh: 02 IP',
+          "Tốc độ mạng: 500MBps",
+          "Ổ cấm mạng: 1GBps",
+          "Bandwidth (Data transfer): Unlimited",
+          "Công suất điện tiêu chuẩn: 350W",
+          "Quản trị máy chủ: Miễn phí",
+          "Phí khởi tạo dịch vụ: Miễn phí",
+          "Số địa chỉ IP tĩnh: 02 IP",
         ],
       },
       {
         id: 6,
-        name: 'Location S6',
-        price: '310000',
+        name: "Location S6",
+        price: "310000",
         data: [
-          'Tốc độ mạng: 800MBps',
-          'Ổ cấm mạng: 1GBps',
-          'Bandwidth (Data transfer): Unlimited',
-          'Công suất điện tiêu chuẩn: 350W',
-          'Quản trị máy chủ: Miễn phí',
-          'Phí khởi tạo dịch vụ: Miễn phí',
-          'Số địa chỉ IP tĩnh: 02 IP',
+          "Tốc độ mạng: 800MBps",
+          "Ổ cấm mạng: 1GBps",
+          "Bandwidth (Data transfer): Unlimited",
+          "Công suất điện tiêu chuẩn: 350W",
+          "Quản trị máy chủ: Miễn phí",
+          "Phí khởi tạo dịch vụ: Miễn phí",
+          "Số địa chỉ IP tĩnh: 02 IP",
         ],
       },
     ],
@@ -149,45 +149,45 @@ const tabs = [
 
 const physicalServerPlace = [
   {
-    id: 'viettel',
+    id: "viettel",
     image: PHYSICAL_IMAGE.VIETTEL,
     data: [
       {
         id: 1,
-        link: '/',
-        name: 'Cấp chứng nhận hệ thống quản lý chất lượng ISO 9001:2008 và hệ thống an toàn an ninh ISO 27001:2013',
+        link: "/",
+        name: "Cấp chứng nhận hệ thống quản lý chất lượng ISO 9001:2008 và hệ thống an toàn an ninh ISO 27001:2013",
       },
       {
         id: 2,
-        link: '/',
-        name: 'Các datacenter đạt tiêu chuẩn Rated 3 - TIA 942 đáp ứng nhu cầu khách hàng từ cơ bản đến nâng cao và các tiêu chí khắt khe của mọi khách hàng.',
+        link: "/",
+        name: "Các datacenter đạt tiêu chuẩn Rated 3 - TIA 942 đáp ứng nhu cầu khách hàng từ cơ bản đến nâng cao và các tiêu chí khắt khe của mọi khách hàng.",
       },
       {
         id: 3,
-        link: '/',
-        name: 'Sự lựa chọn hàng đầu của mọi khách hàng khi có đội ngũ chuyên môn cao, sẵn sàng đáp ứng 24/24',
+        link: "/",
+        name: "Sự lựa chọn hàng đầu của mọi khách hàng khi có đội ngũ chuyên môn cao, sẵn sàng đáp ứng 24/24",
       },
     ],
   },
   {
-    id: 'Vnpt',
+    id: "Vnpt",
     image: PHYSICAL_IMAGE.VNPT,
     data: [
       {
         id: 1,
-        link: '/',
-        name: 'Cấp các chứng chỉ ISO/IEC 27001:2005 và tiêu chuẩn quốc tế Tier 3',
+        link: "/",
+        name: "Cấp các chứng chỉ ISO/IEC 27001:2005 và tiêu chuẩn quốc tế Tier 3",
       },
       {
         id: 2,
-        link: '/',
+        link: "/",
         name: `
 				Mạng Backbone 1, 71bps chiếm trên 65% thị phần dịch vụ 
                 Internet tại Việt Nam.Tổng dung lượng băng thông quốc tế đạt 885Gbps(chiếm 70 % băng thông quốc tế tại Việt Nam)`,
       },
       {
         id: 3,
-        link: '/',
+        link: "/",
         name: `Tốc độ đường truyền cao nhất tại thị trường Việt Nam giúp hệ thống khách hàng 
                 vận hành nhanh chóng. Datacenter đảm bảo vận hành 99,99% thời gian downtime 
                 cùng hệ thống phụ trợ điều hòa và nhiệt độ giúp hệ thống hoạt động hiệu quả.`,
@@ -195,22 +195,22 @@ const physicalServerPlace = [
     ],
   },
   {
-    id: 'Fpt',
+    id: "Fpt",
     image: PHYSICAL_IMAGE.FPT,
     data: [
       {
         id: 1,
-        link: '/',
-        name: 'Đạt các tiêu chuẩn chất lượng ISO 9001:2008 và các chứng chỉ ISO 50001:2011. Đặc biệt, đạt tiêu chuẩn quốc tế Tier 3',
+        link: "/",
+        name: "Đạt các tiêu chuẩn chất lượng ISO 9001:2008 và các chứng chỉ ISO 50001:2011. Đặc biệt, đạt tiêu chuẩn quốc tế Tier 3",
       },
       {
         id: 2,
-        link: '/',
+        link: "/",
         name: `Băng thông kết nối trong nước với các ISP khác hơn 500Gbps và tổng băng thông kết nối quốc tế lên đến 380Gbps`,
       },
       {
         id: 3,
-        link: '/',
+        link: "/",
         name: `Được đánh giá là một trung tâm dữ liệu an toàn và bảo mật. Đội ngũ chuyên môn cao và phục vụ 24/24`,
       },
     ],
@@ -219,8 +219,8 @@ const physicalServerPlace = [
 
 const question = [
   {
-    id: '1',
-    title: 'Máy chủ vật lý là gì ?',
+    id: "1",
+    title: "Máy chủ vật lý là gì ?",
     content: (
       <p>
         Máy chủ vật lý (Dedicated Server) hay còn gọi là server vật lý, máy chủ
@@ -233,8 +233,8 @@ const question = [
     ),
   },
   {
-    id: '2',
-    title: 'Lợi ích khi thuê server vật lý là gì?',
+    id: "2",
+    title: "Lợi ích khi thuê server vật lý là gì?",
     content: (
       <>
         <p>
@@ -272,8 +272,8 @@ const question = [
     ),
   },
   {
-    id: '3',
-    title: 'Lưu ý khi thuê máy chủ vật lý',
+    id: "3",
+    title: "Lưu ý khi thuê máy chủ vật lý",
     content: (
       <>
         <p>
@@ -345,8 +345,8 @@ const question = [
     ),
   },
   {
-    id: '4',
-    title: 'Chính sách hỗ trợ khách hàng',
+    id: "4",
+    title: "Chính sách hỗ trợ khách hàng",
     content: (
       <>
         <p>
@@ -384,8 +384,8 @@ const question = [
     ),
   },
   {
-    id: '5',
-    title: 'Thời gian Setup máy chủ khi thanh toán xong là bao lâu?',
+    id: "5",
+    title: "Thời gian Setup máy chủ khi thanh toán xong là bao lâu?",
     content: (
       <>
         <p>
@@ -412,14 +412,15 @@ function RentPhysicalServer() {
     <>
       <Head>
         <title>
-          Thuê server, máy chủ vật lý, thuê chỗ đặt máy chủ vật lý giá rẻ và uy tín
+          Thuê server, máy chủ vật lý, thuê chỗ đặt máy chủ vật lý giá rẻ và uy
+          tín
         </title>
         <link rel="canonical" href="https://gofiber.vn/thue-may-chu-vat-ly" />
       </Head>
       <div id="rent-vps">
         <section>
           <BannerPage
-            styleLinkName={{ lineHeight: 'unset' }}
+            styleLinkName={{ lineHeight: "unset" }}
             bannerLinkLargeWidth="46%"
             bannerLinkMediumWidth="72%"
             bannerLinkSmallWidth="83%"
@@ -434,8 +435,9 @@ function RentPhysicalServer() {
                 <button
                   onClick={() => setTab(item)}
                   key={item.id}
-                  className={`btn0 btn-tab m-1 ${tab.id === item.id ? 'active' : ''
-                    }`}
+                  className={`btn0 btn-tab m-1 ${
+                    tab.id === item.id ? "active" : ""
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -467,13 +469,13 @@ function RentPhysicalServer() {
                 </div>
               </div>
               <div className="col col-12 col-md-6">
-                <h4 className="h4">Tốc độ và sự nhanh chóng</h4>
+                <h4 className="h4">Tốc độ nhanh chóng</h4>
                 <p>
                   Các ứng dụng và website của bạn có thể sử dụng tất cả các tài
-                  nguyên trên server mà không cần phải chia sẻ tài nguyên với bất
-                  kỳ ai. Bởi vì, tài nguyên trong server không giới hạn nhờ vào sự
-                  linh hoạt trong nâng cấp các thiết bị phần cứng và phần mềm.
-                  Đồng thời, sức tải của server có thể mở rộng vô hạn.
+                  nguyên trên server mà không cần phải chia sẻ tài nguyên với
+                  bất kỳ ai. Bởi vì, tài nguyên trong server không giới hạn nhờ
+                  vào sự linh hoạt trong nâng cấp các thiết bị phần cứng và phần
+                  mềm. Đồng thời, sức tải của server có thể mở rộng vô hạn.
                 </p>
                 <h4 className="h4">Tính an toàn và bảo mật dữ liệu cao</h4>
                 <p>
@@ -483,9 +485,9 @@ function RentPhysicalServer() {
                 </p>
                 <h4 className="h4">Kiểm soát chặt chẽ</h4>
                 <p>
-                  Một server vật lý cho phép bạn điều hành kiểm soát một lúc nhiều
-                  phần cứng và phần mềm hơn so với việc bỏ nhiều chi phí thuê máy
-                  chủ ảo.
+                  Một server vật lý cho phép bạn điều hành kiểm soát một lúc
+                  nhiều phần cứng và phần mềm hơn so với việc bỏ nhiều chi phí
+                  thuê máy chủ ảo.
                 </p>
               </div>
             </div>
@@ -503,15 +505,15 @@ function RentPhysicalServer() {
               <div className="col col-12 col-md-6">
                 <h4 className="h4">Khả năng mở rộng</h4>
                 <p>
-                  Bạn có thể sử dụng thêm CPU, nhiều dung lượng đĩa… Đặc biệt, bạn
-                  hoàn toàn có thể nâng cấp server khi có nhu cầu lưu trữ, xử lý
-                  lượng thông tin khổng lồ, giải phóng băng thông đảm bảo cho
-                  lượng truy cập lớn đồng thời.
+                  Bạn có thể sử dụng thêm CPU, nhiều dung lượng đĩa… Đặc biệt,
+                  bạn hoàn toàn có thể nâng cấp server khi có nhu cầu lưu trữ,
+                  xử lý lượng thông tin khổng lồ, giải phóng băng thông đảm bảo
+                  cho lượng truy cập lớn đồng thời.
                 </p>
                 <h4 className="h4">Tùy chỉnh dễ dàng</h4>
                 <p>
-                  Mọi thiết lập trên server vật lý đều được tùy chỉnh dễ dàng theo
-                  ý muốn của bạn.
+                  Mọi thiết lập trên server vật lý đều được tùy chỉnh dễ dàng
+                  theo ý muốn của bạn.
                 </p>
               </div>
             </div>
@@ -519,13 +521,20 @@ function RentPhysicalServer() {
 
           <section className="section-physical-server-place">
             <div className="text-center pt-4">
-              <h3 className="h3">Nơi đặt máy chủ uy tín hàng đầu tại Việt Nam</h3>
+              <h3 className="h3">
+                Nơi đặt máy chủ uy tín hàng đầu tại Việt Nam
+              </h3>
             </div>
             <div className="row justify-content-center hide-for-medium mt-4">
               {physicalServerPlace.map((item) => (
                 <div className="col col-12 col-md-4" key={item.id}>
                   <div className="image">
-                    <img width={150} height={100} src={item.image} alt={item.id} />
+                    <img
+                      width={150}
+                      height={100}
+                      src={item.image}
+                      alt={item.id}
+                    />
                   </div>
                   <div className="mt-4">
                     {item.data.map((e, index) => (
@@ -558,7 +567,6 @@ function RentPhysicalServer() {
         </section>
 
         <div className="container">
-
           <Question data={question} />
 
           {/* <Contact /> */}
@@ -567,7 +575,6 @@ function RentPhysicalServer() {
         </div>
       </div>
     </>
-
   );
 }
 

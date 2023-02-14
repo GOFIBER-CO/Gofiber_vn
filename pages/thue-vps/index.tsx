@@ -1,69 +1,56 @@
-import BannerPage from '@/src/components/banner/BannerPage';
-import Contact from '@/src/containers/home/contact';
-import Question from '@/src/containers/home/question';
-import BuyPackage from '@/src/containers/BuyPackage';
-import SliderHire from '@/src/containers/rent-vps/SliderHire';
-import { VPS_IMAGE } from '@/src/utils';
-import React, { useState, useEffect } from 'react';
-import { useAppDispatch } from '@/src/redux';
-import { getAllVpsByVpsTab } from '@/src/redux/slice/vpsSlice';
-import Skeleton from 'react-loading-skeleton';
-import Head from 'next/head';
+import BannerPage from "@/src/components/banner/BannerPage";
+import Contact from "@/src/containers/home/contact";
+import Question from "@/src/containers/home/question";
+import BuyPackage from "@/src/containers/BuyPackage";
+import SliderHire from "@/src/containers/rent-vps/SliderHire";
+import { VPS_IMAGE } from "@/src/utils";
+import React, { useState, useEffect } from "react";
+import { useAppDispatch } from "@/src/redux";
+import { getAllVpsByVpsTab } from "@/src/redux/slice/vpsSlice";
+import Skeleton from "react-loading-skeleton";
+import Head from "next/head";
 
 const banner = {
   large: VPS_IMAGE.BANNER_LARGE,
   medium: VPS_IMAGE.BANNER_MEDIUM,
-  small: VPS_IMAGE.BANNER_SMALL
-}
+  small: VPS_IMAGE.BANNER_SMALL,
+};
 
 const tabs = [
   {
-    id: 'vps',
-    name: 'VPS',
+    id: "vps",
+    name: "VPS",
   },
   {
-    id: 'Server Việt Nam',
-    name: 'Server Việt Nam',
+    id: "Server Việt Nam",
+    name: "Server Việt Nam",
   },
   {
-    id: 'Server US',
-    name: 'Server US',
+    id: "Server US",
+    name: "Server US",
     isUpdating: true,
   },
   {
-    id: 'Server Alibaba',
-    name: 'Server Alibaba',
+    id: "Server Alibaba",
+    name: "Server Alibaba",
     isUpdating: true,
   },
   {
-    id: 'Server Singapore',
-    name: 'Server Singapor',
+    id: "Server Singapore",
+    name: "Server Singapor",
     isUpdating: true,
   },
   {
-    id: 'Server Japan',
-    name: 'Server Japan',
+    id: "Server Japan",
+    name: "Server Japan",
     isUpdating: true,
   },
 ];
 
 const question = [
   {
-    id: '1',
-    title: ' VPS là gì?',
-    content: (
-      <>
-        <p>
-          Vẫn còn nhiều người thắc mắc cách thuê VPS phù hợp với túi tiền cũng
-          như nhu cầu sử dụng. VPS được chia thành nhiều gói tương ứng với các
-          mức giá khác nhau.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: '2',
-    title: 'Cách thuê VPS chuẩn',
+    id: "1",
+    title: " VPS là gì?",
     content: (
       <>
         <p>
@@ -71,6 +58,19 @@ const question = [
           vụ. VPS chạy bản sao hệ điều hành và khách hàng có quyền truy cập
           superuser vào phiên bản hệ điều hành đó. Vì thế họ có thể cài đặt hầu
           hết mọi phần mềm chạy trên hệ điều hành đó.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "2",
+    title: "Cách thuê VPS chuẩn",
+    content: (
+      <>
+        <p>
+          Vẫn còn nhiều người thắc mắc cách thuê VPS phù hợp với túi tiền cũng
+          như nhu cầu sử dụng. VPS được chia thành nhiều gói tương ứng với các
+          mức giá khác nhau.
         </p>
         <p>
           Chất lượng đi đôi với giá thành, nghĩa là dung lượng lưu trữ của những
@@ -103,7 +103,7 @@ const question = [
           nhanh thì đừng bỏ qua gói này.
         </p>
         <p>
-          <strong>SSD CLOUD VPS B</strong>: gói này có giá cao hơn hai gói trên.
+          <strong>SSD CLOUD VPS C</strong>: gói này có giá cao hơn hai gói trên.
           Được trang bị lõi xử lý 3 cores, SSD CLOUD VPS C giúp gia tăng tốc độ
           xử lý dữ liệu một cách nhanh chóng. Dung lượng lưu trữ trên SSD CLOUD
           VPS C là 50GB và trên RAM là 2GB. Với những bạn muốn xử lý công việc
@@ -113,8 +113,8 @@ const question = [
     ),
   },
   {
-    id: '3',
-    title: 'Tại sao nên dùng VPS',
+    id: "3",
+    title: "Tại sao nên dùng VPS",
     content: (
       <>
         <p>
@@ -155,8 +155,8 @@ const question = [
     ),
   },
   {
-    id: '4',
-    title: 'Các thông số quan trọng trong VPS',
+    id: "4",
+    title: "Các thông số quan trọng trong VPS",
     content: (
       <>
         <p>
@@ -257,8 +257,8 @@ const question = [
     ),
   },
   {
-    id: '5',
-    title: 'VPS được dùng làm gì ?',
+    id: "5",
+    title: "VPS được dùng làm gì ?",
     content: (
       <>
         <p>Hiện nay VPS được dùng cho những nhu cầu như:&nbsp;</p>
@@ -287,20 +287,39 @@ const question = [
   },
 ];
 
-const SkeletonSlide = () => <>
-  <div className='d-flex justify-content-center mt-4'>
-    <Skeleton count={1} style={{ height: '40px', width: '100px', borderRadius: '32px' }} />
-    <Skeleton className='mx-2' count={1} style={{ height: '40px', width: '100px', borderRadius: '32px' }} />
-    <Skeleton count={1} style={{ height: '40px', width: '100px', borderRadius: '32px' }} />
-  </div>
-  <div className='row mt-4 justify-content-center'>
-    {
-      ['mt-0 mt-lg-3', 'mt-0 d-none d-lg-block', 'mt-lg-3 mt-0 d-none d-md-block'].map((i, index) => <div key={index} className={`col col-12 col-sm-8 col-md-6 col-lg-4 ${i}`}>
-        <Skeleton count={1} style={{ width: '100%', minHeight: '600px' }} />
-      </div>)
-    }
-  </div>
-</>
+const SkeletonSlide = () => (
+  <>
+    <div className="d-flex justify-content-center mt-4">
+      <Skeleton
+        count={1}
+        style={{ height: "40px", width: "100px", borderRadius: "32px" }}
+      />
+      <Skeleton
+        className="mx-2"
+        count={1}
+        style={{ height: "40px", width: "100px", borderRadius: "32px" }}
+      />
+      <Skeleton
+        count={1}
+        style={{ height: "40px", width: "100px", borderRadius: "32px" }}
+      />
+    </div>
+    <div className="row mt-4 justify-content-center">
+      {[
+        "mt-0 mt-lg-3",
+        "mt-0 d-none d-lg-block",
+        "mt-lg-3 mt-0 d-none d-md-block",
+      ].map((i, index) => (
+        <div
+          key={index}
+          className={`col col-12 col-sm-8 col-md-6 col-lg-4 ${i}`}
+        >
+          <Skeleton count={1} style={{ width: "100%", minHeight: "600px" }} />
+        </div>
+      ))}
+    </div>
+  </>
+);
 
 function RentVps() {
   const dispatch = useAppDispatch();
@@ -311,7 +330,7 @@ function RentVps() {
 
   const getVps = async () => {
     try {
-      setIsLoading(true)
+      setIsLoading(true);
 
       const result = await dispatch(getAllVpsByVpsTab({})).unwrap();
 
@@ -320,49 +339,52 @@ function RentVps() {
       setTab(data[0]);
       setVps(data || []);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     getVps();
-  }, [])
+  }, []);
 
   const renderSlideHire = {
     loading: <SkeletonSlide />,
-    notLoading: <>
-      <div className="d-flex justify-content-center flex-wrap mt-4 pt-4">
-        {vps.map((item) => (
-          <button
-            onClick={() => setTab(item)}
-            key={item._id}
-            className={`btn0 btn-tab m-1 ${tab?._id === item?._id ? 'active' : ''
+    notLoading: (
+      <>
+        <div className="d-flex justify-content-center flex-wrap mt-4 pt-4">
+          {vps.map((item) => (
+            <button
+              onClick={() => setTab(item)}
+              key={item._id}
+              className={`btn0 btn-tab m-1 ${
+                tab?._id === item?._id ? "active" : ""
               }`}
-          >
-            {item.name}
-          </button>
-        ))}
-      </div>
-      <div className="mt-3">
-        {tab?.isUpdating ? (
-          <div id="slider-hire">
-            <div className="text-center pt-4">
-              <div className="img">
-                <img
-                  src={VPS_IMAGE.UPDATING}
-                  alt="Đang cập nhật"
-                />
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+        <div className="mt-3">
+          {tab?.isUpdating ? (
+            <div id="slider-hire">
+              <div className="text-center pt-4">
+                <div className="img">
+                  <img src={VPS_IMAGE.UPDATING} alt="Đang cập nhật" />
+                </div>
               </div>
             </div>
-          </div>
-        ) : (
-          <SliderHire data={tab?.vps || []} onSelectPackage={setPackageSelect} />
-        )}
-      </div>
-    </>
-  }
+          ) : (
+            <SliderHire
+              data={tab?.vps || []}
+              onSelectPackage={setPackageSelect}
+            />
+          )}
+        </div>
+      </>
+    ),
+  };
 
   return (
     <>
@@ -378,7 +400,9 @@ function RentVps() {
             <div className="text-center">
               <h3 className="h3">Thuê VPS</h3>
             </div>
-            {isLoading ? renderSlideHire['loading'] : renderSlideHire['notLoading']}
+            {isLoading
+              ? renderSlideHire["loading"]
+              : renderSlideHire["notLoading"]}
           </section>
 
           <section className="section-hire">
@@ -400,17 +424,17 @@ function RentVps() {
               <div className="col col-12 col-md-6">
                 <h4 className="h4">Ổ Cứng SSD và Sức Mạnh Vi Xử Lý</h4>
                 <p>
-                  Ở Gofiber, mỗi máy chủ ảo VPS server đều sử dụng vi xử lý Intel
-                  Xeon mới nhất, hàng terabytes ổ cứng SSD NVMe và 512 GB RAM.
-                  Điều này giúp cung cấp đủ tốc độ xử lý cho mọi dự án từ vừa đến
-                  lớn.
+                  Ở Gofiber, mỗi máy chủ ảo VPS server đều sử dụng vi xử lý
+                  Intel Xeon mới nhất, hàng terabytes ổ cứng SSD NVMe và 512 GB
+                  RAM. Điều này giúp cung cấp đủ tốc độ xử lý cho mọi dự án từ
+                  vừa đến lớn.
                 </p>
                 <h4 className="h4">Đường mạng 1000 Mb/s</h4>
                 <p>
                   Thời gian uptime được đảm bảo 99.99% với hệ thống cloud server
                   mạnh mẽ từ công ty Gofiber. Giờ đây, bạn không phải lo server
-                  không ổn định nữa, hãy để khách có trải nghiệm tốt nhất khi truy
-                  cập vào website của bạn.
+                  không ổn định nữa, hãy để khách có trải nghiệm tốt nhất khi
+                  truy cập vào website của bạn.
                 </p>
                 <h4 className="h4">Hỗ trợ NFS (Network File System)</h4>
                 <p>
@@ -436,15 +460,15 @@ function RentVps() {
                 <p>
                   Bạn được toàn quyền kiểm soát VPS với mức cao nhất không giới
                   hạn. Với quyền root server bạn có thể tùy chỉnh sâu hơn vào hệ
-                  thống VPS cũng như có quyền giám sát tài nguyên máy chủ VPS theo
-                  thời gian thực.
+                  thống VPS cũng như có quyền giám sát tài nguyên máy chủ VPS
+                  theo thời gian thực.
                 </p>
                 <h4 className="h4">IPv6 riêng</h4>
                 <p>
                   Kể cả VPS rẻ nhất chúng tôi cũng sử dụng IPv6 native giúp giảm
-                  độ trễ, tối ưu hóa tốc độ mạng cũng như giúp server không bị đưa
-                  vào danh sách đen. Công nghệ IP mới nhất giúp kết nối tới VPS
-                  server vừa nhanh chóng lại vô cùng an toàn.
+                  độ trễ, tối ưu hóa tốc độ mạng cũng như giúp server không bị
+                  đưa vào danh sách đen. Công nghệ IP mới nhất giúp kết nối tới
+                  VPS server vừa nhanh chóng lại vô cùng an toàn.
                 </p>
                 <h4 className="h4">Backup và Snapshot</h4>
                 <p>
@@ -455,7 +479,7 @@ function RentVps() {
             </div>
           </section>
 
-          <Question data={question} />
+          <Question showContent={false} data={question} />
 
           {/* <Contact /> */}
 
@@ -463,7 +487,6 @@ function RentVps() {
         </div>
       </div>
     </>
-
   );
 }
 

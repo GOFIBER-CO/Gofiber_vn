@@ -1,88 +1,67 @@
-import BannerPage from '@/src/components/banner/BannerPage';
-import SpecificationItem from '@/src/components/firewall/SpecificationItem';
-import TitleWithLine from '@/src/components/TitleWithLine';
-import BuyPackage from '@/src/containers/BuyPackage';
-import SecurityItem from '@/src/containers/firewall/security/SecurityItem';
-import SliderSpecification from '@/src/containers/firewall/SliderSpecification';
-import Contact from '@/src/containers/home/contact';
-import Question from '@/src/containers/home/question';
-import { FIREWALL_IMAGE, formatNumber } from '@/src/utils';
-import Head from 'next/head';
-import img from 'next/image';
-import React, { useState } from 'react';
+import BannerPage from "@/src/components/banner/BannerPage";
+import SpecificationItem from "@/src/components/firewall/SpecificationItem";
+import TitleWithLine from "@/src/components/TitleWithLine";
+import BuyPackage from "@/src/containers/BuyPackage";
+import SecurityItem from "@/src/containers/firewall/security/SecurityItem";
+import SliderSpecification from "@/src/containers/firewall/SliderSpecification";
+import Contact from "@/src/containers/home/contact";
+import Question from "@/src/containers/home/question";
+import { FIREWALL_IMAGE, formatNumber } from "@/src/utils";
+import Head from "next/head";
+import img from "next/image";
+import React, { useState } from "react";
 
 const banner = {
   large: FIREWALL_IMAGE.BANNER_LARGE,
   medium: FIREWALL_IMAGE.BANNER_MEDIUM,
-  small: FIREWALL_IMAGE.BANNER_SMALL
-}
+  small: FIREWALL_IMAGE.BANNER_SMALL,
+};
 
 const specification = [
   {
-    title: 'Băng thông',
+    title: "Băng thông",
     fw1: {
-      content: '1 Core',
+      content: "1 Core",
     },
     fw2: {
-      content: '1 Core',
+      content: "1 Core",
     },
     fw3: {
-      content: '1 Core',
+      content: "1 Core",
     },
     fw4: {
-      content: '1 Core',
+      content: "1 Core",
     },
     fw5: {
-      content: '1 Core',
+      content: "1 Core",
     },
     fw6: {
-      content: '1 Core',
+      content: "1 Core",
     },
   },
   {
-    title: 'Số lượng IP Backend',
+    title: "Số lượng IP Backend",
     fw1: {
-      content: '300Mbs',
+      content: "300Mbs",
     },
     fw2: {
-      content: '700Mbs',
+      content: "700Mbs",
     },
     fw3: {
-      content: '1.5GB',
+      content: "1.5GB",
     },
     fw4: {
-      content: '5GB',
+      content: "5GB",
     },
     fw5: {
-      content: '10GB',
+      content: "10GB",
     },
     fw6: {
-      content: '20GB',
+      content: "20GB",
     },
   },
   {
-    title: 'Chống Botnet',
-    fw1: {
-      checked: true,
-    },
-    fw2: {
-      checked: true,
-    },
-    fw3: {
-      checked: true,
-    },
-    fw4: {
-      checked: true,
-    },
-    fw5: {
-      checked: true,
-    },
-    fw6: {
-      checked: true,
-    },
-  },
-  {
-    title: 'Chống SYN Flood',
+    title: "Chống Botnet",
     fw1: {
       checked: true,
     },
@@ -103,7 +82,7 @@ const specification = [
     },
   },
   {
-    title: 'Chống SYN Flood Fake Source IP',
+    title: "Chống SYN Flood",
     fw1: {
       checked: true,
     },
@@ -124,7 +103,7 @@ const specification = [
     },
   },
   {
-    title: 'Chống ICMP/ICMP',
+    title: "Chống SYN Flood Fake Source IP",
     fw1: {
       checked: true,
     },
@@ -145,7 +124,7 @@ const specification = [
     },
   },
   {
-    title: 'Chống GRE Flood',
+    title: "Chống ICMP/ICMP",
     fw1: {
       checked: true,
     },
@@ -166,7 +145,7 @@ const specification = [
     },
   },
   {
-    title: 'Chống TOS Flood',
+    title: "Chống GRE Flood",
     fw1: {
       checked: true,
     },
@@ -187,7 +166,7 @@ const specification = [
     },
   },
   {
-    title: 'Đường mạng 100 mb/s',
+    title: "Chống TOS Flood",
     fw1: {
       checked: true,
     },
@@ -208,7 +187,7 @@ const specification = [
     },
   },
   {
-    title: 'Hỗ trợ IPv4&IPv6',
+    title: "Đường mạng 100 mb/s",
     fw1: {
       checked: true,
     },
@@ -229,7 +208,28 @@ const specification = [
     },
   },
   {
-    title: 'Hỗ trợ 24/7',
+    title: "Hỗ trợ IPv4&IPv6",
+    fw1: {
+      checked: true,
+    },
+    fw2: {
+      checked: true,
+    },
+    fw3: {
+      checked: true,
+    },
+    fw4: {
+      checked: true,
+    },
+    fw5: {
+      checked: true,
+    },
+    fw6: {
+      checked: true,
+    },
+  },
+  {
+    title: "Hỗ trợ 24/7",
     fw1: {
       checked: true,
     },
@@ -253,53 +253,53 @@ const specification = [
 
 const security = [
   {
-    id: '1',
-    title: 'Lớp 6: Tấn công tầng Ứng dụng',
-    content1: 'Algorithm- based Authentication',
-    content2: 'Advanced Pattern Matching',
+    id: "1",
+    title: "Lớp 6: Tấn công tầng Ứng dụng",
+    content1: "Algorithm- based Authentication",
+    content2: "Advanced Pattern Matching",
     image: FIREWALL_IMAGE.STEP6,
   },
   {
-    id: '2',
-    title: 'Lớp 5: Tấn công tầng Network',
-    content1: 'Algorithm- based Authentication',
-    content2: 'TCP Connection Vertication',
+    id: "2",
+    title: "Lớp 5: Tấn công tầng Network",
+    content1: "Algorithm- based Authentication",
+    content2: "TCP Connection Vertication",
     image: FIREWALL_IMAGE.STEP5,
   },
   {
-    id: '3',
-    title: 'Lớp 4: Tấn công đã có chữ ký',
-    content1: 'Block Access based on Gofiber’s Signature Database',
-    content2: 'Block traffic from well-known tools: t50,hping…',
+    id: "3",
+    title: "Lớp 4: Tấn công đã có chữ ký",
+    content1: "Block Access based on Gofiber’s Signature Database",
+    content2: "Block traffic from well-known tools: t50,hping…",
     image: FIREWALL_IMAGE.STEP4,
   },
   {
-    id: '4',
-    title: 'Lớp 3: Danh sách tin cậy',
-    content1: 'User Configured Blacklist/Whitelist',
-    content2: 'Firewall Auto-learned Blacklist/Whitelist',
+    id: "4",
+    title: "Lớp 3: Danh sách tin cậy",
+    content1: "User Configured Blacklist/Whitelist",
+    content2: "Firewall Auto-learned Blacklist/Whitelist",
     image: FIREWALL_IMAGE.STEP3,
   },
   {
-    id: '5',
-    title: 'Lớp 2: Kiểm soát truy cập',
-    content1: 'GeoIP Rules',
-    content2: 'Port Filtering',
+    id: "5",
+    title: "Lớp 2: Kiểm soát truy cập",
+    content1: "GeoIP Rules",
+    content2: "Port Filtering",
     image: FIREWALL_IMAGE.STEP2,
   },
   {
-    id: '6',
-    title: 'Lớp 1: Phân tích giao thức',
-    content1: 'Drop Malformed Packet',
-    content2: 'Drop Not Allowed Protocols',
+    id: "6",
+    title: "Lớp 1: Phân tích giao thức",
+    content1: "Drop Malformed Packet",
+    content2: "Drop Not Allowed Protocols",
     image: FIREWALL_IMAGE.STEP1,
   },
 ];
 
 const question = [
   {
-    id: '1',
-    title: 'Firewall là gì?',
+    id: "1",
+    title: "Firewall là gì?",
     content: (
       <>
         <p>
@@ -321,8 +321,8 @@ const question = [
     ),
   },
   {
-    id: '2',
-    title: 'Vai trò của firewall là gì?',
+    id: "2",
+    title: "Vai trò của firewall là gì?",
     content: (
       <>
         <p>
@@ -355,8 +355,8 @@ const question = [
     ),
   },
   {
-    id: '3',
-    title: 'Firewall nào tốt nhất hiện tại?',
+    id: "3",
+    title: "Firewall nào tốt nhất hiện tại?",
     content: (
       <>
         <p>
@@ -368,8 +368,8 @@ const question = [
     ),
   },
   {
-    id: '4',
-    title: 'Firewall nào tốt nhất hiện tại?',
+    id: "4",
+    title: "Các lỗ hổng của Firewall cần biết",
     content: (
       <>
         <p>
@@ -442,8 +442,8 @@ const firewallService = [
     id: 6,
     name: "Firewall 6",
     price: 91800,
-  }
-]
+  },
+];
 
 function Firewall() {
   const [packageSelect, setPackageSelect] = useState();
@@ -464,35 +464,37 @@ function Firewall() {
           <section className="section-specification hide-for-medium">
             <div className="row">
               <div className="col col-12">
-                <div
-                  className="price-firewall title pb-2"
-                >
+                <div className="price-firewall title pb-2">
                   <div className="name-server">
                     <p>Tính năng</p>
                   </div>
-                  {
-                    firewallService.map((item) => <div key={item.id} className="name-server info-server">
-                      {item?.name}<br />
-                      <span className='price'>
+                  {firewallService.map((item) => (
+                    <div key={item.id} className="name-server info-server">
+                      {item?.name}
+                      <br />
+                      <span className="price">
                         {formatNumber(item.price)} VNĐ/Th
                       </span>
-                    </div>)
-                  }
+                    </div>
+                  ))}
                 </div>
                 <div className="price-firewall specification-item mt-2">
                   {specification.map((item, index) => (
                     <SpecificationItem key={index} item={item} />
                   ))}
                   <div className="name-server"></div>
-                  {
-                    firewallService.map((item: any) => <div key={item.id} className="info-server">
-                      <a href='#buy-package' className='a'>
-                        <button onClick={() => setPackageSelect(item)} className="btn0 btn-price">
+                  {firewallService.map((item: any) => (
+                    <div key={item.id} className="info-server">
+                      <a href="#buy-package" className="a">
+                        <button
+                          onClick={() => setPackageSelect(item)}
+                          className="btn0 btn-price"
+                        >
                           Chọn
                         </button>
                       </a>
-                    </div>)
-                  }
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -501,16 +503,24 @@ function Firewall() {
           <section className="section-specification hide-for-large">
             <div className="row">
               <div className="col col-6">
-                <div className="" style={{ width: '100% !important' }}>
-                  <div className="name-server" style={{ borderBottom: '1px solid #d6d6d6' }}>
-                    <p style={{ margin: '0px', lineHeight: '42px' }}>Tính năng</p>
+                <div className="" style={{ width: "100% !important" }}>
+                  <div
+                    className="name-server"
+                    style={{ borderBottom: "1px solid #d6d6d6" }}
+                  >
+                    <p style={{ margin: "0px", lineHeight: "42px" }}>
+                      Tính năng
+                    </p>
                   </div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '100%' }}>
+                <div style={{ display: "grid", gridTemplateColumns: "100%" }}>
                   <div className="name-server">
                     <p>Băng thông</p>
                   </div>
-                  <div style={{ minHeight: '41px' }} className="name-server number_line_1">
+                  <div
+                    style={{ minHeight: "41px" }}
+                    className="name-server number_line_1"
+                  >
                     <p>Số lượng IP Backend</p>
                   </div>
                   <div className="name-server">
@@ -519,7 +529,10 @@ function Firewall() {
                   <div className="name-server">
                     <p>Chống SYN Flood</p>
                   </div>
-                  <div style={{ minHeight: '41px' }} className="name-server number_line_1">
+                  <div
+                    style={{ minHeight: "41px" }}
+                    className="name-server number_line_1"
+                  >
                     <p>Chống SYN Flood Fake Source IP</p>
                   </div>
                   <div className="name-server">
@@ -531,7 +544,10 @@ function Firewall() {
                   <div className="name-server">
                     <p>Chống TOS Flood</p>
                   </div>
-                  <div style={{ minHeight: '41px' }} className="name-server number_line_1">
+                  <div
+                    style={{ minHeight: "41px" }}
+                    className="name-server number_line_1"
+                  >
                     <p>Đường mạng 100 mb/s</p>
                   </div>
                   <div className="name-server">
@@ -552,7 +568,7 @@ function Firewall() {
             <div className="section-content position-relative">
               <div className="row justify-content-center">
                 <div className="col col-12 col-md-6 col-lg-4">
-                  <TitleWithLine title='BẢO VỆ TOÀN DIỆN' />
+                  <TitleWithLine title="BẢO VỆ TOÀN DIỆN" />
                 </div>
               </div>
               <div className="row justify-content-center">
@@ -580,11 +596,9 @@ function Firewall() {
           {/* <Contact /> */}
 
           <BuyPackage packageSelect={packageSelect} />
-
         </div>
       </div>
     </>
-
   );
 }
 
