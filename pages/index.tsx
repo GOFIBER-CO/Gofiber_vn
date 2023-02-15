@@ -16,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import EffectButton from "../src/components/button/EffectButton";
 
@@ -62,6 +62,14 @@ const dataWhy = [
 
 function Home() {
   const router = useRouter();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef) {
+      console.log("platyixds");
+      videoRef?.current?.play();
+    }
+  }, []);
 
   return (
     <>
@@ -103,7 +111,12 @@ function Home() {
                     <div className="col col-12 col-lg-8">
                       <div className="img col-right">
                         <div className="img img-inner dark">
-                          <img src={HOME_IMAGE.INIT} alt="Video 33" />
+                          <video
+                            style={{ width: "100%" }}
+                            src={HOME_IMAGE.INIT}
+                            muted
+                            autoPlay
+                          />
                         </div>
                       </div>
                     </div>

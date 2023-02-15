@@ -96,7 +96,8 @@ export const HOME_IMAGE = {
     FOURTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-4.png"),
     FIFTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-5.png"),
   },
-  INIT: getImageWithBunnyUrl("Desktop/Trang-chu/Init.gif"),
+  // INIT: getImageWithBunnyUrl("Desktop/Trang-chu/Init.gif"),
+  INIT: getImageWithBunnyUrl("Desktop/Trang-chu/ezgif.com-gif-maker.webm"),
 };
 
 export const INTRODUCE_IMAGE = {
