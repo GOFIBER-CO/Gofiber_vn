@@ -310,3 +310,9 @@ export const POLICY_IMAGE = {
     ),
   },
 };
+
+export const NEWS_IMAGE = {
+  BANNER_LARGE: getImageWithBunnyUrl("Desktop/Tin-tuc/bg-tin%20tuc.png"),
+  BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Tin-tuc/tablet-%20tin%20tức.png"),
+  BANNER_SMALL: getImageWithBunnyUrl("Mobile/Tin-tuc/mobile-%20tin%20tức.png"),
+};
