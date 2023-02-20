@@ -7,6 +7,7 @@ export enum ICON {
   CHECKED = "mdi:check-bold",
   CALL = "material-symbols:call",
   POLICY = "material-symbols:policy-outline-rounded",
+  STAR = "mdi:star",
 }
 
 export enum NEWS_TAB {
@@ -315,4 +316,61 @@ export const NEWS_IMAGE = {
   BANNER_LARGE: getImageWithBunnyUrl("Desktop/Tin-tuc/bg-tin%20tuc.png"),
   BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Tin-tuc/tablet-%20tin%20tức.png"),
   BANNER_SMALL: getImageWithBunnyUrl("Mobile/Tin-tuc/mobile-%20tin%20tức.png"),
+};
+
+export const ICON_IMAGE = {
+  MESSENGER: getImageWithBunnyUrl("Desktop/Trang-chu/icon-messenger.png"),
+  SEARCH: getImageWithBunnyUrl("Desktop/Trang-chu/icon-search.png"),
+  STAR: getImageWithBunnyUrl("Desktop/Trang-chu/icon-star.png"),
+  RIGHT: getImageWithBunnyUrl("Desktop/Trang-chu-2/icon-right.png"),
+};
+
+export const HOME2_IMAGE = {
+  INTRO: getImageWithBunnyUrl("Desktop/Trang-chu-2/Intro.png"),
+  EXTRA_INTRO: {
+    _247: getImageWithBunnyUrl("Desktop/Trang-chu-2/intro-247.png"),
+    FREE: getImageWithBunnyUrl("Desktop/Trang-chu-2/intro-free.png"),
+    SPEED: getImageWithBunnyUrl("Desktop/Trang-chu-2/intro-speed.png"),
+  },
+  HOT_PRODUCT: {
+    VPS1GB: getImageWithBunnyUrl("Desktop/Trang-chu-2/vps-1gb.png"),
+    VPS2GB: getImageWithBunnyUrl("Desktop/Trang-chu-2/vps-2gb.png"),
+    VPS4GB: getImageWithBunnyUrl("Desktop/Trang-chu-2/vps-4gb.png"),
+    VPS8GB: getImageWithBunnyUrl("Desktop/Trang-chu-2/vps-8gb.png"),
+    VPS16GB: getImageWithBunnyUrl("Desktop/Trang-chu-2/vps-16gb.png"),
+    VPS32GB: getImageWithBunnyUrl("Desktop/Trang-chu-2/vps-32gb.png"),
+    COMPUTER1S: getImageWithBunnyUrl("Desktop/Trang-chu-2/computer-s1.png"),
+    LOCATION1S: getImageWithBunnyUrl("Desktop/Trang-chu-2/location-s1.png"),
+  },
+  HOT_SERVICE: {
+    WEB_HOSTING: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/hot-service-web-hosting.png"
+    ),
+    PHYSICAL_SERVER: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/hot-service-physical-server.png"
+    ),
+    VPS: getImageWithBunnyUrl("Desktop/Trang-chu-2/hot-service-vps.png"),
+  },
+
+  BASIC_SERVICE: {
+    BUILD_CONTENT: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/basic-service-build-content.png"
+    ),
+    CARE: getImageWithBunnyUrl("Desktop/Trang-chu-2/basic-service-care.png"),
+    ENTITY: getImageWithBunnyUrl("Desktop/Trang-chu-2/basic-service-enity.png"),
+    WEB_DESIGN: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/basic-service-web-design.png"
+    ),
+    KEY_WORD: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/basic-service-key-word.png"
+    ),
+    SEO_FULL: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/basic-service-seo-full.png"
+    ),
+  },
+
+  OTHER_SERVICE: {
+    DDOS: getImageWithBunnyUrl("Desktop/Trang-chu-2/other-service-ddos.png"),
+    SSL: getImageWithBunnyUrl("Desktop/Trang-chu-2/other-service-ssl.png"),
+  },
 };

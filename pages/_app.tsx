@@ -47,6 +47,10 @@ export default function App({ Component, pageProps }: AppProps) {
               name="google-site-verification"
               content="MGEbcIEmyG0Sp5dKi1iy07QOlgtTlUUMhjdqZfw9wsc"
             />
+            <meta
+              name="dmca-site-verification"
+              content="VTVITzZSMUZ5VEhGNG83TUJKanRyZz090"
+            />
             <title>
               Gofiber Hosting và Máy chủ hiệu năng cao - Gofiber.vn - Giới thiệu
               sản phẩm

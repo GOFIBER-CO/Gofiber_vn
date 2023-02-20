@@ -325,6 +325,15 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
 
     const title = response?.data?.data?.title;
 
+    if (!title) {
+      return {
+        redirect: {
+          destination: "/",
+          permanent: false,
+        },
+      };
+    }
+
     return {
       props: {
         ...(title ? { title } : {}),

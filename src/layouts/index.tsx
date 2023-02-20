@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react/';
-import ButtonBackToTop from '../components/button/ButtonBackToTop';
-import { useAppDispatch } from '../redux';
-import { initFP } from '../redux/slice';
-import DrawerMenu from './DrawerMenu';
-import Footer from './Footer';
-import Header from './Header';
-import { notification } from 'antd';
+import React, { useState, useEffect } from "react";
+import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react/";
+import ButtonBackToTop from "../components/button/ButtonBackToTop";
+import { useAppDispatch } from "../redux";
+import { initFP } from "../redux/slice";
+import DrawerMenu from "./DrawerMenu";
+import Footer from "./Footer";
+import Header from "./Header";
+import { notification } from "antd";
+import FooterV2 from "./FooterV2";
+import { useRouter } from "next/router";
 
 type Props = {
   children: JSX.Element;
@@ -14,10 +16,11 @@ type Props = {
 
 function Layout({ children }: Props) {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   const [drawer, setDrawer] = useState<boolean>(false);
   const { data } = useVisitorData(
     { extendedResult: true },
-    { immediate: true },
+    { immediate: true }
   );
   const [_, contextHolder] = notification.useNotification();
 
@@ -28,7 +31,7 @@ function Layout({ children }: Props) {
       const params = {
         visId: visitorId,
         reqId: requestId,
-        domain: window?.location?.protocol + '//' + window?.location?.host,
+        domain: window?.location?.protocol + "//" + window?.location?.host,
       };
 
       await dispatch(initFP(params)).unwrap();
@@ -47,14 +50,17 @@ function Layout({ children }: Props) {
 
   return (
     <>
-      <Header onShowDrawer={onShowDrawer} />
+      {!["/", "/test"].includes(router?.asPath) && (
+        <Header onShowDrawer={onShowDrawer} />
+      )}
       <main id="main">
         {contextHolder}
         {children}
       </main>
       <DrawerMenu visible={drawer} onClose={onCloseDrawer} />
       <ButtonBackToTop />
-      <Footer />
+      <div>{}</div>
+      <FooterV2 />
     </>
   );
 }
