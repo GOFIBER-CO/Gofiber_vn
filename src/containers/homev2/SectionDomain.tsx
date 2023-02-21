@@ -6,32 +6,32 @@ const data = [
   {
     id: 1,
     name: ".com",
-    extra: "",
+    extra: "199/Th",
   },
   {
     id: 2,
     name: ".org",
-    extra: "",
+    extra: "179/Th",
   },
   {
     id: 3,
     name: ".info",
-    extra: "",
+    extra: "189/Th",
   },
   {
     id: 4,
     name: ".store",
-    extra: "",
+    extra: "199/Th",
   },
   {
     id: 5,
     name: ".net",
-    extra: "",
+    extra: "159/Th",
   },
   {
     id: 6,
     name: ".co.uk",
-    extra: "",
+    extra: "299/Th",
   },
 ];
 
@@ -65,9 +65,9 @@ function SectionDomain() {
 
             <div className="mt-4 d-flex align-items-center justify-content-between flex-wrap">
               {data.map((item) => (
-                <div key={item.id}>
+                <div className="domain-item" key={item.id}>
                   <div>{item.name}</div>
-                  <div>{item.extra}</div>
+                  <div className="extra">{item.extra}</div>
                 </div>
               ))}
             </div>

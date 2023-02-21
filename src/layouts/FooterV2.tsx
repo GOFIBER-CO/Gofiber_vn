@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import TextImageButton from "../components/button/TextImageButton";
 import Divider from "../components/Divider";
-import { ICON_IMAGE } from "../utils";
+import { HOME2_IMAGE, ICON_IMAGE } from "../utils";
 
 const gofiber = [
   {
@@ -64,14 +64,35 @@ const contactInfo = [
   {
     id: 1,
     name: "Số 131, Đường CN11, P. Sơn Kỳ, Q. Tân Phú",
+    image: HOME2_IMAGE.FOOTER.LOCATION,
   },
   {
     id: 2,
     name: "Số điện thoại : 0985 07 85 07",
+    image: HOME2_IMAGE.FOOTER.PHONE,
   },
   {
     id: 3,
     name: "Sales@gofiber.vn",
+    image: HOME2_IMAGE.FOOTER.MESSAGE,
+  },
+];
+
+const service = [
+  {
+    id: 1,
+    name: "Dịch vụ BacklinkVina",
+    image: HOME2_IMAGE.FOOTER.BACKLINK,
+  },
+  {
+    id: 2,
+    name: "Dịch vụ TrafficVina",
+    image: HOME2_IMAGE.FOOTER.TRAFFIC,
+  },
+  {
+    id: 3,
+    name: "Dịch vụ PBN",
+    image: HOME2_IMAGE.FOOTER.PBN,
   },
 ];
 
@@ -81,7 +102,7 @@ function FooterV2() {
       <div className="container">
         <div className="box-contact row justify-content-center">
           <div className="col col-12 col-md-10">
-            <div className="d-flex align-items-center">
+            <div className="d-flex">
               <h4 className="h4">GOFIBER</h4>
               <h4 className="h4 mx-1">-</h4>
               <h5 className="h5">
@@ -130,10 +151,42 @@ function FooterV2() {
               <div className="col-12 col-md-4 px-0 mt-4">
                 <h5 className="h5">Thông tin liên lạc</h5>
                 {contactInfo.map((item) => (
-                  <div className="px-0 mt-1" key={item.id}>
-                    <a>{item.name}</a>
+                  <div className="px-0 mb-3 d-flex" key={item.id}>
+                    <img
+                      style={{ minWidth: "24px", height: "24px" }}
+                      width={24}
+                      height={24}
+                      src={item.image}
+                      alt={item.name}
+                    />
+                    <a className="mt-1">{item.name}</a>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="row mt-4 justify-content-center">
+              <div className="col col-12 col-lg-8 px-0">
+                <div className="row mt-4 align-items-center">
+                  {service.map((item) => (
+                    <div
+                      className="col col-12 col-md-4 mt-2 mt-md-0 service-footer-item p-0 d-flex align-items-center justify-content-start justify-content-md-center justify-content-lg-start"
+                      key={item.id}
+                    >
+                      <img src={item.image} alt={item.name} />
+                      <span>{item.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="col col-12 col-lg-4 px-0 mt-4 d-flex justify-content-center justify-content-lg-end">
+                <img
+                  width={153}
+                  height={33}
+                  src={HOME2_IMAGE.FOOTER.PROTECTED}
+                  alt="protected"
+                />
               </div>
             </div>
           </div>

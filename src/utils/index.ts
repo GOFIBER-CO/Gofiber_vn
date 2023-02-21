@@ -8,6 +8,8 @@ export enum ICON {
   CALL = "material-symbols:call",
   POLICY = "material-symbols:policy-outline-rounded",
   STAR = "mdi:star",
+  PREV = "material-symbols:chevron-left-rounded",
+  NEXT = "material-symbols:chevron-right-rounded",
 }
 
 export enum NEWS_TAB {
@@ -94,7 +96,7 @@ export const HOME_IMAGE = {
     FIRST: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-1.png"),
     SECOND: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-2.png"),
     THIRD: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-3.png"),
-    FOURTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-4.png"),
+    FOURTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-4-bao-vn.png"),
     FIFTH: getImageWithBunnyUrl("Desktop/Trang-chu/tai-tro-5.png"),
   },
   // INIT: getImageWithBunnyUrl("Desktop/Trang-chu/Init.gif"),
@@ -372,5 +374,40 @@ export const HOME2_IMAGE = {
   OTHER_SERVICE: {
     DDOS: getImageWithBunnyUrl("Desktop/Trang-chu-2/other-service-ddos.png"),
     SSL: getImageWithBunnyUrl("Desktop/Trang-chu-2/other-service-ssl.png"),
+  },
+
+  WHY_CHOOSE: {
+    INVEST: getImageWithBunnyUrl("Desktop/Trang-chu-2/why-choose-invest.png"),
+    EMPLOYEE: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/why-choose-employee.png"
+    ),
+    SUPPORT: getImageWithBunnyUrl("Desktop/Trang-chu-2/why-choose-support.png"),
+    CUSTOMER: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/why-choose-customer.png"
+    ),
+    TECHNOLOGY: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/why-choose-technology.png"
+    ),
+    POLICY: getImageWithBunnyUrl("Desktop/Trang-chu-2/why-choose-policy.png"),
+  },
+  FEEDBACK: {
+    UYEN: getImageWithBunnyUrl("Desktop/Trang-chu-2/feedback-uyen.png"),
+    PHUONG_NHI: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/feedback-phuong-nhi.png"
+    ),
+    HOANG_MINH: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/feedback-hoang-minh.png"
+    ),
+  },
+  FOOTER: {
+    PHONE: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-phone.png"),
+    MESSAGE: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-message.png"),
+    LOCATION: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-location.png"),
+    PBN: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-pbn.png"),
+    TRAFFIC: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-traffic.png"),
+    BACKLINK: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-backlink.png"),
+    PROTECTED: getImageWithBunnyUrl(
+      "Desktop/Trang-chu-2/footer-2-protected.png"
+    ),
   },
 };

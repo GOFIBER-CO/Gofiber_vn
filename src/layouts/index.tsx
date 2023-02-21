@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react/";
 import ButtonBackToTop from "../components/button/ButtonBackToTop";
-import { useAppDispatch } from "../redux";
-import { initFP } from "../redux/slice";
+import { useAppDispatch, useAppSelector } from "../redux";
+import { initFP, updateDrawer } from "../redux/slice";
 import DrawerMenu from "./DrawerMenu";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -16,8 +16,8 @@ type Props = {
 
 function Layout({ children }: Props) {
   const dispatch = useAppDispatch();
+  const { drawer } = useAppSelector((state) => state.home);
   const router = useRouter();
-  const [drawer, setDrawer] = useState<boolean>(false);
   const { data } = useVisitorData(
     { extendedResult: true },
     { immediate: true }
@@ -41,16 +41,16 @@ function Layout({ children }: Props) {
   }, [data]);
 
   const onShowDrawer = () => {
-    setDrawer(true);
+    dispatch(updateDrawer(true));
   };
 
   const onCloseDrawer = () => {
-    setDrawer(false);
+    dispatch(updateDrawer(false));
   };
 
   return (
     <>
-      {!["/", "/test"].includes(router?.asPath) && (
+      {!["/"].includes(router?.asPath) && (
         <Header onShowDrawer={onShowDrawer} />
       )}
       <main id="main">
@@ -59,7 +59,6 @@ function Layout({ children }: Props) {
       </main>
       <DrawerMenu visible={drawer} onClose={onCloseDrawer} />
       <ButtonBackToTop />
-      <div>{}</div>
       <FooterV2 />
     </>
   );

@@ -55,7 +55,10 @@ function SectionOtherService() {
               className={`col col-12 col-lg-5 d-flex justify-content-center flex-column ${item.classText}`}
             >
               <h3 className="h3 title">{item.title}</h3>
-              <div style={{ textAlign: "justify" }} className="mt-4 content">
+              <div
+                style={{ textAlign: "justify" }}
+                className="mt-2 mt-md-4 content"
+              >
                 {item.content}
               </div>
               <div className="mt-4">

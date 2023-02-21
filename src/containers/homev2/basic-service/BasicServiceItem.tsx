@@ -16,10 +16,7 @@ function BasicServiceItem({ item }: Props) {
             <img src={item?.image} alt={item?.name} />
           </div>
           <div className="mt-3 name">{item?.name}</div>
-          <div className="mt-3 content number_line_3">
-            Lorem ipsum dolor sit amet, ea mundi malorum cum, ocurreret
-            reprehendunt.
-          </div>
+          <div className="mt-3 content number_line_3">{item.content}</div>
           <div className="see-more text-center">
             <Link
               href={item?.link}

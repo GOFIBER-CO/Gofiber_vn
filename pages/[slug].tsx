@@ -261,7 +261,10 @@ function NewsDetail({ title }: Props) {
             </InfiniteScroll>
           </div>
         </div>
-        <div className="col-12 col-md-4 hide-for-medium">
+        <div
+          style={{ marginTop: "30px" }}
+          className="col-12 col-md-4 hide-for-medium"
+        >
           <div className="best-news">
             <h4 className="h4 text-uppercase title">Xem nhiều nhất</h4>
             {bestNews?.map((item, index) => (

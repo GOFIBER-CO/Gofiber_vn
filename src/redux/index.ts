@@ -6,6 +6,7 @@ import postReducer from "./slice/postSlice";
 import recruitReducer from "./slice/recruitSlice";
 import hostingReducer from "./slice/hostingSlice";
 import vpsReducer from "./slice/vpsSlice";
+import homeReducer from "./slice/homeSlice";
 
 const rootReducer = combineReducers({
   fp: fpReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   recruit: recruitReducer,
   hosting: hostingReducer,
   vps: vpsReducer,
+  home: homeReducer,
 });
 
 export const store = configureStore({

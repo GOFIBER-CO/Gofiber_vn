@@ -1,6 +1,9 @@
 import TextIconButton from "@/src/components/button/TextIconButton";
+import { useAppDispatch } from "@/src/redux";
+import { updateBuyPackage } from "@/src/redux/slice";
 import { formatNumber, ICON, ICON_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -25,10 +28,23 @@ const Rate = ({ rate }: { rate?: number }) => {
 };
 
 function HotProductItem({ item }: Props) {
+  const dispatch = useAppDispatch();
+
+  const handleChooseProduct = (item: any) => {
+    console.log("item", item);
+
+    dispatch(
+      updateBuyPackage({
+        count: 1,
+        item,
+      })
+    );
+  };
+
   return (
     <div className="col col-12 col-md-6 col-lg-3 py-2 px-2 px-xl-4 mt-4">
       <div className="hot-product-item">
-        <div className="hot-product-item-wrapper">
+        <div className="hot-product-item-wrapper position-relative">
           <img
             style={item?.style ? item?.style : {}}
             src={item.image}
@@ -41,19 +57,16 @@ function HotProductItem({ item }: Props) {
           <div className="extra">{item.extra}</div>
           <div className="price">{formatNumber(item.price)} VND / Tháng</div>
           <div className="price-discount">
-            {item?.discount &&
-              `${formatNumber(
-                (item?.price * item?.discount) / 100
-              )} VND / Tháng`}
+            {item?.discount && `${formatNumber(item?.startPrice)} VND / Tháng`}
           </div>
 
           <div style={{ marginTop: "50px" }}>
-            <TextIconButton
-              name="Xem chi tiết"
-              styles={{ boxShadow: "none" }}
-            />
+            <Link onClick={() => handleChooseProduct(item)} href={item?.link}>
+              <TextIconButton name="Đặt hàng" styles={{ boxShadow: "none" }} />
+            </Link>
           </div>
           <Rate rate={item?.rate || 0} />
+          {item?.discount && <div className="discount">{item?.discount}%</div>}
         </div>
       </div>
     </div>

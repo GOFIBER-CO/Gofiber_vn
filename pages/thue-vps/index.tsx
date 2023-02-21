@@ -5,10 +5,11 @@ import BuyPackage from "@/src/containers/BuyPackage";
 import SliderHire from "@/src/containers/rent-vps/SliderHire";
 import { VPS_IMAGE } from "@/src/utils";
 import React, { useState, useEffect } from "react";
-import { useAppDispatch } from "@/src/redux";
+import { useAppDispatch, useAppSelector } from "@/src/redux";
 import { getAllVpsByVpsTab } from "@/src/redux/slice/vpsSlice";
 import Skeleton from "react-loading-skeleton";
 import Head from "next/head";
+import { updateBuyPackage } from "@/src/redux/slice";
 
 const banner = {
   large: VPS_IMAGE.BANNER_LARGE,
@@ -322,11 +323,30 @@ const SkeletonSlide = () => (
 );
 
 function RentVps() {
+  const { buyPackage } = useAppSelector((state) => state.home);
   const dispatch = useAppDispatch();
   const [tab, setTab] = useState<any>();
   const [packageSelect, setPackageSelect] = useState();
   const [vps, setVps] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const scroll: any = document.getElementById("buy-package");
+    if (buyPackage?.count > 0) {
+      setPackageSelect(buyPackage?.item);
+
+      setTimeout(() => {
+        const offset = -100;
+        const y =
+          scroll.getBoundingClientRect().top + window.pageYOffset + offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }, 200);
+    }
+
+    return () => {
+      dispatch(updateBuyPackage(0));
+    };
+  }, []);
 
   const getVps = async () => {
     try {

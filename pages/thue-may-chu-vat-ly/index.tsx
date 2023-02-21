@@ -4,11 +4,13 @@ import Contact from "@/src/containers/home/contact";
 import Question from "@/src/containers/home/question";
 import SliderPhysicalServer from "@/src/containers/rent-physical-server/SliderPhysicalServer";
 import SliderPhysicalServerPlace from "@/src/containers/rent-physical-server/SliderPhysicalServerPlace";
+import { useAppDispatch, useAppSelector } from "@/src/redux";
+import { updateBuyPackage } from "@/src/redux/slice";
 import { ICON, PHYSICAL_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
 import Head from "next/head";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const banner = {
   large: PHYSICAL_IMAGE.BANNER_LARGE,
@@ -406,8 +408,23 @@ const question = [
 ];
 
 function RentPhysicalServer() {
+  const dispatch = useAppDispatch();
+  const { buyPackage } = useAppSelector((state) => state.home);
   const [tab, setTab] = useState(tabs[0]);
   const [packageSelect, setPackageSelect] = useState();
+
+  useEffect(() => {
+    const scroll = document.getElementById("buy-package");
+    if (buyPackage?.count > 0) {
+      scroll?.scrollIntoView({ behavior: "smooth" });
+      setPackageSelect(buyPackage?.item);
+    }
+
+    return () => {
+      dispatch(updateBuyPackage(0));
+    };
+  }, []);
+
   return (
     <>
       <Head>
