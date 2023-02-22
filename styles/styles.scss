@@ -2272,6 +2272,14 @@ img {
 }
 
 #news-detail {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
   .breadcrumb {
     min-height: 180px;
     background-image: url("https://gofiber.b-cdn.net/tintuc-detail.webp");
@@ -2442,6 +2450,7 @@ img {
       max-width: 650px;
       font-size: 14px;
       color: #828282;
+      text-align: center;
     }
   }
 }
