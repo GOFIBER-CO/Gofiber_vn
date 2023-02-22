@@ -1,15 +1,15 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import Image from 'next/image';
+import "swiper/css";
+import "swiper/css/pagination";
+import Image from "next/image";
 
-import { Pagination } from 'swiper';
-import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
-import Link from 'next/link';
-import { formatNumber } from '@/src/utils';
-import ButtonSlideSeeMore from '@/src/components/button/ButtonSlideSeeMore';
+import { Pagination } from "swiper";
+import TextIconPrice from "@/src/components/web-hosting/TextIconPrice";
+import Link from "next/link";
+import { formatNumber } from "@/src/utils";
+import ButtonSlideSeeMore from "@/src/components/button/ButtonSlideSeeMore";
 
 type Props = {
   name: string;
@@ -20,17 +20,17 @@ type Props = {
 const responsive = [
   {
     id: 1,
-    class: 'show-for-small',
+    class: "show-for-small",
     slidesPerView: 1,
   },
   {
     id: 2,
-    class: 'show-for-medium hide-for-small ',
+    class: "show-for-medium hide-for-small ",
     slidesPerView: 2,
   },
   {
     id: 3,
-    class: 'hide-for-medium',
+    class: "hide-for-medium",
     slidesPerView: 4,
   },
 ];
@@ -59,21 +59,21 @@ function SliderPhysicalServer({ data, name, onSelectPackage }: Props) {
           >
             {data.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className={`ssl-item ${item.isBest ? 'best' : ''}`}>
+                <div className={`ssl-item ${item.isBest ? "best" : ""}`}>
                   <div className="wrapper_content">
                     <div className="text-center">
                       <p className="text-center">
                         <strong>{item.name}</strong>
                         <br />
-                        <span className="mt-2" style={{ fontSize: '14px' }}>
+                        <span className="mt-2" style={{ fontSize: "14px" }}>
                           {item.extra}
                         </span>
                         <br />
                         <span
                           className="color_primary"
                           style={{
-                            fontSize: '32px',
-                            fontWeight: 'bold',
+                            fontSize: "32px",
+                            fontWeight: "bold",
                           }}
                         >
                           {formatNumber(item?.price)}
@@ -81,14 +81,14 @@ function SliderPhysicalServer({ data, name, onSelectPackage }: Props) {
                         VNĐ/Th
                       </p>
                       <div className="text-center">
-                        <button className="btn0">
-                          <a
-                            href="#buy-package"
-                            onClick={() => onSelectPackage(item)}
-                          >
+                        <a
+                          href="#buy-package"
+                          onClick={() => onSelectPackage(item)}
+                        >
+                          <button className="btn0">
                             <span>Thêm vào giỏ hàng</span>
-                          </a>
-                        </button>
+                          </button>
+                        </a>
                       </div>
                     </div>
                     <div className="my-3 divider divider--primary"></div>
@@ -96,21 +96,21 @@ function SliderPhysicalServer({ data, name, onSelectPackage }: Props) {
                       <TextIconPrice color="blue" key={index} content={e} />
                     ))}
                   </div>
-                  {
-                    item.isBest && <div className="wrapper-best">
+                  {item.isBest && (
+                    <div className="wrapper-best">
                       <button className="btn0 btn-best">
                         <span>Phổ biến nhất</span>
                       </button>
                     </div>
-                  }
+                  )}
                   {/* <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} /> */}
-                  {
-                    item.isBest && <div className="wrapper-best">
+                  {item.isBest && (
+                    <div className="wrapper-best">
                       <button className="btn0 btn-best">
                         <span>Phổ biến nhất</span>
                       </button>
                     </div>
-                  }
+                  )}
                 </div>
               </SwiperSlide>
             ))}
