@@ -41,14 +41,14 @@ const data = [
   },
   {
     id: "3",
-    title: "Dịch vụ Firewall",
-    content: `Firewall giúp kiểm soát luồng thông tin giữa Intranet và Internet, 
+    title: "Dịch vụ DDos",
+    content: `DDos giúp kiểm soát luồng thông tin giữa Intranet và Internet, 
         chúng phát hiện và phán xét những hành vi được truy cập và 
         không được truy cập vào bên trong hệ thống, đảm bảo tối đa sự an toàn thông tin.`,
     image: SERVICE_IMAGE.MY_SERVICE.FIREWALL,
     class: "flex-row-reverse",
     aos: ["fade-left", "fade-right"],
-    link: "/dich-vu-firewall",
+    link: "/dich-vu-ddos",
   },
   {
     id: "4",

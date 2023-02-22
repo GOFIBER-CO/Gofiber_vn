@@ -44,9 +44,9 @@ const data = [
   },
   {
     id: "5",
-    title: "Firewall",
+    title: "DDos",
     className: "firth",
-    link: "/dich-vu-firewall",
+    link: "/dich-vu-ddos",
   },
   {
     id: "6",

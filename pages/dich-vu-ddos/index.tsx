@@ -458,10 +458,10 @@ function Firewall() {
       </Head>
       <div id="firewall">
         <section>
-          <BannerPage image={banner} name="Firewall" />
+          <BannerPage image={banner} name="Dịch vụ DDos" />
         </section>
         <div className="container">
-          <section className="section-specification hide-for-medium">
+          {/* <section className="section-specification hide-for-medium">
             <div className="row">
               <div className="col col-12">
                 <div className="price-firewall title pb-2">
@@ -562,7 +562,7 @@ function Firewall() {
                 <SliderSpecification onSelectPackage={setPackageSelect} />
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className="section-security">
             <div className="section-content position-relative">

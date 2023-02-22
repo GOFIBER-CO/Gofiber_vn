@@ -10,7 +10,7 @@ const data = [
     content: `Công nghệ và giải pháp độc quyền giúp hạn chế và bảo vệ website kinh doanh của bạn trước những cuộc tấn công DDoS có chủ đích và ác ý từ những đối thủ cạnh tranh.`,
     image: HOME2_IMAGE.OTHER_SERVICE.DDOS,
     class: "flex-row-reverse",
-    link: "/",
+    link: "/dich-vu-ddos",
     classText: "align-items-start align-items-lg-end",
   },
   {
@@ -19,7 +19,7 @@ const data = [
     content: `Ngoài các chứng chỉ SSL được cấp miễn phí như Let's Encrypt, GOFIBER cũng mang đến cho khách hàng của mình 
     giải pháp chứng chỉ SSL được cấp từ các thương hiệu công nghệ bảo mật hàng đầu như SSL DV, SSL Wildcard DV, Digicert Basic EV (FLEX),...`,
     image: HOME2_IMAGE.OTHER_SERVICE.SSL,
-    link: "/",
+    link: "/chung-chi-ssl",
     classText: "align-items-start",
   },
 ];
@@ -62,7 +62,7 @@ function SectionOtherService() {
                 {item.content}
               </div>
               <div className="mt-4">
-                <Link href="/" className="mt-4">
+                <Link href={item.link} className="mt-4">
                   <TextIconButton name="Xem thêm" />
                 </Link>
               </div>

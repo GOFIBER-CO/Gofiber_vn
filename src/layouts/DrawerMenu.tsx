@@ -51,8 +51,8 @@ const items: MenuProps["items"] = [
       />
     ),
     getItem(
-      "Dịch vụ Firewall",
-      "/dich-vu-firewall",
+      "Dịch vụ DDos",
+      "/dich-vu-ddos",
       <Image
         className="menu_icon"
         src={require("@/public/images/icons/icon-3.svg")}

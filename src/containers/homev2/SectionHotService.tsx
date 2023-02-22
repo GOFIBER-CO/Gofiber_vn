@@ -11,7 +11,7 @@ const data = [
      Do vậy, chúng tôi luôn cố gắng mang đến cho khách hàng dịch vụ hosting chất lượng cùng cam kết uptime lên đến 99,9%.`,
     image: HOME2_IMAGE.HOT_SERVICE.WEB_HOSTING,
     class: "flex-row-reverse",
-    link: "/thiet-ke-website",
+    link: "/hosting-khung-gia-re",
     classText: "align-items-start align-items-lg-end",
   },
   {
@@ -20,7 +20,7 @@ const data = [
     content: `Máy chủ của GOFIBER được đặt tại các Datacenter hàng đầu Việt Nam đạt tiêu chuẩn quốc tế TIER 3 như FPT, Viettel, v.v. 
     Dịch vụ cho thuê máy chủ và cho thuê chỗ đặt máy chủ của của GOFIBER luôn ổn định và đạt hiệu quả cao.`,
     image: HOME2_IMAGE.HOT_SERVICE.PHYSICAL_SERVER,
-    link: "/hosting-khung-gia-re",
+    link: "/thue-may-chu-vat-ly",
     classText: "align-items-start",
   },
   {
@@ -31,7 +31,7 @@ const data = [
      Các dịch vụ VPS như VPS SSD, Cloud VPS, VPS giá rẻ, VPS treo game,... đang là sự lựa chọn ưu tiên hàng đầu của các khách hàng.`,
     image: HOME2_IMAGE.HOT_SERVICE.VPS,
     class: "flex-row-reverse",
-    link: "/dich-vu-firewall",
+    link: "/thue-may-chu-vat-ly",
     classText: "align-items-start align-items-lg-end",
   },
 ];
@@ -74,7 +74,7 @@ function SectionHotService() {
                 {item.content}
               </div>
               <div className="mt-4">
-                <Link href="/" className="mt-4">
+                <Link href={item.link} className="mt-4">
                   <TextIconButton name="Xem thêm" />
                 </Link>
               </div>
