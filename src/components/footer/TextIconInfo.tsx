@@ -14,7 +14,7 @@ function TextIconInfo({ icon, text, link = "" }: Props) {
       <Image src={icon} alt={text} />
       {link ? (
         <p>
-          <Link href={link} rel="nofollow noopener">
+          <Link className="a" href={link} rel="nofollow noopener">
             {text}
           </Link>
         </p>

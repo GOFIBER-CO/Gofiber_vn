@@ -6,6 +6,8 @@ interface HomeState {
     count: number;
     item: any;
   };
+  visibleSearch: false;
+  searchValue: string;
 }
 
 const defaultState: HomeState = {
@@ -14,6 +16,8 @@ const defaultState: HomeState = {
     count: 0,
     item: {},
   },
+  visibleSearch: false,
+  searchValue: "",
 };
 
 const homeSlice = createSlice({
@@ -24,14 +28,24 @@ const homeSlice = createSlice({
       state.drawer = payload;
     },
     updateBuyPackage: (state, { payload }) => {
-      console.log("payload", payload);
       state.buyPackage = payload;
+    },
+    updateVisibleSearch: (state, { payload }) => {
+      state.visibleSearch = payload;
+    },
+    updateSearchValue: (state, { payload }) => {
+      state.searchValue = payload;
     },
   },
 });
 
 const { reducer: homeReducer, actions } = homeSlice;
 
-export const { updateDrawer, updateBuyPackage } = actions;
+export const {
+  updateDrawer,
+  updateBuyPackage,
+  updateSearchValue,
+  updateVisibleSearch,
+} = actions;
 
 export default homeReducer;

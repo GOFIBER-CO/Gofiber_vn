@@ -39,7 +39,9 @@ function BannerPage({
               >
                 <h1 style={styleLinkName}>{name}</h1>
                 <div className="link d-flex align-items-center justify-content-center mt-4">
-                  <Link href="/">Trang chủ</Link>
+                  <Link className="a" href="/">
+                    Trang chủ
+                  </Link>
                   <a className="mx-2">{">"}</a>
                   <a>{name}</a>
                 </div>
@@ -69,7 +71,9 @@ function BannerPage({
               >
                 <h2 style={styleLinkName}>{name}</h2>
                 <div className="link d-flex align-items-center justify-content-center mt-4">
-                  <Link href="/">Trang chủ</Link>
+                  <Link className="a" href="/">
+                    Trang chủ
+                  </Link>
                   <a className="mx-2">{">"}</a>
                   <a>{name}</a>
                 </div>
@@ -91,7 +95,9 @@ function BannerPage({
               >
                 <h2 style={styleLinkName}>{name}</h2>
                 <div className="link d-flex align-items-center justify-content-center mt-4">
-                  <Link href="/">Trang chủ</Link>
+                  <Link className="a" href="/">
+                    Trang chủ
+                  </Link>
                   <a className="mx-2">{">"}</a>
                   <a>{name}</a>
                 </div>

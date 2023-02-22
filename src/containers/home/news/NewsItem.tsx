@@ -15,7 +15,7 @@ function NewsItem({ item }: Props) {
       data-aos="fade-up"
     >
       <div className="news_item">
-        <Link href={`/${item?.slug}`}>
+        <Link className="a" href={`/${item?.slug}`}>
           <div className="box-image">
             <div className="image-cover">
               <img

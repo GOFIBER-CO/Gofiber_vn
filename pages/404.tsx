@@ -15,7 +15,7 @@ function NotFound() {
           />
         </div>
         <div className="mt-4">
-          <Link href={"/"}>
+          <Link className="a" href={"/"}>
             <TextIconButton
               name="Quay về trang chủ"
               className="mt-4"

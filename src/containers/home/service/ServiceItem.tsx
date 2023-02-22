@@ -16,7 +16,7 @@ function ServiceItem({ item }: Props) {
       <h4 className="mt-2">{item.title}</h4>
       <p className="font_size_14 font_weight_500">{item.content1}</p>
       <p className="font_size_14 font_weight_500">{item.content2}</p>
-      <Link href="/">
+      <Link className="a" href="/">
         <TextIconButton
           styles={{ boxShadow: "none" }}
           className="mt-2"

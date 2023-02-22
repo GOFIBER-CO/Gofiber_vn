@@ -14,9 +14,9 @@ const menu = [
     link: "/hosting-khung-gia-re",
   },
   {
-    title: "Dịch vụ DDos",
+    title: "Hỗ trợ chống DDos",
     image: require("@/public/images/menu/firewall.svg"),
-    link: "/dich-vu-ddos",
+    link: "/ho-tro-chong-ddos",
   },
   {
     title: "Thuê VPS",
@@ -48,7 +48,7 @@ function MenuService() {
       <div className="row">
         {menu.map((item, index) => (
           <div className="col col-6 sub_menu p-0" key={index}>
-            <Link onClick={onClick} href={item.link}>
+            <Link className="a" onClick={onClick} href={item.link}>
               <Image className="menu_icon" src={item.image} alt={item.title} />
               <span>{item.title}</span>
             </Link>

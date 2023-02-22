@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import TextImageButton from "@/src/components/button/TextImageButton";
 import BasicService from "@/src/containers/homev2/basic-service";
 import Feedback from "@/src/containers/homev2/feedback";
@@ -14,16 +15,12 @@ import SectionRegistryPromotion from "@/src/containers/homev2/SectionRegistryPro
 import WhyChoose from "@/src/containers/homev2/why-choose";
 import { HOME2_IMAGE, ICON, ICON_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const menuLv1 = [
-  {
-    id: 1,
-    name: "Tài khoản",
-    link: "/",
-  },
   {
     id: 2,
     name: "Tin tức",
@@ -117,114 +114,144 @@ function TestPage() {
     };
   }, []);
 
+  const handleGotoHotProduct = () => {
+    const scroll: any = document.getElementById("section-hot-product");
+
+    const offset = -100;
+    const y = scroll.getBoundingClientRect().top + window.pageYOffset + offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
-    <div id="home-v2">
-      <section className="intro">
-        <div className="container">
-          <div
-            style={{ display: "flex" }}
-            className="menu-lv1 align-items-center justify-content-between py-3 hide-for-small"
-          >
-            <div className="hot-line">Hotline: 0985 07 85 07</div>
-            <ul className="ul d-flex">
-              {menuLv1.map((item) => (
-                <li key={item.id} className="menu-item">
-                  <Link href={item.link}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <HeaderFixed
-            onChangeIsibleAdvanceMenu={handleChangeVisibleAdvanceMenu}
-            visibleAdvanceMenu={visibleAdvanceMenu}
-            menuLv2={menuLv2}
-            visible={visible}
-          />
-
-          <HeaderLarge menuLv2={menuLv2} />
-
-          <HeaderMedium />
-
-          <div className="row box-intro align-items-center flex-row-reverse">
-            <div className="col col-12 col-md-7">
-              <div className="d-flex align-items-center justify-content-end">
-                <img
-                  src={HOME2_IMAGE.INTRO}
-                  alt="Gofiber"
-                  width={600}
-                  height={500}
-                />
-              </div>
-            </div>
-            <div className="col col-12 col-md-5 mt-4 mt-md-0">
-              <h1 className="title">GOFIBER</h1>
-              <div className="extra-1 mb-3">
-                DỊCH VỤ HOSTING, MÁY CHỦ VẬT LÝ, MÁY CHỦ ẢO VPS TỐC ĐỘ CAO
-              </div>
-              <div className="extra-2 mb-3">
-                Xuất phát điểm là đơn vị giàu kinh nghiệm hoạt động trong lĩnh
-                vực thiết kế website và các dịch vụ SEO tổng thể cũng như chuyên
-                sâu, GOFIBER tự hào đã hỗ trợ đắc lực và hiệu quả cho các đối
-                tượng khách hàng là cá nhân, tổ chức và cả doanh nghiệp.
-              </div>
-              <div className="mt-4">
-                <button className="btn0 btn-intro d-flex align-items-center">
-                  <img src={ICON_IMAGE.MESSENGER} width={24} height={24} />
-                  <span>Liên hệ ngay</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="box-intro-extra">
+    <>
+      <Head>
+        <title>Giải pháp công nghệ hàng đầu</title>
+        <link rel="canonical" href="https://gofiber.vn/" />
+      </Head>
+      <div id="home-v2">
+        <section className="intro">
           <div className="container">
-            <div data-aos="fade-up" className="row">
-              {intraExtra.map((item) => (
-                <div
-                  key={item.id}
-                  className="col col-12 col-md-4 d-flex mt-4 mt-md-0"
-                >
-                  <div>
-                    <img
-                      src={item.image}
-                      width={74}
-                      height={74}
-                      alt={item.name}
-                    />
-                  </div>
+            <div
+              style={{ display: "flex" }}
+              className="menu-lv1 align-items-center justify-content-between py-3 hide-for-small"
+            >
+              <div className="hot-line">Hotline: 0985 07 85 07</div>
+              <ul className="ul d-flex">
+                <li className="menu-item">
+                  <a
+                    target="_blank"
+                    href="https://go.vngserver.vn/"
+                    rel="noopener nofollow"
+                    className="a"
+                  >
+                    Tài khoản
+                  </a>
+                </li>
+                {menuLv1.map((item) => (
+                  <li key={item.id} className="menu-item">
+                    <Link className="a" href={item.link}>
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                  <div className="info">
-                    <div className="name mt-3">{item.name}</div>
-                    <div className="mt-2 extra">{item.extra}</div>
-                  </div>
+            <HeaderFixed
+              onChangeIsibleAdvanceMenu={handleChangeVisibleAdvanceMenu}
+              visibleAdvanceMenu={visibleAdvanceMenu}
+              menuLv2={menuLv2}
+              visible={visible}
+            />
+
+            <HeaderLarge menuLv2={menuLv2} />
+
+            <HeaderMedium />
+
+            <div className="row box-intro align-items-center flex-row-reverse">
+              <div className="col col-12 col-md-7">
+                <div className="d-flex align-items-center justify-content-end">
+                  <img
+                    src={HOME2_IMAGE.INTRO}
+                    alt="Gofiber"
+                    width={600}
+                    height={500}
+                  />
                 </div>
-              ))}
+              </div>
+              <div className="col col-12 col-md-5 mt-4 mt-md-0">
+                <h1 className="title">GOFIBER</h1>
+                <div className="extra-1 mb-3">
+                  DỊCH VỤ HOSTING, MÁY CHỦ VẬT LÝ, MÁY CHỦ ẢO VPS TỐC ĐỘ CAO
+                </div>
+                <div className="extra-2 mb-3">
+                  Xuất phát điểm là đơn vị giàu kinh nghiệm hoạt động trong lĩnh
+                  vực thiết kế website và các dịch vụ SEO tổng thể cũng như
+                  chuyên sâu, GOFIBER tự hào đã hỗ trợ đắc lực và hiệu quả cho
+                  các đối tượng khách hàng là cá nhân, tổ chức và cả doanh
+                  nghiệp.
+                </div>
+                <div className="mt-4">
+                  <button
+                    onClick={handleGotoHotProduct}
+                    className="btn0 btn-intro d-flex align-items-center btn-white-to-primary"
+                  >
+                    {/* <img src={ICON_IMAGE.MESSENGER} width={24} height={24} /> */}
+                    <span>Tìm hiểu</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+          <div className="box-intro-extra">
+            <div className="container">
+              <div data-aos="fade-up" className="row">
+                {intraExtra.map((item) => (
+                  <div
+                    key={item.id}
+                    className="col col-12 col-md-4 d-flex mt-4 mt-md-0"
+                  >
+                    <div>
+                      <img
+                        src={item.image}
+                        width={74}
+                        height={74}
+                        alt={item.name}
+                      />
+                    </div>
 
-      <HotProduct />
+                    <div className="info">
+                      <div className="name mt-3">{item.name}</div>
+                      <div className="mt-2 extra">{item.extra}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <SectionDomain />
+        <HotProduct />
 
-      <SectionHotService />
+        <SectionDomain />
 
-      <BasicService />
+        <SectionHotService />
 
-      <SectionOtherService />
+        <BasicService />
 
-      <WhyChoose />
+        <SectionOtherService />
 
-      <HotCustomer />
+        <WhyChoose />
 
-      <Feedback />
+        <HotCustomer />
 
-      <SectionRegistryPromotion />
+        <Feedback />
 
-      <SectionQuestion />
-    </div>
+        <SectionRegistryPromotion />
+
+        <SectionQuestion />
+      </div>
+    </>
   );
 }
 

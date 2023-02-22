@@ -1,105 +1,105 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import Image from 'next/image';
+import "swiper/css";
+import "swiper/css/pagination";
+import Image from "next/image";
 
-import { Pagination } from 'swiper';
-import TextIconPrice from '@/src/components/web-hosting/TextIconPrice';
-import { formatNumber } from '@/src/utils';
-import ButtonSlideSeeMore from '@/src/components/button/ButtonSlideSeeMore';
+import { Pagination } from "swiper";
+import TextIconPrice from "@/src/components/web-hosting/TextIconPrice";
+import { formatNumber } from "@/src/utils";
+import ButtonSlideSeeMore from "@/src/components/button/ButtonSlideSeeMore";
 
 const dummyData = [
   {
-    id: '1',
-    name: 'Website Hosting Cao Cấp',
-    extra: 'Giải pháp lý tưởng cho người mới',
-    price: '45000',
+    id: "1",
+    name: "Website Hosting Cao Cấp",
+    extra: "Giải pháp lý tưởng cho người mới",
+    price: "45000",
     feature: [
-      '1 trang web',
-      '50 GB Dung lượng ổ SSD',
-      '~10 000 lượt truy cập hàng tháng',
-      '100 GB Băng thông',
-      '2 Databases',
+      "1 trang web",
+      "50 GB Dung lượng ổ SSD",
+      "~10 000 lượt truy cập hàng tháng",
+      "100 GB Băng thông",
+      "2 Databases",
     ],
     security: [
-      'SSL Miễn phí Không giới hạn',
-      'Nameservers bảo vệ bằng Cloudflare',
+      "SSL Miễn phí Không giới hạn",
+      "Nameservers bảo vệ bằng Cloudflare",
     ],
-    free: ['Website builder', 'Sao lưu hàng tuần'],
+    free: ["Website builder", "Sao lưu hàng tuần"],
     isBest: true,
   },
   {
-    id: '2',
-    name: 'Website Hosting Cá Nhân',
-    extra: 'Giải pháp lý tưởng cho người mới',
-    price: '25000',
+    id: "2",
+    name: "Website Hosting Cá Nhân",
+    extra: "Giải pháp lý tưởng cho người mới",
+    price: "25000",
     feature: [
-      '1 trang web',
-      '50 GB Dung lượng ổ SSD',
-      '~10 000 lượt truy cập hàng tháng',
-      '100 GB Băng thông',
-      '2 Databases',
+      "1 trang web",
+      "50 GB Dung lượng ổ SSD",
+      "~10 000 lượt truy cập hàng tháng",
+      "100 GB Băng thông",
+      "2 Databases",
     ],
     security: [
-      'SSL Miễn phí Không giới hạn',
-      'Nameservers bảo vệ bằng Cloudflare',
+      "SSL Miễn phí Không giới hạn",
+      "Nameservers bảo vệ bằng Cloudflare",
     ],
-    free: ['Website builder', 'Sao lưu hàng tuần'],
+    free: ["Website builder", "Sao lưu hàng tuần"],
   },
   {
-    id: '3',
-    name: 'Website Hosting Doanh nghiệp',
-    extra: 'Giải pháp lý tưởng cho người mới',
-    price: '75000',
+    id: "3",
+    name: "Website Hosting Doanh nghiệp",
+    extra: "Giải pháp lý tưởng cho người mới",
+    price: "75000",
     feature: [
-      '1 trang web',
-      '50 GB Dung lượng ổ SSD',
-      '~10 000 lượt truy cập hàng tháng',
-      '100 GB Băng thông',
-      '2 Databases',
+      "1 trang web",
+      "50 GB Dung lượng ổ SSD",
+      "~10 000 lượt truy cập hàng tháng",
+      "100 GB Băng thông",
+      "2 Databases",
     ],
     security: [
-      'SSL Miễn phí Không giới hạn',
-      'Nameservers bảo vệ bằng Cloudflare',
+      "SSL Miễn phí Không giới hạn",
+      "Nameservers bảo vệ bằng Cloudflare",
     ],
-    free: ['Website builder', 'Sao lưu hàng tuần'],
+    free: ["Website builder", "Sao lưu hàng tuần"],
   },
   {
-    id: '4',
-    name: 'Website Hosting Doanh nghiệp',
-    extra: '',
-    price: '105000',
+    id: "4",
+    name: "Website Hosting Doanh nghiệp",
+    extra: "",
+    price: "105000",
     feature: [
-      '5 trang web',
-      '50 GB Dung lượng ổ SSD',
-      '~10 000 lượt truy cập hàng tháng',
-      '100 GB Băng thông',
-      '2 Databases',
+      "5 trang web",
+      "50 GB Dung lượng ổ SSD",
+      "~10 000 lượt truy cập hàng tháng",
+      "100 GB Băng thông",
+      "2 Databases",
     ],
     security: [
-      'SSL Miễn phí Không giới hạn',
-      'Nameservers bảo vệ bằng Cloudflare',
+      "SSL Miễn phí Không giới hạn",
+      "Nameservers bảo vệ bằng Cloudflare",
     ],
-    free: ['Website builder', 'Sao lưu hàng tuần'],
+    free: ["Website builder", "Sao lưu hàng tuần"],
   },
 ];
 
 const responsive = [
   {
     id: 1,
-    class: 'show-for-small',
+    class: "show-for-small",
     slidesPerView: 1,
   },
   {
     id: 2,
-    class: 'show-for-medium hide-for-small ',
+    class: "show-for-medium hide-for-small ",
     slidesPerView: 2,
   },
   {
     id: 3,
-    class: 'hide-for-medium',
+    class: "hide-for-medium",
     slidesPerView: 3,
   },
 ];
@@ -107,7 +107,7 @@ const responsive = [
 type Props = {
   onSelectPackage: any;
   data: any[];
-}
+};
 
 function SliderHostingPrice({ onSelectPackage, data }: Props) {
   return (
@@ -129,20 +129,22 @@ function SliderHostingPrice({ onSelectPackage, data }: Props) {
           >
             {data.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className={`web-hosting-item ${item.isBest ? 'best' : ''}`}>
+                <div
+                  className={`web-hosting-item ${item.isBest ? "best" : ""}`}
+                >
                   <div className="wrapper_content">
                     <p className="text-center">
                       <strong>{item.name}</strong>
                       <br />
-                      <span className="mt-2" style={{ fontSize: '14px' }}>
+                      <span className="mt-2" style={{ fontSize: "14px" }}>
                         {item.extra}
                       </span>
                       <br />
                       <span
                         className="color_primary"
                         style={{
-                          fontSize: '48px',
-                          fontWeight: 'bold',
+                          fontSize: "48px",
+                          fontWeight: "bold",
                         }}
                       >
                         {formatNumber(item?.price)}
@@ -152,6 +154,7 @@ function SliderHostingPrice({ onSelectPackage, data }: Props) {
                     <div className="text-center">
                       <button className="btn0">
                         <a
+                          className="a"
                           href="#buy-package"
                           onClick={() => onSelectPackage(item)}
                         >
@@ -174,14 +177,13 @@ function SliderHostingPrice({ onSelectPackage, data }: Props) {
                     ))}
                   </div>
                   {/* <ButtonSlideSeeMore alt={item.name} isBest={item.isBest || false} /> */}
-                  {
-                    item.isBest && <div className="wrapper-best">
+                  {item.isBest && (
+                    <div className="wrapper-best">
                       <button className="btn0 btn-best">
                         <span>Phổ biến nhất</span>
                       </button>
                     </div>
-                  }
-
+                  )}
                 </div>
               </SwiperSlide>
             ))}

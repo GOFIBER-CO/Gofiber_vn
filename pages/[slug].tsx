@@ -77,9 +77,10 @@ const SkeletonPage = () => (
 
 type Props = {
   title: string;
+  description: string;
 };
 
-function NewsDetail({ title }: Props) {
+function NewsDetail({ title, description }: Props) {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const { slug } = router?.query;
@@ -289,6 +290,7 @@ function NewsDetail({ title }: Props) {
       <Head>
         <title>{title}</title>
         <link rel="canonical" href="https://gofiber.vn/" />
+        <meta name="description" content={description} />
       </Head>
       <div id="news-detail">
         <div className="breadcrumb">
@@ -296,11 +298,13 @@ function NewsDetail({ title }: Props) {
             <div className="breadcrumb_container">
               <h2 className="h2 text-uppercase">Tin tức</h2>
               <div className="breadcrumb_link mt-2 flex-wrap hide-for-small">
-                <Link href="/">Trang chủ</Link>
-                <a className="mx-2">{">"}</a>
-                <a>Tin tức</a>
-                <a className="mx-2">{">"}</a>
-                <a>{data?.title}</a>
+                <Link className="a" href="/">
+                  Trang chủ
+                </Link>
+                <a className="mx-2 a">{">"}</a>
+                <a className="a">Tin tức</a>
+                <a className="mx-2 a">{">"}</a>
+                <a className="a">{data?.title}</a>
               </div>
             </div>
           </div>
@@ -327,6 +331,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     const response = await fetchApi().get(url);
 
     const title = response?.data?.data?.title;
+    const description = response?.data?.data?.description;
 
     if (!title) {
       return {
@@ -340,6 +345,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     return {
       props: {
         ...(title ? { title } : {}),
+        ...(description ? { description } : {}),
       },
     };
   } catch (error) {

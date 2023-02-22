@@ -61,8 +61,16 @@ function HotProductItem({ item }: Props) {
           </div>
 
           <div style={{ marginTop: "50px" }}>
-            <Link onClick={() => handleChooseProduct(item)} href={item?.link}>
-              <TextIconButton name="Đặt hàng" styles={{ boxShadow: "none" }} />
+            <Link
+              className="a"
+              onClick={() => handleChooseProduct(item)}
+              href={item?.link}
+            >
+              <TextIconButton
+                className="btn-primary-to-white"
+                name="Đặt hàng"
+                styles={{ boxShadow: "none" }}
+              />
             </Link>
           </div>
           <Rate rate={item?.rate || 0} />

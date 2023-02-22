@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-no-target-blank */
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import TextImageButton from "../components/button/TextImageButton";
 import Divider from "../components/Divider";
@@ -17,7 +19,7 @@ const gofiber = [
   },
   {
     id: 3,
-    name: "Chính sách hoản trả",
+    name: "Chính sách hoàn trả",
     link: "/chinh-sach-hoan-huy-dich-vu",
   },
   {
@@ -83,20 +85,25 @@ const service = [
     id: 1,
     name: "Dịch vụ BacklinkVina",
     image: HOME2_IMAGE.FOOTER.BACKLINK,
+    link: "https://backlinkvina.com/gioi-thieu",
   },
   {
     id: 2,
     name: "Dịch vụ TrafficVina",
     image: HOME2_IMAGE.FOOTER.TRAFFIC,
+    link: "https://dichvutraffic.com/gioi-thieu",
   },
   {
     id: 3,
     name: "Dịch vụ PBN",
     image: HOME2_IMAGE.FOOTER.PBN,
+    link: "https://dichvupbn.com/gioi-thieu",
   },
 ];
 
 function FooterV2() {
+  const { pathname } = useRouter();
+
   return (
     <div id="footer-v2">
       <div className="container">
@@ -118,8 +125,8 @@ function FooterV2() {
               GOFIBER tự hào đã hỗ trợ đắc lực và hiệu quả cho các đối tượng
               khách hàng là cá nhân, tổ chức và cả doanh nghiệp.
             </div>
-            <div className="mt-4">
-              <Link href={"/lien-he"}>
+            <div className="mt-4 d-flex">
+              <Link className="a" href={"/lien-he"}>
                 <TextImageButton
                   color="white"
                   src={ICON_IMAGE.MESSENGER}
@@ -136,7 +143,9 @@ function FooterV2() {
                 <h5 className="h5">Về GoFiber</h5>
                 {gofiber.map((item) => (
                   <div className="px-0 mt-1" key={item.id}>
-                    <Link href={item.link}>{item.name}</Link>
+                    <Link className="a" href={item.link}>
+                      {item.name}
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -144,7 +153,9 @@ function FooterV2() {
                 <h5 className="h5">Thông tin cần thiết</h5>
                 {importantInfo.map((item) => (
                   <div className="px-0 mt-1" key={item.id}>
-                    <Link href={item.link}>{item.name}</Link>
+                    <Link className="a" href={item.link}>
+                      {item.name}
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -159,7 +170,7 @@ function FooterV2() {
                       src={item.image}
                       alt={item.name}
                     />
-                    <a className="mt-1">{item.name}</a>
+                    <a className="mt-1 a">{item.name}</a>
                   </div>
                 ))}
               </div>
@@ -174,19 +185,45 @@ function FooterV2() {
                       key={item.id}
                     >
                       <img src={item.image} alt={item.name} />
-                      <span>{item.name}</span>
+                      <a
+                        className="a"
+                        href={item?.link}
+                        target="_blank"
+                        rel="nofollow noopener"
+                      >
+                        <span>{item.name}</span>
+                      </a>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="col col-12 col-lg-4 px-0 mt-4 d-flex justify-content-center justify-content-lg-end">
-                <img
+              <div className="col col-12 col-lg-4 px-0 d-flex mt-4 mt-md-0 align-items-end justify-content-center justify-content-lg-end">
+                <a
+                  className="a"
+                  href={`https://www.dmca.com/site-report/gofiber.vn?refurl=https://gofiber.vn${pathname}`}
+                  target="_blank"
+                >
+                  <picture title="dmca-badge">
+                    <source
+                      type="image/webp"
+                      src="https://gofiber.b-cdn.net/Admin/dmca-logo-2023.webp"
+                    />
+                    <img
+                      width="153"
+                      height="55"
+                      src="https://gofiber.b-cdn.net/Admin/dmca-logo-2023.webp"
+                      alt="dmca-badg"
+                      data-pin-no-hover="true"
+                    />
+                  </picture>
+                </a>
+                {/* <img
                   width={153}
                   height={33}
                   src={HOME2_IMAGE.FOOTER.PROTECTED}
                   alt="protected"
-                />
+                /> */}
               </div>
             </div>
           </div>

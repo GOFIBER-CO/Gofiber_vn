@@ -10,6 +10,7 @@ export enum ICON {
   STAR = "mdi:star",
   PREV = "material-symbols:chevron-left-rounded",
   NEXT = "material-symbols:chevron-right-rounded",
+  SEARCH_OFF = "tabler:search-off",
 }
 
 export enum NEWS_TAB {
@@ -391,13 +392,14 @@ export const HOME2_IMAGE = {
     POLICY: getImageWithBunnyUrl("Desktop/Trang-chu-2/why-choose-policy.png"),
   },
   FEEDBACK: {
-    UYEN: getImageWithBunnyUrl("Desktop/Trang-chu-2/feedback-uyen.png"),
+    UYEN: getImageWithBunnyUrl("Desktop/Trang-chu-2/feedback-uyen-uyen.jpg"),
     PHUONG_NHI: getImageWithBunnyUrl(
-      "Desktop/Trang-chu-2/feedback-phuong-nhi.png"
+      "Desktop/Trang-chu-2/feedback-phuong-nhi.jpg"
     ),
     HOANG_MINH: getImageWithBunnyUrl(
-      "Desktop/Trang-chu-2/feedback-hoang-minh.png"
+      "Desktop/Trang-chu-2/feedback-hoang-minh.jpg"
     ),
+    SON_TUNG: getImageWithBunnyUrl("Desktop/Trang-chu-2/feedback-son-tung.jpg"),
   },
   FOOTER: {
     PHONE: getImageWithBunnyUrl("Desktop/Trang-chu-2/footer-2-phone.png"),

@@ -166,10 +166,14 @@ function RecruitDetail({ title }: Props) {
                     </div>
                     <div className="d-flex">
                       <div className="link d-flex align-items-center justify-content-center mt-4">
-                        <Link href="/">Trang chủ</Link>
-                        <a className="mx-2">{">"}</a>
-                        <Link href="/tuyen-dung">Tuyển dụng</Link>
-                        <a className="mx-2">{">"}</a>
+                        <Link className="a" href="/">
+                          Trang chủ
+                        </Link>
+                        <a className="a mx-2 a">{">"}</a>
+                        <Link className="a" href="/tuyen-dung">
+                          Tuyển dụng
+                        </Link>
+                        <a className="a mx-2">{">"}</a>
                         <a>Chi tiết</a>
                       </div>
                     </div>
@@ -210,10 +214,14 @@ function RecruitDetail({ title }: Props) {
                     </div>
                     <div className="d-flex">
                       <div className="link d-flex align-items-center justify-content-center mt-4">
-                        <Link href="/">Trang chủ</Link>
-                        <a className="mx-2">{">"}</a>
-                        <Link href="/tuyen-dung">Tuyển dụng</Link>
-                        <a className="mx-2">{">"}</a>
+                        <Link className="a" href="/">
+                          Trang chủ
+                        </Link>
+                        <a className="mx-2 a">{">"}</a>
+                        <Link className="a" href="/tuyen-dung">
+                          Tuyển dụng
+                        </Link>
+                        <a className="mx-2 a">{">"}</a>
                         <a>Chi tiết</a>
                       </div>
                     </div>

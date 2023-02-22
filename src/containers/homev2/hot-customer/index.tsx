@@ -30,9 +30,20 @@ function HotCustomer() {
   return (
     <section className="section-hot-customer">
       <div data-aos="fade-up" className="container">
-        <div className="text-center">
-          <h2 className="h2">Khách hàng tiêu biểu</h2>
+        <div className="row justify-content-center">
+          <div className="col col-12 col-md-8">
+            <div className="text-center">
+              <h2 className="h2">Khách hàng tiêu biểu</h2>
+              <p className="mt-3 extra-title">
+                GOFIBER tự hào cung cấp dịch vụ hosting, máy chủ vật lý, máy chủ
+                ảo VPS tốc độ cao cho hơn 1000 khách hàng trong nước và quốc tế.
+                GOFIBER luôn sẵn sàng đáp ứng nhu cầu đa dạng của tất cả các
+                khách hàng ở tất cả các lĩnh vực
+              </p>
+            </div>
+          </div>
         </div>
+
         <div className="marquee-hot-customer">
           <Marquee gradient={false} speed={150}>
             {data.map((item) => (

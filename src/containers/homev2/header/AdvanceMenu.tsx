@@ -8,31 +8,31 @@ const vps = [
   {
     id: 1,
     title: "Cloud VPS 1 GB",
-    extra: "1 Cpu, 2 Gb Ram, 15 Gb SSD...",
+    extra: "1CPU, 1GB RAM, 15GB SSD, Công nghệ VKM",
   },
   {
     id: 2,
     title: "Cloud VPS 2 GB",
-    extra: "2 Cpu, 2 Gb Ram, 20 Gb SSD...",
+    extra: "2CPU, 2GB RAM, 20GB SSD, Công nghệ VKM",
     hot: true,
   },
   {
     id: 3,
     title: "Cloud VPS 4 GB",
-    extra: "2 Cpu, 8 Gb Ram, 60 Gb SSD...",
+    extra: "2CPU, 8GB RAM, 60GB SSD, Công nghệ VKM",
   },
 ];
 
 const physicalServer = [
   {
     id: 1,
-    title: "Server1",
-    extra: "4 Gb RAM, 500 Gb SSD, 100 Gb băng thông.....",
+    title: "Compurter S1",
+    extra: "Máy chủ vật lý hiệu năng cao",
   },
   {
     id: 2,
-    title: "Server2",
-    extra: "8 Gb RAM, 500 Gb SSD, 100 Gb băng thông.....",
+    title: "Location S1",
+    extra: "Thuê chỗ đặt máy chủ vật lý, máy chủ cá nhân",
     hot: true,
   },
 ];
@@ -40,14 +40,21 @@ const physicalServer = [
 const hosting = [
   {
     id: 1,
-    title: "Website Hosting Doanh nghiệp Pro",
-    extra: "4 Gb RAM, 500 Gb SSD, 100 Gb băng thông.....",
+    title: "Cá Nhân Cao Cấp",
+    extra: "50GB SSD, 100GB băng thông, FREE SSL",
   },
   {
     id: 2,
-    title: "Website Hosting Cá nhân",
-    extra: "4 Gb RAM, 500 Gb SSD, 100 Gb băng thông.....",
+    title: "Website hosting cho doanh nghiệp",
+    extra:
+      "25GB SSD, 100GB băng thông, FREE SSL, Nameservers bảo vệ bằng Cloudflare",
     hot: true,
+  },
+  {
+    id: 3,
+    title: "Website hosting cho doanh nghiệp PRO",
+    extra:
+      "50GB SSD, Không giới hạn băng thông, FREE SSL, Nameservers bảo vệ bằng Cloudflare",
   },
 ];
 
@@ -73,7 +80,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
         <div className="col col-3">
           <div className="advance-menu-item">
             <div>
-              <div className="d-flex align-items-center justify-content-center">
+              <div className="d-flex align-items-center justify-content-start">
                 <div className="title">Thuê VPS</div>
                 <img
                   src={HOME2_IMAGE.HOT_SERVICE.VPS}
@@ -86,7 +93,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
                 {vps.map((item) => (
                   <div key={item.id} className="advance-menu-child">
                     <div className="d-flex align-items-center justify-content-between">
-                      <Link href={"/thue-vps"} className="name">
+                      <Link className="a name" href={"/thue-vps"}>
                         {item.title}
                       </Link>
                       {item?.hot && <div className="hot">Hot</div>}
@@ -98,7 +105,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
             </div>
 
             <div className="text-center">
-              <Link className="see-detail" href={"/thue-vps"}>
+              <Link className="a see-detail" href={"/thue-vps"}>
                 Xem chi tiết
               </Link>
               <img
@@ -113,7 +120,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
         <div className="col col-3">
           <div className="advance-menu-item">
             <div>
-              <div className="d-flex align-items-center justify-content-center">
+              <div className="d-flex align-items-center justify-content-start">
                 <div className="title">Thuê máy chủ vật lý</div>
                 <img
                   src={HOME2_IMAGE.HOT_SERVICE.PHYSICAL_SERVER}
@@ -126,7 +133,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
                 {physicalServer.map((item) => (
                   <div key={item.id} className="advance-menu-child">
                     <div className="d-flex align-items-center justify-content-between">
-                      <Link href={"/thue-may-chu-vat-ly"} className="name">
+                      <Link href={"/thue-may-chu-vat-ly"} className="name a">
                         {item.title}
                       </Link>
                       {item?.hot && <div className="hot">Hot</div>}
@@ -138,7 +145,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
             </div>
 
             <div className="text-center">
-              <Link className="see-detail" href={"/thue-may-chu-vat-ly"}>
+              <Link className="see-detail a" href={"/thue-may-chu-vat-ly"}>
                 Xem chi tiết
               </Link>
               <img
@@ -153,7 +160,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
         <div className="col col-3">
           <div className="advance-menu-item">
             <div>
-              <div className="d-flex align-items-center justify-content-center">
+              <div className="d-flex align-items-center justify-content-start">
                 <div className="title">Web Hosting</div>
                 <img
                   src={HOME2_IMAGE.HOT_SERVICE.WEB_HOSTING}
@@ -166,7 +173,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
                 {hosting.map((item) => (
                   <div key={item.id} className="advance-menu-child">
                     <div className="d-flex align-items-center justify-content-between">
-                      <Link href={"/hosting-khung-gia-re"} className="name">
+                      <Link href={"/hosting-khung-gia-re"} className="name a">
                         {item.title}
                       </Link>
                       {item?.hot && <div className="hot">Hot</div>}
@@ -178,7 +185,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
             </div>
 
             <div className="text-center">
-              <Link className="see-detail" href={"/hosting-khung-gia-re"}>
+              <Link className="see-detail a" href={"/hosting-khung-gia-re"}>
                 Xem chi tiết
               </Link>
               <img
@@ -191,38 +198,39 @@ function AdvanceMenu({ visible, onChange }: Props) {
         </div>
 
         <div className="col col-3">
-          <div className="advance-menu-item-normal d-flex">
+          <div className="advance-menu-item-normal">
             <div>
               <div>
-                <div className="title">Thiết kế Web</div>
-              </div>
-              <div className="mt-2">
-                <div className="advance-menu-child">
-                  <div className="name">Website cá nhân</div>
-                  <div className="name">Website Doanh nghiệp</div>
-                </div>
+                <div className="title">Dịch vụ khác</div>
               </div>
 
               <div className="mt-4">
-                <div>
-                  <div className="title">Thiết kế Web WordPress</div>
+                <div className="title-2">
+                  <Link className="a" href={"/"}>
+                    Dịch vụ quản trị website
+                  </Link>
                 </div>
-                <div className="mt-2">
+                <div className="title-2">
+                  <Link className="a" href={"/"}>
+                    Dịch vụ nội dung chất lượng
+                  </Link>
+                </div>
+                <div className="title-2">
+                  <Link className="a" href={"/"}>
+                    Dịch vụ chăm sóc website chuyên nghiệp
+                  </Link>
+                </div>
+                <div className="title-2">
+                  <Link className="a" href={"/"}>
+                    Dịch vụ SEO Marketing
+                  </Link>
+                </div>
+                <div className="mt-1">
                   <div className="advance-menu-child">
-                    <div className="name">Website cá nhân</div>
-                    <div className="name">Website Doanh nghiệp</div>
+                    <div className="name">SEO tổng thể</div>
+                    <div className="name">SEO từ khóa</div>
+                    <div className="name">Entity SEO</div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div>
-                <div className="title">Dịch vụ SEO</div>
-              </div>
-              <div className="mt-2">
-                <div className="advance-menu-child">
-                  <div className="name">SEO tổng thể</div>
                 </div>
               </div>
             </div>

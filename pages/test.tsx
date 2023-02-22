@@ -96,7 +96,7 @@ function Home() {
                       tục mở rộng dịch vụ và mang đến nhiều hơn nữa các giá trị
                       cho khách hàng của mình.
                     </p>
-                    <Link href={"/lien-he"}>
+                    <Link className="a" href={"/lien-he"}>
                       <EffectButton
                         onClick={() => router.push("/lien-he")}
                         className="shadow"

@@ -165,7 +165,7 @@ function NewsAndEvents() {
               )}
             </div>
             <div className="text-center mt-2">
-              <Link href={"/tin-tuc"}>
+              <Link className="a" href={"/tin-tuc"}>
                 <TextIconButton
                   className="mt-4"
                   name="Xem tất cả"

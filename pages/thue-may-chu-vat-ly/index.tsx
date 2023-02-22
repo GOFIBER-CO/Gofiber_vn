@@ -556,7 +556,7 @@ function RentPhysicalServer() {
                   <div className="mt-4">
                     {item.data.map((e, index) => (
                       <div key={index} className="text-icon-price mt-2">
-                        <Link href={e.link} className="d-flex">
+                        <Link className="a" href={e.link} className="d-flex">
                           <Icon className={`blue`} icon={ICON.CHECKED} />
                           <p className="px-2">{e.name}</p>
                         </Link>

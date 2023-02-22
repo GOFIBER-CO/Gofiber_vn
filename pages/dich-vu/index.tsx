@@ -48,7 +48,7 @@ const data = [
     image: SERVICE_IMAGE.MY_SERVICE.FIREWALL,
     class: "flex-row-reverse",
     aos: ["fade-left", "fade-right"],
-    link: "/dich-vu-ddos",
+    link: "/ho-tro-chong-ddos",
   },
   {
     id: "4",
@@ -130,7 +130,7 @@ function Service() {
                       <h3 className="h3">{item.title}</h3>
                       <p className="mt-4">{item.content}</p>
                       <p>{item.extra}</p>
-                      <Link href={item.link}>
+                      <Link className="a" href={item.link}>
                         <TextIconButton
                           name="Xem chi tiết"
                           icon={ICON.RIGHT}

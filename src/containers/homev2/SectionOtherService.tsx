@@ -10,7 +10,7 @@ const data = [
     content: `Công nghệ và giải pháp độc quyền giúp hạn chế và bảo vệ website kinh doanh của bạn trước những cuộc tấn công DDoS có chủ đích và ác ý từ những đối thủ cạnh tranh.`,
     image: HOME2_IMAGE.OTHER_SERVICE.DDOS,
     class: "flex-row-reverse",
-    link: "/dich-vu-ddos",
+    link: "/ho-tro-chong-ddos",
     classText: "align-items-start align-items-lg-end",
   },
   {
@@ -62,8 +62,11 @@ function SectionOtherService() {
                 {item.content}
               </div>
               <div className="mt-4">
-                <Link href={item.link} className="mt-4">
-                  <TextIconButton name="Xem thêm" />
+                <Link className="a" href={item.link} className="mt-4">
+                  <TextIconButton
+                    className="btn-primary-to-white"
+                    name="Xem thêm"
+                  />
                 </Link>
               </div>
             </div>

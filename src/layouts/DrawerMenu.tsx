@@ -51,8 +51,8 @@ const items: MenuProps["items"] = [
       />
     ),
     getItem(
-      "Dịch vụ DDos",
-      "/dich-vu-ddos",
+      "Hỗ trợ chống DDos",
+      "/ho-tro-chong-ddos",
       <Image
         className="menu_icon"
         src={require("@/public/images/icons/icon-3.svg")}
@@ -128,7 +128,7 @@ function DrawerMenu({ onClose, visible }: Props) {
           />
         </div>
         <div className="mt-4 text-center mx-0">
-          <a href="tel:0989078507" className="btn0 btn-support mx-0">
+          <a href="tel:0989078507" className="btn0 btn-support mx-0 a">
             <Icon icon={ICON.CALL} />
             Hỗ trợ 24/7: 0989.07.85.07
           </a>

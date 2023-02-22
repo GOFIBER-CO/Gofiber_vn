@@ -58,6 +58,7 @@ function SectionDomain() {
                   <TextIconButton
                     styles={{ boxShadow: "none" }}
                     name="Tìm kiếm"
+                    className="btn-primary-to-white"
                   />
                 </div>
               </div>

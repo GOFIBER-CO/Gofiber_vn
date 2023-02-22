@@ -187,7 +187,7 @@ function Footer() {
                     <a
                       key={item.id}
                       href={item.link}
-                      className="button_social button_social__medium"
+                      className="button_social button_social__medium a"
                     >
                       <Image src={item.icon} alt={item.id} />
                     </a>
@@ -240,7 +240,7 @@ function Footer() {
                     <a
                       key={item.id}
                       href={item.link}
-                      className="button_social button_social__large"
+                      className="button_social button_social__large a"
                     >
                       <Image src={item.icon} alt={item.id} />
                     </a>

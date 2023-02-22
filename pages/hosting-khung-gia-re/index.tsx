@@ -44,9 +44,9 @@ const data = [
   },
   {
     id: "5",
-    title: "DDos",
+    title: "Hỗ trợ chống DDos",
     className: "firth",
-    link: "/dich-vu-ddos",
+    link: "/ho-tro-chong-ddos",
   },
   {
     id: "6",
@@ -410,7 +410,7 @@ function WebHosting() {
                 : renderSlideHire["notLoading"]}
             </div>
             <div className="mt-4 text-center">
-              <Link href="/chinh-sach-thanh-toan">
+              <Link className="a" href="/chinh-sach-thanh-toan">
                 <span className="color_primary">Điều khoản thanh toán</span>
               </Link>
             </div>
@@ -503,7 +503,9 @@ function WebHosting() {
                   <div
                     className={`d-flex align-items-center justify-content-center section-search-other__item section-search-other__item__${item.className}`}
                   >
-                    <Link href={item.link}>{item.title}</Link>
+                    <Link className="a" href={item.link}>
+                      {item.title}
+                    </Link>
                   </div>
                 </div>
               ))}

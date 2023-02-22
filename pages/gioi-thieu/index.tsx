@@ -78,7 +78,9 @@ function Introduction() {
               nữa các giá trị của mình, nâng tầm các dịch vụ sẵn có lên một tầm
               cao mới đồng thời xây dựng thêm các dịch vụ chuyên nghiệp khác,
               đặc biệt là dịch vụ Cho thuê{" "}
-              <Link href={"/"}>hosting và máy chủ VPS hiệu năng cao.</Link>
+              <Link className="a" href={"/"}>
+                hosting và máy chủ VPS hiệu năng cao.
+              </Link>
             </p>
             <p>
               Với nguồn nhân lực chất lượng, không ngừng được nâng cao và phát

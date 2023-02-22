@@ -20,7 +20,7 @@ function BasicServiceItem({ item }: Props) {
           <div className="see-more text-center">
             <Link
               href={item?.link}
-              className="d-flex align-items-center justify-content-center"
+              className="d-flex align-items-center justify-content-center a"
             >
               <span>Xem thêm</span>
               <Icon icon={"ph:caret-circle-right-fill"} />

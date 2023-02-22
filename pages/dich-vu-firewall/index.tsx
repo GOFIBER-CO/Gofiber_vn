@@ -458,7 +458,12 @@ function Firewall() {
       </Head>
       <div id="firewall">
         <section>
-          <BannerPage image={banner} name="Dịch vụ DDos" />
+          <BannerPage
+            bannerLinkLargeWidth="30%"
+            bannerLinkMediumWidth="60%"
+            image={banner}
+            name="Hỗ trợ chống DDos"
+          />
         </section>
         <div className="container">
           {/* <section className="section-specification hide-for-medium">

@@ -20,7 +20,7 @@ function Header({ onShowDrawer }: Props): any {
           style={{ height: "80px" }}
           className="container d-flex align-items-center justify-content-between"
         >
-          <Link href="/">
+          <Link className="a" href="/">
             <Image
               id="logo"
               className="logo-left logo"
@@ -31,10 +31,12 @@ function Header({ onShowDrawer }: Props): any {
           <div className="flex-col flex-left flex-grow hide-for-932">
             <ul className="ul nav justify-content-end">
               <li className="menu_item">
-                <Link href="/gioi-thieu">Giới thiệu</Link>
+                <Link className="a" href="/gioi-thieu">
+                  Giới thiệu
+                </Link>
               </li>
               <li className="menu_item has-dropdown position-relative">
-                <Link href="/dich-vu">
+                <Link className="a" href="/dich-vu">
                   Dịch vụ
                   <Icon icon={ICON.DOWN} />
                 </Link>
@@ -42,10 +44,14 @@ function Header({ onShowDrawer }: Props): any {
               </li>
 
               <li className="menu_item">
-                <Link href="/lien-he">Liên hệ</Link>
+                <Link className="a" href="/lien-he">
+                  Liên hệ
+                </Link>
               </li>
               <li className="menu_item">
-                <Link href="/tuyen-dung">Tuyển dụng</Link>
+                <Link className="a" href="/tuyen-dung">
+                  Tuyển dụng
+                </Link>
               </li>
             </ul>
           </div>
@@ -59,7 +65,7 @@ function Header({ onShowDrawer }: Props): any {
           <div className="flex-right flew-col hide-for-932">
             <ul className="ul d-flex align-items-center justify-content-center p-0">
               <li className="mx-2">
-                <a href="https://go.vngserver.vn/register">
+                <a href="https://go.vngserver.vn/register" className="a">
                   <EffectButton
                     className="btn_auth shadow border"
                     styles={{ width: "136px" }}
@@ -69,7 +75,7 @@ function Header({ onShowDrawer }: Props): any {
                 </a>
               </li>
               <li>
-                <a href="https://go.vngserver.vn/">
+                <a href="https://go.vngserver.vn/" className="a">
                   <EffectButton
                     className="btn_auth shadow"
                     styles={{ width: "136px" }}
@@ -79,7 +85,7 @@ function Header({ onShowDrawer }: Props): any {
                 </a>
               </li>
               <li>
-                <a href="tel:0989078507" className="btn0 btn-support d-flex">
+                <a href="tel:0989078507" className="btn0 btn-support d-flex a">
                   <span className="moving">
                     <Icon icon={ICON.CALL} />
                     Hỗ trợ 24/7: 0989.07.85.07

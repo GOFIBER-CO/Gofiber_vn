@@ -13,7 +13,7 @@ function NewItem({ wrapperClassName, item }: Props) {
   return (
     <div className={`${wrapperClassName}`}>
       <div style={{ height: "auto" }} className="recruit-item mt-4">
-        <Link href={`/${item.slug}`}>
+        <Link className="a" href={`/${item.slug}`}>
           <div className="img">
             <img
               src={item.thumb || RECRUIT_IMAGE.ILLUSTRATION}

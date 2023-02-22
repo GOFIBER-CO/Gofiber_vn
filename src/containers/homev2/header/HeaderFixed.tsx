@@ -1,5 +1,5 @@
-import { useAppDispatch } from "@/src/redux";
-import { updateDrawer } from "@/src/redux/slice";
+import { useAppDispatch, useAppSelector } from "@/src/redux";
+import { updateDrawer, updateVisibleSearch } from "@/src/redux/slice";
 import { ICON, ICON_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { render } from "react-dom";
 import AdvanceMenu from "./AdvanceMenu";
+import SearchBar from "./SearchBar";
 
 type Props = {
   visible: boolean;
@@ -22,13 +23,18 @@ function HeaderFixed({
   visibleAdvanceMenu,
 }: Props) {
   const dispatch = useAppDispatch();
+  const { visibleSearch } = useAppSelector((state) => state.home);
+
+  const handleChangeVisibleSearch = (value: boolean) => {
+    dispatch(updateVisibleSearch(value));
+  };
 
   return (
     <div id="header-fixed" className={`${visible ? "show" : ""}`}>
       <div className="container">
         <div className="position-relative hide-for-968">
           <div className="d-flex align-items-center justify-content-between">
-            <Link href="/">
+            <Link className="a" href="/">
               <Image
                 id="logo"
                 className="logo-left logo"
@@ -36,10 +42,11 @@ function HeaderFixed({
                 alt=""
               />
             </Link>
-            <div>
+            <div className="position-relative">
               <ul className="ul d-flex align-items-center">
                 <li className="menu-item">
                   <a
+                    className="a"
                     style={{ cursor: "pointer" }}
                     onClick={(e) => {
                       e.stopPropagation();
@@ -55,19 +62,33 @@ function HeaderFixed({
                 </li>
                 {menuLv2.map((item) => (
                   <li className="menu-item" key={item.id}>
-                    <Link href={item.link}>{item.name}</Link>
+                    <Link className="a" href={item.link}>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
+
+              <SearchBar />
             </div>
             <div>
-              <button className="btn0 btn-search">
-                <img
-                  src={ICON_IMAGE.SEARCH}
-                  width={22}
-                  height={22}
-                  alt="Search"
-                />
+              <button
+                onClick={() => handleChangeVisibleSearch(!visibleSearch)}
+                className="btn0 btn-search"
+              >
+                {visibleSearch ? (
+                  <Icon
+                    style={{ width: "28px", height: "28px" }}
+                    icon={ICON.SEARCH_OFF}
+                  />
+                ) : (
+                  <img
+                    src={ICON_IMAGE.SEARCH}
+                    width={22}
+                    height={22}
+                    alt="Search"
+                  />
+                )}
               </button>
             </div>
           </div>
@@ -78,7 +99,7 @@ function HeaderFixed({
         </div>
 
         <div className="menu-lv2-medium show-for-968">
-          <Link href="/">
+          <Link className="a" href="/">
             <Image
               id="logo"
               className="logo-left logo"
@@ -86,14 +107,30 @@ function HeaderFixed({
               alt=""
             />
           </Link>
+          <div
+            className="position-relative"
+            style={{ width: "45%", background: "red" }}
+          >
+            <SearchBar />
+          </div>
           <div>
-            <button className="btn0 btn-search hide-for-small">
-              <img
-                src={ICON_IMAGE.SEARCH}
-                width={16}
-                height={16}
-                alt="Search"
-              />
+            <button
+              onClick={() => handleChangeVisibleSearch(!visibleSearch)}
+              className="btn0 btn-search hide-for-small"
+            >
+              {visibleSearch ? (
+                <Icon
+                  style={{ width: "22px", height: "22px" }}
+                  icon={ICON.SEARCH_OFF}
+                />
+              ) : (
+                <img
+                  src={ICON_IMAGE.SEARCH}
+                  width={16}
+                  height={16}
+                  alt="Search"
+                />
+              )}
             </button>
             <button
               onClick={() => dispatch(updateDrawer(true))}

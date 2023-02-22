@@ -184,7 +184,7 @@ const vps = [
 
 function HotProduct() {
   return (
-    <section className="section-hot-product">
+    <section id="section-hot-product">
       <div className="container">
         <div data-aos="fade-up" className="text-center">
           <h2 className="h2">Sản phẩm tiêu biểu</h2>

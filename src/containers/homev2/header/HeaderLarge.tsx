@@ -1,24 +1,33 @@
+import { useAppDispatch, useAppSelector } from "@/src/redux";
+import { updateVisibleSearch } from "@/src/redux/slice";
 import { ICON, ICON_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import AdvanceMenu from "./AdvanceMenu";
+import SearchBar from "./SearchBar";
 
 type Props = {
   menuLv2: any[];
 };
 
 function HeaderLarge({ menuLv2 }: Props) {
+  const dispatch = useAppDispatch();
+  const { visibleSearch } = useAppSelector((state) => state.home);
   const [visible, setVisible] = useState<boolean>(false);
 
   const handleChangeVisible = (value: boolean) => {
     setVisible(value);
   };
 
+  const handleChangeVisibleSearch = (value: boolean) => {
+    dispatch(updateVisibleSearch(value));
+  };
+
   return (
     <div className="menu-lv2 hide-for-968 position-relative">
-      <Link href="/">
+      <Link className="a" href="/">
         <Image
           id="logo"
           className="logo-left logo"
@@ -26,10 +35,11 @@ function HeaderLarge({ menuLv2 }: Props) {
           alt=""
         />
       </Link>
-      <div>
+      <div className="position-relative">
         <ul className="ul d-flex align-items-center">
           <li className="menu-item">
             <Link
+              className="a"
               onClick={(e) => {
                 e.stopPropagation();
                 setVisible(!visible);
@@ -45,14 +55,25 @@ function HeaderLarge({ menuLv2 }: Props) {
           </li>
           {menuLv2.map((item) => (
             <li className="menu-item" key={item.id}>
-              <Link href={item.link}>{item.name}</Link>
+              <Link className="a" href={item.link}>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
+
+        <SearchBar />
       </div>
       <div>
-        <button className="btn0 btn-search">
-          <img src={ICON_IMAGE.SEARCH} width={22} height={22} alt="Search" />
+        <button
+          onClick={() => handleChangeVisibleSearch(!visibleSearch)}
+          className="btn0 btn-search"
+        >
+          {visibleSearch ? (
+            <Icon icon={ICON.SEARCH_OFF} />
+          ) : (
+            <img src={ICON_IMAGE.SEARCH} width={22} height={22} alt="Search" />
+          )}
         </button>
       </div>
       <AdvanceMenu onChange={handleChangeVisible} visible={visible} />
