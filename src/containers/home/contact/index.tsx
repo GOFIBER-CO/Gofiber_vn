@@ -30,7 +30,7 @@ const data = [
   },
   {
     id: "7",
-    name: "DDos",
+    name: "Chống DDos",
   },
   {
     id: "8",

@@ -1,3 +1,5 @@
+import ReactHtmlParser from "react-html-parser";
+
 export enum ICON {
   DOWN = "material-symbols:keyboard-arrow-down-rounded",
   MENU = "material-symbols:menu-rounded",
@@ -55,6 +57,20 @@ export const convertObjectToQuery = (obj: any) => {
     }
   });
   return query;
+};
+
+export const appendTagToHead = (tags: any[]) => {
+  tags.forEach((item: any) => {
+    const [convert] = ReactHtmlParser(item);
+    const tag = document.createElement(convert?.type as string);
+
+    Object.entries(convert?.props).forEach((prop) => {
+      if (prop[1]) {
+        tag.setAttribute(prop[0], prop[1] as string);
+      }
+    });
+    document.head.appendChild(tag);
+  });
 };
 
 const BUNNY_URL = "https://gofiber.b-cdn.net/";

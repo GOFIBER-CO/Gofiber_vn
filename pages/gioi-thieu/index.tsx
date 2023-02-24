@@ -1,14 +1,22 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import TitleWithLine from "@/src/components/TitleWithLine";
 import TextIconPrice from "@/src/components/web-hosting/TextIconPrice";
 import ChoiceList from "@/src/containers/introduction/choice";
 import OurProducts from "@/src/containers/web-design/OurProducts";
-import { INTRODUCE_IMAGE } from "@/src/utils";
+import { appendTagToHead, INTRODUCE_IMAGE } from "@/src/utils";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import ReactHtmlParser from "react-html-parser";
 
-function Introduction() {
+type Props = {
+  tags: any[];
+};
+
+function IntroductionPage({ tags }: Props) {
   const banner = {
     large: INTRODUCE_IMAGE.BANNER_LARGE,
     medium: INTRODUCE_IMAGE.BANNER_MEDIUM,
@@ -22,11 +30,17 @@ function Introduction() {
           Thông tin giới thiệu công ty TNHH Công Nghệ Phần Mềm Gofiber
         </title>
         <link rel="canonical" href="https://gofiber.vn/gioi-thieu" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="introduction">
-        <section>
-          <BannerPage image={banner} name="Giới thiệu" />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/gioi-thieu/desktop-gioi-thieu.png"
+          name="Giới thiệu"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <div className="row justify-content-center mt-4">
             <h2 className="h2 my-4 text-center color_primary text-uppercase">
@@ -491,4 +505,27 @@ function Introduction() {
   );
 }
 
-export default Introduction;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/gioi-thieu",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}
+
+export default IntroductionPage;

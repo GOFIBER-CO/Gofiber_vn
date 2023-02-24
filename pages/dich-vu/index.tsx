@@ -1,4 +1,5 @@
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import TextIconButton from "@/src/components/button/TextIconButton";
 import Contact from "@/src/containers/home/contact";
 import { ICON, SERVICE_IMAGE } from "@/src/utils";
@@ -41,8 +42,8 @@ const data = [
   },
   {
     id: "3",
-    title: "Dịch vụ DDos",
-    content: `DDos giúp kiểm soát luồng thông tin giữa Intranet và Internet, 
+    title: "Dịch vụ hỗ trợ chống DDos",
+    content: `Dịch vụ hỗ trợ chống DDos giúp kiểm soát luồng thông tin giữa Intranet và Internet, 
         chúng phát hiện và phán xét những hành vi được truy cập và 
         không được truy cập vào bên trong hệ thống, đảm bảo tối đa sự an toàn thông tin.`,
     image: SERVICE_IMAGE.MY_SERVICE.FIREWALL,
@@ -91,9 +92,12 @@ function Service() {
         <link rel="canonical" href="https://gofiber.vn/dich-vu" />
       </Head>
       <div id="service">
-        <section>
-          <BannerPage image={banner} name="Dịch vụ" />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/dich-vu/desktop-dich-vu.png"
+          name="Dịch vụ"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="square"></div>
         <div className="container">
           <section className="section-hire">

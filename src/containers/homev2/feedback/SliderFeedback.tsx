@@ -12,9 +12,7 @@ const data = [
     id: 1,
     name: "Uyên (Content Marketing - Báo Việt Nam)",
     gender: 0,
-    content1: `Tôi đã từng sử dụng dịch vụ hosting tại rất nhiều đơn vị. Tuy nhiên, GoFiber là đơn vị duy 
-    nhất tôi cảm thấy hài lòng. Sản phẩm hosting đáp ứng được nhu cầu công việc của tôi. 
-    Kèm theo đó chính là dịch vụ chăm sóc khách hàng vô cùng tuyệt vời. Chắc chắn tôi sẽ tiếp tục lựa chọn Gofiber làm người bạn đồng hành trong tương lai.`,
+    content1: `Tôi đã từng sử dụng dịch vụ hosting tại rất nhiều đơn vị. Tuy nhiên, GoFiber là đơn vị duy nhất tôi cảm thấy hài lòng. Sản phẩm hosting đáp ứng được nhu cầu công việc của tôi. Kèm theo đó chính là dịch vụ chăm sóc khách hàng vô cùng tuyệt vời. Chắc chắn tôi sẽ tiếp tục lựa chọn Gofiber làm người bạn đồng hành trong tương lai.`,
     content2: `Kết quả mà khách hàng nhận được không chỉ dừng lại ở KPI mà hơn thế nữa là về doanh thu, thương hiệu,...trên 1 nền tảng chất lượng nhất.`,
     image: HOME2_IMAGE.FEEDBACK.UYEN,
   },

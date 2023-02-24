@@ -287,6 +287,10 @@ export default function App({ Component, pageProps }: AppProps) {
               name="dmca-site-verification"
               content="VTVITzZSMUZ5VEhGNG83TUJKanRyZz090"
             />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
             <title>
               Gofiber Hosting và Máy chủ hiệu năng cao - Gofiber.vn - Giới thiệu
               sản phẩm

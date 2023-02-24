@@ -74,7 +74,7 @@ function SectionHotService() {
                 {item.content}
               </div>
               <div className="mt-4">
-                <Link className="a" href={item.link} className="mt-4">
+                <Link href={item.link} className="a mt-4">
                   <TextIconButton
                     className="btn-primary-to-white"
                     name="Xem thêm"

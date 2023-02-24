@@ -23,6 +23,7 @@ function HeaderFixed({
   visibleAdvanceMenu,
 }: Props) {
   const dispatch = useAppDispatch();
+  const { drawer } = useAppSelector((state) => state.home);
   const { visibleSearch } = useAppSelector((state) => state.home);
 
   const handleChangeVisibleSearch = (value: boolean) => {
@@ -30,7 +31,7 @@ function HeaderFixed({
   };
 
   return (
-    <div id="header-fixed" className={`${visible ? "show" : ""}`}>
+    <div id="header-fixed" className={`${visible && !drawer ? "show" : ""}`}>
       <div className="container">
         <div className="position-relative hide-for-968">
           <div className="d-flex align-items-center justify-content-between">
@@ -69,7 +70,7 @@ function HeaderFixed({
                 ))}
               </ul>
 
-              <SearchBar />
+              <SearchBar isFixed visibleFixed={visible} />
             </div>
             <div>
               <button
@@ -111,7 +112,7 @@ function HeaderFixed({
             className="position-relative"
             style={{ width: "45%", background: "red" }}
           >
-            <SearchBar />
+            <SearchBar isFixed visibleFixed={visible} />
           </div>
           <div>
             <button

@@ -1,3 +1,4 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
 import BuyPackage from "@/src/containers/BuyPackage";
 import Contact from "@/src/containers/home/contact";
@@ -6,10 +7,13 @@ import SliderHostingPrice from "@/src/containers/web-hosting/SliderHostingPrice"
 import { useAppDispatch } from "@/src/redux";
 import { getAllHosting } from "@/src/redux/slice/hostingSlice";
 import { WEB_HOSTING_IMAGE } from "@/src/utils";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
+import ReactHtmlParser from "react-html-parser";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 const banner = {
   large: WEB_HOSTING_IMAGE.BANNER_LARGE,
@@ -340,7 +344,11 @@ const SkeletonSlide = () => (
   </div>
 );
 
-function WebHosting() {
+type Props = {
+  tags: any[];
+};
+
+function WebHostingPage({ tags }: Props) {
   const dispatch = useAppDispatch();
   const [packageSelect, setPackageSelect] = useState();
   const [hostings, setHostings] = useState<any[]>([]);
@@ -387,11 +395,18 @@ function WebHosting() {
       <Head>
         <title>Dịch vụ hosting và web hosting giá rẻ, free chứng chỉ SSL</title>
         <link rel="canonical" href="https://gofiber.vn/hosting-khung-gia-re" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="web-hosting">
-        <section>
-          <BannerPage image={banner} name="Web Hosting" />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
+          name="Web Hosting"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
+
         <div className="container">
           <section className="mt-4 text-center">
             <h3 className="h3 mt-4">
@@ -543,4 +558,27 @@ function WebHosting() {
   );
 }
 
-export default WebHosting;
+export default WebHostingPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/hosting-khung-gia-re",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

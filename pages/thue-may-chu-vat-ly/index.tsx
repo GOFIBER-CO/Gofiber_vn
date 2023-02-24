@@ -1,4 +1,6 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import BuyPackage from "@/src/containers/BuyPackage";
 import Contact from "@/src/containers/home/contact";
 import Question from "@/src/containers/home/question";
@@ -8,9 +10,11 @@ import { useAppDispatch, useAppSelector } from "@/src/redux";
 import { updateBuyPackage } from "@/src/redux/slice";
 import { ICON, PHYSICAL_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const banner = {
   large: PHYSICAL_IMAGE.BANNER_LARGE,
@@ -407,7 +411,11 @@ const question = [
   },
 ];
 
-function RentPhysicalServer() {
+type Props = {
+  tags: any[];
+};
+
+function RentPhysicalServerPage({ tags }: Props) {
   const dispatch = useAppDispatch();
   const { buyPackage } = useAppSelector((state) => state.home);
   const [tab, setTab] = useState(tabs[0]);
@@ -433,16 +441,16 @@ function RentPhysicalServer() {
           tín
         </title>
         <link rel="canonical" href="https://gofiber.vn/thue-may-chu-vat-ly" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="rent-vps">
         <section>
-          <BannerPage
-            styleLinkName={{ lineHeight: "unset" }}
-            bannerLinkLargeWidth="46%"
-            bannerLinkMediumWidth="72%"
-            bannerLinkSmallWidth="83%"
-            image={banner}
+          <BannerV2Page
+            image="https://gofiber.b-cdn.net/new-design/Thue-may-chu-vat-ly/desktop-thue-may-chu-vat-ly.png"
             name="Thuê máy chủ vật lý/ Thuê chỗ đặt máy chủ"
+            extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
           />
         </section>
         <div className="container">
@@ -556,7 +564,7 @@ function RentPhysicalServer() {
                   <div className="mt-4">
                     {item.data.map((e, index) => (
                       <div key={index} className="text-icon-price mt-2">
-                        <Link className="a" href={e.link} className="d-flex">
+                        <Link href={e.link} className="a d-flex">
                           <Icon className={`blue`} icon={ICON.CHECKED} />
                           <p className="px-2">{e.name}</p>
                         </Link>
@@ -582,7 +590,6 @@ function RentPhysicalServer() {
             </div>
           </div>
         </section>
-
         <div className="container">
           <Question data={question} />
 
@@ -595,4 +602,27 @@ function RentPhysicalServer() {
   );
 }
 
-export default RentPhysicalServer;
+export default RentPhysicalServerPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

@@ -42,8 +42,8 @@ function BannerPage({
                   <Link className="a" href="/">
                     Trang chủ
                   </Link>
-                  <a className="mx-2">{">"}</a>
-                  <a>{name}</a>
+                  <a className="mx-2 a">{">"}</a>
+                  <a className="a">{name}</a>
                 </div>
                 {extra && (
                   <div

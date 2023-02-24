@@ -9,6 +9,8 @@ import Header from "./Header";
 import { notification } from "antd";
 import FooterV2 from "./FooterV2";
 import { useRouter } from "next/router";
+import HeaderFixed from "../containers/homev2/header/HeaderFixed";
+import HeaderV2 from "./HeaderV2";
 
 type Props = {
   children: JSX.Element;
@@ -50,9 +52,11 @@ function Layout({ children }: Props) {
 
   return (
     <>
-      {!["/"].includes(router?.asPath) && (
+      {/* {!["/"].includes(router?.asPath) && (
         <Header onShowDrawer={onShowDrawer} />
-      )}
+      )} */}
+      {/* <HeaderFixed /> */}
+      <HeaderV2 />
       <main id="main">
         {contextHolder}
         {children}

@@ -5,8 +5,16 @@ import TitleWithLine from "@/src/components/TitleWithLine";
 import OurProducts from "@/src/containers/web-design/OurProducts";
 import { INTRODUCE_IMAGE, WEB_DESIGN_IMAGE } from "@/src/utils";
 import Head from "next/head";
+import { GetServerSidePropsContext } from "next";
+import { SeoApi } from "@/src/api/seo";
+import ReactHtmlParser from "react-html-parser";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
-function WebDesign() {
+type Props = {
+  tags: any[];
+};
+
+function WebDesign({ tags }: Props) {
   const banner = {
     large: WEB_DESIGN_IMAGE.BANNER_LARGE,
     medium: WEB_DESIGN_IMAGE.BANNER_MEDIUM,
@@ -17,18 +25,17 @@ function WebDesign() {
     <>
       <Head>
         <link rel="canonical" href="https://gofiber.vn/thiet-ke-website" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="web-design">
-        <section>
-          <BannerPage
-            bannerLinkLargeWidth="30%"
-            bannerLinkMediumWidth="50%"
-            image={banner}
-            key="1"
-            name="Thiết kế website"
-          />
-        </section>
-
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/thiet-ke-web/desktop-thiet-ke-web.png"
+          name="Thiết kế Website"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-design">
             <div className="section-content position-relative">
@@ -185,3 +192,26 @@ function WebDesign() {
 }
 
 export default WebDesign;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/thiet-ke-website",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

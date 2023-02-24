@@ -8,6 +8,10 @@ import { getRecruitsByDomain } from "@/src/redux/slice/recruitSlice";
 import { RECRUIT_IMAGE } from "@/src/utils";
 import Skeleton from "react-loading-skeleton";
 import Head from "next/head";
+import { GetServerSidePropsContext } from "next";
+import { SeoApi } from "@/src/api/seo";
+import ReactHtmlParser from "react-html-parser";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 const banner = {
   large: RECRUIT_IMAGE.BANNER_LARGE,
@@ -102,7 +106,11 @@ const SkeletonItem = () => {
   );
 };
 
-function Recruit() {
+type Props = {
+  tags: any[];
+};
+
+function Recruit({ tags }: Props) {
   const dispatch = useAppDispatch();
   const [recruits, setRecruits] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -196,11 +204,17 @@ function Recruit() {
       <Head>
         <title>Cơ hội việc làm với công ty công nghệ hàng đầu</title>
         <link rel="canonical" href="https://gofiber.vn/tuyen-dung" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="recruit">
-        <section>
-          <BannerPage image={banner} name="Tuyển dụng" />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/tuyen-dung/desktop-tuyen-dung.png"
+          name="Tuyển dụng"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-recruit">
             {isLoading ? render["isLoading"] : render["notLoading"]}
@@ -212,3 +226,26 @@ function Recruit() {
 }
 
 export default Recruit;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/tuyen-dung",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

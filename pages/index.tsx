@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
+import { SeoApi } from "@/src/api/seo";
 import TextImageButton from "@/src/components/button/TextImageButton";
 import BasicService from "@/src/containers/homev2/basic-service";
 import Feedback from "@/src/containers/homev2/feedback";
@@ -15,51 +16,12 @@ import SectionRegistryPromotion from "@/src/containers/homev2/SectionRegistryPro
 import WhyChoose from "@/src/containers/homev2/why-choose";
 import { HOME2_IMAGE, ICON, ICON_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
-const menuLv1 = [
-  {
-    id: 2,
-    name: "Tin tức",
-    link: "/tin-tuc",
-  },
-  {
-    id: 3,
-    name: "Liên hệ",
-    link: "/lien-he",
-  },
-];
-
-const menuLv2 = [
-  {
-    id: 1,
-    name: "Hosting",
-    link: "/hosting-khung-gia-re",
-  },
-  {
-    id: 2,
-    name: "Server",
-    link: "/thue-may-chu-vat-ly",
-  },
-  {
-    id: 3,
-    name: "VPS",
-    link: "/thue-vps",
-  },
-  {
-    id: 4,
-    name: "Thiết kế Website",
-    link: "/thiet-ke-website",
-  },
-  {
-    id: 5,
-    name: "Dịch vụ khác",
-    link: "/dich-vu",
-  },
-];
+import ReactHtmlParser from "react-html-parser";
 
 const intraExtra = [
   {
@@ -84,7 +46,11 @@ const intraExtra = [
   },
 ];
 
-function TestPage() {
+type Props = {
+  tags: any[];
+};
+
+function TestPage({ tags }: Props) {
   const [visible, setVisible] = useState<boolean>(false);
   const [visibleAdvanceMenu, setVisibleAdvanceMenu] = useState<boolean>(false);
 
@@ -127,46 +93,23 @@ function TestPage() {
       <Head>
         <title>Giải pháp công nghệ hàng đầu</title>
         <link rel="canonical" href="https://gofiber.vn/" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="home-v2">
         <section className="intro">
           <div className="container">
-            <div
-              style={{ display: "flex" }}
-              className="menu-lv1 align-items-center justify-content-between py-3 hide-for-small"
-            >
-              <div className="hot-line">Hotline: 0985 07 85 07</div>
-              <ul className="ul d-flex">
-                <li className="menu-item">
-                  <a
-                    target="_blank"
-                    href="https://go.vngserver.vn/"
-                    rel="noopener nofollow"
-                    className="a"
-                  >
-                    Tài khoản
-                  </a>
-                </li>
-                {menuLv1.map((item) => (
-                  <li key={item.id} className="menu-item">
-                    <Link className="a" href={item.link}>
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <HeaderFixed
+            {/* <HeaderFixed
               onChangeIsibleAdvanceMenu={handleChangeVisibleAdvanceMenu}
               visibleAdvanceMenu={visibleAdvanceMenu}
               menuLv2={menuLv2}
               visible={visible}
-            />
+            /> */}
 
-            <HeaderLarge menuLv2={menuLv2} />
+            {/* <HeaderLarge menuLv2={menuLv2} />
 
-            <HeaderMedium />
+            <HeaderMedium /> */}
 
             <div className="row box-intro align-items-center flex-row-reverse">
               <div className="col col-12 col-md-7">
@@ -256,3 +199,26 @@ function TestPage() {
 }
 
 export default TestPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

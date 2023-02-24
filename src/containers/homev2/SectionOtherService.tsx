@@ -62,7 +62,7 @@ function SectionOtherService() {
                 {item.content}
               </div>
               <div className="mt-4">
-                <Link className="a" href={item.link} className="mt-4">
+                <Link href={item.link} className="mt-4 a">
                   <TextIconButton
                     className="btn-primary-to-white"
                     name="Xem thêm"

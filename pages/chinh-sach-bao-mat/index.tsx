@@ -1,29 +1,38 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import TextIconPrice from "@/src/components/web-hosting/TextIconPrice";
 import { POLICY_IMAGE } from "@/src/utils";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const banner = {
   large: POLICY_IMAGE.INFORMATION_SECURITY.BANNER_LARGE,
   medium: POLICY_IMAGE.INFORMATION_SECURITY.BANNER_MEDIUM,
   small: POLICY_IMAGE.INFORMATION_SECURITY.BANNER_SMALL,
 };
-function InformationSecurityPage() {
+
+type Props = {
+  tags: any[];
+};
+
+function InformationSecurityPage({ tags }: Props) {
   return (
     <>
       <Head>
         <link rel="canonical" href="https://gofiber.vn/chinh-sach-bao-mat" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="service">
-        <section>
-          <BannerPage
-            image={banner}
-            bannerLinkLargeWidth="33%"
-            bannerLinkMediumWidth="54%"
-            name="Chính sách bảo mật"
-          />
-        </section>
+        <BannerV2Page
+          image="https://gofiber.b-cdn.net/new-design/chinh-sach-bao-mat/desktop-chinh-sach-bao-mat.png"
+          name="Chinh sách bảo mật"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-policy">
             <div className="row justify-content-center">
@@ -186,3 +195,26 @@ function InformationSecurityPage() {
 }
 
 export default InformationSecurityPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/chinh-sach-bao-mat",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

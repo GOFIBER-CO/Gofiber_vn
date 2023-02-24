@@ -1,8 +1,12 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import TextIconPrice from "@/src/components/web-hosting/TextIconPrice";
 import { POLICY_IMAGE } from "@/src/utils";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const banner = {
   large: POLICY_IMAGE.PAYMENT.BANNER_LARGE,
@@ -10,23 +14,26 @@ const banner = {
   small: POLICY_IMAGE.PAYMENT.BANNER_SMALL,
 };
 
-function PaymentPolicyPage() {
+type Props = {
+  tags: any[];
+};
+
+function PaymentPolicyPage({ tags }: Props) {
   return (
     <>
       <Head>
         <title>Chính sách thanh toán</title>
         <link rel="canonical" href="https://gofiber.vn/chinh-sach-thanh-toan" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="service">
-        <section>
-          <BannerPage
-            image={banner}
-            styleLinkName={{ lineHeight: "1.3" }}
-            bannerLinkLargeWidth="40%"
-            bannerLinkMediumWidth="54%"
-            name="Chính sách thanh toán"
-          />
-        </section>
+        <BannerV2Page
+          image="https://gofiber.b-cdn.net/new-design/chinh-sach-thanh-toan/desktop-chinh-sach-thanh-toan.png"
+          name="Chinh sách thanh toán"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-policy">
             <div className="row justify-content-center">
@@ -98,3 +105,26 @@ function PaymentPolicyPage() {
 }
 
 export default PaymentPolicyPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/chinh-sach-thanh-toan",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

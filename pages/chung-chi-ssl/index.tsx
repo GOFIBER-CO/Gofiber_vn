@@ -1,12 +1,16 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import BuyPackage from "@/src/containers/BuyPackage";
 import Contact from "@/src/containers/home/contact";
 import Question from "@/src/containers/home/question";
 import SliderSSL from "@/src/containers/ssl/SliderSSL";
 import { ICON, SSL_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const banner = {
   large: SSL_IMAGE.BANNER_LARGE,
@@ -236,7 +240,11 @@ const question = [
   },
 ];
 
-function SSL() {
+type Props = {
+  tags: any[];
+};
+
+function SSLPage({ tags }: Props) {
   const [packageSelect, setPackageSelect] = useState();
 
   return (
@@ -244,17 +252,17 @@ function SSL() {
       <Head>
         <title>Chứng chỉ bảo mật cho website - Đăng ký SSL</title>
         <link rel="canonical" href="https://gofiber.vn/chung-chi-ssl" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="rent-vps">
-        <section>
-          <BannerPage
-            extra="Hãy tự bảo vệ website của bạn được an toàn và bảo mật bằng việc mua chứng chỉ SSL ngay."
-            bannerLinkLargeWidth="30%"
-            bannerLinkMediumWidth="46%"
-            image={banner}
-            name="Chứng chỉ SSL"
-          />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/lien-he/desktop-lien-he.png"
+          name="Chứng chỉ SSL"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-hire">
             <div className="text-center">
@@ -378,4 +386,27 @@ function SSL() {
   );
 }
 
-export default SSL;
+export default SSLPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/chung-chi-ssl",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

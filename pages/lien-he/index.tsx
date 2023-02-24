@@ -1,10 +1,14 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import TextIconInfo from "@/src/components/footer/TextIconInfo";
 import Contact from "@/src/containers/home/contact";
 import { CONTACT_IMAGE, ICON } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const banner = {
   large: CONTACT_IMAGE.BANNER_LARGE,
@@ -69,7 +73,11 @@ type DataType = {
   name: string;
 };
 
-function ContactPage() {
+type Props = {
+  tags: any[];
+};
+
+function ContactPage({ tags }: Props) {
   const [dataSelected, setDataSelected] = useState<Array<DataType>>([data[0]]);
 
   const selected = (id: string) => {
@@ -96,11 +104,17 @@ function ContactPage() {
       <Head>
         <title>Liên hệ Công ty TNHH Công Nghệ Phần Mềm Gofibe</title>
         <link rel="canonical" href="https://gofiber.vn/lien-he" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="contact">
-        <section>
-          <BannerPage image={banner} name="Liên hệ" />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/lien-he/desktop-lien-he.png"
+          name="Liên hệ"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-contact">
             <div className="row justify-content-center align-items-center">
@@ -175,3 +189,26 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/lien-he",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

@@ -14,6 +14,7 @@ type Props = {
 
 function HeaderLarge({ menuLv2 }: Props) {
   const dispatch = useAppDispatch();
+  const { drawer } = useAppSelector((state) => state.home);
   const { visibleSearch } = useAppSelector((state) => state.home);
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -26,7 +27,11 @@ function HeaderLarge({ menuLv2 }: Props) {
   };
 
   return (
-    <div className="menu-lv2 hide-for-968 position-relative">
+    <div
+      className={`menu-lv2 hide-for-968 position-relative ${
+        drawer ? "d-none" : ""
+      }`}
+    >
       <Link className="a" href="/">
         <Image
           id="logo"

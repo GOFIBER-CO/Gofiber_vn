@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 
 function HeaderMedium() {
   const dispatch = useAppDispatch();
+  const { drawer } = useAppSelector((state) => state.home);
   const { visibleSearch } = useAppSelector((state) => state.home);
 
   const handleChangeVisibleSearch = (value: boolean) => {
@@ -16,7 +17,11 @@ function HeaderMedium() {
   };
 
   return (
-    <div className="menu-lv2 menu-lv2-medium show-for-968">
+    <div
+      className={`menu-lv2 menu-lv2-medium show-for-968 ${
+        drawer ? "d-none" : ""
+      }`}
+    >
       <Link className="a" href="/">
         <Image
           id="logo"

@@ -1,13 +1,17 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
 import NewItem from "@/src/containers/news/NewItem";
 import { useAppDispatch } from "@/src/redux";
 import { getPagingByDomain } from "@/src/redux/slice";
 import { NEWS_IMAGE } from "@/src/utils";
 import { is } from "immer/dist/internal";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import ReactHtmlParser from "react-html-parser";
+import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 const banner = {
   large: NEWS_IMAGE.BANNER_LARGE,
@@ -27,7 +31,11 @@ const SkeletonItem = () => {
   );
 };
 
-function NewsPage() {
+type Props = {
+  tags: any[];
+};
+
+function NewsPage({ tags }: Props) {
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [news, setNews] = useState<any[]>([]);
@@ -154,12 +162,18 @@ function NewsPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://gofiber.vn/dich-vu" />
+        <link rel="canonical" href="https://gofiber.vn/tin-tuc" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="recruit">
-        <section>
-          <BannerPage image={banner} name="Tin tức" />
-        </section>
+        <BannerV2Page
+          styleLinkName={{ maxWidth: "400px" }}
+          image="https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png"
+          name="Tin tức"
+          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+        />
         <div className="container">
           <section className="section-recruit">
             {isLoading ? render["isLoading"] : render["notLoading"]}
@@ -171,3 +185,26 @@ function NewsPage() {
 }
 
 export default NewsPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/tin-tuc",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

@@ -105,7 +105,7 @@ function FooterV2() {
   const { pathname } = useRouter();
 
   return (
-    <div id="footer-v2">
+    <footer id="footer-v2">
       <div className="container">
         <div className="box-contact row justify-content-center">
           <div className="col col-12 col-md-10">
@@ -237,7 +237,7 @@ function FooterV2() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

@@ -1,3 +1,4 @@
+import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
 import SpecificationItem from "@/src/components/firewall/SpecificationItem";
 import TitleWithLine from "@/src/components/TitleWithLine";
@@ -7,9 +8,11 @@ import SliderSpecification from "@/src/containers/firewall/SliderSpecification";
 import Contact from "@/src/containers/home/contact";
 import Question from "@/src/containers/home/question";
 import { FIREWALL_IMAGE, formatNumber } from "@/src/utils";
+import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import img from "next/image";
 import React, { useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const banner = {
   large: FIREWALL_IMAGE.BANNER_LARGE,
@@ -445,7 +448,11 @@ const firewallService = [
   },
 ];
 
-function Firewall() {
+type Props = {
+  tags: any[];
+};
+
+function FirewallPage({ tags }: Props) {
   const [packageSelect, setPackageSelect] = useState();
 
   return (
@@ -455,6 +462,9 @@ function Firewall() {
           Gofiber Next-Gen Firewall – Dịch vụ bảo mật tường lửa thế hệ mới
         </title>
         <link rel="canonical" href="https://gofiber.vn/dich-vu-firewall" />
+        {tags.map((tag, index) => (
+          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="firewall">
         <section>
@@ -607,4 +617,27 @@ function Firewall() {
   );
 }
 
-export default Firewall;
+export default FirewallPage;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/ho-tro-chong-ddos",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}
