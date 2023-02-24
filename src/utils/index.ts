@@ -23,6 +23,7 @@ export enum NEWS_TAB {
 
 export const env = {
   FP_PUBLIC_API_KEY: process.env.NEXT_PUBLIC_FP_PUBLIC_API_KEY,
+  DOMAIN: process.env.NEXT_PUBLIC_DOMAIN,
 };
 
 export const DOMAIN = "localhost:3000";

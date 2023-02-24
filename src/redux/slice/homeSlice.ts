@@ -1,3 +1,4 @@
+import { SeoApi } from "@/src/api/seo";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 interface HomeState {
@@ -8,6 +9,7 @@ interface HomeState {
   };
   visibleSearch: false;
   searchValue: string;
+  searchData: any[];
 }
 
 const defaultState: HomeState = {
@@ -18,6 +20,7 @@ const defaultState: HomeState = {
   },
   visibleSearch: false,
   searchValue: "",
+  searchData: [],
 };
 
 const homeSlice = createSlice({
@@ -36,8 +39,30 @@ const homeSlice = createSlice({
     updateSearchValue: (state, { payload }) => {
       state.searchValue = payload;
     },
+    updateSearchData: (state, { payload }) => {
+      state.searchData = payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(searchByDomain.fulfilled, (state, { payload }) => {
+      const { data } = payload?.data;
+      state.searchData = data || [];
+    });
   },
 });
+
+export const searchByDomain = createAsyncThunk(
+  "home/searchByDomain",
+  async (params: any) => {
+    try {
+      const result = await SeoApi.searchByDomain(params);
+
+      return result;
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
+);
 
 const { reducer: homeReducer, actions } = homeSlice;
 
@@ -46,6 +71,7 @@ export const {
   updateBuyPackage,
   updateSearchValue,
   updateVisibleSearch,
+  updateSearchData,
 } = actions;
 
 export default homeReducer;
