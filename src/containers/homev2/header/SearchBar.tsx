@@ -8,13 +8,24 @@ import { env, ICON_IMAGE } from "@/src/utils";
 import React, { useCallback, useState } from "react";
 import { debounce } from "lodash";
 import SearchItem from "@/src/components/SearchItem";
+import { useRouter } from "next/router";
 
 type Props = {
   isFixed?: boolean;
   visibleFixed?: boolean;
 };
 
-const RenderSearch = ({ item, type }: { item: any; type: any }) => {
+const RenderSearch = ({
+  item,
+  type,
+  handleClearSearch,
+}: {
+  item: any;
+  type: any;
+  handleClearSearch: any;
+}) => {
+  const router = useRouter();
+
   if (type === "vps") {
     return (
       <SearchItem
@@ -30,6 +41,10 @@ const RenderSearch = ({ item, type }: { item: any; type: any }) => {
       image={item?.thumb}
       extra={item?.description}
       title={item?.title}
+      onClick={() => {
+        router.push(`/${item?.slug}`);
+        handleClearSearch();
+      }}
     />
   );
 };
@@ -95,7 +110,12 @@ function SearchBar({ isFixed = false, visibleFixed = false }: Props) {
                   <div className="title">{item?.title}</div>
                   <div className="mt-2">
                     {item?.data?.map((e: any, index: number) => (
-                      <RenderSearch type={item?.type} item={e} key={e?._id} />
+                      <RenderSearch
+                        handleClearSearch={handleClearSearch}
+                        type={item?.type}
+                        item={e}
+                        key={e?._id}
+                      />
                     ))}
                   </div>
                 </div>

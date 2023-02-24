@@ -9,7 +9,7 @@ type Props = {
 
 function SearchItem({ extra, image, title, onClick = () => null }: Props) {
   return (
-    <div className="result-search-item">
+    <div onClick={onClick} className="result-search-item">
       <div>
         <img src={image} alt={title} width={64} height={72} />
       </div>
