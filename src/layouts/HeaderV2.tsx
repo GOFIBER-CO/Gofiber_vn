@@ -23,7 +23,7 @@ const menuLv2 = [
   {
     id: 1,
     name: "Hosting",
-    link: "/hosting-khung-gia-re",
+    link: "/dich-vu-hosting-web-hosting-gia-re",
   },
   {
     id: 2,

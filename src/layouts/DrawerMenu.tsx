@@ -43,7 +43,7 @@ const items: MenuProps["items"] = [
     ),
     getItem(
       "Hosting khủng giá rẻ ",
-      "/hosting-khung-gia-re",
+      "/dich-vu-hosting-web-hosting-gia-re",
       <Image
         className="menu_icon"
         src={require("@/public/images/icons/icon-2.svg")}

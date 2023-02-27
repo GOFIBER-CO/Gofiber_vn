@@ -38,7 +38,7 @@ const data = [
         `,
     image: SERVICE_IMAGE.MY_SERVICE.WEB_HOSTING,
     aos: ["fade-right", "fade-left"],
-    link: "/hosting-khung-gia-re",
+    link: "/dich-vu-hosting-web-hosting-gia-re",
   },
   {
     id: "3",

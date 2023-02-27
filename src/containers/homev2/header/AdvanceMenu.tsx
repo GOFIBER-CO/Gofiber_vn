@@ -173,7 +173,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
                 {hosting.map((item) => (
                   <div key={item.id} className="advance-menu-child">
                     <div className="d-flex align-items-center justify-content-between">
-                      <Link href={"/hosting-khung-gia-re"} className="name a">
+                      <Link href={"/dich-vu-hosting-web-hosting-gia-re"} className="name a">
                         {item.title}
                       </Link>
                       {item?.hot && <div className="hot">Hot</div>}
@@ -185,7 +185,7 @@ function AdvanceMenu({ visible, onChange }: Props) {
             </div>
 
             <div className="text-center">
-              <Link className="see-detail a" href={"/hosting-khung-gia-re"}>
+              <Link className="see-detail a" href={"/dich-vu-hosting-web-hosting-gia-re"}>
                 Xem chi tiết
               </Link>
               <img

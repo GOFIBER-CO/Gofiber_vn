@@ -26,7 +26,7 @@ const data = [
     id: "1",
     title: "Web Hosting",
     className: "first",
-    link: "/hosting-khung-gia-re",
+    link: "/dich-vu-hosting-web-hosting-gia-re",
   },
   {
     id: "2",
@@ -394,7 +394,7 @@ function WebHostingPage({ tags }: Props) {
     <>
       <Head>
         <title>Dịch vụ hosting và web hosting giá rẻ, free chứng chỉ SSL</title>
-        <link rel="canonical" href="https://gofiber.vn/hosting-khung-gia-re" />
+        <link rel="canonical" href="https://gofiber.vn/dich-vu-hosting-web-hosting-gia-re" />
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
         ))}
@@ -563,7 +563,7 @@ export default WebHostingPage;
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const params: any = {
-      link: "/hosting-khung-gia-re",
+      link: "/dich-vu-hosting-web-hosting-gia-re",
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 
