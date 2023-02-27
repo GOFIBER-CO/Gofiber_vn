@@ -12,7 +12,7 @@ import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import img from "next/image";
 import React, { useState } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 
 const banner = {
   large: FIREWALL_IMAGE.BANNER_LARGE,
@@ -463,7 +463,7 @@ function FirewallPage({ tags }: Props) {
         </title>
         <link rel="canonical" href="https://gofiber.vn/dich-vu-firewall" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="firewall">

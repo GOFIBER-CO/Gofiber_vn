@@ -6,7 +6,7 @@ import { POLICY_IMAGE } from "@/src/utils";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 
 const banner = {
   large: POLICY_IMAGE.PAYMENT.BANNER_LARGE,
@@ -25,7 +25,7 @@ function PaymentPolicyPage({ tags }: Props) {
         <title>Chính sách thanh toán</title>
         <link rel="canonical" href="https://gofiber.vn/chinh-sach-thanh-toan" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="service">

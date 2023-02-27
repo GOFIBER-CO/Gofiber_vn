@@ -122,9 +122,9 @@ export const HOME_IMAGE = {
 };
 
 export const INTRODUCE_IMAGE = {
-  BANNER_LARGE: getImageWithBunnyUrl("Desktop/Gioi-thieu/bg-gioithieu.png"),
-  BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Gioi-thieu/Group%20221.png"),
-  BANNER_SMALL: getImageWithBunnyUrl("Mobile/Gioi-thieu/Group%20222.png"),
+  BANNER_LARGE: getImageWithBunnyUrl("new-design/gioi-thieu/gioi-thieu.png"),
+  BANNER_MEDIUM: getImageWithBunnyUrl("new-design/gioi-thieu/tablet-gioi-thieu.png"),
+  BANNER_SMALL: getImageWithBunnyUrl("new-design/gioi-thieu/mobile-gioi-thieu.png"),
   CHOICE: {
     SEO: getImageWithBunnyUrl("Desktop/Gioi-thieu/Seo.png"),
     CMS: getImageWithBunnyUrl("Desktop/Gioi-thieu/nentangcms.png"),
@@ -157,10 +157,10 @@ export const SERVICE_IMAGE = {
 };
 export const WEB_DESIGN_IMAGE = {
   BANNER_LARGE: getImageWithBunnyUrl(
-    "Desktop/Thiet-ke-web/banner-thietketweb.png"
+    "new-design/thiet-ke-web/desktop-thiet-ke-web.png"
   ),
-  BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Thiet-ke-web/thiet-ke-web.png"),
-  BANNER_SMALL: getImageWithBunnyUrl("Mobile/Thiet-ke-web/bg-thietkeweb.png"),
+  BANNER_MEDIUM: getImageWithBunnyUrl("new-design/thiet-ke-web/tablet%20-%20thiet-ke-web.png"),
+  BANNER_SMALL: getImageWithBunnyUrl("new-design/thiet-ke-web/mobile-%20thiet-ke-web.png"),
   AGENCY1: getImageWithBunnyUrl("Desktop/Thiet-ke-web/Agency%201.png"),
   AGENCY2: getImageWithBunnyUrl("Desktop/Thiet-ke-web/Agency%202.png"),
   EDUCATION: getImageWithBunnyUrl("Desktop/Thiet-ke-web/Education.png"),
@@ -206,9 +206,9 @@ export const FIREWALL_IMAGE = {
 };
 
 export const VPS_IMAGE = {
-  BANNER_LARGE: getImageWithBunnyUrl("Desktop/Thue-VPS/banner-thuevpsmanh.png"),
-  BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Thue-vps/bg-thuevpsmanh.png"),
-  BANNER_SMALL: getImageWithBunnyUrl("Mobile/Thue-vps/bg-thuevpsmanh.png"),
+  BANNER_LARGE: getImageWithBunnyUrl("new-design/Thue-vps-manh/desktop-thue-vps-manh-1.png"),
+  BANNER_MEDIUM: getImageWithBunnyUrl("new-design/Thue-vps-manh/tablet-thue-vps-manh.png"),
+  BANNER_SMALL: getImageWithBunnyUrl("new-design/Thue-vps-manh/mobile-thue-vps-manh.png"),
   VPS1: getImageWithBunnyUrl("Desktop/Thue-VPS/anh-kien-truc-vps.png"),
   VPS2: getImageWithBunnyUrl("Desktop/Thue-VPS/anh-kien-truc-vps2.png"),
   UPDATING: getImageWithBunnyUrl("Desktop/Thue-VPS/updating2.gif"),
@@ -241,13 +241,13 @@ export const SSL_IMAGE = {
 
 export const PHYSICAL_IMAGE = {
   BANNER_LARGE: getImageWithBunnyUrl(
-    "Desktop/Thue-may-chu-vat-ly/banner-thuechodatmaychu.png"
+    "new-design/Thue-may-chu-vat-ly/desktop-thue-may-chu-vat-ly.png"
   ),
   BANNER_MEDIUM: getImageWithBunnyUrl(
-    "Tablet/Thue-may-chu-vat-ly/bg-thuemaychuvatly.png"
+    "new-design/Thue-may-chu-vat-ly/tablet-thue-may-chu-vat-ly.png"
   ),
   BANNER_SMALL: getImageWithBunnyUrl(
-    "Mobile/Thue-may-chu-vat-ly/bg-thuemaychuvatly.png"
+    "new-design/Thue-may-chu-vat-ly/mobile-thue-may-chu-vat-ly.png"
   ),
   BENEFIT: {
     FIRST: getImageWithBunnyUrl(
@@ -276,9 +276,9 @@ export const CONTACT_IMAGE = {
 };
 
 export const RECRUIT_IMAGE = {
-  BANNER_LARGE: getImageWithBunnyUrl("Desktop/Tuyen-dung/tuyen-dung.png"),
-  BANNER_MEDIUM: getImageWithBunnyUrl("Tablet/Tuyen-dung/tuyen-dung.png"),
-  BANNER_SMALL: getImageWithBunnyUrl("Mobile/Tuyen-dung/tuyen-dung.png"),
+  BANNER_LARGE: getImageWithBunnyUrl("new-design/tuyen-dung/desktop-tuyen-dung.png"),
+  BANNER_MEDIUM: getImageWithBunnyUrl("new-design/tuyen-dung/tablet-tuyen-dung.png"),
+  BANNER_SMALL: getImageWithBunnyUrl("new-design/tuyen-dung/mobile-tuyen-dung.png"),
   ILLUSTRATION: getImageWithBunnyUrl("Desktop/Tuyen-dung/anh-minh-hoa-4.png"),
 };
 

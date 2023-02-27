@@ -14,7 +14,8 @@ import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
+
 
 const banner = {
   large: PHYSICAL_IMAGE.BANNER_LARGE,
@@ -442,13 +443,16 @@ function RentPhysicalServerPage({ tags }: Props) {
         </title>
         <link rel="canonical" href="https://gofiber.vn/thue-may-chu-vat-ly" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="rent-vps">
         <section>
           <BannerV2Page
             image="https://gofiber.b-cdn.net/new-design/Thue-may-chu-vat-ly/desktop-thue-may-chu-vat-ly.png"
+            imageDesktop={banner.large}
+            imageSmall={banner.small}
+            imageTablet={banner.medium}
             name="Thuê máy chủ vật lý/ Thuê chỗ đặt máy chủ"
             extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
           />

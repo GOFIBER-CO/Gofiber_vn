@@ -12,8 +12,9 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
+
 
 const banner = {
   large: WEB_HOSTING_IMAGE.BANNER_LARGE,
@@ -349,6 +350,7 @@ type Props = {
 };
 
 function WebHostingPage({ tags }: Props) {
+
   const dispatch = useAppDispatch();
   const [packageSelect, setPackageSelect] = useState();
   const [hostings, setHostings] = useState<any[]>([]);
@@ -396,13 +398,17 @@ function WebHostingPage({ tags }: Props) {
         <title>Dịch vụ hosting và web hosting giá rẻ, free chứng chỉ SSL</title>
         <link rel="canonical" href="https://gofiber.vn/dich-vu-hosting-web-hosting-gia-re" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="web-hosting">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
+          imageDesktop="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
+          imageTablet="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
+          imageSmall="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
           name="Web Hosting"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
         />
@@ -570,7 +576,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const response = await SeoApi.getSeoByLink(params);
 
     const tags = response?.data?.data?.tags;
-
     return {
       props: {
         tags: tags?.map((item: any) => item?.value) || [],

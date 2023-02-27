@@ -95,6 +95,9 @@ function Service() {
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/dich-vu/desktop-dich-vu.png"
+          imageDesktop="https://gofiber.b-cdn.net/new-design/dich-vu/desktop-dich-vu.png"
+          imageTablet="https://gofiber.b-cdn.net/new-design/dich-vu/desktop-dich-vu.png"
+          imageSmall="https://gofiber.b-cdn.net/new-design/dich-vu/desktop-dich-vu.png"
           name="Dịch vụ"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
         />

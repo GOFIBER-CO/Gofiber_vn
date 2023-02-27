@@ -10,7 +10,7 @@ import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 
 type Props = {
   tags: any[];
@@ -31,13 +31,17 @@ function IntroductionPage({ tags }: Props) {
         </title>
         <link rel="canonical" href="https://gofiber.vn/gioi-thieu" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          
+          <React.Fragment key={index} >{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="introduction">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/gioi-thieu/desktop-gioi-thieu.png"
+          imageDesktop={banner.large}
+          imageTablet={banner.medium}
+          imageSmall={banner.small}
           name="Giới thiệu"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
         />

@@ -21,7 +21,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 
 const intraExtra = [
   {
@@ -94,7 +94,7 @@ function TestPage({ tags }: Props) {
         <title>Giải pháp công nghệ hàng đầu</title>
         <link rel="canonical" href="https://gofiber.vn/" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="home-v2">

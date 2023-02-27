@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 
 const banner = {
   large: CONTACT_IMAGE.BANNER_LARGE,
@@ -105,7 +105,7 @@ function ContactPage({ tags }: Props) {
         <title>Liên hệ Công ty TNHH Công Nghệ Phần Mềm Gofibe</title>
         <link rel="canonical" href="https://gofiber.vn/lien-he" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="contact">

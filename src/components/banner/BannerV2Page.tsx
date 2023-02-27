@@ -5,6 +5,8 @@ type Props = {
   image?: any;
   imageDesktop?: any;
   imageTablet?: any;
+  imageSmall?: any;
+
   name?: string;
   styleLinkName?: CSSProperties;
   styleBannerLinkLarge?: CSSProperties;
@@ -17,6 +19,7 @@ function BannerV2Page({
   image,
   imageDesktop,
   imageTablet,
+  imageSmall,
   name,
   styleLinkName = {},
   extra = "",
@@ -25,11 +28,27 @@ function BannerV2Page({
   styleBannerLinkSmall = { minWidth: "90%" },
 }: Props) {
   const [Image,setImage] = useState(image)
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  // Change image by responsive
   useEffect(() => {
-    let w = window.innerWidth;
-    let h = window.innerHeight;
+    const handleResize = () => {
+      
+      setWindowWidth(window.innerWidth)
+      if(window.innerWidth >= 1440 && imageDesktop !== undefined ){
+        setImage(imageDesktop)
+      }else if(window.innerWidth > 768  && window.innerWidth < 1439 && imageTablet !== undefined ){
+        setImage(imageTablet)
+  
+      }else if(window.innerWidth < 768 && imageSmall !== undefined ){
+        setImage(imageSmall)
+      }
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
     
-  });
+  },[]);
   return (
     <section id="section-banner-v2">
       {/* <div className="wrapper-banner large hide-for-medium">
@@ -106,7 +125,7 @@ function BannerV2Page({
         <div className="row banner-v2 align-items-center flex-row-reverse">
           <div className="col col-12 col-md-7">
             <div className="d-flex align-items-center justify-content-md-end">
-              <img src={image} alt={name} width={600} height={500} />
+              <img src={Image} alt={name} width={600} height={500} />
             </div>
           </div>
           <div className="col col-12 col-md-5 mt-4 mt-md-0">

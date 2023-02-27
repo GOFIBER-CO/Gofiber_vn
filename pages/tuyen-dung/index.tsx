@@ -10,7 +10,7 @@ import Skeleton from "react-loading-skeleton";
 import Head from "next/head";
 import { GetServerSidePropsContext } from "next";
 import { SeoApi } from "@/src/api/seo";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 const banner = {
@@ -205,13 +205,16 @@ function Recruit({ tags }: Props) {
         <title>Cơ hội việc làm với công ty công nghệ hàng đầu</title>
         <link rel="canonical" href="https://gofiber.vn/tuyen-dung" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="recruit">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/tuyen-dung/desktop-tuyen-dung.png"
+          imageDesktop={banner.large}
+          imageTablet={banner.medium}
+          imageSmall={banner.small}
           name="Tuyển dụng"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
         />

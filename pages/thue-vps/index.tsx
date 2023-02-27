@@ -12,7 +12,7 @@ import Head from "next/head";
 import { updateBuyPackage } from "@/src/redux/slice";
 import { GetServerSidePropsContext } from "next";
 import { SeoApi } from "@/src/api/seo";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 const banner = {
@@ -419,13 +419,16 @@ function RentVps({ tags }: Props) {
       <Head>
         <link rel="canonical" href="https://gofiber.vn/thue-vps" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="rent-vps">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
-          image="https://gofiber.b-cdn.net/new-design/Thue-vps-manh/tablet%20-%20thue-vps-manh.png"
+          image={banner.large}
+          imageSmall={banner.small}
+          imageTablet={banner.medium}
+          imageDesktop="https://gofiber.b-cdn.net/new-design/Thue-vps-manh/desktop-thue-vps-manh.png"          
           name="Thuê VPS Mạnh"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
         />

@@ -10,7 +10,7 @@ import { Icon } from "@iconify/react";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 
 const banner = {
   large: SSL_IMAGE.BANNER_LARGE,
@@ -253,7 +253,7 @@ function SSLPage({ tags }: Props) {
         <title>Chứng chỉ bảo mật cho website - Đăng ký SSL</title>
         <link rel="canonical" href="https://gofiber.vn/chung-chi-ssl" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="rent-vps">

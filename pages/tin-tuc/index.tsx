@@ -10,7 +10,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 const banner = {
@@ -164,7 +164,7 @@ function NewsPage({ tags }: Props) {
       <Head>
         <link rel="canonical" href="https://gofiber.vn/tin-tuc" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="recruit">

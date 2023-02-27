@@ -7,7 +7,7 @@ import { INTRODUCE_IMAGE, WEB_DESIGN_IMAGE } from "@/src/utils";
 import Head from "next/head";
 import { GetServerSidePropsContext } from "next";
 import { SeoApi } from "@/src/api/seo";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
 
 type Props = {
@@ -26,13 +26,16 @@ function WebDesign({ tags }: Props) {
       <Head>
         <link rel="canonical" href="https://gofiber.vn/thiet-ke-website" />
         {tags.map((tag, index) => (
-          <React.Fragment key={index}>{ReactHtmlParser(tag)}</React.Fragment>
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
       <div id="web-design">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
-          image="https://gofiber.b-cdn.net/new-design/thiet-ke-web/desktop-thiet-ke-web.png"
+          image= {banner.large}
+          imageDesktop={banner.large}
+          imageTablet={banner.medium}
+          imageSmall={banner.small}
           name="Thiết kế Website"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
         />
