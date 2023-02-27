@@ -170,19 +170,19 @@ export const WEB_DESIGN_IMAGE = {
 
 export const WEB_HOSTING_IMAGE = {
   BANNER_LARGE: getImageWithBunnyUrl(
-    "Desktop/dich-vu-hosting-web-hosting-gia-re/banner-webhosting.png"
+    "Desktop/Hosting-khung-gia-re/banner-webhosting.png"
   ),
   BANNER_MEDIUM: getImageWithBunnyUrl(
-    "Tablet/dich-vu-hosting-web-hosting-gia-re/bg-webhosting.png"
+    "Tablet/Hosting-khung-gia-re/bg-webhosting.png"
   ),
   BANNER_SMALL: getImageWithBunnyUrl(
-    "Mobile/dich-vu-hosting-web-hosting-gia-re/bg-webhosting.png"
+    "Mobile/Hosting-khung-gia-re/bg-webhosting.png"
   ),
   CLOUD1: getImageWithBunnyUrl(
-    "Desktop/dich-vu-hosting-web-hosting-gia-re/Cloud%20hosting-amico%201.png"
+    "Desktop/Hosting-khung-gia-re/Cloud%20hosting-amico%201.png"
   ),
   CLOUD2: getImageWithBunnyUrl(
-    "Desktop/dich-vu-hosting-web-hosting-gia-re/Cloud%20hosting-rafiki%201.png"
+    "Desktop/Hosting-khung-gia-re/Cloud%20hosting-rafiki%201.png"
   ),
 };
 
