@@ -24,7 +24,6 @@ function WebDesign({ tags }: Props) {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://gofiber.vn/thiet-ke-website" />
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

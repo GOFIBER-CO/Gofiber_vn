@@ -437,11 +437,7 @@ function RentPhysicalServerPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>
-          Thuê server, máy chủ vật lý, thuê chỗ đặt máy chủ vật lý giá rẻ và uy
-          tín
-        </title>
-        <link rel="canonical" href="https://gofiber.vn/thue-may-chu-vat-ly" />
+        
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

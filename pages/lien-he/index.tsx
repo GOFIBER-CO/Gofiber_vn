@@ -102,8 +102,6 @@ function ContactPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>Liên hệ Công ty TNHH Công Nghệ Phần Mềm Gofibe</title>
-        <link rel="canonical" href="https://gofiber.vn/lien-he" />
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

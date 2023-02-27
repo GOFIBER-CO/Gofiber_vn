@@ -22,7 +22,6 @@ function InformationSecurityPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://gofiber.vn/chinh-sach-bao-mat" />
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

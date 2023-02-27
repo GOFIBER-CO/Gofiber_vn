@@ -417,7 +417,6 @@ function RentVps({ tags }: Props) {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://gofiber.vn/thue-vps" />
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

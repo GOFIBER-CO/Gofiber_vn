@@ -26,10 +26,7 @@ function IntroductionPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>
-          Thông tin giới thiệu công ty TNHH Công Nghệ Phần Mềm Gofiber
-        </title>
-        <link rel="canonical" href="https://gofiber.vn/gioi-thieu" />
+        
         {tags.map((tag, index) => (
           
           <React.Fragment key={index} >{parse(tag)}</React.Fragment>

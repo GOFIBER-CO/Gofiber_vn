@@ -395,8 +395,7 @@ function WebHostingPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>Dịch vụ hosting và web hosting giá rẻ, free chứng chỉ SSL</title>
-        <link rel="canonical" href="https://gofiber.vn/dich-vu-hosting-web-hosting-gia-re" />
+     
         {tags.map((tag, index) => (
           
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>

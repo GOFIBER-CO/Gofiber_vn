@@ -22,8 +22,7 @@ function PaymentPolicyPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>Chính sách thanh toán</title>
-        <link rel="canonical" href="https://gofiber.vn/chinh-sach-thanh-toan" />
+     
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

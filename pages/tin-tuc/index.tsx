@@ -162,7 +162,6 @@ function NewsPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://gofiber.vn/tin-tuc" />
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

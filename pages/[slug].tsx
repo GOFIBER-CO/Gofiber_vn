@@ -21,7 +21,7 @@ const pageSize = 4;
 
 const SkeletonPage = () => (
   <div className="row">
-    <div className="col-12 col-md-8 content">
+    <div className="col-12 col-md-8 content mt-5">
       <Skeleton count={1} style={{ height: "48px" }} />
       <Skeleton
         style={{ width: "200px", height: "22px" }}
@@ -189,8 +189,8 @@ function NewsDetail({ title, description }: Props) {
   const render = {
     loading: <SkeletonPage />,
     notLoading: (
-      <div className="row">
-        <div className="col-12 col-md-8 content">
+      <div className="row " >
+        <div className="col-12 col-md-8 content " style={{marginTop: "160px"}}  >
           <h1>{title}</h1>
           <div className="mt-2 time">{getTime(data?.createdAt)}</div>
           <div className="mt-2">
@@ -267,7 +267,7 @@ function NewsDetail({ title, description }: Props) {
           className="col-12 col-md-4 hide-for-medium"
         >
           <div className="best-news">
-            <h4 className="h4 text-uppercase title">Xem nhiều nhất</h4>
+            <h4 className="h4 text-uppercase title ">Xem nhiều nhất</h4>
             {bestNews?.map((item, index) => (
               <React.Fragment key={index}>
                 <BestNews
@@ -286,6 +286,7 @@ function NewsDetail({ title, description }: Props) {
   };
 
   return (
+    
     <>
       <Head>
         <title>{title}</title>
@@ -294,7 +295,7 @@ function NewsDetail({ title, description }: Props) {
       </Head>
       <div id="news-detail">
         <div className="breadcrumb">
-          <div className="container">
+          <div className="container ">
             <div className="breadcrumb_container">
               <h2 className="h2 text-uppercase">Tin tức</h2>
               <div className="breadcrumb_link mt-2 flex-wrap hide-for-small">

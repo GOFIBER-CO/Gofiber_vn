@@ -6,6 +6,9 @@ import { ICON, SERVICE_IMAGE } from "@/src/utils";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import parse from 'html-react-parser';
+import { GetServerSidePropsContext } from "next";
+import { SeoApi } from "@/src/api/seo";
 
 const banner = {
   large: SERVICE_IMAGE.BANNER_LARGE,
@@ -85,11 +88,18 @@ const data = [
   },
 ];
 
-function Service() {
+type Props = {
+  tags: any[];
+};
+
+function Service({tags}: Props) {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://gofiber.vn/dich-vu" />
+      {tags.map((tag, index) => (
+          
+          <React.Fragment key={index}>{parse(tag)}</React.Fragment>
+        ))}
       </Head>
       <div id="service">
         <BannerV2Page
@@ -173,3 +183,24 @@ function Service() {
 }
 
 export default Service;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  try {
+    const params: any = {
+      link: "/dich-vu",
+      domain: process.env.NEXT_PUBLIC_DOMAIN,
+    };
+
+    const response = await SeoApi.getSeoByLink(params);
+
+    const tags = response?.data?.data?.tags;
+    return {
+      props: {
+        tags: tags?.map((item: any) => item?.value) || [],
+      },
+    };
+  } catch (error) {
+    return {
+      props: {},
+    };
+  }
+}

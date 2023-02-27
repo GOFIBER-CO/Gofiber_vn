@@ -250,8 +250,7 @@ function SSLPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>Chứng chỉ bảo mật cho website - Đăng ký SSL</title>
-        <link rel="canonical" href="https://gofiber.vn/chung-chi-ssl" />
+        
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}

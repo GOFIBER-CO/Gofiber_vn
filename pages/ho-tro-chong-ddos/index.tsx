@@ -458,10 +458,7 @@ function FirewallPage({ tags }: Props) {
   return (
     <>
       <Head>
-        <title>
-          Gofiber Next-Gen Firewall – Dịch vụ bảo mật tường lửa thế hệ mới
-        </title>
-        <link rel="canonical" href="https://gofiber.vn/dich-vu-firewall" />
+       
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
