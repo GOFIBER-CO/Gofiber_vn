@@ -1,8 +1,10 @@
 import Link from "next/link";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 
 type Props = {
   image?: any;
+  imageDesktop?: any;
+  imageTablet?: any;
   name?: string;
   styleLinkName?: CSSProperties;
   styleBannerLinkLarge?: CSSProperties;
@@ -10,9 +12,11 @@ type Props = {
   styleBannerLinkSmall?: CSSProperties;
   extra?: string;
 };
-
+// Change Image Responsive
 function BannerV2Page({
   image,
+  imageDesktop,
+  imageTablet,
   name,
   styleLinkName = {},
   extra = "",
@@ -20,6 +24,12 @@ function BannerV2Page({
   styleBannerLinkMedium = { minWidth: "50%" },
   styleBannerLinkSmall = { minWidth: "90%" },
 }: Props) {
+  const [Image,setImage] = useState(image)
+  useEffect(() => {
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+    
+  });
   return (
     <section id="section-banner-v2">
       {/* <div className="wrapper-banner large hide-for-medium">
