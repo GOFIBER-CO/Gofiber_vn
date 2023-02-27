@@ -211,7 +211,7 @@ function Recruit({ tags }: Props) {
       <div id="recruit">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
-          image="https://gofiber.b-cdn.net/new-design/tuyen-dung/desktop-tuyen-dung.png"
+          image="https://gofiber.b-cdn.net/new-design/tuyen-dung/dt-tuyen-dung.png"
           imageDesktop={banner.large}
           imageTablet={banner.medium}
           imageSmall={banner.small}

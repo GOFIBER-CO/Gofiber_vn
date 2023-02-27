@@ -32,8 +32,8 @@ function WebDesign({ tags }: Props) {
       <div id="web-design">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
-          image= {banner.large}
-          imageDesktop={banner.large}
+          image={"https://gofiber.b-cdn.net/new-design/thiet-ke-web/dt-thiet-ke-web.png"}
+          imageDesktop={"https://gofiber.b-cdn.net/new-design/thiet-ke-web/dt-thiet-ke-web.png"}
           imageTablet={banner.medium}
           imageSmall={banner.small}
           name="Thiết kế Website"
