@@ -3,7 +3,6 @@ import * as Yup from 'yup'
 export const fromTuyenDungvalidationSchema = Yup.object().shape({
     file: Yup.mixed()
     .test('fileType', 'Bạn vui lòng chọn đúng định dạng', (value :any) => {
-      console.log(value)
       if (!value) {
         // No file was selected
         return false
@@ -12,14 +11,12 @@ export const fromTuyenDungvalidationSchema = Yup.object().shape({
       // Get the file extension
       const fileExtension = value.name.split('.').pop().toLowerCase()
       // Check if the file extension is valid
-      if( ['pdf', 'png', 'jpg'].includes(fileExtension) )
+      if( ['pdf', 'png', 'jpg','jepg'].includes(fileExtension) )
       {
-        console.log(1)
 
         return true
       }else
       {
-        console.log(2)
         return false
       }
     })

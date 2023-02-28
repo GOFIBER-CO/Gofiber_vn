@@ -95,17 +95,14 @@ function RecruitDetail({ title }: Props) {
     formData.append("email", values.number);
     formData.append("role", values.role);
 
-    console.log(values);
-    try {
-      const response = await fetch("/upload", {
-        method: "POST",
-        body: formData,
-      });
+    // try {
+    //   const response = await fetch("/upload", {
+    //     method: "POST",
+    //     body: formData,
+    //   });
 
-      console.log(response); // handle response from server
-    } catch (error) {
-      console.error(error);
-    }
+    // } catch (error) {
+    // }
   };
 
   const [selectedOption, setSelectedOption] = useState(options[0].value);
@@ -384,13 +381,12 @@ function RecruitDetail({ title }: Props) {
                     setFieldValue,
                   }) => (
                     <>
-                      {console.log(values.file)}
                       <Form>
                         <div className="application_job">
                           <h4 className="h4 title">Nộp đơn ứng tuyển</h4>
                           <div className="mt-10">
                             <label className="d-block">
-                              Cv/Sơ yếu lý lịch (pdf, jpg, png){" "}
+                              Cv/Sơ yếu lý lịch (pdf, jpg, png,jpeg, docx, doc){" "}
                               {errors.file && (
                                 <strong style={{ color: "red" }}>*</strong>
                               )}
@@ -407,7 +403,7 @@ function RecruitDetail({ title }: Props) {
                               }}
                             />
                           </div>
-                          {touched.file && errors.file && (
+                          { errors.file && (
                             <div className="mx-2">
                               {" "}
                               <span className="text-danger font-weight-bold">
