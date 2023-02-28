@@ -11,7 +11,7 @@ export const fromTuyenDungvalidationSchema = Yup.object().shape({
       // Get the file extension
       const fileExtension = value.name.split('.').pop().toLowerCase()
       // Check if the file extension is valid
-      if( ['pdf', 'png', 'jpg','jepg'].includes(fileExtension) )
+      if( ['pdf', 'png', 'jpg','jpeg','docx','doc'].includes(fileExtension) )
       {
 
         return true

@@ -544,38 +544,7 @@ function RentPhysicalServerPage({ tags }: Props) {
             </div>
           </section>
 
-          <section className="section-physical-server-place">
-            <div className="text-center pt-4">
-              <h3 className="h3">
-                Nơi đặt máy chủ uy tín hàng đầu tại Việt Nam
-              </h3>
-            </div>
-            <div className="row justify-content-center hide-for-medium mt-4">
-              {physicalServerPlace.map((item) => (
-                <div className="col col-12 col-md-4" key={item.id}>
-                  <div className="image">
-                    <img
-                      width={150}
-                      height={100}
-                      src={item.image}
-                      alt={item.id}
-                    />
-                  </div>
-                  <div className="mt-4">
-                    {item.data.map((e, index) => (
-                      <div key={index} className="text-icon-price mt-2">
-                        <Link href={e.link} className="a d-flex">
-                          <Icon className={`blue`} icon={ICON.CHECKED} />
-                          <p className="px-2">{e.name}</p>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <SliderPhysicalServerPlace data={physicalServerPlace} />
-          </section>
+         
         </div>
 
         <section className="section-hire">
