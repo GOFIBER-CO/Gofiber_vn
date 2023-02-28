@@ -141,7 +141,7 @@ function SearchBar({ isFixed = false, visibleFixed = false }: Props) {
   };
 
   return (
-    <div className="hide-for-small">
+    <div className="">
       <div className={`search-bar ${visibleSearch ? "show" : ""}`}>
         <div className="wrapper-search-bar">
           <input

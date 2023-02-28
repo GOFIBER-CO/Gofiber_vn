@@ -34,7 +34,7 @@ const items: MenuProps["items"] = [
   getItem("Dịch vụ", "2", null, [
     getItem(
       "Thiết kế Website",
-      "/thiet-ke-website",
+      "/dich-vu-thiet-ke-website-chuyen-nghiep",
       <Image
         className="menu_icon"
         src={require("@/public/images/icons/icon-1.svg")}

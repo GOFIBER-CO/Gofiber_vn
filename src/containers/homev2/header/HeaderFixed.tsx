@@ -25,11 +25,11 @@ function HeaderFixed({
   const dispatch = useAppDispatch();
   const { drawer } = useAppSelector((state) => state.home);
   const { visibleSearch } = useAppSelector((state) => state.home);
-
+  const [visibleSearchBar,setVisibleSearchBar] = useState<any>(false)
   const handleChangeVisibleSearch = (value: boolean) => {
     dispatch(updateVisibleSearch(value));
+    setVisibleSearchBar(value)
   };
-
   return (
     <div id="header-fixed" className={`${visible && !drawer ? "show" : ""}`}>
       <div className="container">
@@ -99,7 +99,7 @@ function HeaderFixed({
           />
         </div>
 
-        <div className="menu-lv2-medium show-for-968">
+        <div className="menu-lv2-medium show-for-968 ">
           <Link className="a" href="/">
             <Image
               id="logo"

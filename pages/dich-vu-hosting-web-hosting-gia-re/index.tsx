@@ -33,7 +33,7 @@ const data = [
     id: "2",
     title: "Thiết kế Website",
     className: "second",
-    link: "/thiet-ke-website",
+    link: "/dich-vu-thiet-ke-website-chuyen-nghiep",
   },
   {
     id: "3",

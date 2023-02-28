@@ -6,7 +6,7 @@ const menu = [
   {
     title: "Thiết kế website",
     image: require("@/public/images/menu/web-design.svg"),
-    link: "/thiet-ke-website",
+    link: "/dich-vu-thiet-ke-website-chuyen-nghiep",
   },
   {
     title: "Hosting khủng giá rẻ",

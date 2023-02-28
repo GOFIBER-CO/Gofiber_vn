@@ -532,7 +532,7 @@ export default RentVps;
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const params: any = {
-      link: "/tin-tuc",
+      link: "/thue-vps",
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 

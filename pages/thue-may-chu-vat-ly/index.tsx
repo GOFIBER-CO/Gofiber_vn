@@ -607,7 +607,7 @@ export default RentPhysicalServerPage;
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const params: any = {
-      link: "/",
+      link: "/thue-may-chu-vat-ly",
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 

@@ -26,7 +26,7 @@ const data = [
     image: SERVICE_IMAGE.MY_SERVICE.WEB_DESIGN,
     class: "flex-row-reverse",
     aos: ["fade-left", "fade-right"],
-    link: "/thiet-ke-website",
+    link: "/dich-vu-thiet-ke-website-chuyen-nghiep",
   },
   {
     id: "2",

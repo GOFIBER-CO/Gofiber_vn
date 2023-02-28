@@ -7,6 +7,11 @@ const nextConfig = {
         destination: '/dich-vu-hosting-web-hosting-gia-re',
         permanent: true,
       },
+      {
+        source: '/thiet-ke-website',
+        destination: '/dich-vu-thiet-ke-website-chuyen-nghiep',
+        permanent: true,
+      },
     ]
   },
   typescript: {

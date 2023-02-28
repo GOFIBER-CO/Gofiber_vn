@@ -198,7 +198,7 @@ export default WebDesign;
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const params: any = {
-      link: "/thiet-ke-website",
+      link: "/dich-vu-thiet-ke-website-chuyen-nghiep",
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 

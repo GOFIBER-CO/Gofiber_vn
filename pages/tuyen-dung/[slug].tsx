@@ -8,7 +8,7 @@ import {
   getRelativeRecruits,
 } from "@/src/redux/slice/recruitSlice";
 import { convertObjectToQuery, formatNumber } from "@/src/utils";
-import { Form } from "antd";
+import { fromTuyenDungvalidationSchema } from "@/src/utils/fromvalidation";
 import moment from "moment";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
@@ -16,7 +16,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 const data = [
   {
     id: 1,
@@ -78,7 +80,35 @@ function RecruitDetail({ title }: Props) {
   const [recruit, setRecruit] = useState<any>({});
   const [relativeRecruits, setRelativeRecruits] = useState<any[]>([]);
   const [file, setFile] = useState<any>(null);
+  const options = [
+    { value: "", text: "--Bạn hãy chọn vị trí--" },
+    { value: "SEO", text: "SEO" },
+    { value: "Developer", text: "Developer" },
+    { value: "Hr", text: "Hr" },
+    { value: "Sales", text: "Sales" },
+  ];
+  const handleSubmit = async (values: any) => {
+    const formData = new FormData();
+    formData.append("name", values.name);
+    formData.append("number", values.number);
+    formData.append("file", values.file);
+    formData.append("email", values.number);
+    formData.append("role", values.role);
 
+    console.log(values);
+    try {
+      const response = await fetch("/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      console.log(response); // handle response from server
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const [selectedOption, setSelectedOption] = useState(options[0].value);
   const getRecruit = async (slug: any) => {
     try {
       const params = {
@@ -334,40 +364,153 @@ function RecruitDetail({ title }: Props) {
               </div>
 
               <div className="col col-12 col-md-8 mt-3">
-                <div className="application_job">
-                  <h4 className="h4 title">Nộp đơn ứng tuyển</h4>
-                  <div className="mt-4">
-                    <label className="d-block">Cv/Sơ yếu lý lịch</label>
-                    <button type="button" className="btn0 btn-upload mt-2">
-                      Click để tải lên CV/ Sơ yếu lí lịch của bạn
-                    </button>
-                  </div>
-                  <div className="mt-4">
-                    <label className="d-block">
-                      Họ và tên <strong style={{ color: "red" }}>*</strong>
-                    </label>
-                    <input className="mt-2" />
-                  </div>
-                  <div className="mt-4">
-                    <label className="d-block">
-                      Email <strong style={{ color: "red" }}>*</strong>
-                    </label>
-                    <input className="mt-2" />
-                  </div>
-                  <div className="mt-4">
-                    <label className="d-block">
-                      Số điện thoại <strong style={{ color: "red" }}>*</strong>
-                    </label>
-                    <input className="mt-2" />
-                  </div>
-                  <button
-                    onClick={(e) => null}
-                    type="submit"
-                    className="btn0 btn-application mt-4 "
-                  >
-                    Nộp hồ sơ ngay
-                  </button>
-                </div>
+                <Formik
+                  initialValues={{
+                    file: null as any,
+                    role: "" as string,
+                    name: "" as string,
+                    number: "" as string,
+                    email: "" as string,
+                  }}
+                  onSubmit={handleSubmit}
+                  validationSchema={fromTuyenDungvalidationSchema as any}
+                >
+                  {({
+                    values,
+                    errors,
+                    handleChange,
+                    touched,
+                    isSubmitting,
+                    setFieldValue,
+                  }) => (
+                    <>
+                      {console.log(values.file)}
+                      <Form>
+                        <div className="application_job">
+                          <h4 className="h4 title">Nộp đơn ứng tuyển</h4>
+                          <div className="mt-10">
+                            <label className="d-block">
+                              Cv/Sơ yếu lý lịch (pdf, jpg, png){" "}
+                              {errors.file && (
+                                <strong style={{ color: "red" }}>*</strong>
+                              )}
+                            </label>
+                            <input
+                              type="file"
+                              className="btn0 btn-upload mt-2 "
+                              onChange={(event: any) => {
+                                setFieldValue("file", event?.target?.files[0]);
+                              }}
+                              style={{
+                                paddingBottom: "60px",
+                                paddingLeft: "40px",
+                              }}
+                            />
+                          </div>
+                          {touched.file && errors.file && (
+                            <div className="mx-2">
+                              {" "}
+                              <span className="text-danger font-weight-bold">
+                                {errors.file as any}
+                              </span>
+                            </div>
+                          )}
+                          <div className="mt-4">
+                            <label className="d-block">
+                              Chọn Vị Trí{" "}
+                              {touched.role && errors.role && (
+                                <strong style={{ color: "red" }}>*</strong>
+                              )}
+                            </label>
+                            <select
+                              name="role"
+                              className="form-select"
+                              aria-label="Default select example"
+                              value={values.role}
+                              onChange={handleChange}
+                            >
+                              {options.map((option) => (
+                                <option
+                                  key={option.value}
+                                  value={option.value}
+                                  label={option.value}
+                                >
+                                  {option.text}
+                                </option>
+                              ))}
+                            </select>
+                            {touched.role && errors.role && (
+                              <div className="mx-2">
+                                {" "}
+                                <span className="text-danger font-weight-bold">
+                                  {errors.name}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <div className="mt-4">
+                            <label className="d-block">
+                              Họ và tên{" "}
+                              {errors.name && (
+                                <strong style={{ color: "red" }}>*</strong>
+                              )}
+                            </label>
+                            <Field name="name" type="text" className="mt-2" />
+                            {touched.name && errors.name && (
+                              <div className="mx-2">
+                                {" "}
+                                <span className="text-danger font-weight-bold">
+                                  {errors.name}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <div className="mt-2">
+                            <label className="d-block">
+                              Email{" "}
+                              {errors.email && (
+                                <strong style={{ color: "red" }}>*</strong>
+                              )}
+                            </label>
+                            <Field name="email" type="text" className="mt-2" />
+                          </div>
+                          {touched.email && errors.email && (
+                            <div className="mx-2">
+                              {" "}
+                              <span className="text-danger font-weight-bold">
+                                {errors.email}
+                              </span>
+                            </div>
+                          )}
+                          <div className="mt-4">
+                            <label className="d-block">
+                              Số điện thoại{" "}
+                              {errors.number && (
+                                <strong style={{ color: "red" }}>*</strong>
+                              )}
+                            </label>
+                            <Field name="number" type="text" className="mt-2" />
+                            {touched.number && errors.number && (
+                              <div className="mx-2">
+                                {" "}
+                                <span className="text-danger font-weight-bold">
+                                  {errors.number}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <button
+                            onClick={(e) => null}
+                            type="submit"
+                            className="btn0 btn-application mt-4 "
+                          >
+                            Nộp hồ sơ ngay
+                          </button>
+                        </div>
+                      </Form>
+                    </>
+                  )}
+                </Formik>
               </div>
             </div>
           </section>

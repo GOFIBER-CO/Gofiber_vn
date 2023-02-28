@@ -130,25 +130,19 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <Provider store={store}>
-      <SkeletonTheme baseColor={"#ebfbff"} highlightColor={"#96eaff"}>
-        <FpjsProvider
-          loadOptions={{
-            apiKey: env.FP_PUBLIC_API_KEY || "",
-          }}
-        >
-          <Script
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
+    <>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', 'G-J21MM63QMB');`,
-            }}
-          ></Script>
-          <Script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: `{
+        }}
+      ></Script>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `{
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
                 "mainEntity": [
@@ -251,56 +245,64 @@ export default function App({ Component, pageProps }: AppProps) {
                 ]
               }
               `,
-            }}
-          ></Script>
-          <Script
-            dangerouslySetInnerHTML={{
-              __html: `
+        }}
+      ></Script>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
             window.__lc = window.__lc || {};
             window.__lc.license = 15101298;
             ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
             `,
+        }}
+      ></Script>
+      <Provider store={store}>
+        <SkeletonTheme baseColor={"#ebfbff"} highlightColor={"#96eaff"}>
+          <FpjsProvider
+            loadOptions={{
+              apiKey: env.FP_PUBLIC_API_KEY || "",
             }}
-          ></Script>
-          <noscript>
-            <a
-              href="https://www.livechat.com/chat-with/15101298/"
-              rel="nofollow"
-            >
-              Chat with us
-            </a>
-            , powered by{" "}
-            <a
-              href="https://www.livechat.com/?welcome"
-              rel="noopener nofollow noreferrer"
-              target="_blank"
-            >
-              LiveChat
-            </a>
-          </noscript>
-          <Head>
-            <meta
-              name="google-site-verification"
-              content="MGEbcIEmyG0Sp5dKi1iy07QOlgtTlUUMhjdqZfw9wsc"
-            />
-            <meta
-              name="dmca-site-verification"
-              content="VTVITzZSMUZ5VEhGNG83TUJKanRyZz090"
-            />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0"
-            />
-            <title>
-              Gofiber Hosting và Máy chủ hiệu năng cao - Gofiber.vn - Giới thiệu
-              sản phẩm
-            </title>
-          </Head>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </FpjsProvider>
-      </SkeletonTheme>
-    </Provider>
+          >
+            <noscript>
+              <a
+                href="https://www.livechat.com/chat-with/15101298/"
+                rel="nofollow"
+              >
+                Chat with us
+              </a>
+              , powered by{" "}
+              <a
+                href="https://www.livechat.com/?welcome"
+                rel="noopener nofollow noreferrer"
+                target="_blank"
+              >
+                LiveChat
+              </a>
+            </noscript>
+            <Head>
+              <meta
+                name="google-site-verification"
+                content="MGEbcIEmyG0Sp5dKi1iy07QOlgtTlUUMhjdqZfw9wsc"
+              />
+              <meta
+                name="dmca-site-verification"
+                content="VTVITzZSMUZ5VEhGNG83TUJKanRyZz090"
+              />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+              />
+              <title>
+                Gofiber Hosting và Máy chủ hiệu năng cao - Gofiber.vn - Giới
+                thiệu sản phẩm
+              </title>
+            </Head>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </FpjsProvider>
+        </SkeletonTheme>
+      </Provider>
+    </>
   );
 }
