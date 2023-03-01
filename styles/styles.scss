@@ -2137,14 +2137,48 @@ img {
 
 #recruit-detail {
   .banner-page {
-    &.image-large {
+    &.image-large-for-default {
       background-image: url("../public/images/recruit/recuit-detail/banner-large.png");
     }
 
-    &.image-medium {
+    &.image-medium-for-default {
       background-image: url("../public/images/recruit/recuit-detail/banner-medium.png");
     }
+    &.image-large-for-IT {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/desktop-background-information technology.png");
+    }
+    &.image-large-for-seo {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/desktop-background-seo.png");
+    }
+    &.image-large-for-sales {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/desktop-background-nhan-vien-kinh-doanh.png");
+    }
+    &.image-large-for-system {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/desktop-background-system-admin.png");
+    }
+    &.image-large-for-mobile {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/desktop-background-mobile-developer.png");
+    }
+    &.image-large-for-content-seo {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/desktop-background-content-seo.png");
+    }
 
+    &.image-medium-for-IT {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-information-technology.png");
+    }
+    &.image-medium-for-seo {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-seo.png");
+    }
+    &.image-medium-for-sales {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-nhan-vien-kinh-doanh.png");
+    }
+    &.image-medium-for-system {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-system-admin.png");
+    }
+
+    &.image-medium-for-content-seo {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-content-seo.png");
+    }
     .banner-link {
       text-align: left;
       h3 {

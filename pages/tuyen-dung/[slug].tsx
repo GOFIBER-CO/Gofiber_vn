@@ -78,6 +78,31 @@ function RecruitDetail({ title }: Props) {
   const router = useRouter();
   const { slug } = router.query;
   const [recruit, setRecruit] = useState<any>({});
+  const [typeImage, setTypeImage] = useState<any>("");
+  useState(() => {
+    const handleChangeUrl = async () => {
+      if (slug == "nhan-vien-it-cty-gofiber") {
+        setTypeImage("for-IT")
+      } else if (slug == "nhan-vien-content-seo-cty-gofiber") {
+        setTypeImage("for-content-seo")
+      } else if (slug == "mobile-developer") {
+        setTypeImage("for-mobile")
+      } else if (slug == "system-admin-cty-gofiber") {
+        setTypeImage("for-system")
+      } else if (slug == "nhan-vien-sale-cty-gofiber") {
+        setTypeImage("for-sales")
+      } else if (slug == "nhan-vien-seo-cty-gofiber") {
+        setTypeImage("for-seo")
+
+      }
+      else {
+        setTypeImage("for-default")
+      }
+    }
+    handleChangeUrl()
+
+  })
+
   const [relativeRecruits, setRelativeRecruits] = useState<any[]>([]);
   const [file, setFile] = useState<any>(null);
   const options = [
@@ -105,7 +130,6 @@ function RecruitDetail({ title }: Props) {
     // }
   };
 
-  const [selectedOption, setSelectedOption] = useState(options[0].value);
   const getRecruit = async (slug: any) => {
     try {
       const params = {
@@ -160,12 +184,12 @@ function RecruitDetail({ title }: Props) {
       </Head>
       <div id="recruit-detail">
         <section>
-          <div className="banner banner-page image-large hide-for-medium">
+          <div className={`banner  banner-page  image-large-${typeImage} hide-for-medium`} >
             <div className="fill">
               <div className="banner-bg fill">
                 <div className="banner-layers">
-                  <div className="banner-link large" style={{ width: "60%" }}>
-                    <h1 className="h1 text-uppercase">{title}</h1>
+                  <div className="banner-link large" style={{ width: "60%", marginLeft: "60px" }}>
+                    <h1 className="h1 text-uppercase" style={{ marginTop: "30px" }}>{title}</h1>
                     <div className="mt-2 text-icon-info d-flex align-items-start">
                       <Image
                         src={require("@/public/images/icons/calendar.svg")}
@@ -210,7 +234,7 @@ function RecruitDetail({ title }: Props) {
             </div>
           </div>
 
-          <div className="banner banner-page image-medium show-for-medium">
+          <div className={`banner banner-page image-medium-${typeImage} show-for-medium`}>
             <div className="fill">
               <div className="banner-bg fill">
                 <div className="banner-layers">
@@ -403,7 +427,7 @@ function RecruitDetail({ title }: Props) {
                               }}
                             />
                           </div>
-                          { errors.file && (
+                          {errors.file && (
                             <div className="mx-2">
                               {" "}
                               <span className="text-danger font-weight-bold">
