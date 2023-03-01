@@ -79,6 +79,8 @@ function RecruitDetail({ title }: Props) {
   const { slug } = router.query;
   const [recruit, setRecruit] = useState<any>({});
   const [typeImage, setTypeImage] = useState<any>("");
+  const [resMessage, setResMessage] = useState<any>("");
+  const [loadingState, setLoadingState] = useState<any>(null)
   useState(() => {
     const handleChangeUrl = async () => {
       if (slug == "nhan-vien-it-cty-gofiber") {
@@ -113,13 +115,30 @@ function RecruitDetail({ title }: Props) {
     { value: "Sales", text: "Sales" },
   ];
   const handleSubmit = async (values: any) => {
-    const formData = new FormData();
+    const Baseurl = ""
+    var formData = new FormData();
     formData.append("name", values.name);
     formData.append("number", values.number);
     formData.append("file", values.file);
     formData.append("email", values.number);
     formData.append("role", values.role);
 
+
+    setLoadingState(true)
+    await axios({
+      url: "https://api.gofiber.vn/api/uploadCV",
+      method: "POST", data: formData, headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }
+    ).then(response => {
+      setResMessage(response.data.result)
+    }).catch(error => {
+
+      setResMessage(error)
+
+    });
+    setLoadingState(false)
     // try {
     //   const response = await fetch("/upload", {
     //     method: "POST",
@@ -164,7 +183,6 @@ function RecruitDetail({ title }: Props) {
       console.log(error);
     }
   };
-
   useEffect(() => {
     if (slug) {
       getRecruit(slug);
@@ -172,9 +190,6 @@ function RecruitDetail({ title }: Props) {
     }
   }, [slug]);
 
-  const handleFileChange = (e: any) => {
-    setFile(e.target.files[0]);
-  };
 
   return (
     <>
@@ -189,7 +204,7 @@ function RecruitDetail({ title }: Props) {
               <div className="banner-bg fill">
                 <div className="banner-layers">
                   <div className="banner-link large" style={{ width: "60%", marginLeft: "60px" }}>
-                    <h1 className="h1 text-uppercase" style={{ marginTop: "30px" }}>{title}</h1>
+                    <h1 className="h1 text-uppercase" style={{ marginTop: "30px" }}>{recruit?.title}</h1>
                     <div className="mt-2 text-icon-info d-flex align-items-start">
                       <Image
                         src={require("@/public/images/icons/calendar.svg")}
@@ -234,7 +249,7 @@ function RecruitDetail({ title }: Props) {
             </div>
           </div>
 
-          <div className={`banner banner-page image-medium-${typeImage} show-for-medium`}>
+          <div className={`banner banner-page image-medium-${typeImage} show-for-medium  `}>
             <div className="fill">
               <div className="banner-bg fill">
                 <div className="banner-layers">
@@ -281,6 +296,54 @@ function RecruitDetail({ title }: Props) {
               </div>
             </div>
           </div>
+          <div className={`banner banner-page image-medium-${typeImage} show-for-small hide-for-medium hide-for-large`}>
+            <div className="fill">
+              <div className="banner-bg fill">
+                <div className="banner-layers">
+                  <div className="banner-link large" style={{ width: "80%" }}>
+                    <h3 className="h3 text-uppercase">{recruit?.title}</h3>
+                    <div className="mt-2 text-icon-info d-flex align-items-start">
+                      <Image
+                        src={require("@/public/images/icons/calendar.svg")}
+                        alt={"Thời gian"}
+                      />
+                      <span>{moment().format("DD/MM/YYYY")}</span>
+                    </div>
+                    <div className="mt-2 text-icon-info d-flex align-items-start">
+                      <Image
+                        src={require("@/public/images/icons/dollar-circle.svg")}
+                        alt={"Thời gian"}
+                      />
+                      <span>
+                        Lương:{" "}
+                        <strong className="color_primary">
+                          {formatNumber(recruit?.fromSalary)} -{" "}
+                          {formatNumber(recruit?.toSalary)} VNĐ
+                        </strong>
+                      </span>
+                    </div>
+                    <div className="mt-3">
+                      <TextIconButton type="button" name="Nộp đơn ứng tuyển" />
+                    </div>
+                    <div className="d-flex">
+                      <div className="link d-flex align-items-center justify-content-center mt-4">
+                        <Link className="a" href="/">
+                          Trang chủ
+                        </Link>
+                        <a className="mx-2 a">{">"}</a>
+                        <Link className="a" href="/tuyen-dung">
+                          Tuyển dụng
+                        </Link>
+                        <a className="mx-2 a">{">"}</a>
+                        <a>Chi tiết</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </section>
 
         <div className="container">
@@ -402,6 +465,7 @@ function RecruitDetail({ title }: Props) {
                     handleChange,
                     touched,
                     isSubmitting,
+                    isValid,
                     setFieldValue,
                   }) => (
                     <>
@@ -519,12 +583,18 @@ function RecruitDetail({ title }: Props) {
                               </div>
                             )}
                           </div>
+                          {resMessage !== "" ?
+                            <div className=" my-3"> <span className={`mx-auto text-success  font-weight-bold`}>
+                              {resMessage}
+                            </span></div> : null}
                           <button
+                            disabled={!isValid}
+
                             onClick={(e) => null}
                             type="submit"
-                            className="btn0 btn-application mt-4 "
+                            className={`btn0 btn-application mt-3  ${!isValid && "opacity-25 cursor-not-allowed"} mt - 4`}
                           >
-                            Nộp hồ sơ ngay
+                            Đang bài vào đây
                           </button>
                         </div>
                       </Form>
@@ -543,7 +613,7 @@ function RecruitDetail({ title }: Props) {
                 {relativeRecruits.map((item, index) => (
                   <RecruitItem
                     item={item}
-                    wrapperClassName={`col col-12 col-sm-6 col-lg-4 secondary`}
+                    wrapperClassName={`col col - 12 col - sm - 6 col - lg - 4 secondary`}
                     key={index}
                   />
                 ))}
@@ -566,10 +636,11 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 
-    const url = `/recruits/getRecruitBySlug` + convertObjectToQuery(params);
+    const url = `/ recruits / getRecruitBySlug` + convertObjectToQuery(params);
 
     const response = await fetchApi().get(url);
     const title = response?.data?.data?.title;
+    console.log(title)
 
     if (!title) {
       return {
