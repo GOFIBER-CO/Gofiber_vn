@@ -23,7 +23,7 @@ const menuLv2 = [
   {
     id: 1,
     name: "Hosting",
-    link: "/dich-vu-hosting-web-hosting-gia-re",
+    link: "/dich-vu-hosting",
   },
   {
     id: 2,
@@ -84,9 +84,8 @@ function HeaderV2() {
         <div className="header-v2">
           <div
             style={{ display: "flex" }}
-            className={`menu-lv1 align-items-center justify-content-between py-3 hide-for-small ${
-              drawer ? "d-none" : ""
-            }`}
+            className={`menu-lv1 align-items-center justify-content-between py-3 hide-for-small ${drawer ? "d-none" : ""
+              }`}
           >
             <div className="hot-line">Hotline: 0985 07 85 07</div>
             <ul className="ul d-flex">

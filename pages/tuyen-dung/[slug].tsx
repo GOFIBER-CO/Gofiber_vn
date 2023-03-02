@@ -640,7 +640,6 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
 
     const response = await fetchApi().get(url);
     const title = response?.data?.data?.title;
-    console.log(title)
 
     if (!title) {
       return {

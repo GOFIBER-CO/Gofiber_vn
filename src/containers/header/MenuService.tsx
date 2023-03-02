@@ -11,7 +11,8 @@ const menu = [
   {
     title: "Hosting khủng giá rẻ",
     image: require("@/public/images/menu/web-hosting.svg"),
-    link: "/dich-vu-hosting-web-hosting-gia-re",
+    link: "/dich-vu-hosting
+",
   },
   {
     title: "Hỗ trợ chống DDos",

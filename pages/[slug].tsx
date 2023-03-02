@@ -190,13 +190,13 @@ function NewsDetail({ title, description }: Props) {
     loading: <SkeletonPage />,
     notLoading: (
       <div className="row " >
-        <div className="col-12 col-md-8 content " style={{marginTop: "80px"}}  >
-          <h1 style={{fontSize:"32px", marginBottom:"16px"}}>{title}</h1>
-          <div className="mt-2 time"  style={{marginBottom:"16px"}} >{getTime(data?.createdAt)}</div>
-          <div className="mt-2" style={{marginBottom:"16px"}}>
+        <div className="col-12 col-md-8 content " style={{ marginTop: "80px" }}  >
+          <h1 style={{ fontSize: "32px", marginBottom: "16px" }}>{title}</h1>
+          <div className="mt-2 time" style={{ marginBottom: "16px" }} >{getTime(data?.createdAt)}</div>
+          <div className="mt-2" style={{ marginBottom: "16px" }}>
             <div dangerouslySetInnerHTML={{ __html: data?.description }}></div>
           </div>
-          <div className="mt-4" style={{marginBottom:"16px"}}>
+          <div className="mt-4" style={{ marginBottom: "16px" }}>
             <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
           </div>
           <div className="relative-news">
@@ -267,7 +267,7 @@ function NewsDetail({ title, description }: Props) {
           className="col-12 col-md-4 hide-for-medium"
         >
           <div className="best-news">
-            <h4 className="h4 text-uppercase title " style={{fontWeight:100, marginTop:"70px"}} >Xem nhiều nhất</h4>
+            <h4 className="h4 text-uppercase title " style={{ fontWeight: 100, marginTop: "70px" }} >Xem nhiều nhất</h4>
             {bestNews?.map((item, index) => (
               <React.Fragment key={index}>
                 <BestNews
@@ -286,18 +286,17 @@ function NewsDetail({ title, description }: Props) {
   };
 
   return (
-    
+
     <>
       <Head>
         <title>{title}</title>
-        <link rel="canonical" href="https://gofiber.vn/" />
+        <link rel="canonical" href={`https://gofiber.vn/${slug}`} />
         <meta name="description" content={description} />
       </Head>
       <div id="news-detail">
         <div className="breadcrumb">
           <div className="container ">
             <div className="breadcrumb_container">
-              <h2 className="h2 text-uppercase">Tin tức</h2>
               <div className="breadcrumb_link mt-2 flex-wrap hide-for-small">
                 <Link className="a" href="/">
                   Trang chủ

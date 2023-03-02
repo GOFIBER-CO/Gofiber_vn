@@ -43,8 +43,8 @@ const items: MenuProps["items"] = [
     ),
     getItem(
       "Hosting khủng giá rẻ ",
-      "/dich-vu-hosting-web-hosting-gia-re",
-      <Image
+      "/dich-vu-hosting",
+      < Image
         className="menu_icon"
         src={require("@/public/images/icons/icon-2.svg")}
         alt="Hosting khủng giá rẻ"
@@ -110,7 +110,8 @@ function DrawerMenu({ onClose, visible }: Props) {
     onClose();
   };
 
-  return (
+  return (<>
+
     <div>
       <Drawer
         onClose={onClose}
@@ -148,7 +149,7 @@ function DrawerMenu({ onClose, visible }: Props) {
         </ul>
       </Drawer>
     </div>
-  );
+  </>);
 }
 
 export default DrawerMenu;

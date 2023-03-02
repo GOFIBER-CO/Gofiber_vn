@@ -11,7 +11,7 @@ const data = [
      Do vậy, chúng tôi luôn cố gắng mang đến cho khách hàng dịch vụ hosting chất lượng cùng cam kết uptime lên đến 99,9%.`,
     image: HOME2_IMAGE.HOT_SERVICE.WEB_HOSTING,
     class: "flex-row-reverse",
-    link: "/dich-vu-hosting-web-hosting-gia-re",
+    link: "/dich-vu-hosting",
     classText: "align-items-start align-items-lg-end",
   },
   {

@@ -41,7 +41,7 @@ const data = [
         `,
     image: SERVICE_IMAGE.MY_SERVICE.WEB_HOSTING,
     aos: ["fade-right", "fade-left"],
-    link: "/dich-vu-hosting-web-hosting-gia-re",
+    link: "/dich-vu-hosting",
   },
   {
     id: "3",
@@ -92,12 +92,12 @@ type Props = {
   tags: any[];
 };
 
-function Service({tags}: Props) {
+function Service({ tags }: Props) {
   return (
     <>
       <Head>
-      {tags.map((tag, index) => (
-          
+        {tags.map((tag, index) => (
+
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
@@ -134,9 +134,8 @@ function Service({tags}: Props) {
             {data.map((item: any, index: number) => (
               <div
                 key={index}
-                className={`mt-4 row justify-content-center align-items-center ${
-                  item?.class ? item?.class : ""
-                }`}
+                className={`mt-4 row justify-content-center align-items-center ${item?.class ? item?.class : ""
+                  }`}
               >
                 <div
                   className="col col-12 col-md-6 mx-0"

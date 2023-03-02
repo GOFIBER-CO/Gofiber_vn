@@ -27,7 +27,7 @@ const data = [
     id: "1",
     title: "Web Hosting",
     className: "first",
-    link: "/dich-vu-hosting-web-hosting-gia-re",
+    link: "/dich-vu-hosting",
   },
   {
     id: "2",
@@ -395,9 +395,9 @@ function WebHostingPage({ tags }: Props) {
   return (
     <>
       <Head>
-     
+
         {tags.map((tag, index) => (
-          
+
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
@@ -568,7 +568,7 @@ export default WebHostingPage;
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const params: any = {
-      link: "/dich-vu-hosting-web-hosting-gia-re",
+      link: "/dich-vu-hosting",
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 
