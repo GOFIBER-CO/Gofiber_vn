@@ -11,7 +11,7 @@ type Props = {
 
 function NewItem({ wrapperClassName, item }: Props) {
   return (
-    <div className={`${wrapperClassName}`}>
+    <div className={`${wrapperClassName} `}>
       <div style={{ height: "auto" }} className="recruit-item mt-4">
         <Link className="a" href={`/${item.slug}`}>
           <div className="img">
@@ -23,8 +23,8 @@ function NewItem({ wrapperClassName, item }: Props) {
               height={100}
             />
           </div>
-          <div className="recruit-info">
-            <div className="title number_line_1">{item.title}</div>
+          <div className="recruit-info mx-4 mt-3 pb-3">
+            <div className="title number_line_1  ">{item.title}</div>
             <p className="mt-2 mb-0 number_line_3">{item.description}</p>
           </div>
         </Link>

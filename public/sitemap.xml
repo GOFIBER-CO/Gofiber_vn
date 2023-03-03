@@ -3,4 +3,10 @@
 <sitemap><loc>https://gofiber.vn/sitemap-0.xml</loc></sitemap>
 <sitemap><loc>https://gofiber.vn/sitemap.xml</loc></sitemap>
 <sitemap><loc>https://gofiber.vn/post-sitemap.xml</loc></sitemap>
+<url>
+<loc>https://gofiber.vn/tuyen-dung</loc>
+<lastmod>2023-02-15T07:15:03.013Z</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.7</priority>
+</url>
 </sitemapindex>

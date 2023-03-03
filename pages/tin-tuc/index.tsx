@@ -117,20 +117,17 @@ function NewsPage({ tags }: Props) {
                   alt="Hiện tại không có bài viết1"
                 />
               </div>
-              <h4 className="h4 text-center">Hiện tại không có tuyển dụng</h4>
+              <h4 className="h4 text-center">Hiện tại không có bài viết</h4>
             </div>
           </div>
         ) : (
           <>
             <div className="row">
+
               {news.map((item, index) => (
                 <NewItem
                   item={item}
-                  wrapperClassName={`col ${
-                    index === -1
-                      ? "col-12 primary"
-                      : "col-12 col-md-6 mt-4 secondary"
-                  }`}
+                  wrapperClassName={`col-lg-4 `}
                   key={index}
                 />
               ))}

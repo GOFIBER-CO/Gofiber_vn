@@ -613,7 +613,7 @@ function RecruitDetail({ title }: Props) {
                 {relativeRecruits.map((item, index) => (
                   <RecruitItem
                     item={item}
-                    wrapperClassName={`col col - 12 col - sm - 6 col - lg - 4 secondary`}
+                    wrapperClassName={`col col-12 col-sm-6 col-lg-4 secondary`}
                     key={index}
                   />
                 ))}
