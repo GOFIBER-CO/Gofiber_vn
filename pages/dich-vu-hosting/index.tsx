@@ -511,27 +511,7 @@ function WebHostingPage({ tags }: Props) {
           </div>
         </section>
 
-        <section className="section-search-other container">
-          <h3 className="h3 text-center">Bạn đang cần tìm gì khác?</h3>
-          <div className="section-search-other__list hide-for-small">
-            <div className="row justify-content-center">
-              {data.map((item) => (
-                <div
-                  key={item.id}
-                  className="col col-12 col-md-6 col-lg-4 mt-4"
-                >
-                  <div
-                    className={`d-flex align-items-center justify-content-center section-search-other__item section-search-other__item__${item.className}`}
-                  >
-                    <Link className="a" href={item.link}>
-                      {item.title}
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         <Question showContent={false} data={question} />
 

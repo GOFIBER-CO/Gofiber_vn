@@ -1,20 +1,20 @@
 import fs from "fs";
 import { Feed } from "feed";
 import { PostApi } from "./../api/post"
-const SITE_URL = "http://gofiber:3000"
+const SITE_URL = "https://gofiber.vn"
 const generateRssFeed = async () => {
     const posts = await PostApi.getAllPost();
     const date = new Date();
     const author = {
         name: "Gofiber",
-        email: "Gofiber",
+        email: "Gofiber@gmail.com",
     };
     const feed = new Feed({
         title: "Gofiber",
         description: "",
         id: SITE_URL,
         link: SITE_URL,
-        image: `${SITE_URL}/logo.svg`,
+        image: `${SITE_URL}/logo`,
         favicon: `${SITE_URL}/favicon.png`,
         copyright: `All rights reserved ${new Date(date).getFullYear()}`,
         updated: date,

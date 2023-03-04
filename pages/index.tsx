@@ -22,6 +22,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import parse from 'html-react-parser';
+import Script from "next/script";
 
 const intraExtra = [
   {
@@ -97,7 +98,21 @@ function TestPage({ tags }: Props) {
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
-      
+
+      <Script type="text/javascript" async src={`https://www.googletagmanager.com/gtag/js?id=G-J21MM63QMB`} />
+      <Script
+        id='google-analytics'
+        dangerouslySetInnerHTML={{
+          __html: `<!-- Google tag (gtag.js) -->
+         
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-J21MM63QMB');
+          `,
+        }}
+      />
       <div id="home-v2">
         <section className="intro">
           <div className="container">

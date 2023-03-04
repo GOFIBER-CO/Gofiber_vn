@@ -131,14 +131,21 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+
+      <Script type="text/javascript" async src={`https://www.googletagmanager.com/gtag/js?id=G-J21MM63QMB`} />
       <Script
         dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-J21MM63QMB');`,
+          __html: `<!-- Google tag (gtag.js) -->
+         
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-J21MM63QMB');
+          `,
         }}
-      ></Script>
+      />
+
       <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
