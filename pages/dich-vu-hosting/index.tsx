@@ -511,7 +511,7 @@ function WebHostingPage({ tags }: Props) {
           </div>
         </section>
 
-
+        <div className="row justify-content-center align-items-center mt-4 w-screen" style={{ height: "533px", backgroundColor: "red", left: "0" }}></div>
 
         <Question showContent={false} data={question} />
 
@@ -538,7 +538,7 @@ function WebHostingPage({ tags }: Props) {
         {/* <Contact /> */}
 
         <BuyPackage packageSelect={packageSelect} />
-      </div>
+      </div >
     </>
   );
 }
