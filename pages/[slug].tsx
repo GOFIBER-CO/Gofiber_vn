@@ -90,7 +90,7 @@ function NewsDetail({ title, description }: Props) {
   const [bestNews, setBestNews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
-
+  console.log(data)
   const getNewsByDomain = async (slug: any) => {
     try {
       setIsLoading(true);
@@ -158,8 +158,15 @@ function NewsDetail({ title, description }: Props) {
   }, [slug]);
 
   const getTime = (time: any) => {
+    const date = new Date(time);
+    const dateString = date.toLocaleDateString(); // returns "3/6/2023" (or equivalent in your local time zone)
+    const timeString = date.toLocaleTimeString(); // returns "9:32:50 AM" (or equivalent in your local time zone)
+    const weekday = date.toLocaleString('vi-VN', { weekday: 'long' });
+    console.log(weekday)
+    console.log(dateString)
+    console.log(timeString)
     const string = moment().format("dddd, DD/MM/YYYY, hh:mm");
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return weekday + ", " + dateString + ", " + timeString
   };
 
   const fetchMoreData = async () => {

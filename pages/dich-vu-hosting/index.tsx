@@ -540,7 +540,7 @@ function WebHostingPage({ tags }: Props) {
         </div>
       </section> */}
         {/* <Contact /> */}
-
+        <Contact showTitle={false} />
         <BuyPackage packageSelect={packageSelect} />
       </div >
     </>
