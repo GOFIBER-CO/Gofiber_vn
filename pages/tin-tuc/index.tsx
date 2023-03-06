@@ -114,7 +114,7 @@ function NewsPage({ tags }: Props) {
               <div className="img">
                 <Image
                   src={require("@/public/images/nodata.png")}
-                  alt="Hiện tại không có bài viết1"
+                  alt="Hiện tại không có bài viết"
                 />
               </div>
               <h4 className="h4 text-center">Hiện tại không có bài viết</h4>
@@ -127,7 +127,7 @@ function NewsPage({ tags }: Props) {
               {news.map((item, index) => (
                 <NewItem
                   item={item}
-                  wrapperClassName={`col-lg-4 `}
+                  wrapperClassName={`col-lg-4 col-md-6 `}
                   key={index}
                 />
               ))}

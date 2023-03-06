@@ -30,7 +30,18 @@ export const PostApi = {
       throw error;
     }
   },
+  getAllPostByCate: async () => {
+    const url = pathname + `/posts/getPaging`;
 
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/getAllPostByCate"
+      );
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
   getNewsBySlug: async (params: any) => {
     const query = convertObjectToQuery(params);
 

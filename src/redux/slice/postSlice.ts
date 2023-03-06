@@ -20,7 +20,6 @@ export const getPagingByDomain = createAsyncThunk(
   async (params: any) => {
     try {
       const result = await PostApi.getPagingByDomain(params);
-
       return result;
     } catch (error: any) {
       console.log(error);

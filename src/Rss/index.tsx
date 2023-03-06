@@ -3,7 +3,8 @@ import { Feed } from "feed";
 import { PostApi } from "./../api/post"
 const SITE_URL = "https://gofiber.vn"
 const generateRssFeed = async () => {
-    const posts = await PostApi.getAllPost();
+    const posts = await PostApi.getAllPostByCate();
+
     const date = new Date();
     const author = {
         name: "Gofiber",
@@ -38,12 +39,13 @@ const generateRssFeed = async () => {
             author: [author],
             contributor: [author],
             date: new Date(post.createdAt),
-        });
-    });
-    fs.mkdirSync("../public/rss", { recursive: true });
-    fs.writeFileSync("../public/rss/feed.xml", feed.rss2());
-    fs.writeFileSync("../public/rss/atom.xml", feed.atom1());
-    fs.writeFileSync("../public/rss/feed.json", feed.json1());
-    return true
+            category: post.currentNameCate
+        })
+        // fs.mkdirSync("../public/rss", { recursive: true });
+        // fs.writeFileSync("../public/rss/feed.xml", feed.rss2());
+        // fs.writeFileSync("../public/rss/atom.xml", feed.atom1());
+        // fs.writeFileSync("../public/rss/feed.json", feed.json1());
+        return true
+    })
 };
 export default generateRssFeed;

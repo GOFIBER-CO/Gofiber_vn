@@ -25,7 +25,7 @@ function NewItem({ wrapperClassName, item }: Props) {
           </div>
           <div className="recruit-info mx-4 mt-3 pb-3">
             <div className="title number_line_1  ">{item.title}</div>
-            <p className="mt-2 mb-0 number_line_3">{item.description}</p>
+            <p className="mt-2 mb-0 number_line_3" dangerouslySetInnerHTML={{ __html: item?.description }}></p>
           </div>
         </Link>
       </div>

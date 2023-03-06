@@ -14,6 +14,8 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
+import BannerForHosting from "@/src/components/banner/BannerforHosting";
+import Banner from "@/src/components/body/banner";
 
 
 const banner = {
@@ -405,7 +407,7 @@ function WebHostingPage({ tags }: Props) {
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
-          imageDesktop="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
+          imageDesktop="https://gofiber.b-cdn.net/new-design/Web-Hosting/dt-web-hosting.png"
           imageTablet="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
           imageSmall="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
           name="Web Hosting"
@@ -436,6 +438,8 @@ function WebHostingPage({ tags }: Props) {
             </div>
           </section>
         </div>
+        <Banner />
+        <BannerForHosting imageDesktop="https://gofiber.b-cdn.net/new-design/Web-Hosting/banner.png" imageTablet="https://gofiber.b-cdn.net/new-design/Web-Hosting/banner-tablet.png" imageSmall="https://gofiber.b-cdn.net/new-design/Web-Hosting/banner-mobile.png" />
         <section className="section-info-web-hosting">
           <div className="container">
             <div className="row justify-content-center align-items-center flex-row-reverse">
@@ -449,6 +453,7 @@ function WebHostingPage({ tags }: Props) {
                   />
                 </div>
               </div>
+
               <div className="col col-12 col-md-6">
                 <h4 className="h4">Chuyên gia hỗ trợ hosting 24/7</h4>
                 <p>
@@ -511,7 +516,6 @@ function WebHostingPage({ tags }: Props) {
           </div>
         </section>
 
-        <div className="row justify-content-center align-items-center mt-4 w-screen" style={{ height: "533px", backgroundColor: "red", left: "0" }}></div>
 
         <Question showContent={false} data={question} />
 

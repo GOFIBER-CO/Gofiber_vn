@@ -160,6 +160,54 @@ html {
   line-height: 42px;
   font-size: 0.85rem;
 }
+.btnHosting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 10px;
+
+  width: 100px;
+  height: 56px;
+
+  /* Gradientttt */
+
+  background: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
+  border-radius: 39px;
+  border: none;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.btnHostingFalse {
+  /* Button */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 10px;
+
+  height: 56px;
+
+  /* Text 8 */
+
+  background: #fafafa;
+  border: none;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
 
 .button_effect,
 .button_text_icon {
