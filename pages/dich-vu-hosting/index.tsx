@@ -66,85 +66,28 @@ const data = [
 const question = [
   {
     id: "1",
-    title: "Web Hosting là gì?",
+    title: "Tôi có dự án ở lớp cần có thể cài đặt website ASP/ ASP.NET, dịch vụ hosting GOFIBER có hỗ trợ không?",
     content: (
       <>
-        <p>
-          Nhằm tránh việc nhầm lẫn định nghĩa của host, nếu host cung cấp dịch
-          vụ nào đó, dịch vụ đó sẽ được nói rõ và dùng server thay vì dùng host.
-        </p>
-        <p>
-          Các định nghĩa đầy đủ về hosting phải là hosting server nhưng thường
-          được viết tắt là hosting.
-        </p>
-        <p>
-          Ví dụ: Web hosting là dịch vụ mà một tổ chức (A) cung cấp tài nguyên
-          của server cho một tổ chức khác (gọi là B) để sử dụng tài nguyên đó
-          làm host cho trang web của mình.
-        </p>
-        <p>
-          Lúc này A và B đều là nhà cung cấp dịch vụ: A cung cấp web hosting cho
-          B, B cung cấp dịch vụ web cho người dùng.
-        </p>
-        <p>
-          Để tránh nhầm lẫn, trong hai cách gọi web host/web server và mail
-          host/mail server thì web server và mail server được sử dụng nhiều hơn.
-          Còn lại web hosting, cloud hosting, email hosting được dùng để chỉ nhà
-          cung cấp dịch vụ host.
-        </p>
-        <p>
-          Nếu chú ý, bạn sẽ thấy rằng khi search “web host” trên Google kết quả
-          trả về sẽ là “web hosting”.
-        </p>
+        <p><span >Ngo&agrave;i c&aacute;c g&oacute;i dịch vụ hosting tr&ecirc;n Linux, thường chuy&ecirc;n dụng cho web hosting chạy PHP v&agrave; MySQL, GOFIBER cũng cung cấp c&aacute;c g&oacute;i dịch vụ hosting tr&ecirc;n Windows. Sản phẩm web hosting chạy Windows l&agrave; một trong những sản phẩm l&yacute; tưởng v&agrave; chuy&ecirc;n dụng d&agrave;nh cho website ph&aacute;t triển tr&ecirc;n m&atilde; nguồn ASP/ ASP.NET.</span></p>
       </>
     ),
   },
   {
     id: "2",
-    title: "Web Hosting hoạt động như thế nào?",
+    title: "Dịch vụ hosting của GOFIBER hỗ trợ tôi cài đặt website thế nào?",
     content: (
       <>
-        <p>
-          Khi thuê hosting, khách hàng sẽ được cung cấp một server lưu trữ. Khi
-          web hoạt động trên Internet, server này có nhiệm vụ truyền tải nội
-          dung, tập tin từ phía server lên trình duyệt để người dùng đọc và hiểu
-          các thông tin trên website.
-        </p>
-        <p>
-          Tùy mức gói cước mà nhà cung cấp sẽ cấu hình theo thông số hosting
-          khách hàng sử dụng. Trong quá trình sử dụng, nếu người thuê có nhu cầu
-          nâng cấp hay giảm gói hosting thì nhà cung cấp sẽ điều chỉnh lại những
-          thông số này.
-        </p>
-        <p>
-          Phía người dùng chỉ cần upload files và cấu hình các thông tin cần
-          thiết. Bên cạnh đó, người dùng có thể truy cập vào quản lý hosting
-          thông qua FTP hoặc truy cập địa chỉ IP hay địa chỉ tên miền của
-          hosting.
-        </p>
+        <p dir="ltr" >Với c&aacute;c g&oacute;i web hosting gi&aacute; rẻ đến cao cấp của dịch vụ hosting tại GOFIBER th&igrave; qu&yacute; kh&aacute;ch lu&ocirc;n c&oacute; thể y&ecirc;u cầu nh&acirc;n vi&ecirc;n kỹ thuật hỗ trợ khi gặp vấn đề trong việc c&agrave;i đặt WordPress. Đặc biệt, c&aacute;c g&oacute;i Hosting WordPress tại GOFIBER c&ograve;n được t&iacute;ch hợp sẵn c&aacute;c phần mềm hỗ trợ tr&ecirc;n tầng server nhằm gi&uacute;p c&aacute;c website WordPress vận h&agrave;nh tối ưu hơn.</p>
       </>
     ),
   },
   {
     id: "3",
-    title: "Hosting ảnh hưởng như thế nào đến SEO ?",
+    title: "Nâng cấp gói hosting như thế nào? Có ảnh hưởng gì đến các trang web đang chạy hay không ?",
     content: (
       <>
-        <p>
-          Bạn cần dùng dịch vụ Web Hosting nếu muốn đăng trang Web lên Internet.
-          Khi người dùng muốn xem trang web của bạn, họ chỉ cần nhập tên miền
-          hoặc địa chỉ IP của trang Web vào trình duyệt.
-        </p>
-        <p>
-          Khi khách truy cập vào trang web của bạn, máy tính của họ sẽ kết nối
-          với máy chủ của bạn. Khi ấy trang Web của bạn sẽ được chuyển đến họ
-          thông qua trình duyệt.
-        </p>
-        <p>
-          Web Hosting ảnh hưởng đến quá trình SEO khi nó là một trong những yếu
-          tố được Google xem xét và quyết định Website nào sẽ hiển thị cho truy
-          vấn tìm kiếm.
-        </p>
+        <p dir="ltr" >Bạn c&oacute; thể chọn để n&acirc;ng cấp c&aacute;c g&oacute;i dịch vụ hosting m&agrave; m&igrave;nh đang sử dụng bất cứ l&uacute;c n&agrave;o m&agrave; kh&ocirc;ng phải lo việc ảnh hưởng đến c&aacute;c trang web đang chạy. Việc n&acirc;ng cấp g&oacute;i hosting d&ugrave; l&agrave; về dung lượng SSD, CORE hay RAM đều được diễn ra ở thượng tầng m&aacute;y chủ. Việc gi&aacute;n đoạn dịch vụ nếu c&oacute; cũng chỉ mất khoảng một ph&uacute;t để c&aacute;c kỹ thuật vi&ecirc;n restart lại hệ thống sau khi n&acirc;ng cấp.</p>
         {/* <p>
           <ul style={{ listStyle: "outside" }}>
             <li>
@@ -173,7 +116,7 @@ const question = [
             </li>
           </ul>
         </p> */}
-        <p>
+        {/* <p>
           Nếu bạn chọn Hosting kém chất lượng, tốc độ tải trang Web sẽ chậm, khi
           ấy trải nghiệm khách hàng sẽ giảm xuống và trang của bạn có thể bị
           Google phạt dẫn đến thứ hạng của trang trong kết quả tìm kiếm bị giảm.
@@ -192,13 +135,13 @@ const question = [
           đến quá trình SEO của bạn. Ví dụ Web có Robot.txt để giúp người dùng
           quản lý công cụ tìm kiếm mà nhà cung cấp không biết và xóa đi sẽ ảnh
           hưởng đến cấu hình Website.
-        </p>
+        </p> */}
       </>
     ),
   },
   {
     id: "4",
-    title: "Mối quan hệ giữa Hosting và Domain",
+    title: "Nên sử dụng hosting có dung lượng bao nhiêu?",
     content: (
       <>
         {/* <p>
@@ -214,49 +157,17 @@ const question = [
           Không có tên miền thì sẽ không có cách nào để tìm ra website và nếu
           không có hosting thì bạn không cách nào để xây website được.
         </p> */}
-        <p>
-          <strong>Hosting</strong> và <strong>Domain</strong> là 2 dịch vụ khác
-          nhau. Một website phải có cả hai dịch vụ trên thì mới có thể hoạt động
-          bình thường.
-        </p>
-        <p>
-          1 hệ thống tên miền cũng giống 1 cuốn danh bạ thường xuyên được
-          update. Sau mỗi tên miền là địa chỉ của dịch vụ lưu trữ file của mỗi
-          website
-        </p>
-        <p>
-          Nếu không có tên miền thì sẽ không có cách nào tìm ra website. Và nếu
-          không có hosting thì bạn không thể xây website được.
-        </p>
+        <p dir="ltr" >Mức dung lượng (disk space) của hosting m&agrave; bạn cần thường sẽ t&ugrave;y thuộc ho&agrave;n to&agrave;n v&agrave;o nhu cầu sử dụng của bạn. Với c&aacute;c trang web đơn giản, &iacute;t h&igrave;nh ảnh v&agrave; c&aacute;c định dạng media th&igrave; chỉ cần một web hosting khoản từ 5-10GB. Tại GOFIBER, qu&yacute; kh&aacute;ch c&oacute; thể n&acirc;ng cấp g&oacute;i dịch vụ lưu trữ của web hosting l&ecirc;n bất cứ l&uacute;c n&agrave;o.</p>
       </>
     ),
   },
   {
     id: "5",
-    title: "Sự khác nhau giữa Domain và Hosting là gì",
+    title: "Các phiên bản PHP hỗ trợ trên hosting GOFIBER ",
     content: (
       <>
-        <p>
-          Cả hai yếu tố Domain và Web Hosting hoạt động song song với nhau. Tuy
-          nhiên, giữa hosting và domain cũng có sự khác biệt. Vậy điểm khác nhau
-          giữa hosting và domain là gì?
-        </p>
-        <p>
-          Dưới đây là một{" "}
-          <strong>số sự khác biệt giữa hosting và domain</strong> mà bạn cần
-          biết trước khi chuẩn bị tạo trang web cho mình.
-        </p>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <strong>Domain</strong>
-              </td>
-              <td>
-                <strong>Hosting</strong>
-              </td>
-            </tr>
-            {/* <tr>
+        <p>Tất cả m&aacute;y chủ hosting tại GOFIBER đều hỗ trợ PHP 5.6 đến PHP 8.1 hoặc hơn, đảm bảo tương th&iacute;ch với mọi m&atilde; nguồn website. Hệ quản trị cơ sở dữ liệu (database) sử dụng MariaDB 10.2 đến mới nhất, hoặc MySQL phi&ecirc;n bản từ 5.1 đến 5.5.</p>
+        {/* <tr>
               <td>
                 Domain là&nbsp;<strong>địa chỉ giúp nhận dạng</strong>&nbsp;hoặc
                 một địa chỉ có tên của một địa điểm internet.
@@ -294,45 +205,69 @@ const question = [
               </td>
             </tr> */}
 
-            <tr>
+      </>
+    ),
+  },
+  {
+    id: "6",
+    title: "Hosting giá rẻ: của rẻ có bị ôi?",
+    content: (
+      <>
+        {/* <tr>
               <td>
-                Domain là một địa chỉ có tên của một địa điểm internet cũng như
-                là địa chỉ giúp nhận dạng.
+                Domain là&nbsp;<strong>địa chỉ giúp nhận dạng</strong>&nbsp;hoặc
+                một địa chỉ có tên của một địa điểm internet.
               </td>
               <td>
-                Hosting là dịch vụ lưu trữ dữ liệu được chia nhỏ thành các máy
-                chủ (server), giúp bạn dễ dàng đăng tải và xuất bản website và
-                app lên internet.
+                Hosting là&nbsp;<strong>không gian lưu trữ</strong>&nbsp;để xuất
+                bản website hay ứng dụng lên internet.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Domain là&nbsp;giúp&nbsp;<strong>phân biệt trang web</strong>
+                &nbsp;của bạn với những trang web khác và mang dấu ấn thương
+                hiệu riêng của bạn.
+              </td>
+              <td>
+                Hosting&nbsp;
+                <strong>
+                  cung cấp không gian và tài nguyên để trang web hoạt động
+                </strong>
+                &nbsp;cũng là nơi lưu trữ dữ liệu website, trong đó có cả lưu
+                trữ domain.
               </td>
             </tr>
             <tr>
               <td>
-                Domain giúp mang lại dấu ấn thương hiệu qua việc phân biệt trang
-                web của bạn với những trang web khác.
+                Tên miền (domain) của mỗi trang web đều phải được đăng kí theo
+                đúng quy trình. Tên miền của mỗi website là&nbsp;
+                <strong>riêng biệt và không trùng nhau</strong>.
               </td>
               <td>
-                Hosting cung cấp tài nguyên và không gian để trang web hoạt động
-                đồng thời là nơi lưu trữ dữ liệu website, trong đó có cả domain.
+                Hosting có thể thuê hoặc mua tùy theo nhu cầu sử dụng. Các trang
+                web&nbsp;<strong>có thể dùng chung Hosting</strong>&nbsp;với
+                nhau.
               </td>
-            </tr>
+            </tr> */}
+        <p>Nhiều người cho rằng hosting gi&aacute; rẻ kh&ocirc;ng bao giờ mang lại chất lượng cao, song nhận định n&agrave;y kh&ocirc;ng hẳn đ&uacute;ng. Tr&ecirc;n thực tế, t&ugrave;y v&agrave;o mục đ&iacute;ch v&agrave; nhu cầu sử dụng của doanh nghiệp m&agrave; bạn cần c&aacute;c g&oacute;i hosting kh&aacute;c nhau.&nbsp;</p>
+        <p>
 
-            <tr>
-              <td>
-                Tên miền của của mỗi website không giống nhau và phải được đăng
-                ký theo đúng quy trình.
-              </td>
-              <td>
-                Các trang web có thể dùng chung một hosting. Bạn có thể mua hoặc
-                thuê hosting tùy theo nhu cầu sử dụng.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        </p>
+        <p>Nếu l&agrave; c&aacute; nh&acirc;n hoặc doanh nghiệp nhỏ, qu&yacute; kh&aacute;ch ho&agrave;n to&agrave;n c&oacute; thể chọn g&oacute;i hosting gi&aacute; rẻ để tối ưu chi ph&iacute;. Sau một thời gian hoạt động nếu doanh nghiệp cần kh&ocirc;ng gian lưu trữ lớn hơn l&uacute;c đ&oacute; c&oacute; thể n&acirc;ng cấp hosting cũng kh&ocirc;ng muộn.</p>
+
       </>
     ),
   },
 ];
-
+const dataForBanner = [
+  "Bảng điều khiển cPanel",
+  "Bảo mật với CloudLinux, Imunify360",
+  "Hỗ trợ kỹ thuật 24/7",
+  "Dùng thử 5 ngày, hoàn tiền 30 ngày",
+  "Miễn phí chuyển dữ liệu",
+  "LiteSpeed Web Server Enterprise"
+]
 const SkeletonSlide = () => (
   <div className="row mt-4 justify-content-center">
     {[
@@ -408,35 +343,19 @@ function WebHostingPage({ tags }: Props) {
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
           imageDesktop="https://gofiber.b-cdn.net/new-design/Web-Hosting/dt-web-hosting.png"
-          imageTablet="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
-          imageSmall="https://gofiber.b-cdn.net/new-design/Web-Hosting/desktop-web-hosting.png"
-          name="Web Hosting"
-          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+          imageSmall="https://gofiber.b-cdn.net/new-design/Web-Hosting/mb-web-hosting.png"
+          imageTablet="https://gofiber.b-cdn.net/new-design/Web-Hosting/tl-web-hosting.png"
+          name="Dịch vụ hosting,
+          web hosting giá rẻ"
+          divImport="true"
+          data={dataForBanner}
+          extra="Các dịch vụ công nghệ do GOFIBER cung cấp như dịch vụ hosting, web hosting giá rẻ,... mang đến sự khác biệt với tính ổn định cao, tốc độ truy cập nhanh, UPTIME lên đến 99%, miễn phí chứng chỉ SSL trọn đời, hỗ trợ kỹ thuật 24/7."
+          extra1="Hosting giá rẻ cao cấp tại GOFIBER được trang bị ổ cứng NVMe và SSD Enterprise RAID-10, hỗ trợ đắc lực cho tốc độ truy cập của website, cùng băng thông không giới hạn đáp ứng nhu cầu của đại đa số các khách hàng hiện nay."
         />
 
-        <div className="container">
-          <section className="mt-4 text-center">
-            <h3 className="h3 mt-4">
-              Mua Hosting đang được tin dùng bởi hàng ngàn người
-            </h3>
-            <p className="mt-3">
-              GoFiber là nhà cung cấp dịch vụ lưu trữ web hosting được đánh giá
-              “tuyệt vời” bởi hàng ngàn người dùng thực tế.
-            </p>
-          </section>
-          <section className="section-hosting-price">
-            <h3 className="h3 text-center">Bảng giá hosting</h3>
-            <div>
-              {isLoading
-                ? renderSlideHire["loading"]
-                : renderSlideHire["notLoading"]}
-            </div>
-            <div className="mt-4 text-center">
-              <Link className="a" href="/chinh-sach-thanh-toan">
-                <span className="color_primary">Điều khoản thanh toán</span>
-              </Link>
-            </div>
-          </section>
+        <div className="containerForHosting" style={{ maxWidth: "910px" }}>
+
+
         </div>
         <Banner />
         <BannerForHosting imageDesktop="https://gofiber.b-cdn.net/new-design/Web-Hosting/banner.png" imageTablet="https://gofiber.b-cdn.net/new-design/Web-Hosting/banner-tablet.png" imageSmall="https://gofiber.b-cdn.net/new-design/Web-Hosting/banner-mobile.png" />

@@ -44,7 +44,7 @@ function BannerForHosting({ imageDesktop, imageTablet, imageSmall }: Props) {
                         <p className="text-left text-white ">Để hỗ trợ tốt hơn cho các khách hàng sử dụng dịch vụ Web hosting cao cấp hay WordPress hosting tại GOFIBER, chúng tôi hân hạnh được hỗ trợ các plugin và theme bản quyền sau: Astra Pro (hosting giá rẻ), Astra Lifetime (gói PRO trở lên), WP Rocket, Rank Math Pro,... với tổng giá trị quà tặng lên đến $2000. Tất cả plugin và theme được hỗ trợ cập nhật tự động.</p>
                         <button
                             className="btn0 btn-intro d-flex align-items-center btn-white-to-primary"
-                            style={{ padding: "8px 22px", borderRadius: "8px" }}
+                            style={{ padding: "8px 22px", borderRadius: "32px" }}
                         >
                             {/* <img src={ICON_IMAGE.MESSENGER} width={24} height={24} /> */}
                             <span>Tìm hiểu</span>

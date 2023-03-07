@@ -68,7 +68,7 @@ function Question({ data = dummyData, showContent = true }: Props) {
 
   return (
     <section className="section-question">
-      <div className="section-content position-relative">
+      <div className="section-content position-relative" >
         <Image
           src={require("@/public/images/introduction/Torus1.png")}
           alt="Torus1"
@@ -80,7 +80,7 @@ function Question({ data = dummyData, showContent = true }: Props) {
           className="img-torus img-torus__bottom"
         />
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" >
           <div className="col col-12 col-lg-8">
             <TitleWithLine
               title="CÂU HỎI THƯỜNG GẶP"
@@ -93,8 +93,8 @@ function Question({ data = dummyData, showContent = true }: Props) {
             />
           </div>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-8">
+        <div className="row justify-content-center" >
+          <div className="col-12 col-md-10 col-lg-8" style={{ maxWidth: "883px" }}>
             <div className="wrapper_question">
               <Collapse
                 accordion
@@ -108,9 +108,8 @@ function Question({ data = dummyData, showContent = true }: Props) {
                   <Panel
                     extra={
                       <Icon
-                        className={`icon-expand ${
-                          chosen === item.id ? "active" : ""
-                        }`}
+                        className={`icon-expand ${chosen === item.id ? "active" : ""
+                          }`}
                         icon={ICON.DOWN}
                       />
                     }

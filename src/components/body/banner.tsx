@@ -1,5 +1,5 @@
 import { HOME2_IMAGE } from "@/src/utils";
-import React from "react";
+import React, { useState } from "react";
 import BannerItem from "./BannerItem";
 
 const data = [
@@ -122,27 +122,76 @@ const data = [
         price: 120000,
         link: "/thue-vps",
     },
-    {
-        id: 7,
-        name: "Compurter S1",
-        extra: "Thuê máy chủ vật lý",
-        price: 1200000,
-        image: HOME2_IMAGE.HOT_PRODUCT.COMPUTER1S,
-        style: {
-            width: "64px",
-        },
-        link: "/thue-may-chu-vat-ly",
-    },
-    {
-        id: 8,
-        name: "Location S1",
-        extra: "Thuê chỗ đặt máy chủ",
-        price: 200000,
-        image: HOME2_IMAGE.HOT_PRODUCT.LOCATION1S,
-        link: "/thue-may-chu-vat-ly",
-    },
+
 ];
 
+
+const NVME = [
+    {
+        id: 1,
+        name: "KICKSTART 1",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "4GB dung lượng SSD NVMe",
+        cpuCore: "1 CPU Core",
+        addonDomain: "2 Addon Domain",
+        ramSize: "2GB Core",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s Disk I/O",
+        worldPress: "Quà tặng WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 70000,
+        rate: 1,
+
+        link: "/thue-vps",
+    },
+    {
+        id: 2,
+
+        name: "KICKSTART 2",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "8GB dung lượng SSD NVMe",
+        addonDomain: "3 Addon Domain",
+        cpuCore: "2 CPU Core",
+        ramSize: "2GB Core",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s Disk I/O",
+        worldPress: "Quà tặng WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 100000,
+        link: "/thue-vps",
+    },
+    {
+        id: 3,
+
+        name: "KICKSTART 3",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "12GB dung lượng SSD NVMe",
+        addonDomain: "4 Addon Domain",
+        cpuCore: "2 CPU Core",
+        ramSize: "2GB Core",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s Disk I/O",
+        worldPress: "Quà tặng WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 120000,
+        link: "/thue-vps",
+    },
+
+
+
+];
 const vps = [
     {
         _id: "63e3845ea116ee4eab4127ff",
@@ -244,26 +293,53 @@ const vps = [
         advance: [],
     },
 ];
-
+const buttonList = [{ id: 1, name: "Giá Rẻ" }, { id: 2, name: "Doanh nghiệp" }, { id: 3, name: "Hosting Wordpress" }, { id: 4, name: "SEO Hosting" }]
 function Banner() {
+    const [activeButton, setActiveButton] = useState(1);
+    const [visibleItems, setVisibleItems] = useState({ id: null, showMore: false }); // start with 3 visible items
+    const handleButtonClick = (id: any) => {
+        setActiveButton(id)
+    }
+    const handleShowMore = (id: any) => {
+        setVisibleItems({ id, showMore: true })
+    }
     return (
         <section id="section-hot-product">
             <div className="container">
-                <div data-aos="fade-up" className="text-center">
-                    <h2 className="h2">Sản phẩm tiêu biểu</h2>
+                <div data-aos="fade-up" className="text-center" style={{ marginBottom: "40px" }}>
+                    <h2 className="h2">Dùng thử hosting giá rẻ 120 giờ MIỄN PHÍ</h2>
                 </div>
-                <div className="d-flex justify-content-center flex-wrap" style={{ gap: "2" }}>
+                <div className="d-flex justify-content-center flex-wrap " style={{ gap: "2", }}>
+                    <div className="mx-auto d-flex justify-content-center flex-wrap " style={{ background: "#FAFAFA" }}>
 
-                    <button className="btnHosting">Giá Rẻ</button>
-                    <button className="btnHostingFalse ">Doanh nghiệp</button>
-                    <button className="btnHostingFalse ">Hosting Wordpress</button>
-                    <button className="btnHostingFalse ">SEO Hosting</button>
+                        {buttonList.map(buttons => (
+                            <button key={buttons.id} className={`btnHosting`} onClick={() => handleButtonClick(buttons.id)} style={activeButton !== buttons.id
+                                ? { background: "white", color: "#00ACD7" } : { color: "white" }}>{buttons.name}</button>
+                        ))}
+                    </div>
+
                 </div>
-
+                <div className="text-center mt-5">
+                    <h2 className="h2">SSD</h2>
+                </div>
                 <div className="mt-4 row" data-aos="fade-up">
-                    {data.map((item) => (
-                        <BannerItem item={item} key={item.id} />
+                    {data.map((item) => (<>
+                        <BannerItem item={item} key={item.id} showMore={handleShowMore} itemShowMore={visibleItems} />
+                    </>
                     ))}
+                </div>
+                <div className="text-center mt-5">
+                    <h2 className="h2">SSD NVME</h2>
+                </div>
+                <div className="mt-4 row" data-aos="fade-up">
+                    {NVME.map((item) => (<>
+                        <BannerItem item={item} key={item.id} showMore={handleShowMore} itemShowMore={visibleItems} />
+                    </>
+                    ))}
+                </div>
+                <div className="termInfo">
+                    Bảng giá chưa bao gồm thuế VAT và ưu đãi (nếu có)
+                    Tài nguyên cộng thêm (+) là được tặng thêm khi đăng ký mới và các dịch vụ cũ, không bao gồm các dịch vụ áp dụng ưu đãi giảm giá trọn đời.
                 </div>
             </div>
         </section >

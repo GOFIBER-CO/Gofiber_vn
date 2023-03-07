@@ -29,10 +29,6 @@ const data = [
     name: "Thuê chỗ đặt máy chủ",
   },
   {
-    id: "7",
-    name: "Chống DDos",
-  },
-  {
     id: "8",
     name: "Khác",
   },
@@ -79,8 +75,8 @@ function Contact({ showTitle = true }: Props) {
             </div>
           </div>
         )}
-        <div className="row justify-content-center">
-          <div className="col col-12 col-md-10 col-lg-8">
+        <div className="row justify-content-center" >
+          <div className="col col-12 col-md-10 col-lg-8" style={{ maxWidth: "883px" }}>
             <form className="contact_form">
               <div className="row justify-content-center">
                 <div className="col-12 col-md-10">
@@ -111,18 +107,16 @@ function Contact({ showTitle = true }: Props) {
                     ))}
                   </div>
                   <div className="row mt-4">
-                    <div className="col-12 col-md-6 mt-4 px-2">
+                    <div className="col-12 col-md-12 mt-4 my-2 px-2">
                       <input placeholder="Tên của bạn" />
                     </div>
-                    <div className="col-12 col-md-6 mt-4 px-2">
+                    <div className="col-12 col-md-12 mt-4 my-2 px-2">
                       <input placeholder="Email của bạn" />
                     </div>
-                    <div className="col-12 col-md-6 mt-4 px-2">
+                    <div className="col-12 col-md-12 mt-4 my-2 px-2">
                       <input placeholder="Số điện thoại" />
                     </div>
-                    <div className="col-12 col-md-6 mt-4 px-2">
-                      <input placeholder="Về dự án của bạn" />
-                    </div>
+
                   </div>
                   <div className="text-center mt-4">
                     <TextIconButton
