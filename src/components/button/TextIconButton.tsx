@@ -26,7 +26,7 @@ function TextIconButton({ color = 'primary', name, styles = {}, className = "",
     }
 
     return (
-        <button type={type} style={_styles} onClick={onClick} className={`${className} btn0 button_text_icon button_text_icon__${color} `}>
+        <button type={type} style={_styles} onClick={onClick} className={`${className} btn0 button_text_icon button_text_icon__${color}  `}>
             <span>{name}</span>
             {icon && <Icon style={_stylesIcon} icon={icon} />}
         </button>

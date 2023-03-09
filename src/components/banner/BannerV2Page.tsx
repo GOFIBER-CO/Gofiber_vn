@@ -144,10 +144,10 @@ function BannerV2Page({
               {name}
             </h1>
             <p className="extra mt-4" >{extra}</p>
-            <p className="extra mt-4 ">{extra1}</p>
+            {extra1 && <p className="extraForHosting mt-4 font-weight-light " >{extra1}</p>}
 
             <TextIconButton
-              className="btn-white-to-primary"
+              className="btn-white-to-primary btnforbanner"
               name="Đăng ký dùng thử"
               styles={{ boxShadow: "none", background: "white", color: "#00ACD7", width: "208px" }}
             />
@@ -163,12 +163,11 @@ function BannerV2Page({
               <div className="container">
                 <div className="row">
                   {data.map((item: any) => (<>
-                    <div className="mb-lg-5 mb-3 mb-tb-4 col-lg-4 col-sm-6 text-white">
+                    <div className="mb-lg-2 mb-3 mb-tb-2 col-lg-4 col-sm-6 text-white">
 
                       <svg width="16" height="12" style={{ marginRight: "5px" }} viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.55061 11.5754C5.41728 11.5754 5.29228 11.5544 5.17561 11.5124C5.05894 11.4704 4.95061 11.3997 4.85061 11.3004L0.550611 7.00039C0.367278 6.81706 0.279611 6.57939 0.287611 6.28739C0.295611 5.99539 0.391611 5.75806 0.575611 5.57539C0.758944 5.39206 0.992278 5.30039 1.27561 5.30039C1.55894 5.30039 1.79228 5.39206 1.97561 5.57539L5.55061 9.15039L14.0256 0.675391C14.2089 0.492057 14.4466 0.400391 14.7386 0.400391C15.0306 0.400391 15.2679 0.492057 15.4506 0.675391C15.6339 0.858724 15.7256 1.09639 15.7256 1.38839C15.7256 1.68039 15.6339 1.91772 15.4506 2.10039L6.25061 11.3004C6.15061 11.4004 6.04228 11.4714 5.92561 11.5134C5.80894 11.5554 5.68394 11.5761 5.55061 11.5754Z" fill="#FAFAFA" />
                       </svg>
-
                       {item}
                     </div >
                   </>

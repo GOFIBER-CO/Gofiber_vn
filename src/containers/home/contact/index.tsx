@@ -107,13 +107,13 @@ function Contact({ showTitle = true }: Props) {
                     ))}
                   </div>
                   <div className="row mt-4">
-                    <div className="col-12 col-md-12 mt-4 my-2 px-2">
+                    <div className="col-12 col-md-12 mt-4  px-2">
                       <input placeholder="Tên của bạn" />
                     </div>
-                    <div className="col-12 col-md-12 mt-4 my-2 px-2">
+                    <div className="col-12 col-md-12 mt-4  px-2">
                       <input placeholder="Email của bạn" />
                     </div>
-                    <div className="col-12 col-md-12 mt-4 my-2 px-2">
+                    <div className="col-12 col-md-12 mt-4 px-2">
                       <input placeholder="Số điện thoại" />
                     </div>
 

@@ -66,7 +66,6 @@ function Home() {
 
   useEffect(() => {
     if (videoRef) {
-      console.log("platyixds");
       videoRef?.current?.play();
     }
   }, []);

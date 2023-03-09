@@ -42,7 +42,7 @@ const items: MenuProps["items"] = [
       />
     ),
     getItem(
-      "Hosting khủng giá rẻ ",
+      "Dịch Vụ Hosting",
       "/dich-vu-hosting",
       < Image
         className="menu_icon"

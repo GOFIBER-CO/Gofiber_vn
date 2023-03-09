@@ -16,6 +16,7 @@ import parse from 'html-react-parser';
 import BannerV2Page from "@/src/components/banner/BannerV2Page";
 import BannerForHosting from "@/src/components/banner/BannerforHosting";
 import Banner from "@/src/components/body/banner";
+import Script from "next/script";
 
 
 const banner = {
@@ -69,7 +70,7 @@ const question = [
     title: "Tôi có dự án ở lớp cần có thể cài đặt website ASP/ ASP.NET, dịch vụ hosting GOFIBER có hỗ trợ không?",
     content: (
       <>
-        <p><span >Ngo&agrave;i c&aacute;c g&oacute;i dịch vụ hosting tr&ecirc;n Linux, thường chuy&ecirc;n dụng cho web hosting chạy PHP v&agrave; MySQL, GOFIBER cũng cung cấp c&aacute;c g&oacute;i dịch vụ hosting tr&ecirc;n Windows. Sản phẩm web hosting chạy Windows l&agrave; một trong những sản phẩm l&yacute; tưởng v&agrave; chuy&ecirc;n dụng d&agrave;nh cho website ph&aacute;t triển tr&ecirc;n m&atilde; nguồn ASP/ ASP.NET.</span></p>
+        Ngoài các gói dịch vụ hosting trên Linux, thường chuyên dụng cho web hosting chạy PHP và MySQL, GOFIBER cũng cung cấp các gói dịch vụ hosting trên Windows. Sản phẩm web hosting chạy Windows là một trong những sản phẩm lý tưởng và chuyên dụng dành cho website phát triển trên mã nguồn ASP/ ASP.NET.
       </>
     ),
   },
@@ -78,7 +79,7 @@ const question = [
     title: "Dịch vụ hosting của GOFIBER hỗ trợ tôi cài đặt website thế nào?",
     content: (
       <>
-        <p dir="ltr" >Với c&aacute;c g&oacute;i web hosting gi&aacute; rẻ đến cao cấp của dịch vụ hosting tại GOFIBER th&igrave; qu&yacute; kh&aacute;ch lu&ocirc;n c&oacute; thể y&ecirc;u cầu nh&acirc;n vi&ecirc;n kỹ thuật hỗ trợ khi gặp vấn đề trong việc c&agrave;i đặt WordPress. Đặc biệt, c&aacute;c g&oacute;i Hosting WordPress tại GOFIBER c&ograve;n được t&iacute;ch hợp sẵn c&aacute;c phần mềm hỗ trợ tr&ecirc;n tầng server nhằm gi&uacute;p c&aacute;c website WordPress vận h&agrave;nh tối ưu hơn.</p>
+        Với các gói web hosting giá rẻ đến cao cấp của dịch vụ hosting tại GOFIBER thì quý khách luôn có thể yêu cầu nhân viên kỹ thuật hỗ trợ khi gặp vấn đề trong việc cài đặt WordPress. Đặc biệt, các gói Hosting WordPress tại GOFIBER còn được tích hợp sẵn các phần mềm hỗ trợ trên tầng server nhằm giúp các website WordPress vận hành tối ưu hơn.
       </>
     ),
   },
@@ -87,7 +88,7 @@ const question = [
     title: "Nâng cấp gói hosting như thế nào? Có ảnh hưởng gì đến các trang web đang chạy hay không ?",
     content: (
       <>
-        <p dir="ltr" >Bạn c&oacute; thể chọn để n&acirc;ng cấp c&aacute;c g&oacute;i dịch vụ hosting m&agrave; m&igrave;nh đang sử dụng bất cứ l&uacute;c n&agrave;o m&agrave; kh&ocirc;ng phải lo việc ảnh hưởng đến c&aacute;c trang web đang chạy. Việc n&acirc;ng cấp g&oacute;i hosting d&ugrave; l&agrave; về dung lượng SSD, CORE hay RAM đều được diễn ra ở thượng tầng m&aacute;y chủ. Việc gi&aacute;n đoạn dịch vụ nếu c&oacute; cũng chỉ mất khoảng một ph&uacute;t để c&aacute;c kỹ thuật vi&ecirc;n restart lại hệ thống sau khi n&acirc;ng cấp.</p>
+        Bạn có thể chọn để nâng cấp các gói dịch vụ hosting mà mình đang sử dụng bất cứ lúc nào mà không phải lo việc ảnh hưởng đến các trang web đang chạy. Việc nâng cấp gói hosting dù là về dung lượng SSD, CORE hay RAM đều được diễn ra ở thượng tầng máy chủ. Việc gián đoạn dịch vụ nếu có cũng chỉ mất khoảng một phút để các kỹ thuật viên restart lại hệ thống sau khi nâng cấp.
         {/* <p>
           <ul style={{ listStyle: "outside" }}>
             <li>
@@ -97,7 +98,7 @@ const question = [
               hạng của trang trong kết quả tìm kiếm bị giảm xuống.
             </li>
             <li>
-              <strong>Website luôn hoạt động:</strong>: Dịch vụ Hosting chất
+              <strong>Website luôn hoạt động:</strong>: Dịch vụ Hosting chấtBạn có thể chọn để nâng cấp các gói dịch vụ hosting mà mình đang sử dụng bất cứ lúc nào mà không phải lo việc ảnh hưởng đến các trang web đang chạy. Việc nâng cấp gói hosting dù là về dung lượng SSD, CORE hay RAM đều được diễn ra ở thượng tầng máy chủ. Việc gián đoạn dịch vụ nếu có cũng chỉ mất khoảng một phút để các kỹ thuật viên restart lại hệ thống sau khi nâng cấp.
               lượng, có cơ sở hạ tầng mạnh sẽ sẽ đảm bảo trang Web hoạt động
               24/7.
             </li>
@@ -157,7 +158,7 @@ const question = [
           Không có tên miền thì sẽ không có cách nào để tìm ra website và nếu
           không có hosting thì bạn không cách nào để xây website được.
         </p> */}
-        <p dir="ltr" >Mức dung lượng (disk space) của hosting m&agrave; bạn cần thường sẽ t&ugrave;y thuộc ho&agrave;n to&agrave;n v&agrave;o nhu cầu sử dụng của bạn. Với c&aacute;c trang web đơn giản, &iacute;t h&igrave;nh ảnh v&agrave; c&aacute;c định dạng media th&igrave; chỉ cần một web hosting khoản từ 5-10GB. Tại GOFIBER, qu&yacute; kh&aacute;ch c&oacute; thể n&acirc;ng cấp g&oacute;i dịch vụ lưu trữ của web hosting l&ecirc;n bất cứ l&uacute;c n&agrave;o.</p>
+        Mức dung lượng (disk space) của hosting mà bạn cần thường sẽ tùy thuộc hoàn toàn vào nhu cầu sử dụng của bạn. Với các trang web đơn giản, ít hình ảnh và các định dạng media thì chỉ cần một web hosting khoản từ 5-10GB. Tại GOFIBER, quý khách có thể nâng cấp gói dịch vụ lưu trữ của web hosting lên bất cứ lúc nào.
       </>
     ),
   },
@@ -166,7 +167,7 @@ const question = [
     title: "Các phiên bản PHP hỗ trợ trên hosting GOFIBER ",
     content: (
       <>
-        <p>Tất cả m&aacute;y chủ hosting tại GOFIBER đều hỗ trợ PHP 5.6 đến PHP 8.1 hoặc hơn, đảm bảo tương th&iacute;ch với mọi m&atilde; nguồn website. Hệ quản trị cơ sở dữ liệu (database) sử dụng MariaDB 10.2 đến mới nhất, hoặc MySQL phi&ecirc;n bản từ 5.1 đến 5.5.</p>
+        Tất cả máy chủ hosting tại GOFIBER đều hỗ trợ PHP 5.6 đến PHP 8.1 hoặc hơn, đảm bảo tương thích với mọi mã nguồn website. Hệ quản trị cơ sở dữ liệu (database) sử dụng MariaDB 10.2 đến mới nhất, hoặc MySQL phiên bản từ 5.1 đến 5.5.
         {/* <tr>
               <td>
                 Domain là&nbsp;<strong>địa chỉ giúp nhận dạng</strong>&nbsp;hoặc
@@ -250,11 +251,8 @@ const question = [
                 nhau.
               </td>
             </tr> */}
-        <p>Nhiều người cho rằng hosting gi&aacute; rẻ kh&ocirc;ng bao giờ mang lại chất lượng cao, song nhận định n&agrave;y kh&ocirc;ng hẳn đ&uacute;ng. Tr&ecirc;n thực tế, t&ugrave;y v&agrave;o mục đ&iacute;ch v&agrave; nhu cầu sử dụng của doanh nghiệp m&agrave; bạn cần c&aacute;c g&oacute;i hosting kh&aacute;c nhau.&nbsp;</p>
-        <p>
-
-        </p>
-        <p>Nếu l&agrave; c&aacute; nh&acirc;n hoặc doanh nghiệp nhỏ, qu&yacute; kh&aacute;ch ho&agrave;n to&agrave;n c&oacute; thể chọn g&oacute;i hosting gi&aacute; rẻ để tối ưu chi ph&iacute;. Sau một thời gian hoạt động nếu doanh nghiệp cần kh&ocirc;ng gian lưu trữ lớn hơn l&uacute;c đ&oacute; c&oacute; thể n&acirc;ng cấp hosting cũng kh&ocirc;ng muộn.</p>
+        Nhiều người cho rằng hosting giá rẻ không bao giờ mang lại chất lượng cao, song nhận định này không hẳn đúng. Trên thực tế, tùy vào mục đích và nhu cầu sử dụng của doanh nghiệp mà bạn cần các gói hosting khác nhau.
+        Nếu là cá nhân hoặc doanh nghiệp nhỏ, quý khách hoàn toàn có thể chọn gói hosting giá rẻ để tối ưu chi phí. Sau một thời gian hoạt động nếu doanh nghiệp cần không gian lưu trữ lớn hơn lúc đó có thể nâng cấp hosting cũng không muộn.
 
       </>
     ),
@@ -281,7 +279,108 @@ const SkeletonSlide = () => (
     ))}
   </div>
 );
-
+const scriptForUser = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "GOFIBER cung cấp những dịch vụ công nghệ gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiện nay GOFIBER đang cung cấp các dịch vụ công nghệ như web hosting, server máy chủ vật lý tốc độ cao, VPS SSD giá rẻ, VPS treo game, Firewall anti DDoS, chứng chỉ SSL,... "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chi phí ở đây đã rẻ nhất hay chưa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "“Hosting rẻ nhất Việt Nam” chưa bao giờ nằm trong chiến lược của GOFIBER. Thay vào đó chúng tôi đặt sự ưu tiên trong việc hài hòa giữa chất lượng dịch vụ và mức phí hợp lý dành cho mọi đối tượng khách hàng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "GOFIBER có hỗ trợ Domain Name Servers (DNS) trong trường hợp tôi chưa có Hosting không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trong trường hợp bạn chưa đăng ký dịch vụ Hosting, GOFIBER sẽ hỗ trợ 1 DNS dành cho tên miền mà bạn đã đăng ký để trỏ về. Vì vậy, trong trường hợp bạn cần sự hỗ trợ hãy liên hệ với chúng tôi bằng cách mở ticket support hoặc để được hỗ trợ nhanh nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nếu không hài lòng với dịch vụ tôi có được hoàn lại phí không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chúng tôi sẽ hoàn trả lại 100% số tiền chúng tôi đã nhận với điều kiện: lý do bạn không hài lòng là đúng hoặc bạn không vi phạm quy định sử dụng dịch vụ của chúng tôi. Xem thêm về quy định hoàn tiền tại đây."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sau bao lâu tôi có thể sử dụng dịch vụ sau khi hoàn tất thanh toán?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hệ thống của GOFIBER tạo tài khoản và cài đặt các dịch vụ cho khách hàng hoàn toàn tự động và gần như hoàn thành ngay lập tức sau khi thanh toán cho đơn hàng được xác nhận thành công. Đối với các khách hàng sử dụng dịch vụ máy chủ ảo VPS có mở thêm yêu cầu hỗ trợ cài các panel như Aapanel hay Directadmin, thời gian để các chuyên viên hệ thống hoàn tất cài đặt thường cộng thêm từ 30-60 phút."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi đang sử dụng dịch vụ hosting ở nơi khác, làm sao để chuyển sang dịch vụ của GOFIBER?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiện tại GOFIBER đang có chính sách hỗ trợ chuyển server từ nhà cung cấp cũ của quý khách về GOFIBER hoàn toàn miễn phí. Quý khách có thể mở ticket để gửi yêu cầu cho các chuyên viên phụ trách để nhờ thực hiện chuyển data về hộ nếu muốn. Website của quý khách sau khi chuyển về được các chuyên viên kiểm tra và đảm bảo vận hành trơn tru trước khi bàn giao lại cho quý khách."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể nâng cấp gói dịch vụ đang sử dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bất cứ lúc nào khách hàng cũng có thể chọn để nâng cấp dịch vụ đang sử dụng lên các gói cao cấp hơn. Hệ thống của GOFIBER tự động tính toán phần chi phí và quý khách chỉ phải chi trả cho phần chênh lệch giữa hai gói dịch vụ khi nâng cấp. Việc thanh toán gói dịch vụ nâng cấp theo giá mới sẽ bắt đầu vào chu kỳ gia hạn dịch vụ tiếp theo dựa trên tài khoản của khách hàng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể liên hệ với GOFIBER qua đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GOFIBER có đa dạng kênh liên lạc nhằm hỗ trợ khách hàng tốt nhất. Bạn có thể liên hệ với chúng tôi qua FanPage Facebook, TikTok, Email,... để được hỗ trợ tức thời, hãy liên hệ với chúng tôi qua số điện thoại 0989078507 (Tel-Viber-Zalo).Đối với các yêu cầu hỗ trợ liên quan đến các dịch vụ như dịch vụ hosting, dịch vụ máy chủ, dịch vụ máy chủ áo VPS,... chúng tôi khuyến khích khách hàng mở yêu cầu hỗ trợ qua hệ thống ticket để được hỗ trợ hiệu quả nhất và bảo mật nhất."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Các hình thức thanh toán sử dụng dịch vụ",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có 2 hình thức thanh toán:Một là, thanh toán bằng tiền mặt tại văn phòng Công ty GOFIBER: Quý khách đến và thực hiện thanh toán bằng tiền mặt trực tiếp tại văn phòng Công ty TNHH Công Nghệ Phần Mềm GOFIBER  tại địa chỉ: Số 131, Đường CN11, P. Sơn Kỳ, Q. Tân Phú, TP.HCM). Hai là, thanh toán qua hình thức chuyển khoản. Khách hàng có thể thanh toán dịch vụ qua chuyển khoản ngân hàng, VISA, ví Momo, QR code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi lỡ quên gia hạn dịch vụ thì dữ liệu có thể phục hồi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dữ liệu là điều quý khách không phải lo khi sử dụng các dịch vụ của GOFIBER. Hệ thống của chúng tôi được cài đặt để thực hiện backup dữ liệu của quý khách thường xuyên trên cấp độ server. Do đó quý khách hàng hoàn toàn có thể liên hệ với nhân viên hỗ trợ để được hỗ trợ nhận lại dữ liệu khi cần thiết. Theo chính sách bảo lưu của GOFIBER, dữ liệu của quý khách cùng tên miền, nếu lỡ quên gia hạn, được hỗ trợ “giữ hộ” miễn phí với thời hạn lên đến 12 tháng. Sau khi dịch vụ đã hết hạn, nếu có bất kỳ vấn đề phát sinh gì xin Quý khách vui lòng liên hệ với NVKD đang làm việc hoặc hotline/livechat để được giải quyết."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "GOFIBER có giữ bí mật các thông tin dữ liệu cá nhân của tôi không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GOFIBER cam kết các thông tin và dữ liệu của khách hàng luôn được bảo mật theo tiêu chuẩn chung của Pháp luật Việt Nam và Tiêu chí riêng của GOFIBER."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có thể dùng thử mà không cần thanh toán?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GOFIBER là một thương hiệu uy tín với các chính sách dùng thử tốt nhất hiện nay. Khách hàng có thể đăng ký dùng thử với bộ phận Kinh doanh để được trải nghiệm thử 7 ngày hoàn toàn miễn phí. Thủ tục dùng thử tại GOFIBER thường không cần xét duyệt và chờ đợi, kích hoạt dùng thử trong 5 phút. Bất cứ lúc nào trong thời hạn dùng thử, khách hàng cũng có thể chủ động tiến hành thanh toán để có nâng cấp tài khoản thành chính thức. Có thể nói, hoàn toàn không có khác biệt giữa chất lượng dịch vụ của tài khoản dùng thử và tài khoản chính thức."
+      }
+    }
+  ]
+}
 type Props = {
   tags: any[];
 };
@@ -292,7 +391,6 @@ function WebHostingPage({ tags }: Props) {
   const [packageSelect, setPackageSelect] = useState();
   const [hostings, setHostings] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
   const getHostings = async () => {
     try {
       setIsLoading(true);
@@ -338,6 +436,57 @@ function WebHostingPage({ tags }: Props) {
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
+      <Script type="application/ld+json" id="dichvuHosting" dangerouslySetInnerHTML={{
+        __html: `{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "Tôi có dự án ở lớp cần có thể cài đặt website ASP/ ASP.NET, dịch vụ hosting GOFIBER có hỗ trợ không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ngoài các gói dịch vụ hosting trên Linux, thường chuyên dụng cho web hosting chạy PHP và MySQL, GOFIBER cũng cung cấp các gói dịch vụ hosting trên Windows. Sản phẩm web hosting chạy Windows là một trong những sản phẩm lý tưởng và chuyên dụng dành cho website phát triển trên mã nguồn ASP/ ASP.NET."
+            }
+          },{
+            "@type": "Question",
+            "name": "Dịch vụ hosting của GOFIBER hỗ trợ tôi cài đặt website thế nào?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Với các gói web hosting giá rẻ đến cao cấp của dịch vụ hosting tại GOFIBER thì quý khách luôn có thể yêu cầu nhân viên kỹ thuật hỗ trợ khi gặp vấn đề trong việc cài đặt WordPress. Đặc biệt, các gói Hosting WordPress tại GOFIBER còn được tích hợp sẵn các phần mềm hỗ trợ trên tầng server nhằm giúp các website WordPress vận hành tối ưu hơn."
+            }
+          },{
+            "@type": "Question",
+            "name": "Nâng cấp gói hosting như thế nào? Có ảnh hưởng gì đến các trang web đang chạy hay không?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bạn có thể chọn để nâng cấp các gói dịch vụ hosting mà mình đang sử dụng bất cứ lúc nào mà không phải lo việc ảnh hưởng đến các trang web đang chạy. Việc nâng cấp gói hosting dù là về dung lượng SSD, CORE hay RAM đều được diễn ra ở thượng tầng máy chủ. Việc gián đoạn dịch vụ nếu có cũng chỉ mất khoảng một phút để các kỹ thuật viên restart lại hệ thống sau khi nâng cấp."
+            }
+          },{
+            "@type": "Question",
+            "name": "Nên sử dụng hosting có dung lượng bao nhiêu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mức dung lượng (disk space) của hosting mà bạn cần thường sẽ tùy thuộc hoàn toàn vào nhu cầu sử dụng của bạn. Với các trang web đơn giản, ít hình ảnh và các định dạng media thì chỉ cần một web hosting khoản từ 5-10GB. Tại GOFIBER, quý khách có thể nâng cấp gói dịch vụ lưu trữ của web hosting lên bất cứ lúc nào."
+            }
+          },{
+            "@type": "Question",
+            "name": "Các phiên bản PHP hỗ trợ trên hosting GOFIBER",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tất cả máy chủ hosting tại GOFIBER đều hỗ trợ PHP 5.6 đến PHP 8.1 hoặc hơn, đảm bảo tương thích với mọi mã nguồn website. Hệ quản trị cơ sở dữ liệu (database) sử dụng MariaDB 10.2 đến mới nhất, hoặc MySQL phiên bản từ 5.1 đến 5.5."
+            }
+          },{
+            "@type": "Question",
+            "name": "Hosting giá rẻ: của rẻ có bị ôi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nhiều người cho rằng hosting giá rẻ không bao giờ mang lại chất lượng cao, song nhận định này không hẳn đúng. Trên thực tế, tùy vào mục đích và nhu cầu sử dụng của doanh nghiệp mà bạn cần các gói hosting khác nhau. Nếu là cá nhân hoặc doanh nghiệp nhỏ, quý khách hoàn toàn có thể chọn gói hosting giá rẻ để tối ưu chi phí. Sau một thời gian hoạt động nếu doanh nghiệp cần không gian lưu trữ lớn hơn lúc đó có thể nâng cấp hosting cũng không muộn."
+            }
+          }]
+        }
+        `,
+      }}></Script>
+
       <div id="web-hosting">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
@@ -373,27 +522,22 @@ function WebHostingPage({ tags }: Props) {
                 </div>
               </div>
 
-              <div className="col col-12 col-md-6">
-                <h4 className="h4">Chuyên gia hỗ trợ hosting 24/7</h4>
+              <div className="col col-12 col-md-6 dichvuHostingInfo">
+                <h4 className="h4">Secure Shell (SSH)</h4>
                 <p>
-                  Ngoài hỗ trợ tiếng Anh 24/7, chuyên gia đào tạo từ công ty
-                  Gofiber còn hỗ trợ kỹ thuật toàn thời gian bằng tiếng Việt cho
-                  bạn. Nếu có vấn đề xảy ra, bạn không cần lo lắng vì đã có
-                  chúng tôi trợ giúp.
+                  Cung cấp tài khoản và cho phép sử dụng shell command qua giao thức bảo mật chuẩn SSH trên mọi gói dịch vụ hosting, bao gồm cả hosting giá rẻ.
                 </p>
-                <h4 className="h4">Server host công nghệ hàng đầu</h4>
+                <h4 className="h4">PHP 5.6 đến PHP 8.1</h4>
                 <p>
-                  Bạn lo lắng trang web chậm ảnh hưởng đến uy tín công ty? Đừng
-                  lo lắng vì đã có chúng tôi! Với gói máy chủ host chạy trên hạ
-                  tầng HTTP/3 kết hợp cơ chế tự phát hiện và sửa lỗi, ổ cứng SSD
-                  và không giới hạn băng thông, website của bạn sẽ đạt tốc độ
-                  cao nhất.
+                  Hỗ trợ cài đặt sẵn hoặc cài đặt theo yêu cầu của khách hàng các phiên bản PHP từ 5.6 đến 8.1. Với công nghệ FPM, mỗi website trên hosting của quý khách có thể sử dụng một phiên bản PHP khác nhau.
                 </p>
-                <h4 className="h4">Server host công nghệ hàng đầu</h4>
+                <h4 className="h4">SSL miễn phí</h4>
                 <p>
-                  Các chuyên gia kỹ thuật sẽ giúp bạn chuyển website tới
-                  Hostinger một cách miễn phí để bạn có thể tập trung vào công
-                  việc chính của bạn nhanh hơn.
+                  Bất cứ website nào đặt trên hệ thống dịch vụ hosting của GOFIBER đều được cấp chứng chỉ SSL miễn phí.
+                </p>
+                <h4 className="h4">Chuyển dữ liệu 24/7</h4>
+                <p>
+                  Hỗ trợ miễn phí việc chuyển dữ liệu của khách hàng từ hosting khác về hosting của GOFIBER. Bộ phận kỹ thuật sẽ đảm cho website của quý khách vận hành trơn tru trước khi chuyển giao lại.
                 </p>
               </div>
             </div>
@@ -409,34 +553,33 @@ function WebHostingPage({ tags }: Props) {
                 </div>
               </div>
               <div className="col col-12 col-md-6">
-                <h4 className="h4">Hosting tối ưu WordPress</h4>
+                <h4 className="h4">Ngăn chặn mã độc</h4>
                 <p>
-                  Mọi gói hosting của Gofiber đều tối ưu cho WordPress. Các công
-                  cụ tăng tốc WordPress cùng máy chủ với LiteSpeed sẽ giúp trang
-                  web bạn đạt tốc độ nhanh nhất.
+                  Các website được lưu trữ trên hệ thống máy chủ của GOFIBER, bao gồm cả dịch vụ hosting đều được quét mã độc tự động hàng ngày bằng công cụ “Quét chống mã độc Imunify360”
                 </p>
-                <h4 className="h4">Bảo mật tối đa</h4>
+                <h4 className="h4">Hệ thống cảnh báo Monitor</h4>
                 <p>
-                  Cài SSL để chống lại các cuộc tấn công mạng và nâng cao tính
-                  bảo mật. Ngay từ lúc bạn mua domain và hosting, công ty chúng
-                  tôi sẽ tặng SSL để bảo vệ trang web bạn được an toàn.
+                  Dữ liệu trên host của bạn sẽ được tự động sao lưu mỗi ngày, bao gồm sao lưu database và sao lưu tập tin và thư mục. Các bản backup được lưu thành 7 bản khác nhau để bạn có thể tự khôi phục một phần hoặc toàn bộ bất cứ lúc nào.
                 </p>
-                <h4 className="h4">Không cần kinh nghiệm làm web</h4>
+
+                <h4 className="h4">Sao lưu mỗi ngày</h4>
                 <p>
-                  Sử dụng dịch vụ của chúng tôi, bạn không cần có kinh nghiệm
-                  làm web. Nhờ công cụ quản lý có giao diện trực quan và thân
-                  thiện với người dùng, bạn có thể mua web hosting và vận hành
-                  một cách hiệu quả. Phần lớn khách hàng của chúng tôi không
-                  phải lập trình viên nhưng họ khởi chạy website chỉ trong ít
-                  phút.
+                  Dữ liệu trên host của bạn sẽ được tự động sao lưu mỗi ngày, bao gồm sao lưu database và sao lưu tập tin và thư mục. Các bản backup được lưu thành 7 bản khác nhau để bạn có thể tự khôi phục một phần hoặc toàn bộ bất cứ lúc nào.
+
+                </p>
+                <h4 className="h4">Bảo mật dữ liệu</h4>
+                <p>
+                  Hệ thống CloudLinux với đặc tính bảo mật nền tảng sẽ giúp hạn chế và ngăn chặn tối đa việc bị tấn công lỗ hổng thông qua Local Attack.
+
                 </p>
               </div>
             </div>
           </div>
         </section>
-
-
-        <Question showContent={false} data={question} />
+        <div className="d-flex mt-5 mx-auto justify-content-center " style={{ fontWeight: "600", fontSize: "32px", lineHeight: "48px" }}>Hỏi & đáp liên quan đến dịch vụ Hosting</div>
+        <div className="d-flex mt-2 mx-auto justify-content-center   text-center dichVuHostingBanner w-sm-100">Khi đi thuê hosting, đa số các khách hàng thường có những thắc mắc về dịch vụ và sản phẩm gần như giống nhau. GOFIBER và các chuyên gia tư vấn của mình đã tổng hợp lại để quý khách hàng  có thể tham khảo nhanh một số vấn đề như sau:
+        </div>
+        <Question showContent={false} isHosting={true} data={question} />
 
         {/* <section className="section-contact">
         <div className="section-content position-relative">
@@ -459,6 +602,7 @@ function WebHostingPage({ tags }: Props) {
         </div>
       </section> */}
         {/* <Contact /> */}
+        <div className="d-flex mt-5 mx-auto justify-content-center " style={{ fontWeight: "600", fontSize: "32px", lineHeight: "48px" }}>Bạn vẫn có thắc mắc cần được tư vấn?</div>
         <Contact showTitle={false} />
         <BuyPackage packageSelect={packageSelect} />
       </div >

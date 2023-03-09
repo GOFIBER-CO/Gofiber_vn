@@ -5,6 +5,9 @@ import { formatNumber, ICON, ICON_IMAGE } from "@/src/utils";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/src/utils/animation";
+
 
 type Props = {
   item: any;
@@ -31,7 +34,6 @@ function HotProductItem({ item }: Props) {
   const dispatch = useAppDispatch();
 
   const handleChooseProduct = (item: any) => {
-    console.log("item", item);
 
     dispatch(
       updateBuyPackage({
@@ -42,7 +44,11 @@ function HotProductItem({ item }: Props) {
   };
 
   return (
+
+
     <div className="col col-12 col-md-6 col-lg-3 py-2 px-2 px-xl-4 mt-4">
+
+
       <div className="hot-product-item">
         <div className="hot-product-item-wrapper position-relative">
           <img
@@ -53,8 +59,8 @@ function HotProductItem({ item }: Props) {
             height={100}
           />
 
-          <div className="title">{item.name}</div>
-          <div className="extra">{item.extra}</div>
+          <div className="title " >{item.name}</div>
+          <div className="extra" >{item.extra}</div>
           <div className="price">{formatNumber(item.price)} VND / Tháng</div>
           <div className="price-discount">
             {item?.discount && `${formatNumber(item?.startPrice)} VND / Tháng`}
@@ -78,6 +84,8 @@ function HotProductItem({ item }: Props) {
         </div>
       </div>
     </div>
+
+
   );
 }
 

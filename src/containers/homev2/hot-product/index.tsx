@@ -1,7 +1,6 @@
 import { HOME2_IMAGE } from "@/src/utils";
 import React from "react";
 import HotProductItem from "./HotProductItem";
-
 const data = [
   {
     id: 1,
@@ -191,8 +190,10 @@ function HotProduct() {
         </div>
 
         <div className="mt-4 row" data-aos="fade-up">
-          {data.map((item) => (
+          {data.map((item) => (<>
+
             <HotProductItem item={item} key={item.id} />
+          </>
           ))}
         </div>
       </div>

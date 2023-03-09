@@ -18,7 +18,7 @@ const infoData = [
   },
   {
     id: "3",
-    text: "0989.07.85.07",
+    text: "0989.07.85.07 - ",
     icon: require("@/public/images/icons/call.svg"),
   },
   {

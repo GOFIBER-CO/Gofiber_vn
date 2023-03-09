@@ -7,14 +7,14 @@ const data = [
         id: 1,
         name: "STARTER 1",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "1GB dung lượng SSD",
-        cpuCore: "1GB CPU Core",
-        addonDomain: "1 Addon Domain",
-        ramSize: "1GB Core",
+        ssdSize: "1GB ",
+        cpuCore: "1",
+        addonDomain: "1",
+        ramSize: "1GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "20MB/s Disk I/O",
+        diskIO: "20MB/s",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -29,19 +29,19 @@ const data = [
 
         name: "STARTER 2",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "3GB dung lượng SSD",
-        addonDomain: "2 Addon Domain",
-        cpuCore: "1 CPU Core",
-        ramSize: "1GB Core",
+        ssdSize: "3GB",
+        addonDomain: "2 ",
+        cpuCore: "1",
+        ramSize: "1GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "20MB/s Disk I/O",
+        diskIO: "20MB/s",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
         Enterprise: "LiteSpeed Enterprise",
-        price: 30000,
+        price: 50000,
         link: "/thue-vps",
     },
     {
@@ -49,14 +49,14 @@ const data = [
 
         name: "STARTER 3",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "4GB dung lượng SSD",
-        addonDomain: "3 Addon Domain",
-        cpuCore: "1 CPU Core",
-        ramSize: "2GB Core",
+        ssdSize: "4GB",
+        addonDomain: "3",
+        cpuCore: "1",
+        ramSize: "2GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "20MB/s Disk I/O",
+        diskIO: "20MB/s",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -68,14 +68,14 @@ const data = [
         id: 4,
         name: "STARTER 4",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "10GB dung lượng SSD",
-        addonDomain: "3 Addon Domain",
-        cpuCore: "2 CPU Core",
-        ramSize: "2GB Core",
+        ssdSize: "10GB",
+        addonDomain: "3",
+        cpuCore: "2",
+        ramSize: "2GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "20MB/s Disk I/O",
+        diskIO: "20MB/s",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -88,14 +88,14 @@ const data = [
         id: 5,
         name: "STARTER 5",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "15GB dung lượng SSD",
-        addonDomain: "5 Addon Domain",
-        cpuCore: "2 CPU Core",
-        ramSize: "2GB Core",
+        ssdSize: "15GB",
+        addonDomain: "5",
+        cpuCore: "2",
+        ramSize: "2GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "20MB/s Disk I/O",
+        diskIO: "20MB/s",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -107,14 +107,14 @@ const data = [
         id: 6,
         name: "STARTER 6",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "20GB dung lượng SSD",
-        addonDomain: "8 Addon Domain",
-        cpuCore: "3 CPU Core",
-        ramSize: "3GB Core",
+        ssdSize: "20GB",
+        addonDomain: "8 ",
+        cpuCore: "3 ",
+        ramSize: "3GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "20MB/s Disk I/O",
+        diskIO: "20MB/s",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -124,21 +124,273 @@ const data = [
     },
 
 ];
-
-
-const NVME = [
+const data1 = [
     {
         id: 1,
-        name: "KICKSTART 1",
+        name: "DN-GO A",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "4GB dung lượng SSD NVMe",
-        cpuCore: "1 CPU Core",
-        addonDomain: "2 Addon Domain",
-        ramSize: "2GB Core",
+        ssdSize: "20GB ",
+        cpuCore: "2",
+        addonDomain: "25",
+        ramSize: "4GB",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "100MB/s Disk I/O",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 215000,
+        rate: 1,
+
+        link: "/thue-vps",
+    },
+    {
+        id: 2,
+
+        name: "DN-GO B",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "25GB",
+        addonDomain: "Unlimited ",
+        cpuCore: "4",
+        ramSize: "6GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 365000,
+        link: "/thue-vps",
+    },
+    {
+        id: 3,
+
+        name: "DN-GO C",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "55GB",
+        addonDomain: "Unlimited",
+        cpuCore: "6",
+        ramSize: "8GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 655000,
+        link: "/thue-vps",
+    },
+
+
+];
+const data2 = [
+    {
+        id: 1,
+        name: "WP-GO 01",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "1GB ",
+        cpuCore: "1",
+        addonDomain: "1",
+        ramSize: "4GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 30000,
+        rate: 1,
+
+        link: "/thue-vps",
+    },
+    {
+        id: 2,
+
+        name: "WP-GO 02",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "2GB",
+        addonDomain: "3 ",
+        cpuCore: "1",
+        ramSize: "2GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 50000,
+        link: "/thue-vps",
+    },
+    {
+        id: 3,
+
+        name: "WP-GO 03",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "4GB",
+        addonDomain: "5",
+        cpuCore: "2",
+        ramSize: "2GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 90000,
+        link: "/thue-vps",
+    },
+    {
+        id: 4,
+
+        name: "WP-GO 04",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "8GB",
+        addonDomain: "10",
+        cpuCore: "2",
+        ramSize: "3GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 120000,
+        link: "/thue-vps",
+    },
+    {
+        id: 5,
+
+        name: "WP-GO 05",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "10GB",
+        addonDomain: "15",
+        cpuCore: "3",
+        ramSize: "3GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 140000,
+        link: "/thue-vps",
+    },
+    {
+        id: 6,
+
+        name: "WP-GO 06",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "15GB",
+        addonDomain: "20",
+        cpuCore: "3",
+        ramSize: "3GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "Tặng Bảo mật SSL Let's Encrypt",
+        cpanel: "Giao diện Cpanel",
+        Enterprise: "LiteSpeed Enterprise",
+        price: 220000,
+        link: "/thue-vps",
+    },
+
+
+];
+const data3 = [
+    {
+        id: 1,
+        name: "SEO A",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "10GB ",
+        iPClassC: "2",
+        cpuCore: "2",
+        addonDomain: "10",
+        ramSize: "3GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "SSL Miễn Phí",
+
+        price: 30000,
+        rate: 1,
+
+        link: "/thue-vps",
+    },
+    {
+        id: 2,
+
+        name: "SEO B",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "10GB",
+        iPClassC: "5",
+        cpuCore: "2",
+        addonDomain: "15",
+        ramSize: "4GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "SSL Miễn Phí",
+        price: 250000,
+        link: "/thue-vps",
+    },
+    {
+        id: 3,
+
+        name: "SEO C",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "40GB",
+        iPClassC: "10",
+        cpuCore: "3",
+        addonDomain: "30",
+        ramSize: "5GB",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s",
+        worldPress: "Tài nguyên WordPress miễn phí",
+        ssl: "SSL Miễn Phí",
+        price: 450000,
+        link: "/thue-vps",
+    },
+
+
+
+];
+const NVME = [
+    {
+        id: 10,
+        name: "KICKSTART 1",
+        extra: "Giải pháp lý tưởng cho người mới",
+        ssdSize: "4GB ",
+        cpuCore: "1 ",
+        addonDomain: "2 ",
+        ramSize: "2GB ",
+        inodes: "Không giới hạn Inodes",
+        subdomain: "Không giới hạn Sub-domains",
+        database: "Không giới hạn MySQL Databases",
+        diskIO: "100MB/s ",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -149,18 +401,18 @@ const NVME = [
         link: "/thue-vps",
     },
     {
-        id: 2,
+        id: 11,
 
         name: "KICKSTART 2",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "8GB dung lượng SSD NVMe",
-        addonDomain: "3 Addon Domain",
-        cpuCore: "2 CPU Core",
-        ramSize: "2GB Core",
+        ssdSize: "8GB",
+        addonDomain: "3 ",
+        cpuCore: "2 ",
+        ramSize: "2GB ",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
-        diskIO: "100MB/s Disk I/O",
+        diskIO: "100MB/s ",
         worldPress: "Quà tặng WordPress miễn phí",
         ssl: "Tặng Bảo mật SSL Let's Encrypt",
         cpanel: "Giao diện Cpanel",
@@ -169,14 +421,14 @@ const NVME = [
         link: "/thue-vps",
     },
     {
-        id: 3,
+        id: 12,
 
         name: "KICKSTART 3",
         extra: "Giải pháp lý tưởng cho người mới",
-        ssdSize: "12GB dung lượng SSD NVMe",
-        addonDomain: "4 Addon Domain",
-        cpuCore: "2 CPU Core",
-        ramSize: "2GB Core",
+        ssdSize: "12GB",
+        addonDomain: "4 ",
+        cpuCore: "2 ",
+        ramSize: "2GB ",
         inodes: "Không giới hạn Inodes",
         subdomain: "Không giới hạn Sub-domains",
         database: "Không giới hạn MySQL Databases",
@@ -296,12 +548,31 @@ const vps = [
 const buttonList = [{ id: 1, name: "Giá Rẻ" }, { id: 2, name: "Doanh nghiệp" }, { id: 3, name: "Hosting Wordpress" }, { id: 4, name: "SEO Hosting" }]
 function Banner() {
     const [activeButton, setActiveButton] = useState(1);
-    const [visibleItems, setVisibleItems] = useState({ id: null, showMore: false }); // start with 3 visible items
+    const [dataforbanner, setDataForBanner] = useState<any>(data)
+    const [nVME, setNVME] = useState(false)
+    const [visibleItems, setVisibleItems] = useState<any>({ id: null, showMore: false, forNVME: false }); // start with 3 visible items
     const handleButtonClick = (id: any) => {
         setActiveButton(id)
+        if (id === 1) {
+            setDataForBanner(data)
+            setNVME(false)
+        } else if (id === 2) {
+            setDataForBanner(data1)
+            setNVME(true)
+        } else if (id == 3) {
+            setDataForBanner(data2)
+            setNVME(true)
+
+        } else if (id == 4) {
+            setDataForBanner(data3)
+            setNVME(true)
+
+        }
+        setVisibleItems({ id: 0, showMore: false })
+
     }
-    const handleShowMore = (id: any) => {
-        setVisibleItems({ id, showMore: true })
+    const handleShowMore = ({ id, forBanner }: any) => {
+        setVisibleItems({ id, showMore: true, forBanner: forBanner })
     }
     return (
         <section id="section-hot-product">
@@ -310,7 +581,7 @@ function Banner() {
                     <h2 className="h2">Dùng thử hosting giá rẻ 120 giờ MIỄN PHÍ</h2>
                 </div>
                 <div className="d-flex justify-content-center flex-wrap " style={{ gap: "2", }}>
-                    <div className="mx-auto d-flex justify-content-center flex-wrap " style={{ background: "#FAFAFA" }}>
+                    <div className="mx-auto d-flex justify-content-center flex-wrap " >
 
                         {buttonList.map(buttons => (
                             <button key={buttons.id} className={`btnHosting`} onClick={() => handleButtonClick(buttons.id)} style={activeButton !== buttons.id
@@ -319,25 +590,31 @@ function Banner() {
                     </div>
 
                 </div>
-                <div className="text-center mt-5">
-                    <h2 className="h2">SSD</h2>
-                </div>
+                {nVME !== true ? <div className="text-center mt-5">
+
+                    <h3 className="h2">SSD</h3>
+                </div> : null}
+
                 <div className="mt-4 row" data-aos="fade-up">
-                    {data.map((item) => (<>
-                        <BannerItem item={item} key={item.id} showMore={handleShowMore} itemShowMore={visibleItems} />
+                    {dataforbanner.map((item: any) => (<>
+                        <BannerItem item={item} key={item.id} showMore={handleShowMore} itemShowMore={visibleItems} NVMe={nVME} isNVMe={false} />
                     </>
                     ))}
                 </div>
-                <div className="text-center mt-5">
-                    <h2 className="h2">SSD NVME</h2>
-                </div>
-                <div className="mt-4 row" data-aos="fade-up">
-                    {NVME.map((item) => (<>
-                        <BannerItem item={item} key={item.id} showMore={handleShowMore} itemShowMore={visibleItems} />
+                {nVME !== true ?
+                    <>
+                        <div className="text-center mt-5">
+                            <h3 className="h2">SSD NVME</h3>
+                        </div>
+                        <div className="mt-4 row" data-aos="fade-up">
+                            {NVME.map((item) => (<>
+                                <BannerItem item={item} key={item.id} showMore={handleShowMore} itemShowMore={visibleItems} NVMe={true} isNVMe={true} />
+                            </>
+                            ))}
+                        </div>
                     </>
-                    ))}
-                </div>
-                <div className="termInfo">
+                    : null}
+                <div className="termInfo" style={{ marginLeft: "26px" }}>
                     Bảng giá chưa bao gồm thuế VAT và ưu đãi (nếu có)
                     Tài nguyên cộng thêm (+) là được tặng thêm khi đăng ký mới và các dịch vụ cũ, không bao gồm các dịch vụ áp dụng ưu đãi giảm giá trọn đời.
                 </div>

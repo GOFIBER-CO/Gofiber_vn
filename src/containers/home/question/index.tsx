@@ -61,9 +61,10 @@ const dummyData = [
 type Props = {
   data?: any[];
   showContent?: boolean;
+  isHosting?: boolean
 };
 
-function Question({ data = dummyData, showContent = true }: Props) {
+function Question({ data = dummyData, showContent = true, isHosting }: Props) {
   const [chosen, setChosen] = useState<string>("");
 
   return (
@@ -81,7 +82,7 @@ function Question({ data = dummyData, showContent = true }: Props) {
         />
 
         <div className="row justify-content-center" >
-          <div className="col col-12 col-lg-8">
+          {isHosting !== true ? <>   <div className="col col-12 col-lg-8">
             <TitleWithLine
               title="CÂU HỎI THƯỜNG GẶP"
               extra={
@@ -91,7 +92,9 @@ function Question({ data = dummyData, showContent = true }: Props) {
                   : ``
               }
             />
-          </div>
+          </div></> : null
+          }
+
         </div>
         <div className="row justify-content-center" >
           <div className="col-12 col-md-10 col-lg-8" style={{ maxWidth: "883px" }}>

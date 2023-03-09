@@ -22,9 +22,9 @@ export const PostApi = {
 
     try {
       const response = await axios.get(
-        "https://api.gofiber.vn/api/posts/getPaging?pageSize=10000&pageIndex=1"
+        "http://localhost:8000/api/posts/getPaging?pageSize=10000&pageIndex=1"
       );
-
+      console.log(response.data.data);
       return response.data.data;
     } catch (error) {
       throw error;

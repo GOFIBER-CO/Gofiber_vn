@@ -122,6 +122,9 @@ function NewsPage({ tags }: Props) {
           </div>
         ) : (
           <>
+            <div className="rơ">
+
+            </div>
             <div className="row">
 
               {news.map((item, index) => (

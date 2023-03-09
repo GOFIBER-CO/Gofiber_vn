@@ -31,7 +31,7 @@ const data = [
      Các dịch vụ VPS như VPS SSD, Cloud VPS, VPS giá rẻ, VPS treo game,... đang là sự lựa chọn ưu tiên hàng đầu của các khách hàng.`,
     image: HOME2_IMAGE.HOT_SERVICE.VPS,
     class: "flex-row-reverse",
-    link: "/thue-may-chu-vat-ly",
+    link: "/thue-vps",
     classText: "align-items-start align-items-lg-end",
   },
 ];

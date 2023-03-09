@@ -35,7 +35,7 @@ const gofiber = [
   {
     id: 6,
     name: "Cam kết chất lượng",
-    link: "/",
+
   },
 ];
 
@@ -43,22 +43,18 @@ const importantInfo = [
   {
     id: 1,
     name: "Hướng dẫn gửi hỗ trợ",
-    link: "/",
   },
   {
     id: 2,
     name: "Hướng dẫn thanh toán",
-    link: "/",
   },
   {
     id: 3,
     name: "Hướng dẫn đăng ký dịch vụ",
-    link: "/",
   },
   {
     id: 4,
     name: "Hướng dẫn sử dụng",
-    link: "/",
   },
 ];
 
@@ -70,7 +66,7 @@ const contactInfo = [
   },
   {
     id: 2,
-    name: "Số điện thoại : 0985 07 85 07",
+    name: "Số điện thoại : 0985 07 85 07 - 0987 19 87 05",
     image: HOME2_IMAGE.FOOTER.PHONE,
   },
   {
@@ -139,28 +135,11 @@ function FooterV2() {
         <div className="mt-4 row justify-content-center wrapper-info">
           <div className="col col-12 col-md-10">
             <div className="row">
-              <div className="col-12 col-md-4 px-0 mt-4">
-                <h5 className="h5">Về GoFiber</h5>
-                {gofiber.map((item) => (
-                  <div className="px-0 mt-1" key={item.id}>
-                    <Link className="a" href={item.link}>
-                      {item.name}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-              <div className="col-12 col-md-4 px-0 mt-4">
-                <h5 className="h5">Thông tin cần thiết</h5>
-                {importantInfo.map((item) => (
-                  <div className="px-0 mt-1" key={item.id}>
-                    <Link className="a" href={item.link}>
-                      {item.name}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-              <div className="col-12 col-md-4 px-0 mt-4">
-                <h5 className="h5">Thông tin liên lạc</h5>
+              <div className="col-12 col-md-6 px-0 mt-4">
+
+                <h5 className="h5 ">Công ty TNHH Công nghệ  Phần Mềm GoFiber</h5>
+                <p className="w-75">GPKD số 0317495104 cấp bởi Sở Kế Hoạch và Đầu tư
+                  TP Hồ Chí Minh ngày 29/08/2022</p>
                 {contactInfo.map((item) => (
                   <div className="px-0 mb-3 d-flex" key={item.id}>
                     <img
@@ -174,6 +153,44 @@ function FooterV2() {
                   </div>
                 ))}
               </div>
+              <div className="col-12 col-md-3 px-0 mt-4">
+                <h5 className="h5">Về GoFiber</h5>
+                {gofiber.map((item: any) => (
+                  <div className="px-0 mt-1" key={item.id}>
+                    {item.link === undefined ? <>
+                      <p style={{ fontSize: "14px" }}>
+
+                        {item.name}
+                      </p>
+
+                    </> : <>
+                      <Link className="a" href={item.link}>
+                        {item.name}
+                      </Link>
+                    </>}
+
+                  </div>
+                ))}
+              </div>
+              <div className="col-12 col-md-3 px-0 mt-4">
+                <h5 className="h5">Thông tin cần thiết</h5>
+                {importantInfo.map((item: any) => (
+                  <div className="px-0 mt-1" key={item.id}>
+                    {item.link === undefined ? <>
+                      <p style={{ fontSize: "14px" }}>
+
+                        {item.name}
+                      </p>
+
+                    </> : <>
+                      <Link className="a" href={item.link}>
+                        {item.name}
+                      </Link>
+                    </>}
+                  </div>
+                ))}
+              </div>
+
             </div>
 
             <div className="row mt-4 justify-content-center">

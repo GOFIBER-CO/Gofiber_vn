@@ -90,7 +90,6 @@ function NewsDetail({ title, description }: Props) {
   const [bestNews, setBestNews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
-  console.log(data)
   const getNewsByDomain = async (slug: any) => {
     try {
       setIsLoading(true);
@@ -157,18 +156,13 @@ function NewsDetail({ title, description }: Props) {
     }
   }, [slug]);
 
-  const getTime = (time: any) => {
+  const getTime = (time?: any, like?: any, view?: any) => {
     const date = new Date(time);
     const dateString = date.toLocaleDateString(); // returns "3/6/2023" (or equivalent in your local time zone)
     const timeString = date.toLocaleTimeString(); // returns "9:32:50 AM" (or equivalent in your local time zone)
     const weekday = date.toLocaleString('vi-VN', { weekday: 'long' });
-    console.log(weekday)
-    console.log(dateString)
-    console.log(timeString)
-    const string = moment().format("dddd, DD/MM/YYYY, hh:mm");
-    return weekday + ", " + dateString + ", " + timeString
+    return weekday + ", " + dateString + ", " + timeString + ", View: " + view + ", Like: " + like
   };
-
   const fetchMoreData = async () => {
     try {
       const params = {
@@ -199,11 +193,11 @@ function NewsDetail({ title, description }: Props) {
       <div className="row " >
         <div className="col-12 col-md-8 content " style={{ marginTop: "80px" }}  >
           <h1 style={{ fontSize: "32px", marginBottom: "16px" }}>{title}</h1>
-          <div className="mt-2 time" style={{ marginBottom: "16px" }} >{getTime(data?.createdAt)}</div>
-          <div className="mt-2" style={{ marginBottom: "16px" }}>
+          <div className="mt-2 time" style={{ marginBottom: "16px" }} >{getTime(data?.createdAt, data?.likes, data?.views)}</div>
+          <div className="mt-2 classforContent" style={{ marginBottom: "16px" }}>
             <div dangerouslySetInnerHTML={{ __html: data?.description }}></div>
           </div>
-          <div className="mt-4" style={{ marginBottom: "16px" }}>
+          <div className="mt-4 classforContent" style={{ marginBottom: "16px" }}>
             <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
           </div>
           <div className="relative-news">

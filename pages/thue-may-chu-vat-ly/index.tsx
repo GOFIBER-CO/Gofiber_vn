@@ -15,6 +15,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import parse from 'html-react-parser';
+import Script from "next/script";
 
 
 const banner = {
@@ -437,11 +438,12 @@ function RentPhysicalServerPage({ tags }: Props) {
   return (
     <>
       <Head>
-        
+
         {tags.map((tag, index) => (
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
+
       <div id="rent-vps">
         <section>
           <BannerV2Page
@@ -460,9 +462,8 @@ function RentPhysicalServerPage({ tags }: Props) {
                 <button
                   onClick={() => setTab(item)}
                   key={item.id}
-                  className={`btn0 btn-tab m-1 ${
-                    tab.id === item.id ? "active" : ""
-                  }`}
+                  className={`btn0 btn-tab m-1 ${tab.id === item.id ? "active" : ""
+                    }`}
                 >
                   {item.name}
                 </button>
@@ -544,7 +545,7 @@ function RentPhysicalServerPage({ tags }: Props) {
             </div>
           </section>
 
-         
+
         </div>
 
         <section className="section-hire">
