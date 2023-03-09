@@ -1,7 +1,7 @@
 import TextIconButton from "@/src/components/button/TextIconButton";
 import TitleWithLine from "@/src/components/TitleWithLine";
 import { useAppDispatch } from "@/src/redux";
-import { getPagingByDomain } from "@/src/redux/slice";
+import { getPagingByCate, getPagingByDomain } from "@/src/redux/slice";
 import { ICON, NEWS_TAB } from "@/src/utils";
 import { Icon } from "@iconify/react";
 import { Button } from "antd";
@@ -77,6 +77,7 @@ function NewsAndEvents() {
         };
 
         const result = await dispatch(getPagingByDomain(params)).unwrap();
+
         const { data } = result?.data;
 
         setData(data || []);

@@ -2,7 +2,7 @@ import { SeoApi } from "@/src/api/seo";
 import BannerPage from "@/src/components/banner/BannerPage";
 import NewItem from "@/src/containers/news/NewItem";
 import { useAppDispatch } from "@/src/redux";
-import { getPagingByDomain } from "@/src/redux/slice";
+import { getPagingByCate, getPagingByDomain } from "@/src/redux/slice";
 import { NEWS_IMAGE } from "@/src/utils";
 import { is } from "immer/dist/internal";
 import { GetServerSidePropsContext } from "next";
@@ -39,6 +39,8 @@ function NewsPage({ tags }: Props) {
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [news, setNews] = useState<any[]>([]);
+  const [news1, setNews1] = useState<any[]>([]);
+
   const [pageIndex, setPageIndex] = useState<number>(1);
   const [isLoadingSeeMore, setIsLoadingSeeMore] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
@@ -51,9 +53,17 @@ function NewsPage({ tags }: Props) {
         pageSize: 6,
         pageIndex,
       };
+      const params1 = {
+        domain: process.env.NEXT_PUBLIC_DOMAIN,
+        status: 1,
+        pageSize: 6,
+        pageIndex,
+      };
 
       const result = await dispatch(getPagingByDomain(params)).unwrap();
+      const result1 = await dispatch(getPagingByCate(params1)).unwrap();
       const { data, count } = result?.data;
+      setNews1(result1?.data.data || []);
 
       setNews(data || []);
       setCount(count || 0);
@@ -63,7 +73,7 @@ function NewsPage({ tags }: Props) {
       setIsLoading(false);
     }
   };
-
+  console.log(news1)
   useEffect(() => {
     getPosts();
   }, []);
@@ -122,8 +132,14 @@ function NewsPage({ tags }: Props) {
           </div>
         ) : (
           <>
-            <div className="rơ">
-
+            <div className="row" style={{ marginBottom: "130px" }}>
+              {news1.map((item, index) => (
+                <NewItem
+                  item={item}
+                  wrapperClassName={`col-lg-4 col-md-6 `}
+                  key={index}
+                />
+              ))}
             </div>
             <div className="row">
 
