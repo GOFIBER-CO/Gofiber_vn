@@ -2,7 +2,14 @@
   font-family: "SVN-Poppins";
   src: url("../public/fonts/SVN-Poppins-Medium.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "GoogleSans-Bold";
+  src: url("../public/fonts/GoogleSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GoogleSans-normal";
+  src: url("../public/fonts/GoogleSans-Regular.ttf") format("truetype");
+}
 $superSmall: 0px;
 $small: 500px;
 $medium: 784px;
@@ -2360,9 +2367,40 @@ img {
 }
 
 #news-detail {
-  h1,
-  h2,
-  h3,
+  letter-spacing: 0.2px;
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    --font-family-primary: "GoogleSans-Bold" !important;
+    font-family: "GoogleSans-Bold" !important;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    --font-family-primary: "GoogleSans-Bold" !important;
+    font-family: "GoogleSans-Bold" !important;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    --font-family-primary: "GoogleSans-Bold" !important;
+    font-family: "GoogleSans-Bold" !important;
+  }
+  p {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
+  li {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
+  span {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
   h4,
   h5,
   h6 {
@@ -2406,6 +2444,44 @@ img {
 
   .best-news,
   .relative-news {
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      --font-family-primary: "GoogleSans-Bold" !important;
+      font-family: "GoogleSans-Bold" !important;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      --font-family-primary: "GoogleSans-Bold" !important;
+      font-family: "GoogleSans-Bold" !important;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      --font-family-primary: "GoogleSans-Bold" !important;
+      font-family: "GoogleSans-Bold" !important;
+    }
+    p {
+      font-size: 16px;
+      --font-family-primary: "GoogleSans-normal" !important;
+      font-family: "GoogleSans-normal" !important;
+    }
+    li {
+      font-size: 16px;
+      --font-family-primary: "GoogleSans-normal" !important;
+      font-family: "GoogleSans-normal" !important;
+    }
+    span {
+      font-size: 16px;
+      --font-family-primary: "GoogleSans-normal" !important;
+      font-family: "GoogleSans-normal" !important;
+    }
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+    }
     .title {
       color: var(--color--primary);
       position: relative;
@@ -2528,6 +2604,49 @@ img {
 }
 
 #news-detail {
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    --font-family-primary: "GoogleSans-Bold" !important;
+    font-family: "GoogleSans-Bold" !important;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    --font-family-primary: "GoogleSans-Bold" !important;
+    font-family: "GoogleSans-Bold" !important;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    --font-family-primary: "GoogleSans-Bold" !important;
+    font-family: "GoogleSans-Bold" !important;
+  }
+  p {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
+  li {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
+  span {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
+  strong {
+    font-size: 16px;
+    --font-family-primary: "GoogleSans-normal" !important;
+    font-family: "GoogleSans-normal" !important;
+  }
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
   figure {
     display: flex;
     align-items: center;

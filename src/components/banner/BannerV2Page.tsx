@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { CSSProperties, useEffect, useState } from "react";
 import TextIconButton from "../button/TextIconButton";
+import { TRUE } from "sass";
 
 type Props = {
   image?: any;
@@ -16,6 +17,7 @@ type Props = {
   extra?: string;
   extra1?: string;
   data?: any;
+  showButton?: Boolean
   divImport?: any;
 };
 // Change Image Responsive
@@ -30,6 +32,7 @@ function BannerV2Page({
   extra1 = "",
   data = "",
   divImport = "",
+  showButton = true,
   styleBannerLinkLarge = { minWidth: "30%" },
   styleBannerLinkMedium = { minWidth: "50%" },
   styleBannerLinkSmall = { minWidth: "90%" },
@@ -145,12 +148,14 @@ function BannerV2Page({
             </h1>
             <p className="extra mt-4" >{extra}</p>
             {extra1 && <p className="extraForHosting mt-4 font-weight-light " >{extra1}</p>}
+            {showButton &&
+              <TextIconButton
+                className="btn-white-to-primary btnforbanner"
+                name="Đăng ký dùng thử"
+                styles={{ boxShadow: "none", background: "white", color: "#00ACD7", width: "208px" }}
 
-            <TextIconButton
-              className="btn-white-to-primary btnforbanner"
-              name="Đăng ký dùng thử"
-              styles={{ boxShadow: "none", background: "white", color: "#00ACD7", width: "208px" }}
-            />
+              />
+            }
           </div>
 
         </div>{

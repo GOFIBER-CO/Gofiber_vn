@@ -161,7 +161,7 @@ function NewsDetail({ title, description }: Props) {
     const dateString = date.toLocaleDateString(); // returns "3/6/2023" (or equivalent in your local time zone)
     const timeString = date.toLocaleTimeString(); // returns "9:32:50 AM" (or equivalent in your local time zone)
     const weekday = date.toLocaleString('vi-VN', { weekday: 'long' });
-    return weekday + ", " + dateString + ", " + timeString + ", View: " + view + ", Like: " + like
+    return weekday + ", " + dateString + ", " + timeString
   };
   const fetchMoreData = async () => {
     try {
@@ -192,8 +192,8 @@ function NewsDetail({ title, description }: Props) {
     notLoading: (
       <div className="row " >
         <div className="col-12 col-md-8 content " style={{ marginTop: "80px" }}  >
-          <h1 style={{ fontSize: "32px", marginBottom: "16px" }}>{title}</h1>
-          <div className="mt-2 time" style={{ marginBottom: "16px" }} >{getTime(data?.createdAt, data?.likes, data?.views)}</div>
+          <h1 style={{ fontSize: "32px", marginBottom: "16px", }}>{title}</h1>
+          <div className="mt-2 time" style={{ marginBottom: "16px" }} ><span >{getTime(data?.createdAt, data?.likes, data?.views)} <img src="/icon-view.png" className="mx-2 pb-1" alt="like" />{" " + data?.views} </span></div>
           <div className="mt-2 classforContent" style={{ marginBottom: "16px" }}>
             <div dangerouslySetInnerHTML={{ __html: data?.description }}></div>
           </div>
@@ -213,7 +213,7 @@ function NewsDetail({ title, description }: Props) {
                                 }
                             </div> */}
             <InfiniteScroll
-              style={{ overflow: "hidden" }}
+              style={{ overflow: "hidden", fontFamily: "GoogleSans-Bold" }}
               dataLength={relativeNews.length}
               next={fetchMoreData}
               hasMore={relativeNews?.length < count}

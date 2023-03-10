@@ -39,6 +39,18 @@ export const getPagingByCate = createAsyncThunk(
   }
 );
 
+export const getPostForSpecificCate = createAsyncThunk(
+  "/getPostForSpecificCate",
+  async (params: any) => {
+    try {
+      const result = await PostApi.getPostForSpecificCate(params);
+      return result;
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
+);
+
 export const getNewsBySlug = createAsyncThunk(
   "post/getNewsBySlug",
   async (params: any) => {

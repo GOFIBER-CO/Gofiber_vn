@@ -29,6 +29,18 @@ export const PostApi = {
       throw error;
     }
   },
+  getPostForSpecificCate: async (params: any) => {
+    const query = convertObjectToQuery(params);
+    const url = `/getPostForSpecificCate` + query;
+
+    try {
+      const response = await fetchApi().get(url);
+
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  },
   getAllPost: async () => {
     const url = pathname + `/posts/getPaging`;
 

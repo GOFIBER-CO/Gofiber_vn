@@ -4,11 +4,10 @@ import { PostApi } from "./../api/post"
 const SITE_URL = "https://gofiber.vn"
 const generateRssFeed = async () => {
     const posts = await PostApi.getAllPost();
-    console.log(posts)
     const date = new Date();
     const author = {
         name: "Gofiber",
-        email: "Gofiber@gmail.com",
+        email: "info.gofiber.vn@gmail.com",
     };
     const feed = new Feed({
         title: "Gofiber",

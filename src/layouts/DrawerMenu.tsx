@@ -87,7 +87,7 @@ const items: MenuProps["items"] = [
       />
     ),
   ]),
-
+  getItem("Tin Tức", "/tin-tuc", null),
   getItem("Liên hệ", "/lien-he", null),
   getItem("Tuyển dụng", "/tuyen-dung", null),
 ];

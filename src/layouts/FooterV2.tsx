@@ -138,7 +138,7 @@ function FooterV2() {
               <div className="col-12 col-md-6 px-0 mt-4">
 
                 <h5 className="h5 ">Công ty TNHH Công nghệ  Phần Mềm GoFiber</h5>
-                <p className="w-75">GPKD số 0317495104 cấp bởi Sở Kế Hoạch và Đầu tư
+                <p className="w-75" style={{ fontSize: "14px " }}>GPKD số 0317495104 cấp bởi Sở Kế Hoạch và Đầu tư
                   TP Hồ Chí Minh ngày 29/08/2022</p>
                 {contactInfo.map((item) => (
                   <div className="px-0 mb-3 d-flex" key={item.id}>
@@ -194,7 +194,7 @@ function FooterV2() {
             </div>
 
             <div className="row mt-4 justify-content-center">
-              <div className="col col-12 col-lg-8 px-0">
+              <div className="col col-12 mb-5 col-lg-8 px-0">
                 <div className="row mt-4 align-items-center">
                   {service.map((item) => (
                     <div
@@ -216,25 +216,48 @@ function FooterV2() {
               </div>
 
               <div className="col col-12 col-lg-4 px-0 d-flex mt-4 mt-md-0 align-items-end justify-content-center justify-content-lg-end">
-                <a
-                  className="a"
-                  href={`https://www.dmca.com/site-report/gofiber.vn?refurl=https://gofiber.vn${pathname}`}
-                  target="_blank"
-                >
-                  <picture title="dmca-badge">
-                    <source
-                      type="image/webp"
-                      src="https://gofiber.b-cdn.net/Admin/dmca-logo-2023.webp"
-                    />
-                    <img
-                      width="153"
-                      height="55"
-                      src="https://gofiber.b-cdn.net/Admin/dmca-logo-2023.webp"
-                      alt="dmca-badg"
-                      data-pin-no-hover="true"
-                    />
-                  </picture>
-                </a>
+                <div className="d-flex mt-2 flex-column flex-md-column justify-content-center   flex-sm-column ">
+                  <a
+                    className="a mb-3 mr-sm-6 mr-md-6 "
+                    href={`http://online.gov.vn/Home/WebDetails/102837?AspxAutoDetectCookieSupport=1`}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                  >
+                    <picture title="Gofiber - Đã thông báo bộ công thương">
+                      <source
+                        type="image/webp"
+                        src="https://gofiber.b-cdn.net/new-design/icon/image%2084.png"
+                      />
+                      <img
+                        width="153"
+                        height="55"
+                        src="https://gofiber.b-cdn.net/new-design/icon/image%2084.png"
+                        alt="Gofiber - Đã thông báo bộ công thương"
+                        data-pin-no-hover="true"
+                      />
+                    </picture>
+                  </a>
+                  <a
+                    className="a"
+                    href={`https://www.dmca.com/site-report/gofiber.vn?refurl=https://gofiber.vn${pathname}`}
+                    target="_blank"
+                  >
+                    <picture title="dmca-badge">
+                      <source
+                        type="image/webp"
+                        src="https://gofiber.b-cdn.net/Admin/dmca-logo-2023.webp"
+                      />
+                      <img
+                        width="153"
+                        height="55"
+                        src="https://gofiber.b-cdn.net/Admin/dmca-logo-2023.webp"
+                        alt="dmca-badg"
+                        data-pin-no-hover="true"
+                      />
+                    </picture>
+                  </a>
+                </div>
+
                 {/* <img
                   width={153}
                   height={33}
@@ -242,6 +265,7 @@ function FooterV2() {
                   alt="protected"
                 /> */}
               </div>
+
             </div>
           </div>
         </div>

@@ -14,9 +14,15 @@ const menuLv1 = [
   },
   {
     id: 3,
+    name: "Tuyển dụng",
+    link: "/tuyen-dung",
+  },
+  {
+    id: 4,
     name: "Liên hệ",
     link: "/lien-he",
   },
+
 ];
 
 const menuLv2 = [
@@ -92,7 +98,7 @@ function HeaderV2() {
               <li className="menu-item">
                 <a
                   target="_blank"
-                  href="https://go.vngserver.vn/"
+                  href="https://manager.gofiber.vn/"
                   rel="noopener nofollow"
                   className="a"
                 >

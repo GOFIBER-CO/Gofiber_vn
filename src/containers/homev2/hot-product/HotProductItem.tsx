@@ -7,10 +7,12 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/src/utils/animation";
+import Tilt from 'react-parallax-tilt';
 
 
 type Props = {
   item: any;
+  key: any
 };
 
 const Rate = ({ rate }: { rate?: number }) => {
@@ -30,7 +32,7 @@ const Rate = ({ rate }: { rate?: number }) => {
   return <div className="rate">{!rate ? render["none"] : render["has"]}</div>;
 };
 
-function HotProductItem({ item }: Props) {
+function HotProductItem({ item, key }: Props) {
   const dispatch = useAppDispatch();
 
   const handleChooseProduct = (item: any) => {
@@ -46,7 +48,7 @@ function HotProductItem({ item }: Props) {
   return (
 
 
-    <div className="col col-12 col-md-6 col-lg-3 py-2 px-2 px-xl-4 mt-4">
+    <div key={key} className="col col-12 col-md-6 col-lg-3 py-2 px-2 px-xl-4 mt-4">
 
 
       <div className="hot-product-item">
@@ -61,7 +63,8 @@ function HotProductItem({ item }: Props) {
 
           <div className="title " >{item.name}</div>
           <div className="extra" >{item.extra}</div>
-          <div className="price">{formatNumber(item.price)} VND / Tháng</div>
+          {item.contact && <div className="price">{item.contact} </div>}
+          {item.price && <div className="price">{formatNumber(item.price)} VND / Tháng</div>}
           <div className="price-discount">
             {item?.discount && `${formatNumber(item?.startPrice)} VND / Tháng`}
           </div>
