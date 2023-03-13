@@ -40,7 +40,7 @@ function NewItem({ wrapperClassName, item, cateList, key }: Props) {
 
 
 
-            <p className="mt-2 mb-0 number_line_3" dangerouslySetInnerHTML={{ __html: item?.description }}></p>
+            <p className="mt-2 mb-0 number_line_3" dangerouslySetInnerHTML={{ __html: item?.description.replace(/<[^>]*>/g, "") }}></p>
 
             {/* <div
               className="d-flex align-items-center mt-3 see-more  a"
@@ -61,8 +61,8 @@ function NewItem({ wrapperClassName, item, cateList, key }: Props) {
             ))}
           </div >
         </Link>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

@@ -108,7 +108,6 @@ function NewsPage({ tags }: Props) {
             setIsLoadingSeeMore(false);
         }
     };
-    console.log(cateListPage)
     useEffect(() => {
         if (pageIndex > 1) getPostsSeeMore();
     }, [pageIndex]);
