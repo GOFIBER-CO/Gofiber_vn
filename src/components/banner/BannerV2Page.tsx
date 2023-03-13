@@ -161,11 +161,12 @@ function BannerV2Page({
         </div>{
           divImport === "true" ? <>
             <div style={{
+              paddingTop: "50px",
               backgroundColor: `linear-gradient(92.18deg, #00ACD7 5.74%, #005CC9 98.17%);
         `, height: `${heightOfDiv}`, backgroundImage: `url("https://gofiber.b-cdn.net/new-design/element1/element1.png")`
             }}
             >
-              <div className="container">
+              <div className="container bannerForHosting">
                 <div className="row">
                   {data.map((item: any) => (<>
                     <div className="mb-lg-2 mb-3 mb-tb-2 col-lg-4 col-sm-6 text-white">
