@@ -208,16 +208,19 @@ const dummyData = [
 type Props = {
   data?: any[];
   showContent?: boolean;
+  titleForHosting?: string
 };
 
-function SectionQuestion({ data = dummyData, showContent = true }: Props) {
+function SectionQuestion({ data = dummyData, showContent = true, titleForHosting }: Props) {
   const [chosen, setChosen] = useState<string>("");
 
   return (
     <section className="section-question">
       <div data-aos="fade-up" className="container">
         <div className="text-center">
-          <h2 className="h2">Khách hàng thường hỏi GOFIBER những gì?</h2>
+          <h2 className="h2">{titleForHosting ? titleForHosting : "Khách hàng thường hỏi GOFIBER những gì"}</h2>
+
+
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
@@ -234,9 +237,8 @@ function SectionQuestion({ data = dummyData, showContent = true }: Props) {
                   <Panel
                     extra={
                       <Icon
-                        className={`icon-expand ${
-                          chosen === item.id ? "active" : ""
-                        }`}
+                        className={`icon-expand ${chosen === item.id ? "active" : ""
+                          }`}
                         icon={ICON.DOWN}
                       />
                     }

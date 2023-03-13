@@ -241,6 +241,7 @@ function FooterV2() {
                     className="a"
                     href={`https://www.dmca.com/site-report/gofiber.vn?refurl=https://gofiber.vn${pathname}`}
                     target="_blank"
+                    rel="nofollow "
                   >
                     <picture title="dmca-badge">
                       <source

@@ -146,7 +146,7 @@ function TestPage({ tags }: Props) {
                 <div className="extra-1 mb-3" style={{ justifyContent: "center" }}>
                   DỊCH VỤ HOSTING, MÁY CHỦ VẬT LÝ, MÁY CHỦ ẢO VPS TỐC ĐỘ CAO
                 </div>
-                <div className="extra-2 mb-3" style={{ justifyContent: "center" }}>
+                <div className="extra-2 mb-3 mediumFont" style={{ justifyContent: "center", fontFamily: "PoppinsRegular !important" }}>
                   Xuất phát điểm là đơn vị giàu kinh nghiệm hoạt động trong lĩnh
                   vực thiết kế website và các dịch vụ SEO tổng thể cũng như
                   chuyên sâu, GOFIBER tự hào đã hỗ trợ đắc lực và hiệu quả cho

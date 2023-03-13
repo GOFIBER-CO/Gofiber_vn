@@ -44,7 +44,7 @@ function BannerForHosting({ imageDesktop, imageTablet, imageSmall }: Props) {
                 <div className="col-12">
                     <div className="col-md-7 col-lg-4 ml-5" style={{ marginLeft: `${margin}` }} >
                         <h2 className="text-left text-white ">Quà tặng Wordpress trị giá hơn $1000.</h2>
-                        <p className="text-left text-white ">Để hỗ trợ tốt hơn cho các khách hàng sử dụng dịch vụ Web hosting cao cấp hay WordPress hosting tại GOFIBER, chúng tôi hân hạnh được hỗ trợ các plugin và theme bản quyền sau: Astra Pro (hosting giá rẻ), Astra Lifetime (gói PRO trở lên), WP Rocket, Rank Math Pro,... với tổng giá trị quà tặng lên đến $2000. Tất cả plugin và theme được hỗ trợ cập nhật tự động.</p>
+                        <p className="text-left text-white fontBannerForHosting ">Để hỗ trợ tốt hơn cho các khách hàng sử dụng dịch vụ Web hosting cao cấp hay WordPress hosting tại GOFIBER, chúng tôi hân hạnh được hỗ trợ các plugin và theme bản quyền sau: Astra Pro (hosting giá rẻ), Astra Lifetime (gói PRO trở lên), WP Rocket, Rank Math Pro,... với tổng giá trị quà tặng lên đến $2000. Tất cả plugin và theme được hỗ trợ cập nhật tự động.</p>
                         <button
                             className="btn0 btn-intro d-flex align-items-center btn-white-to-primary btnforbanner"
                             style={{ paddingLeft: "30px", textAlign: 'center', width: "130px", height: "45px", borderRadius: "32px", }}

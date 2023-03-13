@@ -8,48 +8,39 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { HOME2_IMAGE, HOME_IMAGE, ICON } from "@/src/utils";
 import { Icon } from "@iconify/react";
+import { useRouter } from "next/router";
 
 const data = [
   {
     id: 1,
-    title: "Đầu tư mạnh mẽ vào hạ tầng",
-    content: `Hệ thống cơ sở hạ tầng được đầu tư mạnh mẽ với nhiều lớp bảo mật được tối ưu bởi các chuyên gia hàng đầu. Tất cả giúp tăng cường khả năng giám sát và cảnh báo nhằm hỗ trợ khách hàng hiệu quả nhất trong mọi tình huống.
-    `,
-    image: HOME2_IMAGE.WHY_CHOOSE.INVEST,
+    title: "Gofiber cung cấp dịch vụ máy chủ giá thấp",
+    content: `Theo báo cáo từ đơn vị, tính riêng 3 tháng cuối năm 2022 và 2 tháng đầu năm 2023, bộ phận bán hàng đã nhận được số lượng đơn hàng kỷ lục dành cho các dịch vụ cho thuê VPS, đặc biệt là VPS SSD giá rẻ. Đại diện Gofiber nhận định, công nghệ máy chủ phát triển ngoài ...`,
+    image: "https://gofiber.b-cdn.net/new-design/news/3.png",
+    link: "https://vnexpress.net/gofiber-cung-cap-dich-vu-may-chu-gia-thap-4574541.html"
   },
   {
     id: 2,
-    title: "Đội ngũ nhân viên kỹ thuật cao, giàu kinh nghiệm",
-    content: `GOFIBER hiện đang sở hữu đội ngũ nhân lực trẻ trung, năng động, nhiệt huyết và luôn muốn tìm hiểu cũng như cập nhật những kiến thức và công nghệ mới mẻ.`,
-    image: HOME2_IMAGE.WHY_CHOOSE.EMPLOYEE,
+    title: "Đơn vị cung cấp dịch vụ hosting nổi tiếng hiện nay",
+    content: `Đứng trước cuộc cách mạng công nghiệp 4.0, khi mà sự chuyển đổi số đang là một xu thế tất yếu thì hầu hết các doanh nghiệp đều muốn xây dựng cho mình một hệ thống website chuyên nghiệp.Tuy nhiên, không phải doanh nghiệp nào cũng có thể đạt được điều mình `,
+    image: "https://gofiber.b-cdn.net/new-design/news/2.png",
+    link: "https://www.24h.com.vn/kham-pha-cong-nghe/don-vi-cung-cap-dich-vu-hosting-noi-tieng-hien-nay-c675a1443470.html"
   },
   {
     id: 3,
-    title: "Tự chủ về kỹ thuật và công nghệ",
-    content: `Công nghệ Firewall Anti DDoS được chuyển giao từ các công ty công nghệ nổi tiếng trên thế giới với nhiều tính năng vượt trội.`,
-    image: HOME2_IMAGE.WHY_CHOOSE.TECHNOLOGY,
+    title: "Gofiber cung cấp dịch vụ máy chủ giá thấp",
+    content: `Gofiber là đơn vị nhiều năm kinh nghiệm với dịch vụ thiết kế website, xây dựng website phục vụ đa dạng lĩnh vực và xây dựng website theo nhu cầu của khách hàng. Không những vậy, Gofiber còn mở rộng dịch vụ của mình sang hỗ trợ khách hàng trong việc bảo trì, nâng cấp và ...`,
+    image: "https://gofiber.b-cdn.net/new-design/news/1.png",
+    link: "https://www.nguoiduatin.vn/on-vi-cung-cap-dich-vu-hosting-noi-tieng-hien-nay-a595515.html"
   },
   {
     id: 4,
-    title: "Hỗ trợ nhiệt tình 24/7",
-    content: `Đội ngũ hỗ trợ và hệ thống giám sát hoạt động 24/7 giúp phát hiện nhanh các sự cố, phản hồi nhanh chóng, đảm bảo dịch vụ của khách hàng vận hành xuyên suốt và ổn định.`,
-    image: HOME2_IMAGE.WHY_CHOOSE.SUPPORT,
+    title: "Dịch vụ web hosting và máy chủ ảo của Gofiber",
+    content: `Máy chủ ảo xuất phát từ khái niệm tiếng Anh ban đầu là Virtual Private Server, viết tắt là VPS. Các máy chủ ảo (VPS) được tạo ra bằng phương pháp phân chia tài nguyên của một máy chủ vật lý thành nhiều máy chủ khác nhau. 
+    Khi lựa chọn sử dụng VPS .....`,
+    image: "https://gofiber.b-cdn.net/new-design/news/4.png",
+    link: "https://dantri.com.vn/kinh-doanh/dich-vu-web-hosting-va-may-chu-ao-cua-gofiber-20230225102244599.htm"
   },
-  {
-    id: 5,
-    title: "Chính sách dịch vụ rõ ràng",
-    content: `Tất cả các thông tin liên quan đến chính sách và điều khoản của GOFIBER đều được thể hiện đầy đủ, rõ ràng và chi tiết trên website chính thức của công ty. Khách hàng 
-        sẽ không phải lo về các chi phí ẩn hay bất kỳ sự mập mờ thông tin nào.`,
-    image: HOME2_IMAGE.WHY_CHOOSE.POLICY,
-  },
-  {
-    id: 6,
-    title: "Nhiều ưu đãi cho khách hàng cũ và mới",
-    content: `Để thể hiện sự tri ân đối với các khách hàng đang có, GOFIBER thường xuyên tung ra các chương trình khuyến mãi vào các dịp đặc biệt. 
-    Việc sử dụng các mã giảm giá đăng ký mới và gia hạn dịch vụ tại GOFIBER sẽ quý khách tiết kiệm được thêm nhiều chi phí.
-    `,
-    image: HOME2_IMAGE.WHY_CHOOSE.CUSTOMER,
-  },
+
 ];
 
 const responsive = [
@@ -91,6 +82,7 @@ function SlideNewspaper() {
     sliderRef1.current.swiper.slideNext();
   }, []);
 
+
   return (
     <div id="slider-why-choose" className="position-relative">
       {responsive.map((item) => (
@@ -109,24 +101,27 @@ function SlideNewspaper() {
             className={`mySwiper ${item.slideClass}`}
             autoplay
           >
-            {data.map((item, index) => (
+            {data.map((item, index) => (<>
+
               <SwiperSlide key={index}>
-                <div className="why-choose-item">
-                  <div className="img">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      width={120}
-                      height={120}
-                    />
+                <a key={index} target="_blank" href={item.link} style={{ textDecoration: "none" }} rel="nofollow noopener  noreferrer">
+                  <div className="newspaper-item">
+                    <div className="img">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        width={120}
+                        height={120}
+                      />
+                    </div>
+                    <div className="title">{item.title}</div>
+                    <div className="content">{item.content}</div>
+
                   </div>
-                  <div className="title">{item.title}</div>
-                  <div className="content">{item.content}</div>
-                  <div className="d-flex justify-content-center">
-                    <div className="line"></div>
-                  </div>
-                </div>
+                </a>
               </SwiperSlide>
+            </>
+
             ))}
           </Swiper>
           <button

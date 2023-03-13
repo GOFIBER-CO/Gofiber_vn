@@ -10,6 +10,15 @@
   font-family: "GoogleSans-normal";
   src: url("../public/fonts/GoogleSans-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../public/fonts/SVN-Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url("../public/fonts/SVN-Poppins-Medium.ttf") format("truetype");
+}
+
 $superSmall: 0px;
 $small: 500px;
 $medium: 784px;
@@ -1022,6 +1031,7 @@ img {
       }
 
       .ant-collapse-content-box {
+        font-family: "PoppinsRegular" !important;
         padding: 10px 48px;
         position: relative;
 
@@ -2690,7 +2700,9 @@ img {
     background: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
     padding-top: 130px;
   }
-
+  .mediumFont {
+    font-family: "PoppinsRegular" !important;
+  }
   .menu-lv1 {
     color: #fff;
     font-size: 16px;
@@ -2862,6 +2874,7 @@ img {
       }
 
       .extra {
+        font-family: "PoppinsRegular" !important;
         font-size: 12px;
         font-weight: 500;
       }
@@ -2911,6 +2924,7 @@ img {
       }
 
       .extra {
+        font-family: "PoppinsRegular" !important;
         display: flex;
         color: #3d5156;
         font-size: 14px;
@@ -3124,6 +3138,7 @@ img {
     color: var(--color--primary) !important;
   }
   .content {
+    font-family: "PoppinsRegular" !important;
     line-height: 24px;
   }
 }
@@ -3188,7 +3203,7 @@ img {
       background: linear-gradient(to right, #00acd7, #005cc9);
 
       .see-more {
-        a {
+        div {
           span {
             background: linear-gradient(
               92.18deg,
@@ -3232,7 +3247,7 @@ img {
       .see-more {
         margin-top: 70px;
 
-        a {
+        div {
           color: #525255 !important;
 
           span {
@@ -3327,6 +3342,62 @@ img {
         margin-top: 12px;
         text-align: center;
         color: var(--color--primary);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        word-break: break-word;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        min-height: 56px;
+      }
+
+      .content {
+        color: #0c252c;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        min-height: 120px;
+        margin-top: 24px;
+        word-break: break-word;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        text-align: center;
+      }
+
+      .line {
+        margin-top: 24px;
+        width: 70px;
+        height: 3px;
+        background: linear-gradient(90deg, #00acd7, #006781 50%, #00acd7) 0/200%;
+      }
+    }
+    .newspaper-item {
+      background: white;
+      border: 1px solid #fafafa;
+      /* Shadow 1 */
+      height: 391px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      min-height: 100%;
+
+      .img {
+        height: 20%;
+
+        text-align: center;
+      }
+
+      .title {
+        margin-top: 12px;
+        text-align: center;
+        color: #0c252c;
         font-weight: 600;
         font-size: 20px;
         line-height: 28px;
@@ -3966,7 +4037,9 @@ img {
 
 #section-banner-v2 {
   background: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
-
+  .bannerForHosting {
+    font-family: "PoppinsRegular" !important;
+  }
   .banner-v2 {
     padding: 200px 0px 100px;
     .extra {
@@ -3974,8 +4047,11 @@ img {
       color: #fff;
       line-height: 24px;
       font-size: 16px;
+      font-family: "PoppinsRegular" !important;
     }
     .extraForHosting {
+      font-family: "PoppinsRegular" !important;
+
       display: block;
       text-align: left;
       color: #fff;
@@ -4476,6 +4552,11 @@ img {
     //css code
     width: 90% !important;
   }
+
+  @media screen and (min-width: $superSmall) and (max-width: $small) {
+    //css code
+    width: 90% !important;
+  }
   @media screen and (min-width: $medium) and (max-width: $large) {
     //css code
     width: 70% !important;
@@ -4522,4 +4603,7 @@ img {
   p {
     font-size: 15px !important;
   }
+}
+.fontBannerForHosting {
+  font-family: "PoppinsRegular" !important;
 }

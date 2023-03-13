@@ -158,7 +158,9 @@ function RecruitDetail({ title }: Props) {
       const result = await dispatch(getRecruitBySlug(params)).unwrap();
 
       const { data } = result?.data;
-
+      if (!data) {
+        router.push("/tuyen-dung")
+      }
       setRecruit(data || {});
     } catch (error) {
       console.log(error);
@@ -635,12 +637,10 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       slug,
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
-
-    const url = `/ recruits / getRecruitBySlug` + convertObjectToQuery(params);
+    const url = `/recruits/getRecruitBySlug` + convertObjectToQuery(params);
 
     const response = await fetchApi().get(url);
     const title = response?.data?.data?.title;
-
     if (!title) {
       return {
         redirect: {

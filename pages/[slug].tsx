@@ -16,6 +16,8 @@ import Head from "next/head";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { convertObjectToQuery } from "@/src/utils";
 import { fetchApi } from "@/src/api";
+import Image from "next/image";
+import NewItem from "@/src/containers/news/NewItem";
 
 const pageSize = 4;
 
@@ -86,9 +88,12 @@ function NewsDetail({ title, description }: Props) {
   const { slug } = router?.query;
   const [pageIndex, setPageIndex] = useState<number>(1);
   const [data, setData] = useState<any>({});
+  const [isLoadingSeeMore, setIsLoadingSeeMore] = useState<boolean>(false);
   const [relativeNews, setRelativeNews] = useState<any[]>([]);
   const [bestNews, setBestNews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState<boolean>(true);
+
   const [count, setCount] = useState<number>(0);
   const getNewsByDomain = async (slug: any) => {
     try {
@@ -132,7 +137,37 @@ function NewsDetail({ title, description }: Props) {
       console.log("error", error);
     }
   };
+  const getPostsSeeMore = async () => {
+    try {
+      setIsLoadingSeeMore(true);
+      const params = {
+        domain: process.env.NEXT_PUBLIC_DOMAIN,
+        status: 1,
+        pageSize: 6,
+        pageIndex,
+      };
 
+      const result = await dispatch(getPagingByDomain(params)).unwrap();
+      const { data, count } = result?.data;
+      if (data.length === 0) {
+        setShowButton(false)
+      }
+      setRelativeNews((prevState) => {
+        return [...prevState, ...(data || [])];
+      });
+    } catch (error) {
+      console.log("getPosts", error);
+    } finally {
+      setIsLoadingSeeMore(false);
+    }
+  };
+  useEffect(() => {
+    if (pageIndex > 1) getPostsSeeMore();
+  }, [pageIndex]);
+
+  const onSeeMore = () => {
+    setPageIndex((prevState) => prevState + 1);
+  };
   const getNewsDetail = async (slug: any) => {
     try {
       const params = {
@@ -163,25 +198,7 @@ function NewsDetail({ title, description }: Props) {
     const weekday = date.toLocaleString('vi-VN', { weekday: 'long' });
     return weekday + ", " + dateString + ", " + timeString
   };
-  const fetchMoreData = async () => {
-    try {
-      const params = {
-        domain: process.env.NEXT_PUBLIC_DOMAIN,
-        status: 1,
-        pageSize: pageSize,
-        pageIndex,
-        slug,
-      };
 
-      const result = await dispatch(getPagingByDomain(params)).unwrap();
-      const { data, count } = result?.data;
-      setRelativeNews((prevState) => [...prevState, ...(data || [])]);
-      setCount(count || 0);
-      setPageIndex(pageIndex + 1);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
 
   const onRedirect = () => {
     setPageIndex(1);
@@ -212,7 +229,7 @@ function NewsDetail({ title, description }: Props) {
                                     )
                                 }
                             </div> */}
-            <InfiniteScroll
+            {/* <InfiniteScroll
               style={{ overflow: "hidden", fontFamily: "GoogleSans-Bold" }}
               dataLength={relativeNews.length}
               next={fetchMoreData}
@@ -260,7 +277,37 @@ function NewsDetail({ title, description }: Props) {
                   <Divider className="mx-3" />
                 </React.Fragment>
               ))}
-            </InfiniteScroll>
+            </InfiniteScroll> */}
+            <div className="row">
+              {relativeNews?.map((item, index) => (
+                <React.Fragment key={index}>
+                  <RelativeNews
+                    onRedirect={onRedirect}
+                    item={item}
+                    key={item?._id}
+                  />
+                </React.Fragment>
+              ))}
+            </div>
+            {relativeNews?.length < count && (
+              <div className="row">
+                <div className="mt-4 d-flex justify-content-center">
+                  {showButton && <button
+                    onClick={onSeeMore}
+                    type="button"
+                    className={`btn0 button_text_icon button_text_icon__white mt-4`}
+                  >
+                    <span>Xem thêm</span>
+                    <Image
+                      style={{ marginLeft: "8px" }}
+                      src={require("@/public/images/icons/right.svg")}
+                      alt="Xem thêm"
+                    />
+                  </button>}
+
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div

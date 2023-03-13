@@ -440,7 +440,7 @@ function WebHostingPage({ tags }: Props) {
                 </p>
               </div>
             </div>
-            <div className="row justify-content-center align-items-center mt-4">
+            <div className="row justify-content-center align-items-center mt-4 dichvuHostingInfo">
               <div className="col col-12 col-md-6">
                 <div className="img text-center text-md-left">
                   <img
@@ -476,7 +476,7 @@ function WebHostingPage({ tags }: Props) {
           </div>
         </section>
         <div className="d-flex mt-5 mx-auto justify-content-center " style={{ fontWeight: "600", fontSize: "32px", lineHeight: "48px" }}>Hỏi & đáp liên quan đến dịch vụ Hosting</div>
-        <div className="d-flex mt-2 mx-auto justify-content-center   text-center dichVuHostingBanner w-sm-100">Khi đi thuê hosting, đa số các khách hàng thường có những thắc mắc về dịch vụ và sản phẩm gần như giống nhau. GOFIBER và các chuyên gia tư vấn của mình đã tổng hợp lại để quý khách hàng  có thể tham khảo nhanh một số vấn đề như sau:
+        <div className="d-flex mt-2 mx-auto justify-content-center   text-center dichVuHostingBanner fontBannerForHosting ">Khi đi thuê hosting, đa số các khách hàng thường có những thắc mắc về dịch vụ và sản phẩm gần như giống nhau. GOFIBER và các chuyên gia tư vấn của mình đã tổng hợp lại để quý khách hàng  có thể tham khảo nhanh một số vấn đề như sau:
         </div>
         <Question showContent={false} isHosting={true} data={question} />
 
