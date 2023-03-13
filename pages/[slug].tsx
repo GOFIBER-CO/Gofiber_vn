@@ -18,9 +18,13 @@ import { convertObjectToQuery } from "@/src/utils";
 import { fetchApi } from "@/src/api";
 import Image from "next/image";
 import NewItem from "@/src/containers/news/NewItem";
+import Parser from 'html-react-parser';
 
 const pageSize = 4;
 
+const handleText = (text: any) => {
+  return <React.Fragment>{text}</React.Fragment>;
+};
 const SkeletonPage = () => (
   <div className="row">
     <div className="col-12 col-md-8 content mt-5">
@@ -93,8 +97,15 @@ function NewsDetail({ title, description }: Props) {
   const [bestNews, setBestNews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showButton, setShowButton] = useState<boolean>(true);
+  let text: any = description.replace(/<[^>]*>/g, "")
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, 'text/html');
+
+  const plainText = doc.body.textContent;
 
   const [count, setCount] = useState<number>(0);
+
+
   const getNewsByDomain = async (slug: any) => {
     try {
       setIsLoading(true);
@@ -339,7 +350,7 @@ function NewsDetail({ title, description }: Props) {
       <Head>
         <title>{title}</title>
         <link rel="canonical" href={`https://gofiber.vn/${slug}`} />
-        <meta name="description" content={description} />
+        <meta name="description" content={plainText as any} />
       </Head>
       <div id="news-detail">
         <div className="breadcrumb">
