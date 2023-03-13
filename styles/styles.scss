@@ -2379,19 +2379,19 @@ img {
 #news-detail {
   letter-spacing: 0.2px;
   h1 {
-    font-size: 32px;
+    font-size: 32px !important;
     font-weight: bold;
     --font-family-primary: "GoogleSans-Bold" !important;
     font-family: "GoogleSans-Bold" !important;
   }
   h2 {
-    font-size: 20px;
+    font-size: 20px !important;
     font-weight: bold;
     --font-family-primary: "GoogleSans-Bold" !important;
     font-family: "GoogleSans-Bold" !important;
   }
   h3 {
-    font-size: 20px;
+    font-size: 18px !important;
     font-weight: bold;
     --font-family-primary: "GoogleSans-Bold" !important;
     font-family: "GoogleSans-Bold" !important;
@@ -4606,4 +4606,255 @@ img {
 }
 .fontBannerForHosting {
   font-family: "PoppinsRegular" !important;
+}
+#news,
+#news-detail {
+  .section-recruit {
+    margin-top: 50px;
+  }
+
+  .recruit-item {
+    width: 383px !important;
+    height: 612px !important;
+
+    border-radius: 8px;
+    height: 100%;
+    font-family: "PoppinsRegular" !important;
+    img {
+      max-height: 400px !important;
+      overflow: hidden;
+      object-fit: fill;
+      border-radius: 20px;
+
+      &.small {
+        max-height: 270px !important;
+      }
+    }
+  }
+  .forCate {
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      text-decoration: none;
+      color: black;
+      div {
+        background: #f3f3f3 !important;
+        color: #3d5156;
+        font-weight: 400;
+        font-family: "PoppinsRegular" !important;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 24px;
+        border: radius 25px;
+        letter-spacing: 0.8px;
+
+        margin-left: 10px;
+        margin-top: 5px;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        padding: 8px 8px;
+      }
+    }
+  }
+  .recruit-info {
+    .title {
+      font-weight: bold;
+    }
+    p {
+      font-weight: normal !important;
+      color: #3d5156 !important;
+    }
+    div {
+      span {
+        background: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+
+      .iconify {
+        color: var(--color--primary);
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #777777;
+    }
+  }
+
+  .primary {
+    .recruit-info {
+      padding: 24px;
+
+      .title {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .secondary {
+    .recruit-info {
+      padding: 12px;
+    }
+
+    .title {
+      font-size: 14px;
+    }
+  }
+}
+
+#news-detail {
+  .banner-page {
+    &.image-large-for-default {
+      background-image: url("../public/images/recruit/recuit-detail/banner-large.png");
+    }
+
+    &.image-medium-for-default {
+      background-image: url("../public/images/recruit/recuit-detail/banner-medium.png");
+    }
+    &.image-large-for-IT {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-information technology.png");
+    }
+    &.image-large-for-seo {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-seo.png");
+    }
+    &.image-large-for-sales {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-nhan-vien-kinh-doanh.png");
+    }
+    &.image-large-for-system {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-system-admin.png");
+    }
+    &.image-large-for-mobile {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-mobile-developer.png");
+    }
+    &.image-large-for-content-seo {
+      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-content-seo.png");
+    }
+
+    &.image-medium-for-IT {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-information-technology.png");
+    }
+    &.image-medium-for-seo {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-seo.png");
+    }
+    &.image-medium-for-sales {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-nhan-vien-kinh-doanh.png");
+    }
+    &.image-medium-for-system {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-system-admin.png");
+    }
+
+    &.image-medium-for-content-seo {
+      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-content-seo.png");
+    }
+    .banner-link {
+      text-align: left;
+      h3 {
+        color: #fff;
+        font-weight: 500;
+      }
+      .link {
+        width: fit-content;
+      }
+
+      .text-icon-info {
+        span {
+          margin-left: 8px;
+          color: #fff;
+        }
+      }
+
+      .button_text_icon {
+        width: fit-content !important;
+        padding: 0px 16px;
+      }
+    }
+  }
+
+  .description_job,
+  .overview_job,
+  .application_job {
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    .title {
+      font-weight: bold !important;
+    }
+
+    .divider {
+      border-top: 1px solid #f4f4f4 !important;
+      margin: 12px 0px;
+    }
+
+    .overview_name,
+    .overview_item span {
+      font-size: 14px;
+      color: #5c5c5c;
+    }
+
+    .overview_item {
+      img {
+        min-width: 24px;
+      }
+
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .description_job {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 24px 12px;
+
+    ul {
+      list-style: unset;
+    }
+  }
+
+  .overview_job {
+    padding: 16px 12px;
+  }
+  .application_job {
+    padding: 18px 12px;
+
+    label {
+      font-size: 14px;
+      color: #5c5c5c;
+    }
+
+    .btn-upload {
+      width: 100%;
+      background-color: #fff;
+      border: 1px dashed var(--color--primary);
+      border-radius: 8px;
+      color: var(--color--primary);
+      padding: 8px 0px;
+    }
+
+    input {
+      height: 36px;
+      width: 100%;
+      border: 1px solid #adadad;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      color: 1px solid 1x;
+      padding: 0px 10px;
+    }
+
+    .btn-application {
+      width: 100% !important;
+      background: #00acd7;
+      border: 1px solid #00acd7;
+      border-radius: 8px;
+      padding: 4px 0px;
+      color: #fff;
+    }
+  }
 }

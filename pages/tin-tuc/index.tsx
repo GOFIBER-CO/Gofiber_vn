@@ -40,6 +40,8 @@ function NewsPage({ tags }: Props) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [news, setNews] = useState<any[]>([]);
   const [news1, setNews1] = useState<any[]>([]);
+  const [cateList, setCateList] = useState<any>([])
+  const [cateList1, setCateList1] = useState<any>([])
 
   const [pageIndex, setPageIndex] = useState<number>(1);
   const [isLoadingSeeMore, setIsLoadingSeeMore] = useState<boolean>(false);
@@ -64,7 +66,8 @@ function NewsPage({ tags }: Props) {
       const result1 = await dispatch(getPagingByCate(params1)).unwrap();
       const { data, count } = result?.data;
       setNews1(result1?.data.data || []);
-
+      setCateList(result?.data.cateList as any)
+      setCateList1(result?.data.cateList as any)
       setNews(data || []);
       setCount(count || 0);
     } catch (error) {
@@ -73,7 +76,6 @@ function NewsPage({ tags }: Props) {
       setIsLoading(false);
     }
   };
-  console.log(news1)
   useEffect(() => {
     getPosts();
   }, []);
@@ -93,13 +95,15 @@ function NewsPage({ tags }: Props) {
       setNews((prevState) => {
         return [...prevState, ...(data || [])];
       });
+      setCateList((prevState: any) => {
+        return [...prevState, ...(result?.data.cateList || [])];
+      });
     } catch (error) {
       console.log("getPosts", error);
     } finally {
       setIsLoadingSeeMore(false);
     }
   };
-
   useEffect(() => {
     if (pageIndex > 1) getPostsSeeMore();
   }, [pageIndex]);
@@ -111,7 +115,7 @@ function NewsPage({ tags }: Props) {
   const render = {
     isLoading: (
       <div className="row">
-        {[1, 2].map((item) => (
+        {[1, 3].map((item) => (
           <SkeletonItem key={item} />
         ))}
       </div>
@@ -135,6 +139,7 @@ function NewsPage({ tags }: Props) {
             <div className="row" style={{ marginBottom: "130px" }}>
               {news1.map((item, index) => (
                 <NewItem
+                  cateList={cateList1[index]}
                   item={item}
                   wrapperClassName={`col-lg-4 col-md-6 `}
                   key={index}
@@ -145,6 +150,7 @@ function NewsPage({ tags }: Props) {
 
               {news.map((item, index) => (
                 <NewItem
+                  cateList={cateList[index]}
                   item={item}
                   wrapperClassName={`col-lg-4 col-md-6 `}
                   key={index}
@@ -182,13 +188,15 @@ function NewsPage({ tags }: Props) {
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
-      <div id="recruit">
+      <div id="news">
         <BannerV2Page
           styleLinkName={{ maxWidth: "400px" }}
           image="https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png"
           name="Tin tức"
           extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
-        />
+          showButton={false}
+          
+   />
         <div className="container">
           <section className="section-recruit">
             {isLoading ? render["isLoading"] : render["notLoading"]}

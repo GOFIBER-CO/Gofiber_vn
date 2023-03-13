@@ -204,10 +204,10 @@ function TestPage({ tags }: Props) {
         <SectionOtherService />
 
         <WhyChoose />
+        <Newspaper />
         <HotCustomer />
 
         <Feedback />
-        <Newspaper />
 
         <SectionRegistryPromotion />
 

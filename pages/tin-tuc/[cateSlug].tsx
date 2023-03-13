@@ -42,7 +42,9 @@ function NewsPage({ tags }: Props) {
     const router = useRouter();
     const { cateSlug } = router?.query;
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [news, setNews] = useState<any[]>([]);
+    const [news, setNews] = useState<any>([]);
+    const [cateListPost, setCateListPost] = useState<any[]>([])
+    const [cateListPage, setCateListPage] = useState<any>({})
 
     const [pageIndex, setPageIndex] = useState<number>(1);
     const [isLoadingSeeMore, setIsLoadingSeeMore] = useState<boolean>(false);
@@ -60,8 +62,9 @@ function NewsPage({ tags }: Props) {
 
 
             const result = await dispatch(getPostForSpecificCate(params)).unwrap();
-            const { data, count, cateName } = result?.data;
-            console.log(count)
+            const { data, count, cateName, cateList, cateInfo } = result?.data;
+            setCateListPage(cateInfo as any || {})
+            setCateListPost(cateList as any || [])
             setCateName(cateName || "")
             setNews(data || []);
             setCount(count || 0);
@@ -71,6 +74,7 @@ function NewsPage({ tags }: Props) {
             setIsLoading(false);
         }
     };
+
     useEffect(() => {
         if (cateSlug !== undefined) {
 
@@ -90,8 +94,12 @@ function NewsPage({ tags }: Props) {
             };
 
             const result = await dispatch(getPostForSpecificCate(params)).unwrap();
-            const { data } = result?.data;
-            setNews((prevState) => {
+            const { data, count, cateName, cateList, cateInfo } = result?.data;
+
+            setCateListPost(prevState => {
+                return [...prevState as any, ...(cateList || [])];
+            });
+            setNews((prevState: any) => {
                 return [...prevState, ...(data || [])];
             });
         } catch (error) {
@@ -100,7 +108,7 @@ function NewsPage({ tags }: Props) {
             setIsLoadingSeeMore(false);
         }
     };
-
+    console.log(cateListPage)
     useEffect(() => {
         if (pageIndex > 1) getPostsSeeMore();
     }, [pageIndex]);
@@ -134,8 +142,9 @@ function NewsPage({ tags }: Props) {
                 ) : (
                     <>
                         <div className="row">
-                            {news.map((item, index) => (
+                            {news.map((item: any, index: any) => (
                                 <NewItem
+                                    cateList={cateListPost[index]}
                                     item={item}
                                     wrapperClassName={`col-lg-4 col-md-6 `}
                                     key={index}
@@ -169,12 +178,12 @@ function NewsPage({ tags }: Props) {
     return (
         <>
 
-            <div id="recruit">
+            <div id="news">
                 <BannerV2Page
                     styleLinkName={{ maxWidth: "400px" }}
                     image="https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png"
                     name={cateName as any}
-                    extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+                    extra={cateListPage?.description as any}
                     showButton={false}
 
                 />
