@@ -26,12 +26,12 @@ function RelativeNews({ item, onRedirect = () => null }: Props) {
         >
           {item?.title}
         </Link>
-        <div
-          className='description mt-2'
+        <p
+          className='description mt-2 mb-0 number_line_3'
           dangerouslySetInnerHTML={{
             __html: item?.description.replace(/<[^>]*>/g, ''),
           }}
-        ></div>
+        ></p>
         <div className='time mt-2'>
           <div className='time mt-2'>
             {moment(item?.createdAt).format('HH:mm, DD/MM/YYYY')}

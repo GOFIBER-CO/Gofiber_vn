@@ -1326,6 +1326,10 @@ img {
   bottom: 0;
 }
 
+table {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 tbody,
 td,
 tfoot,
@@ -1334,6 +1338,10 @@ thead,
 tr {
   border-width: 1px !important;
   padding: 10px;
+}
+
+p {
+  margin-top: 15px !important;
 }
 
 .banner-bg {
@@ -2560,6 +2568,9 @@ tr {
       .description,
       .time {
         font-size: 14px;
+        color: #3d5156;
+        font-weight: normal !important;
+        font-family: PoppinsRegular !important;
       }
 
       .title-news {

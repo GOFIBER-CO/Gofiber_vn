@@ -21,7 +21,7 @@ function BuyPackage({ packageSelect }: Props) {
 
   const handleBuyPackage = async (e: any) => {
     e.preventDefault();
-    // setIsLoading(true);
+    setIsLoading(true);
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData);
 
@@ -56,10 +56,18 @@ function BuyPackage({ packageSelect }: Props) {
 
       const result = await dispatch(postNewOrder(order)).unwrap();
 
-      console.log(result);
-      return;
+      if (!result) {
+        openNotificationWithIcon(
+          'error',
+          'Đặt hàng thất bại',
+          'Đã có lỗi xảy ra. Quý khách vui lòng thử lại sau',
+          api
+        );
+        return;
+      }
 
       const templateParams = {
+        order_id: result?.data?.orderId,
         to_name: fullName,
         number_phone: numberPhone,
         email,
@@ -70,7 +78,7 @@ function BuyPackage({ packageSelect }: Props) {
         total_price: formatNumber(parseInt(packageSelect?.price) * usedTime),
       };
 
-      emailjs
+      await emailjs
         .send(
           'service_1jvutpr',
           'template_28uxqmd',
