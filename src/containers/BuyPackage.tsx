@@ -63,6 +63,7 @@ function BuyPackage({ packageSelect }: Props) {
           'Đã có lỗi xảy ra. Quý khách vui lòng thử lại sau',
           api
         );
+        setIsLoading(false);
         return;
       }
 
@@ -102,6 +103,7 @@ function BuyPackage({ packageSelect }: Props) {
               'Đã có lỗi xảy ra. Quý khách vui lòng thử lại sau',
               api
             );
+            setIsLoading(false);
           }
         )
         .finally(() => {
