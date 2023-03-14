@@ -34,7 +34,8 @@ const gofiber = [
   },
   {
     id: 6,
-    name: 'Cam kết chất lượng',
+    name: 'Điều khoản sử dụng',
+    link: '/dieu-khoan-su-dung-dich-vu',
   },
 ];
 
@@ -101,7 +102,7 @@ const service = [
 ];
 
 function FooterV2() {
-  const { pathname } = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <footer id='footer-v2'>
@@ -241,7 +242,7 @@ function FooterV2() {
                   </a>
                   <a
                     className='a'
-                    href={`https://www.dmca.com/site-report/gofiber.vn?refurl=https://gofiber.vn${pathname}`}
+                    href={`https://www.dmca.com/site-report/gofiber.vn?refurl=https://gofiber.vn${asPath}`}
                     target='_blank'
                     rel='nofollow '
                   >

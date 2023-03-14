@@ -182,9 +182,19 @@ function NewsPage({ tags }: Props) {
         <link
           rel='alternate'
           href={`https://gofiber.vn/tin-tuc/${cateSlug}`}
-          lang='vi-vn'
+          hreflang='vi-vn'
         />
+        <link rel='canonical' href={`https://gofiber.vn/tin-tuc/${cateSlug}`} />
         <meta name='description' content={cateListPage?.description} />
+
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@gofibervn' />
+        <meta name='twitter:title' content={cateListPage?.name} />
+        <meta name='twitter:description' content={cateListPage?.description} />
+        <meta
+          name='twitter:image'
+          content='https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png'
+        />
       </Head>
       <div id='news'>
         <BannerV2Page

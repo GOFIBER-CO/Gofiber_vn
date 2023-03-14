@@ -1,22 +1,22 @@
 @font-face {
-  font-family: "SVN-Poppins";
-  src: url("../public/fonts/SVN-Poppins-Medium.ttf") format("truetype");
+  font-family: 'SVN-Poppins';
+  src: url('../public/fonts/SVN-Poppins-Medium.ttf') format('truetype');
 }
 @font-face {
-  font-family: "GoogleSans-Bold";
-  src: url("../public/fonts/GoogleSans-Bold.ttf") format("truetype");
+  font-family: 'GoogleSans-Bold';
+  src: url('../public/fonts/GoogleSans-Bold.ttf') format('truetype');
 }
 @font-face {
-  font-family: "GoogleSans-normal";
-  src: url("../public/fonts/GoogleSans-Regular.ttf") format("truetype");
+  font-family: 'GoogleSans-normal';
+  src: url('../public/fonts/GoogleSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: "PoppinsRegular";
-  src: url("../public/fonts/SVN-Poppins-Regular.ttf") format("truetype");
+  font-family: 'PoppinsRegular';
+  src: url('../public/fonts/SVN-Poppins-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: "PoppinsMedium";
-  src: url("../public/fonts/SVN-Poppins-Medium.ttf") format("truetype");
+  font-family: 'PoppinsMedium';
+  src: url('../public/fonts/SVN-Poppins-Medium.ttf') format('truetype');
 }
 
 $superSmall: 0px;
@@ -28,7 +28,7 @@ $large: 1400px;
   --color-secondary: rgba(0, 0, 0, 0.03);
   --color-text-primary: #0a0a0a;
   --color-dark: #f1f1f1;
-  --font-family-primary: "SVN-Poppins";
+  --font-family-primary: 'SVN-Poppins';
   --linear-primary: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
   --box--shadow-button: inset 2px 2px 2px 0px rgb(255 255 255 / 50%),
     7px 7px 20px 0px rgb(0 0 0 / 10%), 4px 4px 5px 0px rgb(0 0 0 / 10%);
@@ -38,7 +38,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "SVN-Poppins" !important;
+  font-family: 'SVN-Poppins' !important;
   overflow-x: hidden;
   max-width: 100vw !important;
 }
@@ -90,7 +90,7 @@ html {
 .textShowMore {
   /* Xem thêm tính năng */
 
-  font-family: "SVN-Poppins";
+  font-family: 'SVN-Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -411,7 +411,7 @@ html {
 }
 
 .menu_item.has-dropdown::after {
-  content: "";
+  content: '';
   background-color: transparent;
   width: 80%;
   position: absolute;
@@ -633,7 +633,7 @@ img {
   .scroll-wrapper {
     display: flex;
     flex-wrap: nowrap;
-    background-image: url("../public/images/introduction/bg-scroll.png");
+    background-image: url('../public/images/introduction/bg-scroll.png');
     background-size: 100% 100%;
 
     .item {
@@ -783,13 +783,13 @@ img {
     box-shadow: 0px 4px 33px rgba(0, 172, 215, 0.2);
 
     .hot-item {
-      background-image: url("../public/images/introduction/khung-noibat1.png");
+      background-image: url('../public/images/introduction/khung-noibat1.png');
       background-size: 100% 100%;
       position: relative;
       opacity: 1;
 
       &::before {
-        content: "";
+        content: '';
         background: linear-gradient(
           135.01deg,
           rgba(5, 173, 216, 0.2) 2.07%,
@@ -804,7 +804,7 @@ img {
       }
 
       &::after {
-        content: "";
+        content: '';
         background: linear-gradient(
           135.01deg,
           rgba(5, 173, 216, 0.2) 2.07%,
@@ -1025,20 +1025,20 @@ img {
 
       .ant-collapse-header-text {
         font-size: 16px;
-        font-family: "SVN-Poppins";
+        font-family: 'SVN-Poppins';
         font-style: normal;
         font-weight: 500;
       }
 
       .ant-collapse-content-box {
-        font-family: "PoppinsRegular" !important;
+        font-family: 'PoppinsRegular' !important;
         padding: 10px 48px;
         position: relative;
 
         p,
         li,
         td {
-          font-family: "SVN-Poppins";
+          font-family: 'SVN-Poppins';
           font-style: normal;
           font-weight: 500;
           font-size: 14px;
@@ -1324,6 +1324,16 @@ img {
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-width: 1px !important;
+  padding: 10px;
 }
 
 .banner-bg {
@@ -2205,46 +2215,46 @@ img {
 #recruit-detail {
   .banner-page {
     &.image-large-for-default {
-      background-image: url("../public/images/recruit/recuit-detail/banner-large.png");
+      background-image: url('../public/images/recruit/recuit-detail/banner-large.png');
     }
 
     &.image-medium-for-default {
-      background-image: url("../public/images/recruit/recuit-detail/banner-medium.png");
+      background-image: url('../public/images/recruit/recuit-detail/banner-medium.png');
     }
     &.image-large-for-IT {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-information technology.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-information technology.png');
     }
     &.image-large-for-seo {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-seo.png');
     }
     &.image-large-for-sales {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-nhan-vien-kinh-doanh.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-nhan-vien-kinh-doanh.png');
     }
     &.image-large-for-system {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-system-admin.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-system-admin.png');
     }
     &.image-large-for-mobile {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-mobile-developer.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-mobile-developer.png');
     }
     &.image-large-for-content-seo {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-content-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-content-seo.png');
     }
 
     &.image-medium-for-IT {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-information-technology.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-information-technology.png');
     }
     &.image-medium-for-seo {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-seo.png');
     }
     &.image-medium-for-sales {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-nhan-vien-kinh-doanh.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-nhan-vien-kinh-doanh.png');
     }
     &.image-medium-for-system {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-system-admin.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-system-admin.png');
     }
 
     &.image-medium-for-content-seo {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-content-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-content-seo.png');
     }
     .banner-link {
       text-align: left;
@@ -2381,35 +2391,35 @@ img {
   h1 {
     font-size: 32px !important;
     font-weight: bold;
-    --font-family-primary: "GoogleSans-Bold" !important;
-    font-family: "GoogleSans-Bold" !important;
+    --font-family-primary: 'GoogleSans-Bold' !important;
+    font-family: 'GoogleSans-Bold' !important;
   }
   h2 {
     font-size: 20px !important;
     font-weight: bold;
-    --font-family-primary: "GoogleSans-Bold" !important;
-    font-family: "GoogleSans-Bold" !important;
+    --font-family-primary: 'GoogleSans-Bold' !important;
+    font-family: 'GoogleSans-Bold' !important;
   }
   h3 {
     font-size: 18px !important;
     font-weight: bold;
-    --font-family-primary: "GoogleSans-Bold" !important;
-    font-family: "GoogleSans-Bold" !important;
+    --font-family-primary: 'GoogleSans-Bold' !important;
+    font-family: 'GoogleSans-Bold' !important;
   }
   p {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   li {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   span {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   h4,
   h5,
@@ -2419,7 +2429,7 @@ img {
 
   .breadcrumb {
     min-height: 180px;
-    background-image: url("https://gofiber.b-cdn.net/tintuc-detail.webp");
+    background-image: url('https://gofiber.b-cdn.net/tintuc-detail.webp');
     background-size: 100% 100%;
 
     .breadcrumb_container {
@@ -2457,35 +2467,35 @@ img {
     h1 {
       font-size: 32px;
       font-weight: bold;
-      --font-family-primary: "GoogleSans-Bold" !important;
-      font-family: "GoogleSans-Bold" !important;
+      --font-family-primary: 'GoogleSans-Bold' !important;
+      font-family: 'GoogleSans-Bold' !important;
     }
     h2 {
       font-size: 20px;
       font-weight: bold;
-      --font-family-primary: "GoogleSans-Bold" !important;
-      font-family: "GoogleSans-Bold" !important;
+      --font-family-primary: 'GoogleSans-Bold' !important;
+      font-family: 'GoogleSans-Bold' !important;
     }
     h3 {
       font-size: 20px;
       font-weight: bold;
-      --font-family-primary: "GoogleSans-Bold" !important;
-      font-family: "GoogleSans-Bold" !important;
+      --font-family-primary: 'GoogleSans-Bold' !important;
+      font-family: 'GoogleSans-Bold' !important;
     }
     p {
       font-size: 16px;
-      --font-family-primary: "GoogleSans-normal" !important;
-      font-family: "GoogleSans-normal" !important;
+      --font-family-primary: 'GoogleSans-normal' !important;
+      font-family: 'GoogleSans-normal' !important;
     }
     li {
       font-size: 16px;
-      --font-family-primary: "GoogleSans-normal" !important;
-      font-family: "GoogleSans-normal" !important;
+      --font-family-primary: 'GoogleSans-normal' !important;
+      font-family: 'GoogleSans-normal' !important;
     }
     span {
       font-size: 16px;
-      --font-family-primary: "GoogleSans-normal" !important;
-      font-family: "GoogleSans-normal" !important;
+      --font-family-primary: 'GoogleSans-normal' !important;
+      font-family: 'GoogleSans-normal' !important;
     }
     h4,
     h5,
@@ -2617,40 +2627,40 @@ img {
   h1 {
     font-size: 32px;
     font-weight: bold;
-    --font-family-primary: "GoogleSans-Bold" !important;
-    font-family: "GoogleSans-Bold" !important;
+    --font-family-primary: 'GoogleSans-Bold' !important;
+    font-family: 'GoogleSans-Bold' !important;
   }
   h2 {
     font-size: 20px;
     font-weight: bold;
-    --font-family-primary: "GoogleSans-Bold" !important;
-    font-family: "GoogleSans-Bold" !important;
+    --font-family-primary: 'GoogleSans-Bold' !important;
+    font-family: 'GoogleSans-Bold' !important;
   }
   h3 {
     font-size: 20px;
     font-weight: bold;
-    --font-family-primary: "GoogleSans-Bold" !important;
-    font-family: "GoogleSans-Bold" !important;
+    --font-family-primary: 'GoogleSans-Bold' !important;
+    font-family: 'GoogleSans-Bold' !important;
   }
   p {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   li {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   span {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   strong {
     font-size: 16px;
-    --font-family-primary: "GoogleSans-normal" !important;
-    font-family: "GoogleSans-normal" !important;
+    --font-family-primary: 'GoogleSans-normal' !important;
+    font-family: 'GoogleSans-normal' !important;
   }
   h4,
   h5,
@@ -2701,7 +2711,7 @@ img {
     padding-top: 130px;
   }
   .mediumFont {
-    font-family: "PoppinsRegular" !important;
+    font-family: 'PoppinsRegular' !important;
   }
   .menu-lv1 {
     color: #fff;
@@ -2874,7 +2884,7 @@ img {
       }
 
       .extra {
-        font-family: "PoppinsRegular" !important;
+        font-family: 'PoppinsRegular' !important;
         font-size: 12px;
         font-weight: 500;
       }
@@ -2924,7 +2934,7 @@ img {
       }
 
       .extra {
-        font-family: "PoppinsRegular" !important;
+        font-family: 'PoppinsRegular' !important;
         display: flex;
         color: #3d5156;
         font-size: 14px;
@@ -3138,7 +3148,7 @@ img {
     color: var(--color--primary) !important;
   }
   .content {
-    font-family: "PoppinsRegular" !important;
+    font-family: 'PoppinsRegular' !important;
     line-height: 24px;
   }
 }
@@ -3528,7 +3538,7 @@ img {
   background: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
 
   .wrapper-registry-promotion {
-    background-image: url("https://gofiber.b-cdn.net/Desktop/Trang-chu-2/bg-registry-promotion.png");
+    background-image: url('https://gofiber.b-cdn.net/Desktop/Trang-chu-2/bg-registry-promotion.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 120px 0px;
@@ -4038,7 +4048,7 @@ img {
 #section-banner-v2 {
   background: linear-gradient(92.18deg, #00acd7 5.74%, #005cc9 98.17%);
   .bannerForHosting {
-    font-family: "PoppinsRegular" !important;
+    font-family: 'PoppinsRegular' !important;
   }
   .banner-v2 {
     padding: 200px 0px 100px;
@@ -4047,10 +4057,10 @@ img {
       color: #fff;
       line-height: 24px;
       font-size: 16px;
-      font-family: "PoppinsRegular" !important;
+      font-family: 'PoppinsRegular' !important;
     }
     .extraForHosting {
-      font-family: "PoppinsRegular" !important;
+      font-family: 'PoppinsRegular' !important;
 
       display: block;
       text-align: left;
@@ -4470,13 +4480,13 @@ img {
 
 @media (min-width: 550px) {
   .show-for-small,
-  [data-show="show-for-small"] {
+  [data-show='show-for-small'] {
     display: none !important;
   }
 }
 @media (min-width: 850px) {
   .show-for-medium,
-  [data-show="show-for-medium"] {
+  [data-show='show-for-medium'] {
     display: none !important;
   }
 
@@ -4487,7 +4497,7 @@ img {
 .termInfo {
   margin-bottom: 30px;
   margin-top: 40px;
-  font-family: "SVN-Poppins";
+  font-family: 'SVN-Poppins';
   font-style: italic;
   font-weight: 300;
   font-size: 16px;
@@ -4605,7 +4615,7 @@ img {
   }
 }
 .fontBannerForHosting {
-  font-family: "PoppinsRegular" !important;
+  font-family: 'PoppinsRegular' !important;
 }
 #news,
 #news-detail {
@@ -4619,7 +4629,7 @@ img {
 
     border-radius: 8px;
     height: 100%;
-    font-family: "PoppinsRegular" !important;
+    font-family: 'PoppinsRegular' !important;
     img {
       max-height: 400px !important;
       overflow: hidden;
@@ -4642,7 +4652,7 @@ img {
         background: #f3f3f3 !important;
         color: #3d5156;
         font-weight: 400;
-        font-family: "PoppinsRegular" !important;
+        font-family: 'PoppinsRegular' !important;
         font-style: normal;
         font-size: 16px;
         line-height: 24px;
@@ -4709,46 +4719,46 @@ img {
 #news-detail {
   .banner-page {
     &.image-large-for-default {
-      background-image: url("../public/images/recruit/recuit-detail/banner-large.png");
+      background-image: url('../public/images/recruit/recuit-detail/banner-large.png');
     }
 
     &.image-medium-for-default {
-      background-image: url("../public/images/recruit/recuit-detail/banner-medium.png");
+      background-image: url('../public/images/recruit/recuit-detail/banner-medium.png');
     }
     &.image-large-for-IT {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-information technology.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-information technology.png');
     }
     &.image-large-for-seo {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-seo.png');
     }
     &.image-large-for-sales {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-nhan-vien-kinh-doanh.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-nhan-vien-kinh-doanh.png');
     }
     &.image-large-for-system {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-system-admin.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-system-admin.png');
     }
     &.image-large-for-mobile {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-mobile-developer.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-mobile-developer.png');
     }
     &.image-large-for-content-seo {
-      background-image: url("../public/images/recruit/recuit-detail/desktop/dt-background-content-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/desktop/dt-background-content-seo.png');
     }
 
     &.image-medium-for-IT {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-information-technology.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-information-technology.png');
     }
     &.image-medium-for-seo {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-seo.png');
     }
     &.image-medium-for-sales {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-nhan-vien-kinh-doanh.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-nhan-vien-kinh-doanh.png');
     }
     &.image-medium-for-system {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-system-admin.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-system-admin.png');
     }
 
     &.image-medium-for-content-seo {
-      background-image: url("../public/images/recruit/recuit-detail/tablet/tablet-background-content-seo.png");
+      background-image: url('../public/images/recruit/recuit-detail/tablet/tablet-background-content-seo.png');
     }
     .banner-link {
       text-align: left;

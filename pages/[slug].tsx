@@ -20,6 +20,8 @@ import Image from 'next/image';
 import NewItem from '@/src/containers/news/NewItem';
 import Parser from 'html-react-parser';
 
+import cheerio from 'cheerio';
+
 const pageSize = 4;
 
 const handleText = (text: any) => {
@@ -97,13 +99,13 @@ function NewsDetail({ title, description }: Props) {
   const [bestNews, setBestNews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showButton, setShowButton] = useState<boolean>(true);
-  let text: any = description.replace(/<[^>]*>/g, '');
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(text, 'text/html');
-
-  const plainText = doc.body.textContent;
-
   const [count, setCount] = useState<number>(0);
+
+  const htmlText = description;
+  const $ = cheerio.load(htmlText);
+  const stringText = $.text();
+
+  const text = stringText;
 
   const getNewsByDomain = async (slug: any) => {
     try {
@@ -118,6 +120,7 @@ function NewsDetail({ title, description }: Props) {
       };
 
       const result = await dispatch(getPagingByDomain(params)).unwrap();
+
       const { data, count } = result?.data;
       setRelativeNews(data || []);
       setCount(count || 0);
@@ -185,6 +188,7 @@ function NewsDetail({ title, description }: Props) {
         domain: process.env.NEXT_PUBLIC_DOMAIN,
       };
       const result = await dispatch(getNewsBySlug(params)).unwrap();
+
       const { data } = result?.data;
 
       setData(data || {});
@@ -365,7 +369,21 @@ function NewsDetail({ title, description }: Props) {
       <Head>
         <title>{title}</title>
         <link rel='canonical' href={`https://gofiber.vn/${slug}`} />
-        <meta name='description' content={plainText as any} />
+        <link
+          rel='alternate'
+          href={`https://gofiber.vn/${slug}`}
+          hreflang='vi-vn'
+        />
+        <meta name='description' content={text} />
+
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@gofibervn' />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={text} />
+        <meta
+          name='twitter:image'
+          content='https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png'
+        />
       </Head>
       <div id='news-detail'>
         <div className='breadcrumb'>
