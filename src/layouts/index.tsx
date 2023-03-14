@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react/";
-import ButtonBackToTop from "../components/button/ButtonBackToTop";
-import { useAppDispatch, useAppSelector } from "../redux";
-import { initFP, updateDrawer } from "../redux/slice";
-import DrawerMenu from "./DrawerMenu";
-import Footer from "./Footer";
-import Header from "./Header";
-import { notification } from "antd";
-import FooterV2 from "./FooterV2";
-import { useRouter } from "next/router";
-import HeaderFixed from "../containers/homev2/header/HeaderFixed";
-import HeaderV2 from "./HeaderV2";
+import React, { useState, useEffect } from 'react';
+// import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react/";
+import ButtonBackToTop from '../components/button/ButtonBackToTop';
+import { useAppDispatch, useAppSelector } from '../redux';
+import { initFP, updateDrawer } from '../redux/slice';
+import DrawerMenu from './DrawerMenu';
+import Footer from './Footer';
+import Header from './Header';
+import { notification } from 'antd';
+import FooterV2 from './FooterV2';
+import { useRouter } from 'next/router';
+import HeaderFixed from '../containers/homev2/header/HeaderFixed';
+import HeaderV2 from './HeaderV2';
+import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react';
 
 type Props = {
   children: JSX.Element;
@@ -18,7 +19,7 @@ type Props = {
 
 function Layout({ children }: Props) {
   const dispatch = useAppDispatch();
-  const { drawer } = useAppSelector((state) => state.home);
+  const { drawer } = useAppSelector(state => state.home);
   const router = useRouter();
   const { data } = useVisitorData(
     { extendedResult: true },
@@ -33,7 +34,7 @@ function Layout({ children }: Props) {
       const params = {
         visId: visitorId,
         reqId: requestId,
-        domain: window?.location?.protocol + "//" + window?.location?.host,
+        domain: window?.location?.protocol + '//' + window?.location?.host,
       };
 
       await dispatch(initFP(params)).unwrap();
@@ -57,7 +58,7 @@ function Layout({ children }: Props) {
       )} */}
       {/* <HeaderFixed /> */}
       <HeaderV2 />
-      <main id="main">
+      <main id='main'>
         {contextHolder}
         {children}
       </main>

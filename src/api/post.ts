@@ -1,8 +1,8 @@
-import axios from "axios";
-import { fetchApi } from ".";
-import { convertObjectToQuery } from "../utils";
+import axios from 'axios';
+import { fetchApi } from '.';
+import { convertObjectToQuery } from '../utils';
 
-const pathname = "/posts";
+const pathname = '/posts';
 
 export const PostApi = {
   getPagingByDomain: async (params: any) => {
@@ -46,7 +46,7 @@ export const PostApi = {
 
     try {
       const response = await axios.get(
-        "https://api.gofiber.vn/api/posts/getPaging?pageSize=10000&pageIndex=1"
+        'https://api.gofiber.vn/api/posts/getPaging?pageSize=10000&pageIndex=1'
       );
       return response.data.data;
     } catch (error) {
@@ -58,7 +58,7 @@ export const PostApi = {
 
     try {
       const response = await axios.get(
-        "https://api.gofiber.vn/api/getAllPostByCate"
+        'https://api.gofiber.vn/api/getAllPostByCate'
       );
       return response.data;
     } catch (error) {

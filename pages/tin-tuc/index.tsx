@@ -1,17 +1,17 @@
-import { SeoApi } from "@/src/api/seo";
-import BannerPage from "@/src/components/banner/BannerPage";
-import NewItem from "@/src/containers/news/NewItem";
-import { useAppDispatch } from "@/src/redux";
-import { getPagingByCate, getPagingByDomain } from "@/src/redux/slice";
-import { NEWS_IMAGE } from "@/src/utils";
-import { is } from "immer/dist/internal";
-import { GetServerSidePropsContext } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
+import { SeoApi } from '@/src/api/seo';
+import BannerPage from '@/src/components/banner/BannerPage';
+import NewItem from '@/src/containers/news/NewItem';
+import { useAppDispatch } from '@/src/redux';
+import { getPagingByCate, getPagingByDomain } from '@/src/redux/slice';
+import { NEWS_IMAGE } from '@/src/utils';
+import { is } from 'immer/dist/internal';
+import { GetServerSidePropsContext } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import parse from 'html-react-parser';
-import BannerV2Page from "@/src/components/banner/BannerV2Page";
+import BannerV2Page from '@/src/components/banner/BannerV2Page';
 
 const banner = {
   large: NEWS_IMAGE.BANNER_LARGE,
@@ -21,11 +21,11 @@ const banner = {
 
 const SkeletonItem = () => {
   return (
-    <div className="col-12 col-md-6 mb-4 d-flex justify-content-center">
-      <div className="p-2 recruit-item-skeleton">
-        <Skeleton style={{ height: "200px" }} count={1} />
-        <Skeleton style={{ height: "24px", width: "70%" }} className="mt-4" />
-        <Skeleton style={{ height: "72px" }} className="mt-4" />
+    <div className='col-12 col-md-6 mb-4 d-flex justify-content-center'>
+      <div className='p-2 recruit-item-skeleton'>
+        <Skeleton style={{ height: '200px' }} count={1} />
+        <Skeleton style={{ height: '24px', width: '70%' }} className='mt-4' />
+        <Skeleton style={{ height: '72px' }} className='mt-4' />
       </div>
     </div>
   );
@@ -40,8 +40,8 @@ function NewsPage({ tags }: Props) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [news, setNews] = useState<any[]>([]);
   const [news1, setNews1] = useState<any[]>([]);
-  const [cateList, setCateList] = useState<any>([])
-  const [cateList1, setCateList1] = useState<any>([])
+  const [cateList, setCateList] = useState<any>([]);
+  const [cateList1, setCateList1] = useState<any>([]);
 
   const [pageIndex, setPageIndex] = useState<number>(1);
   const [isLoadingSeeMore, setIsLoadingSeeMore] = useState<boolean>(false);
@@ -66,12 +66,12 @@ function NewsPage({ tags }: Props) {
       const result1 = await dispatch(getPagingByCate(params1)).unwrap();
       const { data, count } = result?.data;
       setNews1(result1?.data.data || []);
-      setCateList(result?.data.cateList as any)
-      setCateList1(result?.data.cateList as any)
+      setCateList(result?.data.cateList as any);
+      setCateList1(result?.data.cateList as any);
       setNews(data || []);
       setCount(count || 0);
     } catch (error) {
-      console.log("getPosts", error);
+      console.log('getPosts', error);
     } finally {
       setIsLoading(false);
     }
@@ -92,14 +92,14 @@ function NewsPage({ tags }: Props) {
 
       const result = await dispatch(getPagingByDomain(params)).unwrap();
       const { data } = result?.data;
-      setNews((prevState) => {
+      setNews(prevState => {
         return [...prevState, ...(data || [])];
       });
       setCateList((prevState: any) => {
         return [...prevState, ...(result?.data.cateList || [])];
       });
     } catch (error) {
-      console.log("getPosts", error);
+      console.log('getPosts', error);
     } finally {
       setIsLoadingSeeMore(false);
     }
@@ -109,13 +109,13 @@ function NewsPage({ tags }: Props) {
   }, [pageIndex]);
 
   const onSeeMore = () => {
-    setPageIndex((prevState) => prevState + 1);
+    setPageIndex(prevState => prevState + 1);
   };
 
   const render = {
     isLoading: (
-      <div className="row">
-        {[1, 3].map((item) => (
+      <div className='row'>
+        {[1, 3].map(item => (
           <SkeletonItem key={item} />
         ))}
       </div>
@@ -123,20 +123,20 @@ function NewsPage({ tags }: Props) {
     notLoading: (
       <>
         {news?.length === 0 ? (
-          <div className="row justify-content-center">
-            <div className="col col-12 col-md-6 col-lg-6">
-              <div className="img">
+          <div className='row justify-content-center'>
+            <div className='col col-12 col-md-6 col-lg-6'>
+              <div className='img'>
                 <Image
-                  src={require("@/public/images/nodata.png")}
-                  alt="Hiện tại không có bài viết"
+                  src={require('@/public/images/nodata.png')}
+                  alt='Hiện tại không có bài viết'
                 />
               </div>
-              <h4 className="h4 text-center">Hiện tại không có bài viết</h4>
+              <h4 className='h4 text-center'>Hiện tại không có bài viết</h4>
             </div>
           </div>
         ) : (
           <>
-            <div className="row" style={{ marginBottom: "130px" }}>
+            <div className='row' style={{ marginBottom: '130px' }}>
               {news1.map((item, index) => (
                 <NewItem
                   cateList={cateList1[index]}
@@ -146,8 +146,7 @@ function NewsPage({ tags }: Props) {
                 />
               ))}
             </div>
-            <div className="row">
-
+            <div className='row'>
               {news.map((item, index) => (
                 <NewItem
                   cateList={cateList[index]}
@@ -158,18 +157,18 @@ function NewsPage({ tags }: Props) {
               ))}
             </div>
             {news?.length < count && (
-              <div className="row">
-                <div className="mt-4 d-flex justify-content-center">
+              <div className='row'>
+                <div className='mt-4 d-flex justify-content-center'>
                   <button
                     onClick={onSeeMore}
-                    type="button"
+                    type='button'
                     className={`btn0 button_text_icon button_text_icon__white mt-4`}
                   >
                     <span>Xem thêm</span>
                     <Image
-                      style={{ marginLeft: "8px" }}
-                      src={require("@/public/images/icons/right.svg")}
-                      alt="Xem thêm"
+                      style={{ marginLeft: '8px' }}
+                      src={require('@/public/images/icons/right.svg')}
+                      alt='Xem thêm'
                     />
                   </button>
                 </div>
@@ -188,18 +187,17 @@ function NewsPage({ tags }: Props) {
           <React.Fragment key={index}>{parse(tag)}</React.Fragment>
         ))}
       </Head>
-      <div id="news">
+      <div id='news'>
         <BannerV2Page
-          styleLinkName={{ maxWidth: "400px" }}
-          image="https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png"
-          name="Tin tức"
-          extra="Những giao diện website mà gofiber.vn cung cấp luôn làm hài lòng khách hàng. Sự hài lòng của khách hàng là động lực để chúng tôi phát triển"
+          styleLinkName={{ maxWidth: '400px' }}
+          image='https://gofiber.b-cdn.net/new-design/tin-tuc/desktop-tin-tuc.png'
+          name='Tin tức'
+          extra='Cập nhật tin tức dịch vụ, sản phẩm và tuyển dụng từ công ty GOFIBER.'
           showButton={false}
-          
-   />
-        <div className="container">
-          <section className="section-recruit">
-            {isLoading ? render["isLoading"] : render["notLoading"]}
+        />
+        <div className='container'>
+          <section className='section-recruit'>
+            {isLoading ? render['isLoading'] : render['notLoading']}
           </section>
         </div>
       </div>
@@ -212,7 +210,7 @@ export default NewsPage;
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const params: any = {
-      link: "/tin-tuc",
+      link: '/tin-tuc',
       domain: process.env.NEXT_PUBLIC_DOMAIN,
     };
 
